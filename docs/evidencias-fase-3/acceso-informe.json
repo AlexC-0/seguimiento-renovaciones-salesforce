@@ -1,0 +1,42 @@
+{
+  "timestamp": "2026-11-23T15:33:35.889Z",
+  "reportContext": "Cuenta técnica existente con P06_OperadorRenovaciones y su perfil administrativo previo",
+  "comparisonContext": "Misma conexión autenticada para Analytics REST y SOQL",
+  "reportTotal": 126,
+  "queryTotal": 126,
+  "sameIds": true,
+  "completeReport": true,
+  "newFollowsInReport": 119,
+  "newClosedExcluded": true,
+  "newInProgressIncluded": true,
+  "access": [
+    {
+      "actor": "A",
+      "role": "coordinacion",
+      "follows": 120,
+      "followsReadable": 120,
+      "followsEditable": 120,
+      "contracts": 120,
+      "contractsReadable": 120,
+      "contractsEditable": 120,
+      "deleteAllowed": 0,
+      "method": "UserRecordAccess consultado por cuenta técnica; no es una nueva sesión del comercial o coordinador.",
+      "pass": true
+    },
+    {
+      "actor": "B",
+      "role": "comercial",
+      "follows": 120,
+      "followsReadable": 120,
+      "followsEditable": 120,
+      "contracts": 120,
+      "contractsReadable": 120,
+      "contractsEditable": 0,
+      "deleteAllowed": 0,
+      "method": "UserRecordAccess consultado por cuenta técnica; no es una nueva sesión del comercial o coordinador.",
+      "pass": true
+    }
+  ],
+  "loginAsReenabled": false,
+  "pass": true
+}

@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-11-23T15:32:52.495Z",
+  "purpose": "Preparación técnica de dos registros nuevos para comprobar conservación; no acredita una operación de usuario comercial.",
+  "records": [
+    {
+      "id": "a03g700000tK6uaAAC",
+      "state": "Cerrado",
+      "notes": "P06 F3: cierre ficticio que debe conservar la repetición."
+    },
+    {
+      "id": "a03g700000tK6ubAAC",
+      "state": "En curso",
+      "notes": "P06 F3: nota comercial que debe conservar la repetición."
+    }
+  ]
+}

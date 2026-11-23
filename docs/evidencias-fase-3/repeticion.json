@@ -1,0 +1,49 @@
+{
+  "stage": "repeticion",
+  "timestamp": "2026-11-23T15:33:15.780Z",
+  "receipt": {
+    "tamanioLote": 50,
+    "contratosEnFiltro": 124,
+    "zona": "Europe/Paris",
+    "fin": "2026-12-23",
+    "corte": "2026-11-23",
+    "job": "707g700001DLwdpAAD",
+    "ejecucion": "a01g700001M1rWXAAZ"
+  },
+  "job": {
+    "id": "707g700001DLwdpAAD",
+    "status": "Completed",
+    "numberOfErrors": 0,
+    "jobItemsProcessed": 3,
+    "totalJobItems": 3,
+    "unit": "lotes, no contratos"
+  },
+  "execution": {
+    "id": "a01g700001M1rWXAAZ",
+    "state": "Completada",
+    "cut": "2026-11-23",
+    "windowEnd": "2026-12-23",
+    "timezone": "Europe/Paris",
+    "reconciliation": false,
+    "counts": {
+      "Evaluados__c": 120,
+      "Creados__c": 0,
+      "YaExistentes__c": 120,
+      "Omitidos__c": 0,
+      "Fallidos__c": 0,
+      "LotesFallidos__c": 0
+    }
+  },
+  "expectedCandidates": 120,
+  "follows": 120,
+  "unchangedOnRepeat": true,
+  "changedFollowIds": [],
+  "originalExecutionPreserved": true,
+  "ownerMatchesContract": true,
+  "states": {
+    "Pendiente": 118,
+    "Cerrado": 1,
+    "En curso": 1
+  },
+  "pass": true
+}

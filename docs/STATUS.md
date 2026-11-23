@@ -2,13 +2,23 @@
 
 Fecha: 23/11/2026.
 
-## Situación de fase 2
+## Situación de fase 3
+
+Fase 3 completada dentro del alcance de lanzamiento manual y procesamiento, sobre 0716f9fc41d2b2142a79d9abd495f8236783ce03. Validación 0Afg700000L0MUHCA3 y despliegue 0Afg700000L0NQLCA3 terminados Succeeded, con 21/21 componentes y 14/14 pruebas Apex. Fuentes validadas y desplegadas coincidentes.
+
+Dos jobs reales completaron tres lotes cada uno: 707g700001DKOHsAAP creó 120 seguimientos y 707g700001DLwdpAAD reconoció los mismos 120 sin cambios. Corte 23/11/2026, zona del solicitante Europe/Paris, fin 23/12/2026. Cero fallidos, omitidos, incidencias o lotes fallidos. Los cuatro controles excluidos no generaron seguimientos.
+
+Informe y SOQL coinciden en 126 registros, incluidos 119 nuevos y excluido el nuevo cerrado. Consulta realizada con la cuenta técnica y su perfil administrativo previo; UserRecordAccess confirma acceso de A y B a los 120 seguimientos y contratos. No se repitieron sesiones comerciales ni se habilitó Login As. Se conservan las asignaciones de A/B, los 50 fixtures y 34 archivos históricos de evidencia. Quedan 247 registros nuevos inventariados.
+
+V1 no está cerrada. Solapamiento real, interrupciones y recuperación adversa son el siguiente alcance. El contraste manual normal está ejecutado; la detección de cierre incoherente y rollback se ensayan en pruebas unitarias, sin presentarlos como incidentes reales recuperados. Véanse [FASE-3.md](FASE-3.md) y [evidencias-fase-3.json](evidencias-fase-3.json).
+
+## Situación al cierre de fase 2
 
 Fase 2 completada sobre f779561036541b29e03fbf8f41e851c49bbea7c9. Aplicación Lightning, permisos comerciales y de coordinación, compartición e informe desplegados y comprobados con dos identidades ficticias sin privilegios administrativos. Cuatro objetos, 35 campos y 21 validaciones.
 
 Resultado: 70 comprobaciones API agrupadas correctas, creación de contrato adicional, cuatro comprobaciones de interfaz y contrastes de informe en las mismas sesiones. Se conservan 19 fixtures históricos sin cambios y 31 nuevos. Login As está restaurado a false. La función de coordinación y el permiso comercial se probaron con asignaciones separadas.
 
-Los [resultados de fase 2](FASE-2.md), la [matriz de acceso](ACCESO.md) y las [evidencias](evidencias-fase-2.json) delimitan el alcance. La V1 completa sigue pendiente de procesamiento; no hay Batch, servicio de lanzamiento, generación canónica ni reconciliación.
+Los [resultados de fase 2](FASE-2.md), la [matriz de acceso](ACCESO.md) y las [evidencias](evidencias-fase-2.json) delimitan el alcance. Al cierre de fase 2 no había Batch, servicio de lanzamiento, generación canónica ni contraste de reconciliación. La fase 3 incorpora ese procesamiento con los límites indicados arriba.
 
 ## Situación al cierre de fase 1B
 
@@ -108,4 +118,4 @@ Las comprobaciones locales finales cubren sintaxis de scripts, XML, enlaces, coh
 
 ## Trabajo posterior al cierre de fase 1B
 
-La gestión comercial y la configuración de acceso eran el siguiente alcance previsto y se completaron en fase 2. El procesamiento sigue pendiente: Batch, servicio de lanzamiento, reconciliación de lotes, programación e integración no se han iniciado. La cobertura actual de los criterios figura en PROJECT_BRIEF.md y FASE-2.md; las comprobaciones declarativas históricas no sustituyen su aceptación integral.
+La gestión comercial y el acceso se completaron en fase 2. La fase 3 incorpora Batch, lanzamiento e identificación de incertidumbre mediante contraste manual. Programación e integración permanecen fuera del alcance. La cobertura actual figura en PROJECT_BRIEF.md y FASE-3.md; las comprobaciones declarativas históricas no sustituyen la aceptación integral.

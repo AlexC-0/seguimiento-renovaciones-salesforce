@@ -4,46 +4,48 @@ Proyecto independiente para gestionar el seguimiento comercial de contratos fict
 
 ## Estado
 
-Fase 2 completada en la Developer Edition exclusiva P06, API 65.0. La aplicación Lightning estándar permite consultar contratos, editar estado y notas de seguimientos, reasignar desde coordinación y consultar el informe operativo. Los permisos y accesos se han comprobado con dos identidades ficticias sin privilegios administrativos.
+Fase 3 implementada, validada y desplegada en la Developer Edition exclusiva P06, API 65.0. El lanzamiento manual captura una fecha y zona horaria, selecciona contratos Activos en la ventana inclusiva de 30 días y crea seguimientos mediante Batch Apex. La identidad canónica protege las inserciones y la repetición conserva los seguimientos existentes.
 
-Se mantienen cuatro objetos y 35 campos. Las 19 validaciones del modelo se complementan con dos controles de reasignación. Se conservan los 19 fixtures de fase 1B y 31 registros nuevos de fase 2. El acceso delegado temporal está restaurado a false.
+Pruebas Apex: 14/14 correctas. Demostración real: 120 contratos elegibles, cuatro controles excluidos y tres lotes de tamaño máximo 50. El primer lanzamiento creó 120 seguimientos; la repetición reconoció los 120 existentes sin modificarlos. Se conservan los 50 registros históricos y 247 registros nuevos inventariados.
 
-La V1 completa sigue pendiente: todavía no existen Batch, servicio de lanzamiento, generación canónica de identidad ni reconciliación. Los seguimientos actuales son fixtures técnicos.
+V1 sigue abierta: faltan las demostraciones de solapamiento real, interrupciones, fallos adversos y recuperación manual. Dos lanzamientos consecutivos no acreditan concurrencia ni rendimiento general.
 
 ## Funciones
 
-- Comercial: lectura de contratos y actualización de estado y notas de seguimientos asignados; sin creación, eliminación, edición de contratos ni lectura técnica.
-- Coordinación: creación y edición de contratos, gestión comercial y reasignación de seguimientos, lectura de ejecuciones e incidencias e informe global del ámbito P06.
+- Comercial: lectura de contratos y actualización de estado y notas de seguimientos asignados.
+- Coordinación: creación y edición de contratos, gestión y reasignación de seguimientos, lectura de ejecuciones e incidencias.
+- Operador técnico: lanzamiento manual autorizado, resultados por ejecución y contraste con el trabajo real; permiso separado de las funciones comerciales.
 - Informe Seguimientos de renovación pendientes: Pendiente o En curso y Aplicable=true, incluidos atrasados; agrupación por responsable y orden de vencimiento.
-- Compartición manual de contratos cuando cambia su propietario o se transfiere un seguimiento. Requiere revisión y retirada explícita de accesos que ya no correspondan.
+- Compartición manual de contratos tras transferencias, con revisión explícita de concesiones. No existe sincronización automática de propietarios.
 
-Los detalles y límites están en [Acceso y reasignación](docs/ACCESO.md). Account conserva su compartición interna ReadWrite; el permiso comercial solo concede lectura. No se afirma aislamiento de las cuentas estándar de la organización.
+Se mantienen cuatro objetos, 35 campos y 21 validaciones. Account conserva ReadWrite interno; el permiso comercial solo concede lectura. Los detalles están en [Acceso](docs/ACCESO.md).
 
 ## Estructura
 
 | Ruta | Contenido |
 |---|---|
-| force-app/main/default | Modelo, aplicación, pestañas, layouts, listas, permisos, grupos, roles, compartición e informe |
+| force-app/main/default | Modelo, aplicación estándar, permisos, compartición, informe, cuatro clases Apex y un trigger |
 | manifest/modelo-p06.xml | Modelo declarativo de fase 1B |
-| manifest/verificacion-p06.xml | Permiso técnico separado |
-| manifest/fase-2.xml | 31 componentes explícitos de gestión comercial |
-| manifest/fase-2-navegacion.xml | Ajuste incremental de visibilidad de Informes |
-| scripts/fase-1b | Comprobaciones históricas del modelo |
-| scripts/fase-2 | Preparación y comprobaciones con identidades y fixtures de fase 2 |
-| docs/evidencias-fase-2 | Resultados sanitizados, inventarios y conservación |
+| manifest/verificacion-p06.xml | Permiso técnico de verificación separado |
+| manifest/fase-2.xml | Gestión comercial |
+| manifest/fase-2-navegacion.xml | Navegación de Informes |
+| manifest/fase-3.xml | 13 miembros explícitos; Salesforce procesó 21 componentes |
+| scripts/fase-1b y scripts/fase-2 | Procedimientos y comprobaciones anteriores |
+| scripts/fase-3 | Lanzamiento, contraste, demostración y conservación |
+| docs/evidencias-fase-3 | Resultados sanitizados e inventario |
 
-No hay clases Apex desplegables, LWC, Flow, integraciones, comunicaciones, programación ni reintentos. El estado de autenticación y los inventarios privados quedan excluidos de Git.
+No se añaden LWC, Flow, integraciones, comunicaciones, programación ni reintentos. El estado de autenticación y los inventarios privados quedan excluidos de Git.
 
 ## Documentación
 
+- [Fase 3: resultados y procedimiento](docs/FASE-3.md)
+- [Decisiones transaccionales](docs/DECISIONES-FASE-3.md)
+- [Evidencias de fase 3](docs/evidencias-fase-3.json)
 - [Definición y criterios de aceptación](docs/PROJECT_BRIEF.md)
 - [Modelo de datos](docs/MODELO_DATOS.md)
 - [Estado e historial](docs/STATUS.md)
 - [Entorno](docs/ENVIRONMENT.md)
-- [Resultados de fase 2](docs/FASE-2.md)
 - [Uso de la aplicación](docs/USO.md)
 - [Acceso y reasignación](docs/ACCESO.md)
-- [Evidencias de fase 2](docs/evidencias-fase-2.json)
+- [Fase 2](docs/FASE-2.md) y [sus evidencias](docs/evidencias-fase-2.json)
 - [Fase 1B y sus límites](docs/FASE-1B.md)
-
-La unicidad del campo no acredita generación canónica, concurrencia ni idempotencia integral. El procesamiento corresponde a un alcance posterior.

@@ -3,5 +3,6 @@
     <accessType>Shared</accessType>
     <folderShares><accessLevel>View</accessLevel><sharedTo>P06_Comerciales</sharedTo><sharedToType>Group</sharedToType></folderShares>
     <folderShares><accessLevel>View</accessLevel><sharedTo>P06_Coordinacion</sharedTo><sharedToType>Group</sharedToType></folderShares>
+    <folderShares><accessLevel>View</accessLevel><sharedTo>P06_Operadores</sharedTo><sharedToType>Group</sharedToType></folderShares>
     <name>Renovaciones de contratos</name>
 </ReportFolder>

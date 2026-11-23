@@ -1,0 +1,1077 @@
+{
+  "timestamp": "2026-11-23T15:33:33.195Z",
+  "baseline": "0716f9fc41d2b2142a79d9abd495f8236783ce03",
+  "target": "p06-renovaciones-dev",
+  "apiVersion": "65.0",
+  "validation": {
+    "id": "0Afg700000L0MUHCA3",
+    "status": "Succeeded",
+    "done": true,
+    "success": true,
+    "checkOnly": true,
+    "rollbackOnError": true,
+    "components": 21,
+    "componentsTotal": 21,
+    "testsPassed": 14,
+    "testErrors": 0,
+    "methods": [
+      {
+        "class": "RenovacionesTest",
+        "method": "autorizacionEnTodosLosPuntosDeEntrada"
+      },
+      {
+        "class": "RenovacionesTest",
+        "method": "conjuntoVacioNuncaSeleccionaTodos"
+      },
+      {
+        "class": "RenovacionesTest",
+        "method": "contrasteDetectaCierreIncoherenteSinInventarResultados"
+      },
+      {
+        "class": "RenovacionesTest",
+        "method": "duplicadoConfirmadoNoEsFallo"
+      },
+      {
+        "class": "RenovacionesTest",
+        "method": "entradasInvalidasYSaneamiento"
+      },
+      {
+        "class": "RenovacionesTest",
+        "method": "falloAlGuardarJobRevierteEjecucionYCola"
+      },
+      {
+        "class": "RenovacionesTest",
+        "method": "falloDeContadoresRevierteTodoElLote"
+      },
+      {
+        "class": "RenovacionesTest",
+        "method": "identidadNormalizadaYAlternativasRechazadas"
+      },
+      {
+        "class": "RenovacionesTest",
+        "method": "limitesEstadosCorteYJobReal"
+      },
+      {
+        "class": "RenovacionesTest",
+        "method": "permisoPersonalizadoNoSustituyeCrud"
+      },
+      {
+        "class": "RenovacionesTest",
+        "method": "relecturaOmiteCambiosYConservaCorte"
+      },
+      {
+        "class": "RenovacionesTest",
+        "method": "repeticionConservaDatosComerciales"
+      },
+      {
+        "class": "RenovacionesTest",
+        "method": "resultadosParcialesEIncidencias"
+      },
+      {
+        "class": "RenovacionesTest",
+        "method": "seleccionOrdinariaSinCandidatos"
+      }
+    ],
+    "coverage": [
+      {
+        "name": "ValidarIdentidadRenovacion",
+        "locations": 1,
+        "uncovered": 0,
+        "percent": 100
+      },
+      {
+        "name": "ServicioRenovaciones",
+        "locations": 78,
+        "uncovered": 6,
+        "percent": 92.31
+      },
+      {
+        "name": "IdentidadRenovacion",
+        "locations": 34,
+        "uncovered": 3,
+        "percent": 91.18
+      },
+      {
+        "name": "LoteRenovaciones",
+        "locations": 133,
+        "uncovered": 4,
+        "percent": 96.99
+      }
+    ]
+  },
+  "deployment": {
+    "id": "0Afg700000L0NQLCA3",
+    "status": "Succeeded",
+    "done": true,
+    "success": true,
+    "checkOnly": false,
+    "rollbackOnError": true,
+    "components": 21,
+    "componentsTotal": 21,
+    "testsPassed": 14,
+    "testErrors": 0,
+    "methods": [
+      {
+        "class": "RenovacionesTest",
+        "method": "autorizacionEnTodosLosPuntosDeEntrada"
+      },
+      {
+        "class": "RenovacionesTest",
+        "method": "conjuntoVacioNuncaSeleccionaTodos"
+      },
+      {
+        "class": "RenovacionesTest",
+        "method": "contrasteDetectaCierreIncoherenteSinInventarResultados"
+      },
+      {
+        "class": "RenovacionesTest",
+        "method": "duplicadoConfirmadoNoEsFallo"
+      },
+      {
+        "class": "RenovacionesTest",
+        "method": "entradasInvalidasYSaneamiento"
+      },
+      {
+        "class": "RenovacionesTest",
+        "method": "falloAlGuardarJobRevierteEjecucionYCola"
+      },
+      {
+        "class": "RenovacionesTest",
+        "method": "falloDeContadoresRevierteTodoElLote"
+      },
+      {
+        "class": "RenovacionesTest",
+        "method": "identidadNormalizadaYAlternativasRechazadas"
+      },
+      {
+        "class": "RenovacionesTest",
+        "method": "limitesEstadosCorteYJobReal"
+      },
+      {
+        "class": "RenovacionesTest",
+        "method": "permisoPersonalizadoNoSustituyeCrud"
+      },
+      {
+        "class": "RenovacionesTest",
+        "method": "relecturaOmiteCambiosYConservaCorte"
+      },
+      {
+        "class": "RenovacionesTest",
+        "method": "repeticionConservaDatosComerciales"
+      },
+      {
+        "class": "RenovacionesTest",
+        "method": "resultadosParcialesEIncidencias"
+      },
+      {
+        "class": "RenovacionesTest",
+        "method": "seleccionOrdinariaSinCandidatos"
+      }
+    ],
+    "coverage": [
+      {
+        "name": "ValidarIdentidadRenovacion",
+        "locations": 1,
+        "uncovered": 0,
+        "percent": 100
+      },
+      {
+        "name": "ServicioRenovaciones",
+        "locations": 78,
+        "uncovered": 6,
+        "percent": 92.31
+      },
+      {
+        "name": "IdentidadRenovacion",
+        "locations": 34,
+        "uncovered": 3,
+        "percent": 91.18
+      },
+      {
+        "name": "LoteRenovaciones",
+        "locations": 133,
+        "uncovered": 4,
+        "percent": 96.99
+      }
+    ]
+  },
+  "attempts": [
+    {
+      "kind": "validation",
+      "id": "0Afg700000KzkC8CAJ",
+      "status": "Failed",
+      "done": true,
+      "success": false,
+      "checkOnly": true,
+      "rollbackOnError": true,
+      "components": 17,
+      "componentsTotal": 28,
+      "testsPassed": 0,
+      "testErrors": 0,
+      "methods": [],
+      "coverage": []
+    },
+    {
+      "kind": "validation",
+      "id": "0Afg700000L05V4CAJ",
+      "status": "Failed",
+      "done": true,
+      "success": false,
+      "checkOnly": true,
+      "rollbackOnError": true,
+      "components": 21,
+      "componentsTotal": 21,
+      "testsPassed": 10,
+      "testErrors": 2,
+      "methods": [
+        {
+          "class": "RenovacionesTest",
+          "method": "autorizacionEnTodosLosPuntosDeEntrada"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "conjuntoVacioNuncaSeleccionaTodos"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "falloDeContadoresRevierteTodoElLote"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "identidadNormalizadaYAlternativasRechazadas"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "limitesEstadosCorteYJobReal"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "permisoPersonalizadoNoSustituyeCrud"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "relecturaOmiteCambiosYConservaCorte"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "repeticionConservaDatosComerciales"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "resultadosParcialesEIncidencias"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "seleccionOrdinariaSinCandidatos"
+        }
+      ],
+      "coverage": [
+        {
+          "name": "ServicioRenovaciones",
+          "locations": 78,
+          "uncovered": 20,
+          "percent": 74.36
+        },
+        {
+          "name": "LoteRenovaciones",
+          "locations": 132,
+          "uncovered": 16,
+          "percent": 87.88
+        },
+        {
+          "name": "ValidarIdentidadRenovacion",
+          "locations": 1,
+          "uncovered": 0,
+          "percent": 100
+        },
+        {
+          "name": "IdentidadRenovacion",
+          "locations": 34,
+          "uncovered": 3,
+          "percent": 91.18
+        }
+      ]
+    },
+    {
+      "kind": "validation",
+      "id": "0Afg700000L0AWLCA3",
+      "status": "Failed",
+      "done": true,
+      "success": false,
+      "checkOnly": true,
+      "rollbackOnError": true,
+      "components": 21,
+      "componentsTotal": 21,
+      "testsPassed": 12,
+      "testErrors": 0,
+      "methods": [
+        {
+          "class": "RenovacionesTest",
+          "method": "autorizacionEnTodosLosPuntosDeEntrada"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "conjuntoVacioNuncaSeleccionaTodos"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "duplicadoConfirmadoNoEsFallo"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "entradasInvalidasYSaneamiento"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "falloDeContadoresRevierteTodoElLote"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "identidadNormalizadaYAlternativasRechazadas"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "limitesEstadosCorteYJobReal"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "permisoPersonalizadoNoSustituyeCrud"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "relecturaOmiteCambiosYConservaCorte"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "repeticionConservaDatosComerciales"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "resultadosParcialesEIncidencias"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "seleccionOrdinariaSinCandidatos"
+        }
+      ],
+      "coverage": [
+        {
+          "name": "ServicioRenovaciones",
+          "locations": 78,
+          "uncovered": 20,
+          "percent": 74.36
+        },
+        {
+          "name": "IdentidadRenovacion",
+          "locations": 34,
+          "uncovered": 3,
+          "percent": 91.18
+        },
+        {
+          "name": "LoteRenovaciones",
+          "locations": 133,
+          "uncovered": 5,
+          "percent": 96.24
+        },
+        {
+          "name": "ValidarIdentidadRenovacion",
+          "locations": 1,
+          "uncovered": 0,
+          "percent": 100
+        }
+      ]
+    },
+    {
+      "kind": "validation",
+      "id": "0Afg700000L0C1tCAF",
+      "status": "Succeeded",
+      "done": true,
+      "success": true,
+      "checkOnly": true,
+      "rollbackOnError": true,
+      "components": 21,
+      "componentsTotal": 21,
+      "testsPassed": 14,
+      "testErrors": 0,
+      "methods": [
+        {
+          "class": "RenovacionesTest",
+          "method": "autorizacionEnTodosLosPuntosDeEntrada"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "conjuntoVacioNuncaSeleccionaTodos"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "contrasteDetectaCierreIncoherenteSinInventarResultados"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "duplicadoConfirmadoNoEsFallo"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "entradasInvalidasYSaneamiento"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "falloDeContadoresRevierteTodoElLote"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "falloDeFlsRevierteElLanzamiento"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "identidadNormalizadaYAlternativasRechazadas"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "limitesEstadosCorteYJobReal"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "permisoPersonalizadoNoSustituyeCrud"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "relecturaOmiteCambiosYConservaCorte"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "repeticionConservaDatosComerciales"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "resultadosParcialesEIncidencias"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "seleccionOrdinariaSinCandidatos"
+        }
+      ],
+      "coverage": [
+        {
+          "name": "IdentidadRenovacion",
+          "locations": 34,
+          "uncovered": 3,
+          "percent": 91.18
+        },
+        {
+          "name": "ValidarIdentidadRenovacion",
+          "locations": 1,
+          "uncovered": 0,
+          "percent": 100
+        },
+        {
+          "name": "ServicioRenovaciones",
+          "locations": 78,
+          "uncovered": 6,
+          "percent": 92.31
+        },
+        {
+          "name": "LoteRenovaciones",
+          "locations": 133,
+          "uncovered": 4,
+          "percent": 96.99
+        }
+      ]
+    },
+    {
+      "kind": "validation",
+      "id": "0Afg700000L0DVpCAN",
+      "status": "Failed",
+      "done": true,
+      "success": false,
+      "checkOnly": true,
+      "rollbackOnError": true,
+      "components": 21,
+      "componentsTotal": 21,
+      "testsPassed": 13,
+      "testErrors": 1,
+      "methods": [
+        {
+          "class": "RenovacionesTest",
+          "method": "autorizacionEnTodosLosPuntosDeEntrada"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "conjuntoVacioNuncaSeleccionaTodos"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "contrasteDetectaCierreIncoherenteSinInventarResultados"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "duplicadoConfirmadoNoEsFallo"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "entradasInvalidasYSaneamiento"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "falloDeContadoresRevierteTodoElLote"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "identidadNormalizadaYAlternativasRechazadas"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "limitesEstadosCorteYJobReal"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "permisoPersonalizadoNoSustituyeCrud"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "relecturaOmiteCambiosYConservaCorte"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "repeticionConservaDatosComerciales"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "resultadosParcialesEIncidencias"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "seleccionOrdinariaSinCandidatos"
+        }
+      ],
+      "coverage": [
+        {
+          "name": "ValidarIdentidadRenovacion",
+          "locations": 1,
+          "uncovered": 0,
+          "percent": 100
+        },
+        {
+          "name": "LoteRenovaciones",
+          "locations": 133,
+          "uncovered": 4,
+          "percent": 96.99
+        },
+        {
+          "name": "ServicioRenovaciones",
+          "locations": 78,
+          "uncovered": 6,
+          "percent": 92.31
+        },
+        {
+          "name": "IdentidadRenovacion",
+          "locations": 34,
+          "uncovered": 3,
+          "percent": 91.18
+        }
+      ]
+    },
+    {
+      "kind": "validation",
+      "id": "0Afg700000L0EzlCAF",
+      "status": "Failed",
+      "done": true,
+      "success": false,
+      "checkOnly": true,
+      "rollbackOnError": true,
+      "components": 21,
+      "componentsTotal": 21,
+      "testsPassed": 13,
+      "testErrors": 1,
+      "methods": [
+        {
+          "class": "RenovacionesTest",
+          "method": "autorizacionEnTodosLosPuntosDeEntrada"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "conjuntoVacioNuncaSeleccionaTodos"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "contrasteDetectaCierreIncoherenteSinInventarResultados"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "duplicadoConfirmadoNoEsFallo"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "entradasInvalidasYSaneamiento"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "falloDeContadoresRevierteTodoElLote"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "identidadNormalizadaYAlternativasRechazadas"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "limitesEstadosCorteYJobReal"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "permisoPersonalizadoNoSustituyeCrud"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "relecturaOmiteCambiosYConservaCorte"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "repeticionConservaDatosComerciales"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "resultadosParcialesEIncidencias"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "seleccionOrdinariaSinCandidatos"
+        }
+      ],
+      "coverage": [
+        {
+          "name": "ValidarIdentidadRenovacion",
+          "locations": 1,
+          "uncovered": 0,
+          "percent": 100
+        },
+        {
+          "name": "IdentidadRenovacion",
+          "locations": 34,
+          "uncovered": 3,
+          "percent": 91.18
+        },
+        {
+          "name": "ServicioRenovaciones",
+          "locations": 78,
+          "uncovered": 6,
+          "percent": 92.31
+        },
+        {
+          "name": "LoteRenovaciones",
+          "locations": 133,
+          "uncovered": 4,
+          "percent": 96.99
+        }
+      ]
+    },
+    {
+      "kind": "validation",
+      "id": "0Afg700000L0HO9CAN",
+      "status": "Failed",
+      "done": true,
+      "success": false,
+      "checkOnly": true,
+      "rollbackOnError": true,
+      "components": 21,
+      "componentsTotal": 21,
+      "testsPassed": 13,
+      "testErrors": 1,
+      "methods": [
+        {
+          "class": "RenovacionesTest",
+          "method": "autorizacionEnTodosLosPuntosDeEntrada"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "conjuntoVacioNuncaSeleccionaTodos"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "contrasteDetectaCierreIncoherenteSinInventarResultados"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "duplicadoConfirmadoNoEsFallo"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "entradasInvalidasYSaneamiento"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "falloDeContadoresRevierteTodoElLote"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "identidadNormalizadaYAlternativasRechazadas"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "limitesEstadosCorteYJobReal"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "permisoPersonalizadoNoSustituyeCrud"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "relecturaOmiteCambiosYConservaCorte"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "repeticionConservaDatosComerciales"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "resultadosParcialesEIncidencias"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "seleccionOrdinariaSinCandidatos"
+        }
+      ],
+      "coverage": [
+        {
+          "name": "LoteRenovaciones",
+          "locations": 133,
+          "uncovered": 4,
+          "percent": 96.99
+        },
+        {
+          "name": "IdentidadRenovacion",
+          "locations": 34,
+          "uncovered": 3,
+          "percent": 91.18
+        },
+        {
+          "name": "ValidarIdentidadRenovacion",
+          "locations": 1,
+          "uncovered": 0,
+          "percent": 100
+        },
+        {
+          "name": "ServicioRenovaciones",
+          "locations": 78,
+          "uncovered": 6,
+          "percent": 92.31
+        }
+      ]
+    },
+    {
+      "kind": "validation",
+      "id": "0Afg700000L0J09CAF",
+      "status": "Failed",
+      "done": true,
+      "success": false,
+      "checkOnly": true,
+      "rollbackOnError": true,
+      "components": 21,
+      "componentsTotal": 21,
+      "testsPassed": 13,
+      "testErrors": 1,
+      "methods": [
+        {
+          "class": "RenovacionesTest",
+          "method": "autorizacionEnTodosLosPuntosDeEntrada"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "conjuntoVacioNuncaSeleccionaTodos"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "contrasteDetectaCierreIncoherenteSinInventarResultados"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "duplicadoConfirmadoNoEsFallo"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "entradasInvalidasYSaneamiento"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "falloDeContadoresRevierteTodoElLote"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "identidadNormalizadaYAlternativasRechazadas"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "limitesEstadosCorteYJobReal"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "permisoPersonalizadoNoSustituyeCrud"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "relecturaOmiteCambiosYConservaCorte"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "repeticionConservaDatosComerciales"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "resultadosParcialesEIncidencias"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "seleccionOrdinariaSinCandidatos"
+        }
+      ],
+      "coverage": [
+        {
+          "name": "ValidarIdentidadRenovacion",
+          "locations": 1,
+          "uncovered": 0,
+          "percent": 100
+        },
+        {
+          "name": "LoteRenovaciones",
+          "locations": 133,
+          "uncovered": 4,
+          "percent": 96.99
+        },
+        {
+          "name": "IdentidadRenovacion",
+          "locations": 34,
+          "uncovered": 3,
+          "percent": 91.18
+        },
+        {
+          "name": "ServicioRenovaciones",
+          "locations": 78,
+          "uncovered": 6,
+          "percent": 92.31
+        }
+      ]
+    },
+    {
+      "kind": "validation",
+      "id": "0Afg700000L0MUHCA3",
+      "status": "Succeeded",
+      "done": true,
+      "success": true,
+      "checkOnly": true,
+      "rollbackOnError": true,
+      "components": 21,
+      "componentsTotal": 21,
+      "testsPassed": 14,
+      "testErrors": 0,
+      "methods": [
+        {
+          "class": "RenovacionesTest",
+          "method": "autorizacionEnTodosLosPuntosDeEntrada"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "conjuntoVacioNuncaSeleccionaTodos"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "contrasteDetectaCierreIncoherenteSinInventarResultados"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "duplicadoConfirmadoNoEsFallo"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "entradasInvalidasYSaneamiento"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "falloAlGuardarJobRevierteEjecucionYCola"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "falloDeContadoresRevierteTodoElLote"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "identidadNormalizadaYAlternativasRechazadas"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "limitesEstadosCorteYJobReal"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "permisoPersonalizadoNoSustituyeCrud"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "relecturaOmiteCambiosYConservaCorte"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "repeticionConservaDatosComerciales"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "resultadosParcialesEIncidencias"
+        },
+        {
+          "class": "RenovacionesTest",
+          "method": "seleccionOrdinariaSinCandidatos"
+        }
+      ],
+      "coverage": [
+        {
+          "name": "ValidarIdentidadRenovacion",
+          "locations": 1,
+          "uncovered": 0,
+          "percent": 100
+        },
+        {
+          "name": "ServicioRenovaciones",
+          "locations": 78,
+          "uncovered": 6,
+          "percent": 92.31
+        },
+        {
+          "name": "IdentidadRenovacion",
+          "locations": 34,
+          "uncovered": 3,
+          "percent": 91.18
+        },
+        {
+          "name": "LoteRenovaciones",
+          "locations": 133,
+          "uncovered": 4,
+          "percent": 96.99
+        }
+      ]
+    },
+    {
+      "kind": "deployment",
+      "id": "0Afg700000L0NADCA3",
+      "status": "Failed",
+      "done": true,
+      "success": false,
+      "checkOnly": false,
+      "rollbackOnError": true,
+      "components": 21,
+      "componentsTotal": 21,
+      "testsPassed": 0,
+      "testErrors": 0,
+      "methods": [],
+      "coverage": [
+        {
+          "name": "ValidarIdentidadRenovacion",
+          "locations": 1,
+          "uncovered": 1,
+          "percent": 0
+        }
+      ],
+      "reason": "Nombre incorrecto de clase en el comando; cero tests y cobertura insuficiente. Paquete revertido."
+    }
+  ],
+  "sourceHashes": [
+    {
+      "file": "force-app/main/default/classes/IdentidadRenovacion.cls",
+      "sha256": "509f77b90d9672b82cccc48a3e4e44498379fa42120e4fce30f824c27600e171",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/classes/IdentidadRenovacion.cls-meta.xml",
+      "sha256": "0347267b36e4cd542616bb80997ae7c7634cf64ed063b5bd68dd2493c8fca3ea",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/classes/LoteRenovaciones.cls",
+      "sha256": "76c463d40231c472b17d13bea81045fd0552ad3cefdce662aa0ee61bac46845d",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/classes/LoteRenovaciones.cls-meta.xml",
+      "sha256": "0347267b36e4cd542616bb80997ae7c7634cf64ed063b5bd68dd2493c8fca3ea",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/classes/RenovacionesTest.cls",
+      "sha256": "1876c370f08364c958d2c9356e2e0551f7d7c0eb27b2587c59505357f4c4f70a",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/classes/RenovacionesTest.cls-meta.xml",
+      "sha256": "0347267b36e4cd542616bb80997ae7c7634cf64ed063b5bd68dd2493c8fca3ea",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/classes/ServicioRenovaciones.cls",
+      "sha256": "62de3aec766bb23c229d2638b8e6d47c454141526f41756085c8b5258cb2c5a1",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/classes/ServicioRenovaciones.cls-meta.xml",
+      "sha256": "0347267b36e4cd542616bb80997ae7c7634cf64ed063b5bd68dd2493c8fca3ea",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/customPermissions/P06_ProcesarRenovaciones.customPermission-meta.xml",
+      "sha256": "ee34ccd58e1f330828b3cc5e7d3fe85b7e3ab32122645bbb0321830053a9f4e9",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/groups/P06_Operadores.group-meta.xml",
+      "sha256": "5877503f84b6944dca74e546d079313bbf89abd94edb4641f359a55cf53d41ff",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/permissionsets/P06_OperadorRenovaciones.permissionset-meta.xml",
+      "sha256": "479cfd75115f1ed69730db8a78f82f64e89e16829780ac88759a69645db8aef9",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/reports/P06_Renovaciones.reportFolder-meta.xml",
+      "sha256": "ae92bdcc3f89019374e588702c9ab6c5ade5b8bff8a7be8dfe9bdc0251840e77",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/sharingRules/ContratoComercial__c.sharingRules-meta.xml",
+      "sha256": "10f4e577bbc77a97614ea01dcf4221b0fc84884da20c4df7d3079d5c0d20cd3a",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/sharingRules/EjecucionRenovacion__c.sharingRules-meta.xml",
+      "sha256": "5d1fde2acf69e14f9b110b6db2aa4f222aee2b3e4c0d0bb85f77443e36aa5c78",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/sharingRules/IncidenciaRenovacion__c.sharingRules-meta.xml",
+      "sha256": "4939052021c1804017d533ccbbe4007a22aa05dc80d049016281499c03a649fd",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/sharingRules/SeguimientoRenovacion__c.sharingRules-meta.xml",
+      "sha256": "10f4e577bbc77a97614ea01dcf4221b0fc84884da20c4df7d3079d5c0d20cd3a",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/triggers/ValidarIdentidadRenovacion.trigger",
+      "sha256": "3db50ce4e0aecea4aa4977b4a140ad0a64690c2dcdedfdbadaf06277ef8e50dc",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/triggers/ValidarIdentidadRenovacion.trigger-meta.xml",
+      "sha256": "134df26f0acec2ebfcc6112d674c54d5f3a77691f5522dc77e6ab5a016255b51",
+      "unchanged": true
+    },
+    {
+      "file": "manifest/fase-3.xml",
+      "sha256": "e2118030cc04743b314bf28a168a782ab4b375f44a85a237c3cb13901236b0bd",
+      "unchanged": true
+    }
+  ],
+  "contractsUnchanged": true,
+  "incidents": 0,
+  "loginAsFinal": false,
+  "loginAsUsedInPhase3": false,
+  "newPersistentUsers": 0,
+  "globalAdministrativePrivilegesAdded": false
+}

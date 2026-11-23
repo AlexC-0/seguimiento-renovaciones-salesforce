@@ -66,3 +66,13 @@ Perfil mínimo propio, dos Permission Sets, roles y grupos P06 comprobados en se
 Las pruebas usaron el Chrome habitual mediante Playwright MCP 0.0.86 temporal en loopback. La configuración global de Playwright no se actualizó. Al cerrar, la conexión temporal se detuvo y el acceso delegado quedó restaurado a false, con [lectura de verificación](evidencias-fase-2/restauracion.json). Inventarios, identidades, cookies y autenticación quedan fuera de Git.
 
 Los [resultados de fase 2](FASE-2.md) sustituyen los pendientes comerciales anteriores. La comprobación del runtime Java y del servicio de lenguaje Apex sigue fuera del alcance.
+
+## Entorno de fase 3
+
+Se reutiliza exclusivamente p06-renovaciones-dev, Developer Edition, API 65.0. Cada script remoto verifica Organization contra el recibo privado de fase 1B. No se crean usuarios persistentes ni se cambian destinos globales, herramientas o dependencias. Los scripts Node reutilizan los módulos de la CLI instalada mediante scripts/fase-2/salesforce.cjs; P06_SF_MODULES permite indicar esa ruta existente sin instalar paquetes.
+
+La cuenta técnica recibe P06_OperadorRenovaciones y pertenencia a P06_Operadores; conserva su perfil previo. Las asignaciones A/B y P06_VerificacionModelo permanecen intactas. Login As=false confirmado por Metadata API al terminar. No se utiliza el navegador ni se restablece el puente temporal de fase 2.
+
+El corte observado es 23/11/2026 y la zona del usuario Salesforce es Europe/Paris; se conserva esa zona real en las dos ejecuciones. La ventana termina el 23/12/2026. Los tiempos de evidencia JSON se guardan en UTC.
+
+Validación 0Afg700000L0MUHCA3 y despliegue 0Afg700000L0NQLCA3 terminados correctamente, con 14 pruebas y 21 componentes procesados. El manifiesto contiene 13 miembros explícitos; Salesforce desglosa contenedores de compartición en sus componentes. Los hashes de los 19 archivos del paquete coinciden. [Resultados completos](evidencias-fase-3/despliegue-pruebas.json).

@@ -23,3 +23,7 @@ El informe incluye Pendiente y En curso con Aplicable=true, sin filtro que exclu
 La visibilidad depende de la sesión: cada comercial obtiene sus registros accesibles y coordinación la visión del ámbito P06. Las listas y los filtros no conceden acceso. La ordenación inicial de Mis pendientes puede diferir de la ordenación por fecha del informe.
 
 El nombre solicitado superaba el máximo de 40 caracteres de Salesforce. El título completo Pendientes de seguimiento de renovaciones se conserva en la descripción del informe.
+
+## Procesamiento manual
+
+La fase 3 incorpora el recorrido técnico descrito en [FASE-3.md](FASE-3.md). El comercial continúa trabajando en la aplicación estándar. Los seguimientos generados empiezan Pendiente, pertenecen al responsable observado en el contrato y conservan la ejecución de origen. Repetir el procesamiento no reabre cierres ni sobrescribe notas o propietarios. Cerrar un seguimiento no renueva el contrato.

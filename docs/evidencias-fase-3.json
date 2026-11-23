@@ -1,0 +1,85 @@
+{
+  "phase": 3,
+  "date": "2026-11-23",
+  "baseline": "0716f9fc41d2b2142a79d9abd495f8236783ce03",
+  "target": "p06-renovaciones-dev",
+  "apiVersion": "65.0",
+  "status": "Completada dentro del alcance de lanzamiento y procesamiento; V1 abierta",
+  "validation": "0Afg700000L0MUHCA3",
+  "deployment": "0Afg700000L0NQLCA3",
+  "apexTests": 14,
+  "cut": "2026-11-23",
+  "timezone": "Europe/Paris",
+  "windowEnd": "2026-12-23",
+  "batchSize": 50,
+  "scopeContracts": 124,
+  "eligible": 120,
+  "excluded": 4,
+  "runs": [
+    {
+      "job": "707g700001DKOHsAAP",
+      "execution": "a01g700001M1lNuAAJ",
+      "scopes": 3,
+      "counts": {
+        "Evaluados__c": 120,
+        "Creados__c": 120,
+        "YaExistentes__c": 0,
+        "Omitidos__c": 0,
+        "Fallidos__c": 0,
+        "LotesFallidos__c": 0
+      },
+      "pass": true
+    },
+    {
+      "job": "707g700001DLwdpAAD",
+      "execution": "a01g700001M1rWXAAZ",
+      "scopes": 3,
+      "counts": {
+        "Evaluados__c": 120,
+        "Creados__c": 0,
+        "YaExistentes__c": 120,
+        "Omitidos__c": 0,
+        "Fallidos__c": 0,
+        "LotesFallidos__c": 0
+      },
+      "pass": true
+    }
+  ],
+  "report": {
+    "context": "Cuenta técnica existente con P06_OperadorRenovaciones y su perfil administrativo previo",
+    "total": 126,
+    "new": 119,
+    "sameIds": true,
+    "newCommercialSession": false
+  },
+  "historicalRecordsPreserved": 50,
+  "historicalEvidenceFilesPreserved": 34,
+  "newRecords": 247,
+  "newRecordCounts": {
+    "Account": 1,
+    "ContratoComercial__c": 124,
+    "EjecucionRenovacion__c": 2,
+    "SeguimientoRenovacion__c": 120
+  },
+  "loginAs": false,
+  "pending": [
+    "Solapamiento real",
+    "Interrupciones y fallos adversos",
+    "Recuperación manual adversa",
+    "Cruce real de medianoche y transición estacional"
+  ],
+  "files": [
+    "evidencias-fase-3/despliegue-pruebas.json",
+    "evidencias-fase-3/conjunto.json",
+    "evidencias-fase-3/previo-primero.json",
+    "evidencias-fase-3/primero.json",
+    "evidencias-fase-3/muestras-repeticion.json",
+    "evidencias-fase-3/previo-repeticion.json",
+    "evidencias-fase-3/repeticion.json",
+    "evidencias-fase-3/inventario.json",
+    "evidencias-fase-3/contraste-manual.json",
+    "evidencias-fase-3/acceso-informe.json",
+    "evidencias-fase-3/conservacion.json",
+    "evidencias-fase-3/revision-local.json"
+  ]
+}

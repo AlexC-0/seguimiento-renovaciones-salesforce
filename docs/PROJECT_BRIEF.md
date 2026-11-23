@@ -10,7 +10,7 @@ Se utilizarán páginas, listas e informes estándar. Se excluyen LWC, Flow, int
 
 ## Selección y ventana
 
-La futura ejecución fijará una sola fecha de corte a partir de la fecha local del solicitante al lanzar y conservará su TimeZoneSidKey. La ventana será `[fecha de corte, fecha de corte + 30 días]`: ambos extremos incluidos, 31 fechas de calendario. No es una duración de 720 horas.
+El lanzamiento de fase 3 fija una sola fecha de corte a partir de la fecha local del solicitante y conserva su TimeZoneSidKey. La ventana es `[fecha de corte, fecha de corte + 30 días]`: ambos extremos incluidos, 31 fechas de calendario. No es una duración de 720 horas.
 
 Solo serán elegibles contratos Activos con vencimiento dentro de esa ventana. Los datos actuales se releerán antes de crear seguimientos de cada lote, usando siempre el corte original. Los contratos que entren después de la selección inicial podrán recogerse en otra ejecución. El procesamiento no recalculará el corte entre lotes ni al cruzar medianoche.
 
@@ -20,7 +20,7 @@ La relectura reduce la obsolescencia; no demuestra por sí sola aislamiento fren
 
 La identidad prevista será `IdContrato18|YYYY-MM-DD`, de 29 caracteres. El Id se normalizará a 18 caracteres y la fecha se formará sin depender de la configuración regional. Responsable y ejecución quedan fuera de la clave.
 
-El campo obligatorio y único está definido en metadatos. La generación y comprobación canónica con Apex están pendientes: una clave distinta o mal formada todavía podría representar la misma pareja. La unicidad del campo no demuestra la idempotencia del sistema completo.
+El campo obligatorio y único está definido en metadatos. La fase 3 incorpora generación canónica y protección before insert: calcula la clave ausente y rechaza otra representación incompatible de la pareja. La unicidad del campo no demuestra la idempotencia del sistema completo.
 
 La repetición y el solapamiento no deberán sobrescribir estado, notas, propietario ni ejecución de origen de un seguimiento existente. Los conflictos de unicidad deberán distinguir una identidad ya persistida de otros errores.
 
@@ -38,13 +38,13 @@ En cada actualización persistida debe cumplirse:
 
 `evaluados = creados + ya existentes + omitidos + fallidos`
 
-Los contadores representan resultados confirmados por registro, no intentos en memoria. Los lotes completamente revertidos se contabilizan aparte y no permiten inferir cuántos resultados individuales se persistieron. El procesamiento deberá marcar reconciliación cuando existan resultados desconocidos; registrar ese fallo de forma durable tras una reversión sigue pendiente.
+Los contadores representan resultados confirmados por registro, no intentos en memoria. Los lotes completamente revertidos se contabilizan aparte y no permiten inferir cuántos resultados individuales se persistieron. finish y el contraste manual señalan reconciliación ante incertidumbre. Las pruebas verifican rollback y señalización de un cierre incoherente; la demostración real de interrupciones y recuperación queda para la siguiente fase.
 
 La recuperación será manual, con revisión de resultados persistidos, incidencias y estado del trabajo antes de decidir un nuevo lanzamiento. No se inventarán resultados ni se alterarán evidencias anteriores para cuadrar contadores. La resolución de una incertidumbre podrá dejar constancia en una nueva incidencia de reconciliación sin borrar el contador histórico de lotes fallidos.
 
 ## Criterios de aceptación funcional
 
-La tabla define la aceptación integral de V1. Fase 1B comprobó el modelo declarativo con 117 casos; fase 2 comprobó las funciones comerciales de AC-14, las denegaciones ordinarias de AC-15, el informe AC-16 y la conservación de AC-17. El operador, el procesamiento y los criterios que dependen de ellos siguen pendientes. Los resultados y límites de cobertura se detallan en [FASE-2.md](FASE-2.md); no se equiparan con la aceptación completa de V1.
+La tabla define la aceptación integral de V1. Fase 1B comprobó el modelo declarativo con 117 casos; fase 2 comprobó las funciones comerciales de AC-14, las denegaciones ordinarias de AC-15, el informe AC-16 y la conservación de AC-17. Fase 3 incorpora operador, procesamiento, identidad y repetición, con pruebas unitarias y dos jobs reales de tres lotes. [FASE-3.md](FASE-3.md) separa esas evidencias de solapamiento, cruce real de medianoche, cambio estacional e interrupciones todavía no demostrados; no se equiparan con la aceptación completa de V1.
 
 | ID | Escenario | Resultado exigido |
 |---|---|---|
@@ -65,7 +65,7 @@ La tabla define la aceptación integral de V1. Fase 1B comprobó el modelo decla
 | AC-15 | Identidad, origen, incidencias y eliminación | Se rechaza alterar referencias protegidas; permisos ordinarios no borran historia; se comprueban restricciones lookup |
 | AC-16 | Informe operativo | Muestra Pendiente y En curso aplicables, incluidos atrasados, con responsable y días restantes; respeta acceso |
 | AC-17 | Conservación entre sesiones | Datos ficticios, ejecuciones e incidencias siguen disponibles y las evidencias no contienen secretos |
-| AC-18 | Claves mal formadas o distintas para la misma pareja | La futura protección canónica rechaza la inconsistencia; unicidad verificada en inserción concurrente |
+| AC-18 | Claves mal formadas o distintas para la misma pareja | La protección canónica rechaza la inconsistencia; la aceptación integral exige verificar además inserción concurrente |
 | AC-19 | Permisos de lanzamiento | Solo el operador autorizado lanza y consulta; los comerciales carecen de Author Apex |
 | AC-20 | Zona horaria y cambio horario estacional | Corte coherente con la referencia capturada; los días de calendario no se convierten en intervalos horarios fijos |
 

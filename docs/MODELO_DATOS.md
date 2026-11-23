@@ -27,7 +27,7 @@ La obligatoriedad declarativa se aplica al dato, no solo a la página. Las fórm
 |---|---|---|---|
 | `Contrato__c` | Lookup → ContratoComercial__c | Sí | Contrato. Restrict impide borrar el padre mientras existan referencias activas. |
 | `FechaVencimientoCapturada__c` | Date | Sí | Vencimiento capturado |
-| `ClaveIdentidad__c` | Text(29) | Sí | Identidad prevista: Id de contrato de 18 caracteres, separador \| y fecha YYYY-MM-DD. La generación y comprobación canónica mediante Apex están pendientes. |
+| `ClaveIdentidad__c` | Text(29) | Sí | Identidad prevista: Id de contrato de 18 caracteres, separador \| y fecha YYYY-MM-DD. IdentidadRenovacion y el trigger before insert calculan la clave ausente y rechazan claves incompatibles. |
 | `Estado__c` | Picklist | Sí; Pendiente | Pendiente, En curso, Cerrado, Descartado |
 | `Notas__c` | TextArea(255) | No | Nota comercial breve de hasta 255 caracteres. Obligatoria y no vacía al cerrar o descartar. |
 | `Ejecucion__c` | Lookup → EjecucionRenovacion__c | Sí | Ejecución de origen. Restrict impide borrar el padre mientras existan referencias activas. |
@@ -53,7 +53,7 @@ La obligatoriedad declarativa se aplica al dato, no solo a la página. Las fórm
 | `Omitidos__c` | Number(18,0) | Sí; 0 | Registros cuyo descarte se confirmó tras la relectura. |
 | `Fallidos__c` | Number(18,0) | Sí; 0 | Registros con fallo individual confirmado. No es el número de lotes fallidos. |
 | `LotesFallidos__c` | Number(18,0) | Sí; 0 | Lotes completamente revertidos cuya ocurrencia se confirmó. No se suma a Evaluados ni a Fallidos. |
-| `RequiereReconciliacion__c` | Checkbox | No; false | Indica resultados incompletos o inciertos pendientes de revisión manual. El futuro procesamiento deberá marcarlo cuando proceda. |
+| `RequiereReconciliacion__c` | Checkbox | No; false | Indica resultados incompletos o inciertos pendientes de revisión manual. finish y el contraste manual lo activan cuando detectan resultados inciertos. |
 
 ### IncidenciaRenovacion__c
 
@@ -81,7 +81,7 @@ Restrict protege referencias activas, pero no sustituye la retirada del permiso 
 
 ## Decisiones sobre identidad y textos
 
-`ClaveIdentidad__c` es Text(29), obligatoria, única y sin distinción de mayúsculas. No es External ID: no se prevé upsert comercial ni integración. La futura representación canónica será Id de 18 caracteres, separador `|` y vencimiento ISO. La validación actual impide modificar contrato, fecha capturada, clave y ejecución después de insertar; no calcula ni valida esa representación al insertar.
+`ClaveIdentidad__c` es Text(29), obligatoria, única y sin distinción de mayúsculas. No es External ID: no se prevé upsert comercial ni integración. La representación canónica es Id de 18 caracteres, separador `|` y vencimiento ISO capturado. El trigger before insert calcula la clave ausente y rechaza una incompatible; también protege una pareja histórica representada por otra clave sin reescribirla. La validación impide modificar contrato, fecha capturada, clave y ejecución después de insertar. La restricción única conserva la protección frente a carreras sobre la clave canónica.
 
 `Notas__c` es TextArea de 255 caracteres para una nota comercial breve. `Mensaje__c` admite 32.768 caracteres para diagnóstico técnico y requiere contenido mediante una validación. El resto de textos de incidencia admite 255 caracteres; la clave intentada puede ser incorrecta y por eso admite más que la clave válida. La fase de procesamiento deberá gestionar longitudes y saneamiento de mensajes sin exponer secretos ni perder incidencias por un segundo error de registro. No se ha implementado ese tratamiento.
 
@@ -97,9 +97,9 @@ Inicio representa el registro del lanzamiento, incluida la espera en cola; su va
 
 La fecha de corte, sus dos límites, la zona horaria, el solicitante y el inicio no pueden cambiar tras crear la ejecución. AsyncApexJobId puede asignarse una vez; es texto, no lookup y no valida que exista un trabajo real. El estado inicial es Encolada. El futuro servicio debe registrar el lanzamiento antes de encolar y completar el identificador de forma coherente con la transacción.
 
-Los seis contadores son no negativos. Cinco corresponden a resultados confirmados por registro; LotesFallidos tiene unidad lote. La igualdad de resultados se exige en cada guardado: el futuro código debe actualizar los contadores de forma conjunta y transaccional. Una ejecución con fallos o reconciliación pendiente no puede presentarse como Completada.
+Los seis contadores son no negativos. Cinco corresponden a resultados confirmados por registro; LotesFallidos tiene unidad lote. La igualdad de resultados se exige en cada guardado: LoteRenovaciones actualiza contadores, seguimientos e incidencias dentro de la misma transacción. Una ejecución con fallos o reconciliación pendiente no puede presentarse como Completada.
 
-RequiereReconciliacion parte de false y debe activarse ante incertidumbre; no hay automatismo en esta fase. Un lote fallido histórico puede seguir registrado tras resolver la incertidumbre, por lo que el indicador no se calcula a partir del contador. No se congela todavía el conjunto de resultados finales ni se implementa el ciclo completo de estados de ejecución: la reconciliación deberá poder añadir información confirmada sin reescribir el contexto de lanzamiento.
+RequiereReconciliacion parte de false. finish lo activa ante errores del job; el contraste manual detecta trabajos terminales sin cierre coherente. No se garantiza que finish llegue a ejecutarse. Un lote fallido histórico puede seguir registrado tras resolver la incertidumbre, por lo que el indicador no se calcula a partir del contador. El procesamiento registra Encolada, En curso y cierre según resultados confirmados. No se congela por validación todo resultado final; la revisión manual puede añadir información confirmada sin reescribir el contexto. El procedimiento implementado señala incertidumbre y no la resuelve automáticamente.
 
 Las incidencias son anexos inmutables: cualquier actualización se rechaza. Una aclaración se guarda como otra incidencia de etapa Reconciliación. No se obliga a informar contrato o clave cuando el error sea de selección, lote o finalización y no se conozcan.
 
@@ -124,15 +124,15 @@ Los campos universalmente obligatorios pueden mantener controles de edición aun
 
 La lectura del contrato tras transferencias se mantiene mediante concesiones Manual de lectura, con revisión explícita del propietario y de accesos anteriores. No hay sincronización automática. Account y User conservan su compartición global; no se afirma aislamiento de las cuentas estándar.
 
-El operador de procesamiento sigue como diseño pendiente. No se ha creado un Permission Set de lanzamiento ni se ha implementado el servicio. P06_VerificacionModelo permanece limitado a la cuenta técnica.
+P06_OperadorRenovaciones y P06_ProcesarRenovaciones autorizan el servicio y Batch de fase 3. Cuatro reglas adicionales comparten el ámbito P06 con P06_Operadores. P06_VerificacionModelo se conserva separado y limitado a la cuenta técnica.
 
 ### Lanzamiento y límites
 
-El lanzamiento técnico de clases mediante Apex anónimo requiere permisos específicos, incluidos API Enabled y Author Apex. Author Apex no limita al usuario a un único lanzador: el operador es un rol técnico de confianza que exige autorización separada; nunca se asignará a comerciales. No se han concedido estos permisos. Véanse [bloques anónimos](https://developer.salesforce.com/docs/platform/apex-dev/references/apex-dev/apex-anonymous-block.html) y [ejecución en consola](https://help.salesforce.com/s/articleView?id=code_dev_console_execute_anonymous.htm&language=en_US&type=5).
+El lanzamiento técnico de clases mediante Apex anónimo requiere permisos específicos, incluidos API Enabled y Author Apex. Author Apex no limita al usuario a un único lanzador: el operador es un rol técnico de confianza que exige autorización separada; nunca se asignará a comerciales. La cuenta técnica utiliza sus capacidades previas; el nuevo Permission Set no añade Author Apex ni privilegios administrativos globales. Véanse [bloques anónimos](https://developer.salesforce.com/docs/platform/apex-dev/references/apex-dev/apex-anonymous-block.html) y [ejecución en consola](https://help.salesforce.com/s/articleView?id=code_dev_console_execute_anonymous.htm&language=en_US&type=5).
 
 La validación de propietario usuario cubre los guardados que ejecutan validaciones. Algunas operaciones de transferencia masiva o de Salesforce Classic no las ejecutan; no se habilitarán como alternativa a los controles de acceso. La fase 2 rechazó también la transferencia en el formulario Classic directo ensayado; no extrapola ese resultado a todas las operaciones. Véase [validaciones y cambios de propietario](https://help.salesforce.com/s/articleView?id=000385142&language=en_US&type=1).
 
-Desplegado: Private, restricciones de referencias, campo único y reglas declarativas. El permiso técnico permite leer Aplicable__c, DiasRestantes__c y AsyncApexJobId__c, y leer/editar Notas__c, Solicitante__c, Finalizacion__c, RequiereReconciliacion__c, Contrato__c de incidencia, ClaveIntentada__c, Mensaje__c y CamposAfectados__c. No añade permisos de sistema, objetos o eliminación. La matriz comercial, la compartición y las transferencias se completaron en fase 2 con el alcance de ACCESO.md. El control canónico de identidad y el operador siguen pendientes.
+Desplegado: Private, restricciones de referencias, campo único y reglas declarativas. El permiso técnico permite leer Aplicable__c, DiasRestantes__c y AsyncApexJobId__c, y leer/editar Notas__c, Solicitante__c, Finalizacion__c, RequiereReconciliacion__c, Contrato__c de incidencia, ClaveIntentada__c, Mensaje__c y CamposAfectados__c. No añade permisos de sistema, objetos o eliminación. La matriz comercial, la compartición y las transferencias se completaron en fase 2 con el alcance de ACCESO.md. El control canónico y el operador se incorporan en fase 3 sin cambiar campos ni validaciones. Las decisiones de modos USER_MODE y las dos lecturas técnicas limitadas en modo sistema se documentan en [DECISIONES-FASE-3.md](DECISIONES-FASE-3.md).
 
 ## Comprobaciones realizadas en fase 1B
 

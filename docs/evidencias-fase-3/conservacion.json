@@ -1,0 +1,401 @@
+{
+  "timestamp": "2026-11-23T15:33:35.815Z",
+  "previousRecords": 50,
+  "unchanged": true,
+  "rows": [
+    {
+      "objeto": "Account",
+      "id": "001g700001LxvUqAAJ",
+      "fields": []
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002b45UUAAY",
+      "fields": []
+    },
+    {
+      "objeto": "Account",
+      "id": "001g700001LwEu5AAF",
+      "fields": []
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002b50XJAAY",
+      "fields": []
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002b50XKAAY",
+      "fields": []
+    },
+    {
+      "objeto": "EjecucionRenovacion__c",
+      "id": "a01g700001LwEu6AAF",
+      "fields": []
+    },
+    {
+      "objeto": "EjecucionRenovacion__c",
+      "id": "a01g700001LwEu7AAF",
+      "fields": []
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tIYOYAA4",
+      "fields": []
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tIYOZAA4",
+      "fields": []
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tIYOaAAO",
+      "fields": []
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tIYObAAO",
+      "fields": []
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tIYOdAAO",
+      "fields": []
+    },
+    {
+      "objeto": "EjecucionRenovacion__c",
+      "id": "a01g700001LwKQ1AAN",
+      "fields": []
+    },
+    {
+      "objeto": "Account",
+      "id": "001g700001LyNmjAAF",
+      "fields": []
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002b50vVAAQ",
+      "fields": []
+    },
+    {
+      "objeto": "EjecucionRenovacion__c",
+      "id": "a01g700001LyNmkAAF",
+      "fields": []
+    },
+    {
+      "objeto": "EjecucionRenovacion__c",
+      "id": "a01g700001LyNmlAAF",
+      "fields": []
+    },
+    {
+      "objeto": "IncidenciaRenovacion__c",
+      "id": "a02g700000F1C05AAF",
+      "fields": []
+    },
+    {
+      "objeto": "IncidenciaRenovacion__c",
+      "id": "a02g700000F1C06AAF",
+      "fields": []
+    },
+    {
+      "objeto": "Account",
+      "id": "001g700001LzBDFAA3",
+      "fields": []
+    },
+    {
+      "objeto": "Account",
+      "id": "001g700001Ly6SiAAJ",
+      "fields": []
+    },
+    {
+      "objeto": "EjecucionRenovacion__c",
+      "id": "a01g700001LyA7yAAF",
+      "fields": []
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002b5b2DAAQ",
+      "fields": []
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tJLInAAO",
+      "fields": []
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002b5b3pAAA",
+      "fields": []
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tIytTAAS",
+      "fields": []
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002b5A6sAAE",
+      "fields": []
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tJLKPAA4",
+      "fields": []
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002b3POYAA2",
+      "fields": []
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tJLM1AAO",
+      "fields": []
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002b5b73AAA",
+      "fields": []
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tJL9MAAW",
+      "fields": []
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002b3V33AAE",
+      "fields": []
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tIAyyAAG",
+      "fields": []
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002b5bBtAAI",
+      "fields": []
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tJLNdAAO",
+      "fields": []
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002b3iXuAAI",
+      "fields": []
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tHw4tAAC",
+      "fields": []
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002b5GXGAA2",
+      "fields": []
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tIEbOAAW",
+      "fields": []
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002b5bDVAAY",
+      "fields": []
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tJLU5AAO",
+      "fields": []
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002b59M7AAI",
+      "fields": []
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tJLYvAAO",
+      "fields": []
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002b5SleAAE",
+      "fields": []
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tJLc9AAG",
+      "fields": []
+    },
+    {
+      "objeto": "IncidenciaRenovacion__c",
+      "id": "a02g700000F1KLpAAN",
+      "fields": []
+    },
+    {
+      "objeto": "EjecucionRenovacion__c",
+      "id": "a01g700001Lw2svAAB",
+      "fields": []
+    },
+    {
+      "objeto": "IncidenciaRenovacion__c",
+      "id": "a02g700000F1Ny1AAF",
+      "fields": []
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002b5sCjAAI",
+      "fields": []
+    }
+  ],
+  "ignoredDynamicFields": [
+    "LastViewedDate",
+    "LastReferencedDate",
+    "DiasRestantes__c"
+  ],
+  "commercialAssignmentsUnchanged": true,
+  "historicalEvidence": [
+    {
+      "file": "docs/evidencias-fase-1b.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-1b/P06-1B-20261123T132719-b12376f4-contratos.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-1b/P06-1B-20261123T132811-bff184d2-seguimientos.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-1b/P06-1B-20261123T133354-b17fd935-seguimientos.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-1b/P06-1B-20261123T133432-f8cc7f15-ejecuciones.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-1b/P06-1B-20261123T133507-a51f9870-incidencias.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-1b/conservacion.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-2.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-2/acceso-comerciales.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-2/acceso-coordinacion.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-2/acceso-final.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-2/comercial-a-criterios-iniciales.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-2/comercial-a.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-2/comercial-b.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-2/configuracion.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-2/conservacion.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-2/coordinacion.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-2/despliegues.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-2/fixtures.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-2/informe-comercial-a-inicial.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-2/informe-comercial-a-reasignado.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-2/informe-comercial-b-final.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-2/informe-comercial-b-reasignado.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-2/informe-comercial-b.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-2/informe-coordinacion-final.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-2/informe-coordinacion-inicial.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-2/interfaz.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-2/reasignacion-a.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-2/reasignacion-b.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-2/reasignacion-ui-b.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-2/reasignacion-ui-coordinacion.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-2/restauracion.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-2/revision-local.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-2/transferencia-multiple-a.json",
+      "unchanged": true
+    }
+  ]
+}

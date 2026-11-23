@@ -1,0 +1,39 @@
+{
+  "timestamp": "2026-11-23T15:34:08.281Z",
+  "cases": [
+    {
+      "lotesFallidos": 0,
+      "fallidos": 0,
+      "omitidos": 0,
+      "existentes": 0,
+      "creados": 120,
+      "evaluados": 120,
+      "reconciliacion": false,
+      "estadoEjecucion": "Completada",
+      "erroresJob": 0,
+      "lotesTotales": 3,
+      "lotesProcesados": 3,
+      "estadoJob": "Completed",
+      "job": "707g700001DKOHsAAP",
+      "ejecucion": "a01g700001M1lNuAAJ"
+    },
+    {
+      "lotesFallidos": 0,
+      "fallidos": 0,
+      "omitidos": 0,
+      "existentes": 120,
+      "creados": 0,
+      "evaluados": 120,
+      "reconciliacion": false,
+      "estadoEjecucion": "Completada",
+      "erroresJob": 0,
+      "lotesTotales": 3,
+      "lotesProcesados": 3,
+      "estadoJob": "Completed",
+      "job": "707g700001DLwdpAAD",
+      "ejecucion": "a01g700001M1rWXAAZ"
+    }
+  ],
+  "pass": true,
+  "scope": "Contraste normal de dos jobs terminados; no demuestra recuperación adversa."
+}

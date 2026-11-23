@@ -1,0 +1,17 @@
+{
+  "timestamp": "2026-11-23T15:37:19.472Z",
+  "files": 52,
+  "scripts": 9,
+  "json": 12,
+  "links": 43,
+  "head": "0716f9fc41d2b2142a79d9abd495f8236783ce03",
+  "branch": "main",
+  "indexEmpty": true,
+  "privateStateIgnored": true,
+  "issues": [],
+  "xmlFiles": 103,
+  "xmlNamespace": "http://soap.sforce.com/2006/04/metadata",
+  "trackedDiffWhitespaceErrors": 0,
+  "editorialReview": "Sin atribuciones de elaboración, firmas automáticas ni relatos personales en los materiales afectados.",
+  "scope": "52 archivos revisados antes de añadir este recibo; comprobación local, separada de pruebas Apex y demostración remota."
+}

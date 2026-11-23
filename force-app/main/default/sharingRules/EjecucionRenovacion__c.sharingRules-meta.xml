@@ -7,4 +7,11 @@
         <sharedFrom><group>P06_Propietarios</group></sharedFrom>
         <sharedTo><group>P06_Coordinacion</group></sharedTo>
     </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>P06_AccesoOperador</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>P06 Acceso de operador</label>
+        <sharedFrom><group>P06_Propietarios</group></sharedFrom>
+        <sharedTo><group>P06_Operadores</group></sharedTo>
+    </sharingOwnerRules>
 </SharingRules>

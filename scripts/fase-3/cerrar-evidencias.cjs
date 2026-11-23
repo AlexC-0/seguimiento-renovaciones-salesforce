@@ -1,0 +1,34 @@
+'use strict';
+const fs = require('node:fs');
+const path = require('node:path');
+const crypto = require('node:crypto');
+const { connectP06, reportError, root, cliModules, readState } = require('./salesforce.cjs');
+require(path.join(cliModules, '@jsforce/jsforce-node/lib/api/metadata'));
+(async () => {
+  const c = await connectP06(process.argv[2]);
+  const source = readState('fuentes-validadas.json');
+  const hashes = source.files.map(x => ({ ...x, unchanged: crypto.createHash('sha256').update(fs.readFileSync(path.join(root, x.file))).digest('hex') === x.sha256 }));
+  if (hashes.some(x => !x.unchanged)) throw Error('Fuentes distintas del paquete validado.');
+  const clean = name => {
+    const r = readState(name).result;
+    const t = r.details.runTestResult;
+    return { id: r.id, status: r.status, done: r.done, success: r.success, checkOnly: r.checkOnly, rollbackOnError: r.rollbackOnError, components: r.numberComponentsDeployed, componentsTotal: r.numberComponentsTotal, testsPassed: r.numberTestsCompleted, testErrors: r.numberTestErrors, methods: (t.successes || []).map(x => ({ class: x.name, method: x.methodName })), coverage: (t.codeCoverage || []).map(x => ({ name: x.name, locations: x.numLocations, uncovered: x.numLocationsNotCovered, percent: Number((100 * (x.numLocations - x.numLocationsNotCovered) / x.numLocations).toFixed(2)) })) };
+  };
+  const validation = clean('validacion-9.json');
+  const deployment = clean('despliegue.json');
+  if (![validation, deployment].every(x => x.status === 'Succeeded' && x.done && x.success && x.testsPassed === 14 && x.testErrors === 0)) throw Error('Pruebas o despliegue no conformes.');
+  const attempts = Array.from({ length: 9 }, (_, i) => ({ kind: 'validation', ...clean('validacion-' + (i + 1) + '.json') }));
+  attempts.push({ kind: 'deployment', ...clean('despliegue-intento-1.json'), reason: 'Nombre incorrecto de clase en el comando; cero tests y cobertura insuficiente. Paquete revertido.' });
+  const security = await c.metadata.read('SecuritySettings', 'Security');
+  if (security.enableAdminLoginAsAnyUser !== false) throw Error('Login As no está en el estado cerrado previsto.');
+  const state = readState('demostracion.json');
+  const ids = state.contracts.map(x => x.id);
+  const contracts = (await c.query("SELECT Id, Estado__c, FechaVencimiento__c, OwnerId, Cuenta__c FROM ContratoComercial__c WHERE Id IN ('" + ids.join("','") + "')")).records;
+  const contractsUnchanged = contracts.length === 124 && contracts.every(r => { const expected = state.contracts.find(x => x.id === r.Id); return r.Estado__c === expected.status && r.FechaVencimiento__c === expected.expiry && r.OwnerId === state.ownerId && r.Cuenta__c === state.accountId; });
+  const executionIds = Object.values(state.runs).map(x => x.receipt.ejecucion);
+  const incidents = (await c.query("SELECT COUNT() FROM IncidenciaRenovacion__c WHERE Ejecucion__c IN ('" + executionIds.join("','") + "')")).totalSize;
+  if (!contractsUnchanged || incidents !== 0) throw Error('Contratos o incidencias inesperados.');
+  const evidence = { timestamp: new Date().toISOString(), baseline: '0716f9fc41d2b2142a79d9abd495f8236783ce03', target: 'p06-renovaciones-dev', apiVersion: '65.0', validation, deployment, attempts, sourceHashes: hashes, contractsUnchanged, incidents, loginAsFinal: false, loginAsUsedInPhase3: false, newPersistentUsers: 0, globalAdministrativePrivilegesAdded: false };
+  fs.writeFileSync(path.join(root, 'docs/evidencias-fase-3/despliegue-pruebas.json'), JSON.stringify(evidence, null, 2) + '\n');
+  console.log(JSON.stringify({ validation: validation.id, deployment: deployment.id, testsPassed: deployment.testsPassed, coverage: deployment.coverage, unchangedSources: hashes.length, contractsUnchanged, incidents, loginAsFinal: false }));
+})().catch(reportError);
