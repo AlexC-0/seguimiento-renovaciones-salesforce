@@ -2,7 +2,15 @@
 
 Fecha: 23/11/2026.
 
-## Situación
+## Situación de fase 2
+
+Fase 2 completada sobre f779561036541b29e03fbf8f41e851c49bbea7c9. Aplicación Lightning, permisos comerciales y de coordinación, compartición e informe desplegados y comprobados con dos identidades ficticias sin privilegios administrativos. Cuatro objetos, 35 campos y 21 validaciones.
+
+Resultado: 70 comprobaciones API agrupadas correctas, creación de contrato adicional, cuatro comprobaciones de interfaz y contrastes de informe en las mismas sesiones. Se conservan 19 fixtures históricos sin cambios y 31 nuevos. Login As está restaurado a false. La función de coordinación y el permiso comercial se probaron con asignaciones separadas.
+
+Los [resultados de fase 2](FASE-2.md), la [matriz de acceso](ACCESO.md) y las [evidencias](evidencias-fase-2.json) delimitan el alcance. La V1 completa sigue pendiente de procesamiento; no hay Batch, servicio de lanzamiento, generación canónica ni reconciliación.
+
+## Situación al cierre de fase 1B
 
 Fase 1B completada sobre la referencia publicada 3c6341eff29d9faee09c8d248f516377de45029d. Destino exclusivo P06 verificado como Developer Edition, API 65.0, sin colisiones iniciales con los cuatro objetos del modelo.
 
@@ -77,7 +85,7 @@ El primer bloque de seguimientos no compiló por falta de acceso a Notas__c y no
 
 Las ejecuciones son fixtures Encolada, sin AsyncApexJobId ni resultados inventados de procesamiento. Los valores sintéticos usados para probar contadores se revirtieron. Hubo un segundo usuario estándar activo disponible para la comprobación del solicitante; no se crearon usuarios.
 
-## Niveles de validación
+## Niveles de validación al cierre de fase 1B
 
 | Nivel | Estado |
 |---|---|
@@ -98,6 +106,6 @@ La clave única solo acredita rechazo de una clave exacta duplicada. No demuestr
 
 Las comprobaciones locales finales cubren sintaxis de scripts, XML, enlaces, coherencia de evidencias, exclusiones y diferencias Git. La documentación distingue resultados actuales e históricos y conserva las limitaciones.
 
-## Trabajo posterior
+## Trabajo posterior al cierre de fase 1B
 
-La gestión comercial y la configuración de acceso son el siguiente alcance previsto. No se ha iniciado Batch, servicio de lanzamiento, reconciliación de lotes, programación, informe ni integración. No se han añadido usuarios o privilegios administrativos. Los criterios AC-01 a AC-20 se mantienen como aceptación integral futura; las comprobaciones declarativas de esta fase no sustituyen su ejecución completa.
+La gestión comercial y la configuración de acceso eran el siguiente alcance previsto y se completaron en fase 2. El procesamiento sigue pendiente: Batch, servicio de lanzamiento, reconciliación de lotes, programación e integración no se han iniciado. La cobertura actual de los criterios figura en PROJECT_BRIEF.md y FASE-2.md; las comprobaciones declarativas históricas no sustituyen su aceptación integral.

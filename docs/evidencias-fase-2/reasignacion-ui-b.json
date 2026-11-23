@@ -1,0 +1,23 @@
+{
+  "actor": "B",
+  "role": "comercial",
+  "identityVerified": true,
+  "timestamp": "2026-11-23T14:44:49.902Z",
+  "checks": [
+    {
+      "id": "lee_reasignacion_ui",
+      "status": 200,
+      "pass": true
+    },
+    {
+      "id": "edita_reasignacion_ui",
+      "status": 204,
+      "pass": true
+    },
+    {
+      "id": "lee_contrato_compartido_ui",
+      "status": 200,
+      "pass": true
+    }
+  ]
+}

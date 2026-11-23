@@ -1,0 +1,49 @@
+{
+  "timestamp": "2026-11-23T14:47:06.208Z",
+  "licenses": [
+    {
+      "Name": "Salesforce",
+      "TotalLicenses": 4,
+      "UsedLicenses": 4
+    },
+    {
+      "Name": "Salesforce Platform",
+      "TotalLicenses": 6,
+      "UsedLicenses": 0
+    }
+  ],
+  "technicalPermissionSetAssignments": 1,
+  "technicalPermissionSetExclusive": true,
+  "roleTransitions": [
+    {
+      "actor": "A",
+      "from": "comercial",
+      "to": "coordinacion",
+      "timestamp": "2026-11-23T14:31:25.380Z",
+      "beforePermissionSets": [
+        "P06_Comercial"
+      ],
+      "afterPermissionSet": "P06_Coordinacion"
+    },
+    {
+      "actor": "A",
+      "from": "coordinacion",
+      "to": "comercial",
+      "timestamp": "2026-11-23T14:38:40.817Z",
+      "beforePermissionSets": [
+        "P06_Coordinacion"
+      ],
+      "afterPermissionSet": "P06_Comercial"
+    },
+    {
+      "actor": "A",
+      "from": "comercial",
+      "to": "coordinacion",
+      "timestamp": "2026-11-23T14:41:26.784Z",
+      "beforePermissionSets": [
+        "P06_Comercial"
+      ],
+      "afterPermissionSet": "P06_Coordinacion"
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+{
+  "tipo": "inventario_final_fixtures",
+  "fase": "2",
+  "fechaUtc": "2026-11-23T14:44:41.191Z",
+  "marca": "P06-F2-1795443152067",
+  "registros": [
+    {
+      "objeto": "Account",
+      "id": "001g700001LzBDFAA3",
+      "funcion": "cuenta_A"
+    },
+    {
+      "objeto": "Account",
+      "id": "001g700001Ly6SiAAJ",
+      "funcion": "cuenta_B"
+    },
+    {
+      "objeto": "EjecucionRenovacion__c",
+      "id": "a01g700001LyA7yAAF",
+      "funcion": "ejecucion"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002b5b2DAAQ",
+      "funcion": "contrato_a_pendiente"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tJLInAAO",
+      "funcion": "a_pendiente"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002b5b3pAAA",
+      "funcion": "contrato_a_en_curso"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tIytTAAS",
+      "funcion": "a_en_curso"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002b5A6sAAE",
+      "funcion": "contrato_a_atrasado"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tJLKPAA4",
+      "funcion": "a_atrasado"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002b3POYAA2",
+      "funcion": "contrato_a_cerrado"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tJLM1AAO",
+      "funcion": "a_cerrado"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002b5b73AAA",
+      "funcion": "contrato_a_descartado"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tJL9MAAW",
+      "funcion": "a_descartado"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002b3V33AAE",
+      "funcion": "contrato_a_inactivo"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tIAyyAAG",
+      "funcion": "a_inactivo"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002b5bBtAAI",
+      "funcion": "contrato_a_fecha_distinta"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tJLNdAAO",
+      "funcion": "a_fecha_distinta"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002b3iXuAAI",
+      "funcion": "contrato_b_pendiente"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tHw4tAAC",
+      "funcion": "b_pendiente"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002b5GXGAA2",
+      "funcion": "contrato_b_en_curso"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tIEbOAAW",
+      "funcion": "b_en_curso"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002b5bDVAAY",
+      "funcion": "contrato_cambio_contrato"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tJLU5AAO",
+      "funcion": "cambio_contrato"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002b59M7AAI",
+      "funcion": "contrato_reasignacion"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tJLYvAAO",
+      "funcion": "reasignacion"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002b5SleAAE",
+      "funcion": "contrato_borrado_desechable"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tJLc9AAG",
+      "funcion": "borrado_desechable"
+    },
+    {
+      "objeto": "IncidenciaRenovacion__c",
+      "id": "a02g700000F1KLpAAN",
+      "funcion": "incidencia"
+    },
+    {
+      "objeto": "EjecucionRenovacion__c",
+      "id": "a01g700001Lw2svAAB",
+      "funcion": "ejecucion_desechable"
+    },
+    {
+      "objeto": "IncidenciaRenovacion__c",
+      "id": "a02g700000F1Ny1AAF",
+      "funcion": "incidencia_desechable"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002b5sCjAAI",
+      "funcion": "contrato_coordinacion"
+    }
+  ],
+  "registrosHistoricosConservados": 19
+}

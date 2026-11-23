@@ -23,7 +23,7 @@ La consulta de Organization confirmó Developer Edition, IsSandbox=false y conex
 
 El identificador de organización se conserva en el estado local excluido de Git para vincular operaciones. No se publican usuarios, direcciones de instancia ni archivos de autenticación. Cada comando remoto especifica el destino.
 
-## Capacidades y acceso
+## Capacidades y acceso al comienzo de fase 1B
 
 | Capacidad | Resultado observado |
 |---|---|
@@ -53,6 +53,16 @@ En fase 1A se convirtió el modelo inicial de cuatro objetos, 35 campos y 18 reg
 
 El lanzador de CLI emitió avisos auxiliares de acceso denegado al consultar procesos de Windows en comprobaciones locales. No se cambiaron herramientas ni configuración global para eliminarlos. No se inspeccionaron otros repositorios ni se reutilizaron organizaciones ajenas. La asociación incorrecta inicial del alias P06 se retiró antes de consultar ese destino; las demás credenciales y alias se conservaron.
 
-## Límites pendientes
+## Límites al cierre de fase 1B
 
 No se ha comprobado el runtime Java efectivo de las extensiones ni el funcionamiento del servicio de lenguaje Apex. No se han creado usuarios, concedido privilegios administrativos, configurado roles comerciales ni ejecutado pruebas por rol. No hay servicios, túneles, integraciones o procesos Batch asociados a esta fase.
+
+## Estado después de fase 2
+
+El destino y API 65.0 se conservaron. Se ocuparon las dos licencias Salesforce libres con identidades ficticias: uso final 4/4; Salesforce Platform 0/6. La configuración final y la exclusividad del permiso técnico se verificaron en [configuracion.json](evidencias-fase-2/configuracion.json). No hubo contratación, correos de bienvenida ni restablecimientos.
+
+Perfil mínimo propio, dos Permission Sets, roles y grupos P06 comprobados en sesiones reales. No se modificaron usuarios reales, perfiles compartidos, herramientas globales ni la compartición de Account o User. Los cuatro objetos P06 mantienen Private.
+
+Las pruebas usaron el Chrome habitual mediante Playwright MCP 0.0.86 temporal en loopback. La configuración global de Playwright no se actualizó. Al cerrar, la conexión temporal se detuvo y el acceso delegado quedó restaurado a false, con [lectura de verificación](evidencias-fase-2/restauracion.json). Inventarios, identidades, cookies y autenticación quedan fuera de Git.
+
+Los [resultados de fase 2](FASE-2.md) sustituyen los pendientes comerciales anteriores. La comprobación del runtime Java y del servicio de lenguaje Apex sigue fuera del alcance.

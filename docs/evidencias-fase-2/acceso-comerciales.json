@@ -1,0 +1,610 @@
+{
+  "timestamp": "2026-11-23T14:39:54.625Z",
+  "stage": "comerciales",
+  "users": [
+    {
+      "actor": "A",
+      "role": "comercial",
+      "profile": "P06_BaseComercial",
+      "salesforceRole": "P06_Comercial",
+      "active": true,
+      "permissionSets": [
+        {
+          "name": "P06_BaseComercial",
+          "enabled": [
+            "ChatterInternalUser",
+            "ActivitiesAccess",
+            "AllowViewKnowledge",
+            "ViewHelpLink",
+            "LightningConsoleAllowedForUser"
+          ]
+        },
+        {
+          "name": "P06_Comercial",
+          "enabled": [
+            "RunReports",
+            "ApiEnabled",
+            "LightningExperienceUser",
+            "PreventClassicExperience"
+          ]
+        }
+      ],
+      "groups": [
+        "P06_Comerciales",
+        "P06_Propietarios"
+      ],
+      "permissionSetGroups": 0,
+      "forbiddenPermissionsAbsent": true,
+      "objectAccess": [
+        {
+          "object": "Account",
+          "read": true,
+          "create": false,
+          "edit": false,
+          "delete": false,
+          "viewAll": false,
+          "modifyAll": false
+        },
+        {
+          "object": "ContratoComercial__c",
+          "read": true,
+          "create": false,
+          "edit": false,
+          "delete": false,
+          "viewAll": false,
+          "modifyAll": false
+        },
+        {
+          "object": "SeguimientoRenovacion__c",
+          "read": true,
+          "create": false,
+          "edit": true,
+          "delete": false,
+          "viewAll": false,
+          "modifyAll": false
+        },
+        {
+          "object": "EjecucionRenovacion__c",
+          "read": false,
+          "create": false,
+          "edit": false,
+          "delete": false,
+          "viewAll": false,
+          "modifyAll": false
+        },
+        {
+          "object": "IncidenciaRenovacion__c",
+          "read": false,
+          "create": false,
+          "edit": false,
+          "delete": false,
+          "viewAll": false,
+          "modifyAll": false
+        }
+      ],
+      "recordAccess": [
+        {
+          "fixture": "cambio_contrato",
+          "read": true,
+          "edit": true,
+          "delete": false,
+          "transfer": true
+        },
+        {
+          "fixture": "incidencia",
+          "read": false,
+          "edit": false,
+          "delete": false,
+          "transfer": false
+        },
+        {
+          "fixture": "a_cerrado",
+          "read": true,
+          "edit": true,
+          "delete": false,
+          "transfer": true
+        },
+        {
+          "fixture": "a_pendiente",
+          "read": true,
+          "edit": true,
+          "delete": false,
+          "transfer": true
+        },
+        {
+          "fixture": "contrato_b_pendiente",
+          "read": true,
+          "edit": false,
+          "delete": false,
+          "transfer": false
+        },
+        {
+          "fixture": "a_inactivo",
+          "read": true,
+          "edit": true,
+          "delete": false,
+          "transfer": true
+        },
+        {
+          "fixture": "borrado_desechable",
+          "read": true,
+          "edit": true,
+          "delete": false,
+          "transfer": true
+        },
+        {
+          "fixture": "contrato_borrado_desechable",
+          "read": true,
+          "edit": false,
+          "delete": false,
+          "transfer": false
+        },
+        {
+          "fixture": "reasignacion",
+          "read": false,
+          "edit": false,
+          "delete": false,
+          "transfer": false
+        },
+        {
+          "fixture": "contrato_coordinacion",
+          "read": true,
+          "edit": false,
+          "delete": false,
+          "transfer": false
+        },
+        {
+          "fixture": "a_en_curso",
+          "read": true,
+          "edit": true,
+          "delete": false,
+          "transfer": true
+        },
+        {
+          "fixture": "contrato_a_pendiente",
+          "read": true,
+          "edit": false,
+          "delete": false,
+          "transfer": false
+        },
+        {
+          "fixture": "contrato_cambio_contrato",
+          "read": true,
+          "edit": false,
+          "delete": false,
+          "transfer": false
+        },
+        {
+          "fixture": "a_descartado",
+          "read": true,
+          "edit": true,
+          "delete": false,
+          "transfer": true
+        },
+        {
+          "fixture": "contrato_b_en_curso",
+          "read": false,
+          "edit": false,
+          "delete": false,
+          "transfer": false
+        },
+        {
+          "fixture": "contrato_a_inactivo",
+          "read": true,
+          "edit": false,
+          "delete": false,
+          "transfer": false
+        },
+        {
+          "fixture": "contrato_a_cerrado",
+          "read": true,
+          "edit": false,
+          "delete": false,
+          "transfer": false
+        },
+        {
+          "fixture": "contrato_reasignacion",
+          "read": true,
+          "edit": false,
+          "delete": false,
+          "transfer": false
+        },
+        {
+          "fixture": "b_pendiente",
+          "read": false,
+          "edit": false,
+          "delete": false,
+          "transfer": false
+        },
+        {
+          "fixture": "contrato_a_atrasado",
+          "read": true,
+          "edit": false,
+          "delete": false,
+          "transfer": false
+        },
+        {
+          "fixture": "contrato_a_descartado",
+          "read": true,
+          "edit": false,
+          "delete": false,
+          "transfer": false
+        },
+        {
+          "fixture": "contrato_a_en_curso",
+          "read": true,
+          "edit": false,
+          "delete": false,
+          "transfer": false
+        },
+        {
+          "fixture": "ejecucion_desechable",
+          "read": false,
+          "edit": false,
+          "delete": false,
+          "transfer": false
+        },
+        {
+          "fixture": "a_atrasado",
+          "read": true,
+          "edit": true,
+          "delete": false,
+          "transfer": true
+        },
+        {
+          "fixture": "a_fecha_distinta",
+          "read": true,
+          "edit": true,
+          "delete": false,
+          "transfer": true
+        },
+        {
+          "fixture": "contrato_a_fecha_distinta",
+          "read": true,
+          "edit": false,
+          "delete": false,
+          "transfer": false
+        },
+        {
+          "fixture": "incidencia_desechable",
+          "read": false,
+          "edit": false,
+          "delete": false,
+          "transfer": false
+        },
+        {
+          "fixture": "b_en_curso",
+          "read": false,
+          "edit": false,
+          "delete": false,
+          "transfer": false
+        },
+        {
+          "fixture": "ejecucion",
+          "read": false,
+          "edit": false,
+          "delete": false,
+          "transfer": false
+        }
+      ]
+    },
+    {
+      "actor": "B",
+      "role": "comercial",
+      "profile": "P06_BaseComercial",
+      "salesforceRole": "P06_Comercial",
+      "active": true,
+      "permissionSets": [
+        {
+          "name": "P06_BaseComercial",
+          "enabled": [
+            "ChatterInternalUser",
+            "ActivitiesAccess",
+            "AllowViewKnowledge",
+            "ViewHelpLink",
+            "LightningConsoleAllowedForUser"
+          ]
+        },
+        {
+          "name": "P06_Comercial",
+          "enabled": [
+            "RunReports",
+            "ApiEnabled",
+            "LightningExperienceUser",
+            "PreventClassicExperience"
+          ]
+        }
+      ],
+      "groups": [
+        "P06_Comerciales",
+        "P06_Propietarios"
+      ],
+      "permissionSetGroups": 0,
+      "forbiddenPermissionsAbsent": true,
+      "objectAccess": [
+        {
+          "object": "Account",
+          "read": true,
+          "create": false,
+          "edit": false,
+          "delete": false,
+          "viewAll": false,
+          "modifyAll": false
+        },
+        {
+          "object": "ContratoComercial__c",
+          "read": true,
+          "create": false,
+          "edit": false,
+          "delete": false,
+          "viewAll": false,
+          "modifyAll": false
+        },
+        {
+          "object": "SeguimientoRenovacion__c",
+          "read": true,
+          "create": false,
+          "edit": true,
+          "delete": false,
+          "viewAll": false,
+          "modifyAll": false
+        },
+        {
+          "object": "EjecucionRenovacion__c",
+          "read": false,
+          "create": false,
+          "edit": false,
+          "delete": false,
+          "viewAll": false,
+          "modifyAll": false
+        },
+        {
+          "object": "IncidenciaRenovacion__c",
+          "read": false,
+          "create": false,
+          "edit": false,
+          "delete": false,
+          "viewAll": false,
+          "modifyAll": false
+        }
+      ],
+      "recordAccess": [
+        {
+          "fixture": "cambio_contrato",
+          "read": false,
+          "edit": false,
+          "delete": false,
+          "transfer": false
+        },
+        {
+          "fixture": "incidencia",
+          "read": false,
+          "edit": false,
+          "delete": false,
+          "transfer": false
+        },
+        {
+          "fixture": "a_cerrado",
+          "read": false,
+          "edit": false,
+          "delete": false,
+          "transfer": false
+        },
+        {
+          "fixture": "a_pendiente",
+          "read": false,
+          "edit": false,
+          "delete": false,
+          "transfer": false
+        },
+        {
+          "fixture": "contrato_b_pendiente",
+          "read": true,
+          "edit": false,
+          "delete": false,
+          "transfer": false
+        },
+        {
+          "fixture": "a_inactivo",
+          "read": false,
+          "edit": false,
+          "delete": false,
+          "transfer": false
+        },
+        {
+          "fixture": "borrado_desechable",
+          "read": false,
+          "edit": false,
+          "delete": false,
+          "transfer": false
+        },
+        {
+          "fixture": "contrato_borrado_desechable",
+          "read": false,
+          "edit": false,
+          "delete": false,
+          "transfer": false
+        },
+        {
+          "fixture": "reasignacion",
+          "read": true,
+          "edit": true,
+          "delete": false,
+          "transfer": true
+        },
+        {
+          "fixture": "contrato_coordinacion",
+          "read": false,
+          "edit": false,
+          "delete": false,
+          "transfer": false
+        },
+        {
+          "fixture": "a_en_curso",
+          "read": false,
+          "edit": false,
+          "delete": false,
+          "transfer": false
+        },
+        {
+          "fixture": "contrato_a_pendiente",
+          "read": false,
+          "edit": false,
+          "delete": false,
+          "transfer": false
+        },
+        {
+          "fixture": "contrato_cambio_contrato",
+          "read": true,
+          "edit": false,
+          "delete": false,
+          "transfer": false
+        },
+        {
+          "fixture": "a_descartado",
+          "read": false,
+          "edit": false,
+          "delete": false,
+          "transfer": false
+        },
+        {
+          "fixture": "contrato_b_en_curso",
+          "read": true,
+          "edit": false,
+          "delete": false,
+          "transfer": false
+        },
+        {
+          "fixture": "contrato_a_inactivo",
+          "read": false,
+          "edit": false,
+          "delete": false,
+          "transfer": false
+        },
+        {
+          "fixture": "contrato_a_cerrado",
+          "read": false,
+          "edit": false,
+          "delete": false,
+          "transfer": false
+        },
+        {
+          "fixture": "contrato_reasignacion",
+          "read": true,
+          "edit": false,
+          "delete": false,
+          "transfer": false
+        },
+        {
+          "fixture": "b_pendiente",
+          "read": true,
+          "edit": true,
+          "delete": false,
+          "transfer": true
+        },
+        {
+          "fixture": "contrato_a_atrasado",
+          "read": false,
+          "edit": false,
+          "delete": false,
+          "transfer": false
+        },
+        {
+          "fixture": "contrato_a_descartado",
+          "read": false,
+          "edit": false,
+          "delete": false,
+          "transfer": false
+        },
+        {
+          "fixture": "contrato_a_en_curso",
+          "read": false,
+          "edit": false,
+          "delete": false,
+          "transfer": false
+        },
+        {
+          "fixture": "ejecucion_desechable",
+          "read": false,
+          "edit": false,
+          "delete": false,
+          "transfer": false
+        },
+        {
+          "fixture": "a_atrasado",
+          "read": false,
+          "edit": false,
+          "delete": false,
+          "transfer": false
+        },
+        {
+          "fixture": "a_fecha_distinta",
+          "read": false,
+          "edit": false,
+          "delete": false,
+          "transfer": false
+        },
+        {
+          "fixture": "contrato_a_fecha_distinta",
+          "read": false,
+          "edit": false,
+          "delete": false,
+          "transfer": false
+        },
+        {
+          "fixture": "incidencia_desechable",
+          "read": false,
+          "edit": false,
+          "delete": false,
+          "transfer": false
+        },
+        {
+          "fixture": "b_en_curso",
+          "read": true,
+          "edit": true,
+          "delete": false,
+          "transfer": true
+        },
+        {
+          "fixture": "ejecucion",
+          "read": false,
+          "edit": false,
+          "delete": false,
+          "transfer": false
+        }
+      ]
+    }
+  ],
+  "sharing": [
+    {
+      "QualifiedApiName": "Account",
+      "InternalSharingModel": "ReadWrite",
+      "ExternalSharingModel": "Private"
+    },
+    {
+      "QualifiedApiName": "ContratoComercial__c",
+      "InternalSharingModel": "Private",
+      "ExternalSharingModel": "Private"
+    },
+    {
+      "QualifiedApiName": "EjecucionRenovacion__c",
+      "InternalSharingModel": "Private",
+      "ExternalSharingModel": "Private"
+    },
+    {
+      "QualifiedApiName": "IncidenciaRenovacion__c",
+      "InternalSharingModel": "Private",
+      "ExternalSharingModel": "Private"
+    },
+    {
+      "QualifiedApiName": "SeguimientoRenovacion__c",
+      "InternalSharingModel": "Private",
+      "ExternalSharingModel": "Private"
+    },
+    {
+      "QualifiedApiName": "User",
+      "InternalSharingModel": "Read",
+      "ExternalSharingModel": "Private"
+    }
+  ]
+}

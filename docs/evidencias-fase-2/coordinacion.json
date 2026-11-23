@@ -1,0 +1,287 @@
+{
+  "actor": "A",
+  "role": "coordinacion",
+  "identityVerified": true,
+  "timestamp": "2026-11-23T14:34:17.328Z",
+  "cases": [
+    {
+      "id": "leer_contrato_b",
+      "method": "GET",
+      "status": 200,
+      "expected": "permitido",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "editar_fecha",
+      "method": "PATCH",
+      "status": 204,
+      "expected": "permitido",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "formula_fecha_no_aplicable",
+      "method": "GET",
+      "status": 200,
+      "expected": "permitido",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "restaurar_fecha",
+      "method": "PATCH",
+      "status": 204,
+      "expected": "permitido",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "formula_fecha_aplicable",
+      "method": "GET",
+      "status": 200,
+      "expected": "permitido",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "editar_estado_contrato",
+      "method": "PATCH",
+      "status": 204,
+      "expected": "permitido",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "formula_estado_no_aplicable",
+      "method": "GET",
+      "status": 200,
+      "expected": "permitido",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "restaurar_estado",
+      "method": "PATCH",
+      "status": 204,
+      "expected": "permitido",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "formula_estado_aplicable",
+      "method": "GET",
+      "status": 200,
+      "expected": "permitido",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "reasignar_contrato_b",
+      "method": "PATCH",
+      "status": 204,
+      "expected": "permitido",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "conservar_responsable_seguimiento_b",
+      "method": "GET",
+      "status": 200,
+      "expected": "permitido",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "compartir_contrato_b",
+      "method": "POST",
+      "status": 201,
+      "expected": "permitido",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "reasignar_seguimiento",
+      "method": "PATCH",
+      "status": 204,
+      "expected": "permitido",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "compartir_contrato_nuevo_responsable",
+      "method": "POST",
+      "status": 201,
+      "expected": "permitido",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "nuevo_responsable_confirmado",
+      "method": "GET",
+      "status": 200,
+      "expected": "permitido",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "leer_ejecucion",
+      "method": "GET",
+      "status": 200,
+      "expected": "permitido",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "leer_incidencia",
+      "method": "GET",
+      "status": 200,
+      "expected": "permitido",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "editar_ejecucion_denegado",
+      "method": "PATCH",
+      "status": 400,
+      "expected": "denegado",
+      "pass": true,
+      "errors": [
+        {
+          "code": "CANNOT_INSERT_UPDATE_ACTIVATE_ENTITY",
+          "message": "entity type cannot be updated: Ejecución de renovación"
+        }
+      ]
+    },
+    {
+      "id": "editar_incidencia_denegado",
+      "method": "PATCH",
+      "status": 400,
+      "expected": "denegado",
+      "pass": true,
+      "errors": [
+        {
+          "code": "CANNOT_INSERT_UPDATE_ACTIVATE_ENTITY",
+          "message": "entity type cannot be updated: Incidencia de renovación"
+        }
+      ]
+    },
+    {
+      "id": "borrado_denegado_ContratoComercial__c",
+      "method": "DELETE",
+      "status": 400,
+      "expected": "denegado",
+      "pass": true,
+      "errors": [
+        {
+          "code": "INSUFFICIENT_ACCESS_OR_READONLY",
+          "message": "insufficient access rights on object id"
+        }
+      ]
+    },
+    {
+      "id": "borrado_denegado_SeguimientoRenovacion__c",
+      "method": "DELETE",
+      "status": 400,
+      "expected": "denegado",
+      "pass": true,
+      "errors": [
+        {
+          "code": "INSUFFICIENT_ACCESS_OR_READONLY",
+          "message": "insufficient access rights on object id"
+        }
+      ]
+    },
+    {
+      "id": "borrado_denegado_EjecucionRenovacion__c",
+      "method": "DELETE",
+      "status": 400,
+      "expected": "denegado",
+      "pass": true,
+      "errors": [
+        {
+          "code": "INSUFFICIENT_ACCESS_OR_READONLY",
+          "message": "insufficient access rights on object id"
+        }
+      ]
+    },
+    {
+      "id": "borrado_denegado_IncidenciaRenovacion__c",
+      "method": "DELETE",
+      "status": 400,
+      "expected": "denegado",
+      "pass": true,
+      "errors": [
+        {
+          "code": "INSUFFICIENT_ACCESS_OR_READONLY",
+          "message": "insufficient access rights on object id"
+        }
+      ]
+    },
+    {
+      "id": "identidad_protegida_Contrato__c",
+      "method": "PATCH",
+      "status": 400,
+      "expected": "denegado",
+      "pass": true,
+      "errors": [
+        {
+          "code": "FIELD_CUSTOM_VALIDATION_EXCEPTION",
+          "message": "No se pueden modificar el contrato, el vencimiento capturado, la clave ni la ejecución de origen."
+        }
+      ]
+    },
+    {
+      "id": "identidad_protegida_FechaVencimientoCapturada__c",
+      "method": "PATCH",
+      "status": 400,
+      "expected": "denegado",
+      "pass": true,
+      "errors": [
+        {
+          "code": "FIELD_CUSTOM_VALIDATION_EXCEPTION",
+          "message": "No se pueden modificar el contrato, el vencimiento capturado, la clave ni la ejecución de origen."
+        }
+      ]
+    },
+    {
+      "id": "identidad_protegida_ClaveIdentidad__c",
+      "method": "PATCH",
+      "status": 400,
+      "expected": "denegado",
+      "pass": true,
+      "errors": [
+        {
+          "code": "FIELD_CUSTOM_VALIDATION_EXCEPTION",
+          "message": "No se pueden modificar el contrato, el vencimiento capturado, la clave ni la ejecución de origen."
+        }
+      ]
+    },
+    {
+      "id": "identidad_protegida_Ejecucion__c",
+      "method": "PATCH",
+      "status": 400,
+      "expected": "denegado",
+      "pass": true,
+      "errors": [
+        {
+          "code": "FIELD_CUSTOM_VALIDATION_EXCEPTION",
+          "message": "No se pueden modificar el contrato, el vencimiento capturado, la clave ni la ejecución de origen."
+        }
+      ]
+    },
+    {
+      "id": "crear_seguimiento_denegado",
+      "method": "POST",
+      "status": 400,
+      "expected": "denegado",
+      "pass": true,
+      "errors": [
+        {
+          "code": "CANNOT_INSERT_UPDATE_ACTIVATE_ENTITY",
+          "message": "entity type cannot be inserted: Seguimiento de renovación"
+        }
+      ]
+    }
+  ]
+}

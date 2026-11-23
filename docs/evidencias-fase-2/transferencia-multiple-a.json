@@ -1,0 +1,27 @@
+{
+  "actor": "A",
+  "role": "comercial",
+  "identityVerified": true,
+  "status": 200,
+  "results": [
+    {
+      "success": false,
+      "errors": [
+        {
+          "code": "FIELD_CUSTOM_VALIDATION_EXCEPTION",
+          "message": "Solo coordinación puede cambiar el responsable del registro."
+        }
+      ]
+    },
+    {
+      "success": false,
+      "errors": [
+        {
+          "code": "FIELD_CUSTOM_VALIDATION_EXCEPTION",
+          "message": "Solo coordinación puede cambiar el responsable del registro."
+        }
+      ]
+    }
+  ],
+  "pass": true
+}

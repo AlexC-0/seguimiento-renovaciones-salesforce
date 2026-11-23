@@ -2,7 +2,7 @@
 
 ## Convenciones
 
-Modelo de fase 1A corregido, validado y desplegado en fase 1B. Los cuatro objetos usan propietario independiente y visibilidad interna y externa `Private` en sus metadatos. No hay relaciones master-detail ni borrado en cascada.
+Modelo de fase 1A corregido, validado y desplegado en fase 1B; acceso comercial y dos reglas de reasignación añadidos en fase 2. Los cuatro objetos usan propietario independiente y visibilidad interna y externa `Private` en sus metadatos. No hay relaciones master-detail ni borrado en cascada.
 
 Los nombres API de estados coinciden con sus etiquetas, incluidos espacios y acentos. Las listas son restringidas. Los valores no indicados como iniciales no se rellenan automáticamente. No se crean campos económicos ni objetos adicionales.
 
@@ -87,7 +87,7 @@ Restrict protege referencias activas, pero no sustituye la retirada del permiso 
 
 ## Fórmulas
 
-`Aplicable__c` combina contrato Activo y coincidencia de fechas. No depende del estado del seguimiento ni de TODAY. El futuro informe añadirá `Estado__c IN ('Pendiente', 'En curso')` y `Aplicable__c = true`.
+`Aplicable__c` combina contrato Activo y coincidencia de fechas. No depende del estado del seguimiento ni de TODAY. El informe operativo añade `Estado__c IN ('Pendiente', 'En curso')` y `Aplicable__c = true`.
 
 `DiasRestantes__c = FechaVencimientoCapturada__c - TODAY()`: positivo antes del vencimiento, cero ese día y negativo tras vencer. Es información dinámica del contexto de consulta, no evidencia congelada ni criterio de selección del Batch. La zona del usuario que consulta puede diferir de la zona capturada al lanzar. La fecha de corte persistida de la ejecución permanece fija.
 
@@ -114,38 +114,25 @@ Las incidencias son anexos inmutables: cualquier actualización se rechaza. Una 
 
 Las listas restringidas y la obligatoriedad de los campos complementan estas 19 reglas activas. Salesforce aceptó y desplegó los 58 componentes del modelo. Los bloques anónimos verificaron 117 casos declarativos; no acreditan todas las operaciones o excepciones de plataforma ni la matriz de acceso.
 
-## Diseño de acceso pendiente
+## Acceso implementado en fase 2
 
-R = lectura, C = creación, U = edición. Ningún rol ordinario tendrá Delete en los cuatro objetos. La tabla es diseño: no hay permisos de roles comerciales, reglas de compartición ni controles de transferencia implementados. El único Permission Set desplegado es P06_VerificacionModelo, limitado a la cuenta técnica y a once campos necesarios para las comprobaciones.
+La [matriz efectiva](ACCESO.md) concentra perfil, Permission Sets, grupos, funciones, compartición y procedimiento de transferencia. Comercial tiene lectura de contratos y actualización funcional de estado y notas de seguimientos asignados. Coordinación crea y edita contratos, gestiona y reasigna seguimientos y lee ejecuciones e incidencias. Ninguno elimina los cuatro objetos ni recibe permisos administrativos.
 
-| Objeto / ámbito | Comercial | Coordinación comercial | Operador técnico |
-|---|---|---|---|
-| Account | R de cuentas necesarias | R de cuentas ficticias del proyecto | R de cuentas necesarias para el procesamiento |
-| User | R mínima para identificar responsables | R para seleccionar responsables autorizados | R de solicitante y responsables |
-| Contrato | R de contratos propios o vinculados a seguimientos asignados | C/R/U de todos los contratos del proyecto | R de contratos del proyecto |
-| Seguimiento | R/U de asignados; U solo Estado y Notas | R/U global del proyecto; estado, notas y reasignación explícita | C/R para el procesamiento; sin sobrescribir seguimientos existentes |
-| Ejecución | Sin acceso | R global del proyecto para consulta operativa | C/R/U para lanzamiento, resultados y reconciliación |
-| Incidencia | Sin acceso | R global del proyecto | C/R; sin actualización de evidencias |
+Se mantienen Private interno y externo. El permiso personalizado P06_Reasignar y dos reglas ReasignacionAutorizada controlan OwnerId en contratos y seguimientos existentes. El modelo conserva las 19 reglas anteriores y suma estas dos: 21 activas. Las transferencias comerciales se rechazaron por REST individual y de colecciones, Lightning y formulario Classic directo.
 
-### Campos y registros
+Los campos universalmente obligatorios pueden mantener controles de edición aunque el layout pida Readonly. La regla IdentidadYOrigenInmutables conserva la protección funcional de contrato, fecha capturada, clave y ejecución. El comercial no ve el lookup de ejecución por falta de acceso al objeto técnico. Los cambios protegidos fueron rechazados en sus sesiones reales.
 
-- Comercial: lectura de fechas, estado, cuenta y responsable del contrato; en seguimiento, lectura de contrato, vencimiento, aplicabilidad y días restantes, y edición solo de estado y notas. La clave y la referencia de origen se conservan sin permitir cambios; no se concede acceso al registro técnico de ejecución ni creación de seguimientos.
-- Coordinación: edición de datos del contrato y gestión explícita de OwnerId; identidad, fecha capturada y origen del seguimiento siguen protegidos. Tiene lectura de ejecuciones e incidencias y sus campos operativos.
-- Operador: campos necesarios para crear identidad y contexto, escribir contadores y anexar incidencias. El acceso de escritura no sustituye la comprobación de CRUD/FLS y acceso a registros del futuro código. No se prevé edición de contratos ni de datos comerciales de seguimientos existentes.
-- La visibilidad global de coordinación y operador se limitará a estos objetos del proyecto mediante grupos y compartición explícita. No se presupone una jerarquía concreta ni se conceden View All Data o Modify All Data.
-- El acceso del comercial al contrato relacionado debe conservarse si se reasigna el contrato y el seguimiento permanece a su nombre. Es un caso explícito para diseñar y verificar la compartición; un lookup no lo resuelve.
-- OwnerId tiene reglas de transferencia propias, no una FLS convencional. La futura configuración deberá impedir la autoasignación o transferencia no autorizada por comerciales y permitir las reasignaciones de coordinación. No se confiará únicamente en ocultar botones.
-- Las fórmulas entre objetos pueden revelar datos derivados; la futura FLS y la compartición deben permitir únicamente la información prevista y probarse con acceso ajeno denegado.
+La lectura del contrato tras transferencias se mantiene mediante concesiones Manual de lectura, con revisión explícita del propietario y de accesos anteriores. No hay sincronización automática. Account y User conservan su compartición global; no se afirma aislamiento de las cuentas estándar.
 
-Los campos universalmente obligatorios limitan la configuración de FLS. No se presupone que puedan ocultarse o marcarse de solo lectura mediante FLS: en los seguimientos, la inmutabilidad de identidad y origen se exige mediante validaciones, además de la configuración de página que se prepare después. La navegación por lookup debe respetar el acceso al objeto relacionado. Esta interacción se comprobará al configurar permisos según [acceso a campos](https://help.salesforce.com/s/articleView?id=platform.customize_fieldaccess.htm&language=en_US&type=5).
+El operador de procesamiento sigue como diseño pendiente. No se ha creado un Permission Set de lanzamiento ni se ha implementado el servicio. P06_VerificacionModelo permanece limitado a la cuenta técnica.
 
 ### Lanzamiento y límites
 
 El lanzamiento técnico de clases mediante Apex anónimo requiere permisos específicos, incluidos API Enabled y Author Apex. Author Apex no limita al usuario a un único lanzador: el operador es un rol técnico de confianza que exige autorización separada; nunca se asignará a comerciales. No se han concedido estos permisos. Véanse [bloques anónimos](https://developer.salesforce.com/docs/platform/apex-dev/references/apex-dev/apex-anonymous-block.html) y [ejecución en consola](https://help.salesforce.com/s/articleView?id=code_dev_console_execute_anonymous.htm&language=en_US&type=5).
 
-La validación de propietario usuario cubre los guardados que ejecutan validaciones. Algunas operaciones de transferencia masiva o de Salesforce Classic no las ejecutan; no se habilitarán como alternativa a los controles de acceso. Esta limitación debe comprobarse en el entorno dedicado según [validaciones y cambios de propietario](https://help.salesforce.com/s/articleView?id=000385142&language=en_US&type=1).
+La validación de propietario usuario cubre los guardados que ejecutan validaciones. Algunas operaciones de transferencia masiva o de Salesforce Classic no las ejecutan; no se habilitarán como alternativa a los controles de acceso. La fase 2 rechazó también la transferencia en el formulario Classic directo ensayado; no extrapola ese resultado a todas las operaciones. Véase [validaciones y cambios de propietario](https://help.salesforce.com/s/articleView?id=000385142&language=en_US&type=1).
 
-Desplegado: Private, restricciones de referencias, campo único y reglas declarativas. El permiso técnico permite leer Aplicable__c, DiasRestantes__c y AsyncApexJobId__c, y leer/editar Notas__c, Solicitante__c, Finalizacion__c, RequiereReconciliacion__c, Contrato__c de incidencia, ClaveIntentada__c, Mensaje__c y CamposAfectados__c. No añade permisos de sistema, objetos o eliminación. Diseñado y pendiente: roles comerciales, CRUD/FLS completo, compartición, transferencia y control canónico de identidad.
+Desplegado: Private, restricciones de referencias, campo único y reglas declarativas. El permiso técnico permite leer Aplicable__c, DiasRestantes__c y AsyncApexJobId__c, y leer/editar Notas__c, Solicitante__c, Finalizacion__c, RequiereReconciliacion__c, Contrato__c de incidencia, ClaveIntentada__c, Mensaje__c y CamposAfectados__c. No añade permisos de sistema, objetos o eliminación. La matriz comercial, la compartición y las transferencias se completaron en fase 2 con el alcance de ACCESO.md. El control canónico de identidad y el operador siguen pendientes.
 
 ## Comprobaciones realizadas en fase 1B
 
@@ -155,4 +142,4 @@ Los scripts utilizan fixtures propios y verifican el código de error y, para la
 
 Las ejecuciones de comprobación no representan jobs Batch. Se conservan sin AsyncApexJobId y sin contadores de procesamiento ficticios; los valores sintéticos para comprobar la ecuación y sus rechazos quedan bajo rollback. La prueba de unicidad se limita a la misma clave exacta.
 
-No se han ejecutado pruebas de eliminación ni por roles. La configuración completa de acceso y transferencia sigue pendiente. La prueba de cambio de solicitante utilizó otro usuario estándar activo existente. También se rechazaron alta y actualización con solicitante vacío. No se crearon usuarios.
+Al cierre de fase 1B no se habían ejecutado pruebas de eliminación ni por roles. Fase 2 incorpora esas comprobaciones para las funciones comerciales y de coordinación; los resultados anteriores siguen siendo históricos. La prueba de cambio de solicitante utilizó otro usuario estándar activo existente. También se rechazaron alta y actualización con solicitante vacío. No se crearon usuarios.

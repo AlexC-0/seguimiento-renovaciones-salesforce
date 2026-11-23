@@ -1,0 +1,59 @@
+{
+  "actor": "B",
+  "stage": "comercial-b",
+  "identityVerified": true,
+  "timestamp": "2026-11-23T14:31:01.366Z",
+  "reportName": "Seguimientos de renovación pendientes",
+  "reportTotal": 2,
+  "queryTotal": 2,
+  "sameRecordIds": true,
+  "allData": true,
+  "groupedByOwner": true,
+  "expiryAscendingWithinGroups": true,
+  "rows": [
+    {
+      "id": "a03g700000tHw4tAAC",
+      "name": "SEG-000013",
+      "contract": "CON-000011",
+      "account": "P06-F2-1795443152067 Cuenta B",
+      "capturedExpiry": "2026-12-01",
+      "state": "Pendiente",
+      "days": 8,
+      "applicable": true
+    },
+    {
+      "id": "a03g700000tIEbOAAW",
+      "name": "SEG-000014",
+      "contract": "CON-000012",
+      "account": "P06-F2-1795443152067 Cuenta B",
+      "capturedExpiry": "2026-12-05",
+      "state": "En curso",
+      "days": 12,
+      "applicable": true
+    }
+  ],
+  "filters": [
+    {
+      "column": "SeguimientoRenovacion__c.Estado__c",
+      "filterType": "fieldValue",
+      "isRunPageEditable": false,
+      "operator": "equals",
+      "value": "Pendiente"
+    },
+    {
+      "column": "SeguimientoRenovacion__c.Estado__c",
+      "filterType": "fieldValue",
+      "isRunPageEditable": false,
+      "operator": "equals",
+      "value": "En curso"
+    },
+    {
+      "column": "SeguimientoRenovacion__c.Aplicable__c",
+      "filterType": "fieldValue",
+      "isRunPageEditable": false,
+      "operator": "equals",
+      "value": "Verdadero"
+    }
+  ],
+  "pass": true
+}

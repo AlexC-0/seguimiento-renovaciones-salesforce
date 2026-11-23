@@ -1,0 +1,264 @@
+{
+  "actor": "A",
+  "role": "comercial",
+  "identityVerified": true,
+  "cases": [
+    {
+      "id": "lectura_propia",
+      "method": "GET",
+      "status": 200,
+      "expected": "permitido",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "edicion_notas_propia",
+      "method": "PATCH",
+      "status": 204,
+      "expected": "permitido",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "lectura_ajena",
+      "method": "GET",
+      "status": 404,
+      "expected": "denegado",
+      "pass": true,
+      "errors": [
+        {
+          "code": "NOT_FOUND",
+          "message": "The requested resource does not exist"
+        }
+      ]
+    },
+    {
+      "id": "edicion_ajena",
+      "method": "PATCH",
+      "status": 400,
+      "expected": "denegado",
+      "pass": true,
+      "errors": [
+        {
+          "code": "INSUFFICIENT_ACCESS_OR_READONLY",
+          "message": "insufficient access rights on object id"
+        }
+      ]
+    },
+    {
+      "id": "contrato_solo_lectura",
+      "method": "PATCH",
+      "status": 400,
+      "expected": "denegado",
+      "pass": false,
+      "errors": [
+        {
+          "code": "CANNOT_INSERT_UPDATE_ACTIVATE_ENTITY",
+          "message": "entity type cannot be updated: Contrato comercial"
+        }
+      ]
+    },
+    {
+      "id": "ejecucion_denegada",
+      "method": "GET",
+      "status": 404,
+      "expected": "denegado",
+      "pass": true,
+      "errors": [
+        {
+          "code": "NOT_FOUND",
+          "message": "The requested resource does not exist"
+        }
+      ]
+    },
+    {
+      "id": "incidencia_denegada",
+      "method": "GET",
+      "status": 404,
+      "expected": "denegado",
+      "pass": true,
+      "errors": [
+        {
+          "code": "NOT_FOUND",
+          "message": "The requested resource does not exist"
+        }
+      ]
+    },
+    {
+      "id": "reasignacion_denegada",
+      "method": "PATCH",
+      "status": 400,
+      "expected": "denegado",
+      "pass": true,
+      "errors": [
+        {
+          "code": "FIELD_CUSTOM_VALIDATION_EXCEPTION",
+          "message": "Solo coordinación puede cambiar el responsable del registro."
+        }
+      ]
+    },
+    {
+      "id": "creacion_denegada",
+      "method": "POST",
+      "status": 400,
+      "expected": "denegado",
+      "pass": false,
+      "errors": [
+        {
+          "code": "INVALID_FIELD",
+          "message": "No such column 'Ejecucion__c' on sobject of type SeguimientoRenovacion__c"
+        }
+      ]
+    },
+    {
+      "id": "eliminacion_denegada",
+      "method": "DELETE",
+      "status": 400,
+      "expected": "denegado",
+      "pass": true,
+      "errors": [
+        {
+          "code": "INSUFFICIENT_ACCESS_OR_READONLY",
+          "message": "insufficient access rights on object id"
+        }
+      ]
+    },
+    {
+      "id": "inmutabilidad_contrato",
+      "method": "PATCH",
+      "status": 400,
+      "expected": "denegado",
+      "pass": true,
+      "errors": [
+        {
+          "code": "FIELD_CUSTOM_VALIDATION_EXCEPTION",
+          "message": "No se pueden modificar el contrato, el vencimiento capturado, la clave ni la ejecución de origen."
+        }
+      ]
+    },
+    {
+      "id": "inmutabilidad_fecha",
+      "method": "PATCH",
+      "status": 400,
+      "expected": "denegado",
+      "pass": true,
+      "errors": [
+        {
+          "code": "FIELD_CUSTOM_VALIDATION_EXCEPTION",
+          "message": "No se pueden modificar el contrato, el vencimiento capturado, la clave ni la ejecución de origen."
+        }
+      ]
+    },
+    {
+      "id": "inmutabilidad_clave",
+      "method": "PATCH",
+      "status": 400,
+      "expected": "denegado",
+      "pass": true,
+      "errors": [
+        {
+          "code": "FIELD_CUSTOM_VALIDATION_EXCEPTION",
+          "message": "No se pueden modificar el contrato, el vencimiento capturado, la clave ni la ejecución de origen."
+        }
+      ]
+    },
+    {
+      "id": "inmutabilidad_origen",
+      "method": "PATCH",
+      "status": 400,
+      "expected": "denegado",
+      "pass": false,
+      "errors": [
+        {
+          "code": "INVALID_FIELD",
+          "message": "No such column 'Ejecucion__c' on sobject of type SeguimientoRenovacion__c"
+        }
+      ]
+    },
+    {
+      "id": "pendiente_a_en_curso",
+      "method": "PATCH",
+      "status": 204,
+      "expected": "permitido",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "cierre_sin_nota",
+      "method": "PATCH",
+      "status": 400,
+      "expected": "denegado",
+      "pass": true,
+      "errors": [
+        {
+          "code": "FIELD_CUSTOM_VALIDATION_EXCEPTION",
+          "message": "Para cerrar o descartar se necesita una nota con contenido."
+        }
+      ]
+    },
+    {
+      "id": "cierre_con_nota",
+      "method": "PATCH",
+      "status": 204,
+      "expected": "permitido",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "reapertura_denegada",
+      "method": "PATCH",
+      "status": 400,
+      "expected": "denegado",
+      "pass": true,
+      "errors": [
+        {
+          "code": "FIELD_CUSTOM_VALIDATION_EXCEPTION",
+          "message": "Solo se permite pasar de Pendiente a En curso, Cerrado o Descartado, y de En curso a Cerrado o Descartado."
+        }
+      ]
+    }
+  ],
+  "objectAccess": {
+    "createable": false,
+    "updateable": true,
+    "deletable": false
+  },
+  "fields": [
+    {
+      "name": "OwnerId",
+      "createable": false,
+      "updateable": true
+    },
+    {
+      "name": "ClaveIdentidad__c",
+      "createable": false,
+      "updateable": true
+    },
+    {
+      "name": "Estado__c",
+      "createable": false,
+      "updateable": true
+    },
+    {
+      "name": "Notas__c",
+      "createable": false,
+      "updateable": true
+    },
+    {
+      "name": "Aplicable__c",
+      "createable": false,
+      "updateable": false
+    }
+  ],
+  "lists": [
+    {
+      "name": "P06_MisPendientes",
+      "label": "Mis pendientes"
+    },
+    {
+      "name": "P06_Pendientes",
+      "label": "Pendientes del proyecto"
+    }
+  ],
+  "timestamp": "2026-11-23T14:20:25.490Z"
+}

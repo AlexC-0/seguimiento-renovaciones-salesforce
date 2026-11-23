@@ -1,0 +1,9 @@
+{
+  "actor": "A",
+  "role": "coordinacion",
+  "identityVerified": true,
+  "operation": "reasignacion desde Lightning",
+  "notifications": false,
+  "ownerIsB": true,
+  "timestamp": "2026-11-23T14:43:13.520Z"
+}

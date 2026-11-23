@@ -44,7 +44,7 @@ La recuperación será manual, con revisión de resultados persistidos, incidenc
 
 ## Criterios de aceptación funcional
 
-Todos los criterios de esta tabla están **pendientes de ejecución en Salesforce**. La revisión estática local no los acredita.
+La tabla define la aceptación integral de V1. Fase 1B comprobó el modelo declarativo con 117 casos; fase 2 comprobó las funciones comerciales de AC-14, las denegaciones ordinarias de AC-15, el informe AC-16 y la conservación de AC-17. El operador, el procesamiento y los criterios que dependen de ellos siguen pendientes. Los resultados y límites de cobertura se detallan en [FASE-2.md](FASE-2.md); no se equiparan con la aceptación completa de V1.
 
 | ID | Escenario | Resultado exigido |
 |---|---|---|

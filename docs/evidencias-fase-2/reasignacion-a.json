@@ -1,0 +1,23 @@
+{
+  "actor": "A",
+  "role": "comercial",
+  "identityVerified": true,
+  "timestamp": "2026-11-23T14:39:44.395Z",
+  "checks": [
+    {
+      "id": "antiguo_responsable_no_lee",
+      "status": 404,
+      "pass": true
+    },
+    {
+      "id": "antiguo_responsable_no_edita",
+      "status": 400,
+      "pass": true
+    },
+    {
+      "id": "resto_seguimientos_propios_accesible",
+      "status": 200,
+      "pass": true
+    }
+  ]
+}

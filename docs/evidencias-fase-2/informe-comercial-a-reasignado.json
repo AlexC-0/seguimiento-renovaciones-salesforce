@@ -1,0 +1,69 @@
+{
+  "actor": "A",
+  "stage": "comercial-a-reasignado",
+  "identityVerified": true,
+  "timestamp": "2026-11-23T14:39:50.925Z",
+  "reportName": "Seguimientos de renovación pendientes",
+  "reportTotal": 3,
+  "queryTotal": 3,
+  "sameRecordIds": true,
+  "allData": true,
+  "groupedByOwner": true,
+  "expiryAscendingWithinGroups": true,
+  "rows": [
+    {
+      "id": "a03g700000tJLKPAA4",
+      "name": "SEG-000008",
+      "contract": "CON-000006",
+      "account": "P06-F2-1795443152067 Cuenta A",
+      "capturedExpiry": "2026-11-21",
+      "state": "Pendiente",
+      "days": -2,
+      "applicable": true
+    },
+    {
+      "id": "a03g700000tIytTAAS",
+      "name": "SEG-000007",
+      "contract": "CON-000005",
+      "account": "P06-F2-1795443152067 Cuenta A",
+      "capturedExpiry": "2026-12-03",
+      "state": "En curso",
+      "days": 10,
+      "applicable": true
+    },
+    {
+      "id": "a03g700000tJLU5AAO",
+      "name": "SEG-000015",
+      "contract": "CON-000013",
+      "account": "P06-F2-1795443152067 Cuenta A",
+      "capturedExpiry": "2026-12-11",
+      "state": "Pendiente",
+      "days": 18,
+      "applicable": true
+    }
+  ],
+  "filters": [
+    {
+      "column": "SeguimientoRenovacion__c.Estado__c",
+      "filterType": "fieldValue",
+      "isRunPageEditable": false,
+      "operator": "equals",
+      "value": "Pendiente"
+    },
+    {
+      "column": "SeguimientoRenovacion__c.Estado__c",
+      "filterType": "fieldValue",
+      "isRunPageEditable": false,
+      "operator": "equals",
+      "value": "En curso"
+    },
+    {
+      "column": "SeguimientoRenovacion__c.Aplicable__c",
+      "filterType": "fieldValue",
+      "isRunPageEditable": false,
+      "operator": "equals",
+      "value": "Verdadero"
+    }
+  ],
+  "pass": true
+}

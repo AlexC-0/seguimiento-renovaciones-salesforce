@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>P06_Incidencias</fullName>
+    <columns>NAME</columns>
+    <columns>Ejecucion__c</columns>
+    <columns>Etapa__c</columns>
+    <columns>CodigoError__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>Incidencias del proyecto</label>
+</ListView>

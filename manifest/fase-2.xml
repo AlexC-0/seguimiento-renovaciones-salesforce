@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>P06_Reasignar</members>
+        <name>CustomPermission</name>
+    </types>
+    <types>
+        <members>ContratoComercial__c.ReasignacionAutorizada</members>
+        <members>SeguimientoRenovacion__c.ReasignacionAutorizada</members>
+        <name>ValidationRule</name>
+    </types>
+    <types>
+        <members>P06_Propietarios</members>
+        <members>P06_Comerciales</members>
+        <members>P06_Coordinacion</members>
+        <name>Group</name>
+    </types>
+    <types>
+        <members>P06_Coordinacion</members>
+        <members>P06_Comercial</members>
+        <name>Role</name>
+    </types>
+    <types>
+        <members>ContratoComercial__c</members>
+        <members>SeguimientoRenovacion__c</members>
+        <members>EjecucionRenovacion__c</members>
+        <members>IncidenciaRenovacion__c</members>
+        <name>SharingRules</name>
+    </types>
+    <types>
+        <members>ContratoComercial__c</members>
+        <members>SeguimientoRenovacion__c</members>
+        <members>EjecucionRenovacion__c</members>
+        <members>IncidenciaRenovacion__c</members>
+        <name>CustomTab</name>
+    </types>
+    <types>
+        <members>P06_Renovaciones</members>
+        <name>CustomApplication</name>
+    </types>
+    <types>
+        <members>ContratoComercial__c-P06 Gestión</members>
+        <members>SeguimientoRenovacion__c-P06 Gestión</members>
+        <members>EjecucionRenovacion__c-P06 Gestión</members>
+        <members>IncidenciaRenovacion__c-P06 Gestión</members>
+        <name>Layout</name>
+    </types>
+    <types>
+        <members>ContratoComercial__c.P06_Contratos</members>
+        <members>SeguimientoRenovacion__c.P06_MisPendientes</members>
+        <members>SeguimientoRenovacion__c.P06_Pendientes</members>
+        <members>EjecucionRenovacion__c.P06_Ejecuciones</members>
+        <members>IncidenciaRenovacion__c.P06_Incidencias</members>
+        <name>ListView</name>
+    </types>
+    <types>
+        <members>P06_Comercial</members>
+        <members>P06_Coordinacion</members>
+        <name>PermissionSet</name>
+    </types>
+    <types>
+        <members>P06_BaseComercial</members>
+        <name>Profile</name>
+    </types>
+    <types>
+        <members>P06_Renovaciones</members>
+        <name>ReportFolder</name>
+    </types>
+    <types>
+        <members>P06_Renovaciones/PendientesRenovaciones</members>
+        <name>Report</name>
+    </types>
+    <version>65.0</version>
+</Package>

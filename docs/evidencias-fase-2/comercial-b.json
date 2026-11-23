@@ -1,0 +1,144 @@
+{
+  "actor": "B",
+  "role": "comercial",
+  "identityVerified": true,
+  "cases": [
+    {
+      "id": "lectura_propia",
+      "method": "GET",
+      "status": 200,
+      "expected": "permitido",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "edicion_notas_propia",
+      "method": "PATCH",
+      "status": 204,
+      "expected": "permitido",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "lectura_ajena",
+      "method": "GET",
+      "status": 404,
+      "expected": "denegado",
+      "pass": true,
+      "errors": [
+        {
+          "code": "NOT_FOUND",
+          "message": "The requested resource does not exist"
+        }
+      ]
+    },
+    {
+      "id": "edicion_ajena",
+      "method": "PATCH",
+      "status": 400,
+      "expected": "denegado",
+      "pass": true,
+      "errors": [
+        {
+          "code": "INSUFFICIENT_ACCESS_OR_READONLY",
+          "message": "insufficient access rights on object id"
+        }
+      ]
+    },
+    {
+      "id": "contrato_solo_lectura",
+      "method": "PATCH",
+      "status": 400,
+      "expected": "denegado",
+      "pass": true,
+      "errors": [
+        {
+          "code": "CANNOT_INSERT_UPDATE_ACTIVATE_ENTITY",
+          "message": "entity type cannot be updated: Contrato comercial"
+        }
+      ]
+    },
+    {
+      "id": "ejecucion_denegada",
+      "method": "GET",
+      "status": 404,
+      "expected": "denegado",
+      "pass": true,
+      "errors": [
+        {
+          "code": "NOT_FOUND",
+          "message": "The requested resource does not exist"
+        }
+      ]
+    },
+    {
+      "id": "incidencia_denegada",
+      "method": "GET",
+      "status": 404,
+      "expected": "denegado",
+      "pass": true,
+      "errors": [
+        {
+          "code": "NOT_FOUND",
+          "message": "The requested resource does not exist"
+        }
+      ]
+    },
+    {
+      "id": "reasignacion_denegada",
+      "method": "PATCH",
+      "status": 400,
+      "expected": "denegado",
+      "pass": true,
+      "errors": [
+        {
+          "code": "FIELD_CUSTOM_VALIDATION_EXCEPTION",
+          "message": "Solo coordinación puede cambiar el responsable del registro."
+        }
+      ]
+    }
+  ],
+  "objectAccess": {
+    "createable": false,
+    "updateable": true,
+    "deletable": false
+  },
+  "fields": [
+    {
+      "name": "OwnerId",
+      "createable": false,
+      "updateable": true
+    },
+    {
+      "name": "ClaveIdentidad__c",
+      "createable": false,
+      "updateable": true
+    },
+    {
+      "name": "Estado__c",
+      "createable": false,
+      "updateable": true
+    },
+    {
+      "name": "Notas__c",
+      "createable": false,
+      "updateable": true
+    },
+    {
+      "name": "Aplicable__c",
+      "createable": false,
+      "updateable": false
+    }
+  ],
+  "lists": [
+    {
+      "name": "P06_MisPendientes",
+      "label": "Mis pendientes"
+    },
+    {
+      "name": "P06_Pendientes",
+      "label": "Pendientes del proyecto"
+    }
+  ],
+  "timestamp": "2026-11-23T14:30:54.104Z"
+}

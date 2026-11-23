@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Gestión comercial y seguimiento de renovaciones de contratos.</description>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <label>Renovaciones de contratos</label>
+    <navType>Standard</navType>
+    <tabs>ContratoComercial__c</tabs>
+    <tabs>SeguimientoRenovacion__c</tabs>
+    <tabs>EjecucionRenovacion__c</tabs>
+    <tabs>IncidenciaRenovacion__c</tabs>
+    <tabs>standard-report</tabs>
+    <uiType>Lightning</uiType>
+</CustomApplication>

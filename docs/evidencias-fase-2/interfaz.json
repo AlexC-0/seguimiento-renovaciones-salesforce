@@ -1,0 +1,43 @@
+{
+  "timestamp": "2026-11-23T14:46:26.909Z",
+  "checks": [
+    {
+      "id": "nota_lightning_comercial",
+      "actor": "A",
+      "role": "comercial",
+      "pass": true
+    },
+    {
+      "id": "reasignacion_lightning_comercial_denegada",
+      "actor": "A",
+      "role": "comercial",
+      "pass": true
+    },
+    {
+      "id": "reasignacion_classic_directa_denegada",
+      "actor": "A",
+      "role": "comercial",
+      "pass": true
+    },
+    {
+      "id": "reasignacion_lightning_coordinacion_permitida",
+      "actor": "A",
+      "role": "coordinacion",
+      "pass": true
+    }
+  ],
+  "report": {
+    "actor": "A",
+    "role": "comercial",
+    "title": "Seguimientos de renovación pendientes",
+    "total": 4,
+    "overdueDays": -2,
+    "verifiedInUi": true
+  },
+  "lists": {
+    "name": "Mis pendientes",
+    "visibleToBothCommercials": true,
+    "massOwnerActionObserved": false
+  },
+  "method": "Interaccion con formularios estandar Lightning y Classic en Chrome habitual; lectura API posterior confirma notas y propietario. No equivale a una auditoria exhaustiva de todas las rutas de plataforma."
+}

@@ -1,0 +1,41 @@
+{
+  "fechaUtc": "2026-11-23T14:54:27.189Z",
+  "xml": {
+    "archivos": 94,
+    "bienFormados": 94,
+    "namespaceCorrecto": 94
+  },
+  "manifiesto": {
+    "miembros": 31,
+    "archivosEncontrados": 31
+  },
+  "scripts": {
+    "archivos": 14,
+    "sintaxisCorrecta": 14
+  },
+  "json": {
+    "archivosAntesDeEstaActa": 26,
+    "legibles": 26
+  },
+  "enlacesRelativos": {
+    "comprobados": 39,
+    "rotos": 0
+  },
+  "espaciosFinales": {
+    "errores": 0
+  },
+  "revision": {
+    "archivosAntesDeEstaActa": 83,
+    "atribucionesNoAdmitidas": 0,
+    "identidadesPrivadas": 0,
+    "secretosDetectados": 0,
+    "urlsDeInstancia": 0
+  },
+  "git": {
+    "rama": "main",
+    "head": "f779561036541b29e03fbf8f41e851c49bbea7c9",
+    "indiceVacio": true,
+    "estadoPrivadoExcluido": true
+  },
+  "alcance": "Comprobaciones locales; no sustituyen los despliegues ni las pruebas funcionales del destino."
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>P06_AccesoCoordinacion</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>P06 Acceso de coordinación</label>
+        <sharedFrom><group>P06_Propietarios</group></sharedFrom>
+        <sharedTo><group>P06_Coordinacion</group></sharedTo>
+    </sharingOwnerRules>
+</SharingRules>

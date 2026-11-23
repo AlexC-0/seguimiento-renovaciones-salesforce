@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>P06_Ejecuciones</fullName>
+    <columns>NAME</columns>
+    <columns>FechaCorte__c</columns>
+    <columns>Estado__c</columns>
+    <columns>Inicio__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>Ejecuciones del proyecto</label>
+</ListView>

@@ -1,0 +1,276 @@
+{
+  "fase": "2",
+  "estado": "completada",
+  "fechaUtc": "2026-11-23T14:52:11.983Z",
+  "referenciaBase": "f779561036541b29e03fbf8f41e851c49bbea7c9",
+  "destino": {
+    "alias": "p06-renovaciones-dev",
+    "tipo": "Developer Edition",
+    "api": "65.0",
+    "identidadContrastadaConFase1B": true
+  },
+  "metadatos": {
+    "componentesExplicitos": 31,
+    "componentesDesplieguePrincipal": 35,
+    "objetos": 4,
+    "campos": 35,
+    "validaciones": 21,
+    "cambiosPosterioresAlPaquetePrincipal": [
+      "force-app/main/default/permissionsets/P06_Comercial.permissionset-meta.xml",
+      "force-app/main/default/permissionsets/P06_Coordinacion.permissionset-meta.xml",
+      "force-app/main/default/profiles/P06_BaseComercial.profile-meta.xml"
+    ],
+    "ajustesIncrementalesValidadosYDesplegados": true
+  },
+  "despliegues": [
+    {
+      "tipo": "validacion-inicial",
+      "id": "0Afg700000KyzzaCAB",
+      "status": "Failed",
+      "done": true,
+      "success": false,
+      "checkOnly": true,
+      "numberComponentsTotal": 35,
+      "numberComponentsDeployed": 29,
+      "numberComponentErrors": 6
+    },
+    {
+      "tipo": "validacion-inicial",
+      "id": "0Afg700000KyniJCAR",
+      "status": "Failed",
+      "done": true,
+      "success": false,
+      "checkOnly": true,
+      "numberComponentsTotal": 35,
+      "numberComponentsDeployed": 31,
+      "numberComponentErrors": 4
+    },
+    {
+      "tipo": "validacion-inicial",
+      "id": "0Afg700000KzDw8CAF",
+      "status": "Failed",
+      "done": true,
+      "success": false,
+      "checkOnly": true,
+      "numberComponentsTotal": 35,
+      "numberComponentsDeployed": 31,
+      "numberComponentErrors": 4
+    },
+    {
+      "tipo": "validacion-principal",
+      "id": "0Afg700000KyM3nCAF",
+      "status": "Succeeded",
+      "done": true,
+      "success": true,
+      "checkOnly": true,
+      "numberComponentsTotal": 35,
+      "numberComponentsDeployed": 35,
+      "numberComponentErrors": 0
+    },
+    {
+      "tipo": "despliegue-principal",
+      "id": "0Afg700000KzRFuCAN",
+      "status": "Succeeded",
+      "done": true,
+      "success": true,
+      "checkOnly": false,
+      "numberComponentsTotal": 35,
+      "numberComponentsDeployed": 35,
+      "numberComponentErrors": 0
+    },
+    {
+      "tipo": "validacion-perfil",
+      "id": "0Afg700000KzYNpCAN",
+      "status": "Succeeded",
+      "done": true,
+      "success": true,
+      "checkOnly": true
+    },
+    {
+      "tipo": "despliegue-perfil",
+      "id": "0Afg700000Kz9MECAZ",
+      "status": "Succeeded",
+      "done": true,
+      "success": true,
+      "checkOnly": false
+    },
+    {
+      "tipo": "validacion-navegacion",
+      "id": "0Afg700000KzeUrCAJ",
+      "status": "Succeeded",
+      "done": true,
+      "success": true,
+      "checkOnly": true,
+      "numberComponentsTotal": 2,
+      "numberComponentsDeployed": 2,
+      "numberComponentErrors": 0
+    },
+    {
+      "tipo": "despliegue-navegacion",
+      "id": "0Afg700000KzeoDCAR",
+      "status": "Succeeded",
+      "done": true,
+      "success": true,
+      "checkOnly": false,
+      "numberComponentsTotal": 2,
+      "numberComponentsDeployed": 2,
+      "numberComponentErrors": 0
+    }
+  ],
+  "comprobacionesApi": {
+    "grupos": [
+      {
+        "nombre": "Comercial A",
+        "casos": 19,
+        "correctos": 19,
+        "evidencia": "evidencias-fase-2/comercial-a.json"
+      },
+      {
+        "nombre": "Comercial B",
+        "casos": 8,
+        "correctos": 8,
+        "evidencia": "evidencias-fase-2/comercial-b.json"
+      },
+      {
+        "nombre": "Coordinación",
+        "casos": 28,
+        "correctos": 28,
+        "evidencia": "evidencias-fase-2/coordinacion.json"
+      },
+      {
+        "nombre": "Antiguo responsable",
+        "casos": 3,
+        "correctos": 3,
+        "evidencia": "evidencias-fase-2/reasignacion-a.json"
+      },
+      {
+        "nombre": "Nuevo responsable y contrato",
+        "casos": 7,
+        "correctos": 7,
+        "evidencia": "evidencias-fase-2/reasignacion-b.json"
+      },
+      {
+        "nombre": "Recepción de transferencia Lightning",
+        "casos": 3,
+        "correctos": 3,
+        "evidencia": "evidencias-fase-2/reasignacion-ui-b.json"
+      },
+      {
+        "nombre": "Transferencia múltiple",
+        "casos": 2,
+        "correctos": 2,
+        "evidencia": "evidencias-fase-2/transferencia-multiple-a.json"
+      }
+    ],
+    "total": 70,
+    "correctas": 70,
+    "creacionContratoAdicional": {
+      "httpStatus": 201,
+      "evidenciaInventario": "contrato_coordinacion"
+    }
+  },
+  "interfaz": {
+    "casos": 4,
+    "correctos": 4,
+    "evidencia": "evidencias-fase-2/interfaz.json"
+  },
+  "informes": [
+    {
+      "etapa": "comercial-a-inicial",
+      "actor": "A",
+      "total": 4,
+      "coincideConsulta": true,
+      "correcto": true,
+      "evidencia": "evidencias-fase-2/informe-comercial-a-inicial.json"
+    },
+    {
+      "etapa": "comercial-a-reasignado",
+      "actor": "A",
+      "total": 3,
+      "coincideConsulta": true,
+      "correcto": true,
+      "evidencia": "evidencias-fase-2/informe-comercial-a-reasignado.json"
+    },
+    {
+      "etapa": "comercial-b-final",
+      "actor": "B",
+      "total": 4,
+      "coincideConsulta": true,
+      "correcto": true,
+      "evidencia": "evidencias-fase-2/informe-comercial-b-final.json"
+    },
+    {
+      "etapa": "comercial-b-reasignado",
+      "actor": "B",
+      "total": 3,
+      "coincideConsulta": true,
+      "correcto": true,
+      "evidencia": "evidencias-fase-2/informe-comercial-b-reasignado.json"
+    },
+    {
+      "etapa": "comercial-b",
+      "actor": "B",
+      "total": 2,
+      "coincideConsulta": true,
+      "correcto": true,
+      "evidencia": "evidencias-fase-2/informe-comercial-b.json"
+    },
+    {
+      "etapa": "coordinacion-final",
+      "actor": "A",
+      "total": 7,
+      "coincideConsulta": true,
+      "correcto": true,
+      "evidencia": "evidencias-fase-2/informe-coordinacion-final.json"
+    },
+    {
+      "etapa": "coordinacion-inicial",
+      "actor": "A",
+      "total": 7,
+      "coincideConsulta": true,
+      "correcto": true,
+      "evidencia": "evidencias-fase-2/informe-coordinacion-inicial.json"
+    }
+  ],
+  "conservacion": {
+    "historicos": 19,
+    "historicosSinCambios": true,
+    "fixturesFase2": 31,
+    "archivosPreviosSinCambios": 74,
+    "evidencia": "evidencias-fase-2/conservacion.json"
+  },
+  "restauracion": {
+    "timestamp": "2026-11-23T14:45:35.137Z",
+    "initial": false,
+    "temporarilyEnabled": true,
+    "final": false,
+    "verifiedByReadback": true,
+    "browserBridgeStopped": true,
+    "loopbackListenerAbsent": true
+  },
+  "configuracionFinal": {
+    "A": "coordinacion",
+    "B": "comercial",
+    "evidencia": "evidencias-fase-2/acceso-final.json",
+    "permisoTecnicoExclusivo": true
+  },
+  "limites": [
+    "Compartición de contratos manual, comprobada por REST; botón Compartir de Lightning no verificado.",
+    "No se auditó toda ruta de transferencia o concesión de acceso de la plataforma.",
+    "Account conserva ReadWrite interno; no se acredita aislamiento de cuentas estándar.",
+    "No hay procesamiento Batch, servicio de lanzamiento, generación canónica ni reconciliación.",
+    "No se ejecutaron pruebas Apex automatizadas ni se repitieron las 117 comprobaciones históricas."
+  ],
+  "revisionEditorial": {
+    "archivosAfectados": true,
+    "metadatosYTextosObservados": true,
+    "sinAtribucionesAutomaticas": true,
+    "noRevisado": [
+      "otros proyectos u organizaciones",
+      "historial Git completo",
+      "todas las pantallas estándar",
+      "superficies externas de publicación"
+    ]
+  },
+  "revisionLocal": "evidencias-fase-2/revision-local.json"
+}

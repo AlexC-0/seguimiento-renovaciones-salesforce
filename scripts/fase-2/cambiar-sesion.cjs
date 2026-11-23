@@ -1,0 +1,14 @@
+'use strict';
+const {run,reportError}=require('./navegador.cjs');const {readPrivate,connectP06}=require('./salesforce.cjs');
+(async()=>{const actor=process.argv[2],users=readPrivate('usuarios.json').users,technical=readPrivate('configuracion.json').technicalUserId;const target=actor==='tecnica'?technical:users.find(u=>u.actor===actor)?.id;if(!target)throw Error('Actor no permitido');
+const c=await connectP06('p06-renovaciones-dev');const adminLoginUrl=c.instanceUrl+'/secur/frontdoor.jsp?sid='+encodeURIComponent(c.accessToken)+'&retURL=%2Flightning%2Fpage%2Fhome';
+const r=await run(async(page,ctx)=>{
+ async function navigate(url){for(let i=0;i<3;i++){try{await page.goto(url,{waitUntil:'domcontentloaded'});return}catch(e){if(!String(e.message).includes('ERR_ABORTED')||i===2)throw e;await page.waitForTimeout(500);}}}
+ async function who(){const cs=await page.context().cookies([ctx.instanceUrl,'https://'+ctx.allowed[1]]);const s=cs.find(c=>c.name==='sid'&&c.domain===new URL(ctx.instanceUrl).hostname)||cs.find(c=>c.name==='sid');if(!s)return null;const r=await page.request.get(ctx.instanceUrl+'/services/oauth2/userinfo',{headers:{Authorization:'Bearer '+s.value}});if(r.status()!==200)return null;try{return (await r.json()).user_id}catch{return null}}
+ async function untilActor(id){for(let i=0;i<35;i++){if(await who()===id)return;await page.waitForTimeout(300);}throw Error('La sesion no alcanzo la identidad esperada');}
+ let current=await who();if(current===ctx.target)return {actor:ctx.actor,identityVerified:true,alreadyActive:true};
+ if(current&&current!==ctx.technical){if(!ctx.allowedUsers.includes(current))throw Error('Sesion fuera del inventario P06');await navigate('https://'+ctx.allowed[1]+'/lightning/page/home');const logout=page.getByRole('link').filter({hasText:/Cerrar sesi/}).first();await logout.waitFor({state:'attached',timeout:15000});await logout.evaluate(e=>e.click());for(let i=0;i<35;i++){current=await who();if(!current||current===ctx.technical)break;await page.waitForTimeout(300);}}
+ if(await who()!==ctx.technical){await navigate(ctx.adminLoginUrl);await untilActor(ctx.technical);}
+ if(ctx.target!==ctx.technical){await navigate('https://'+ctx.allowed[1]+'/lightning/setup/ManageUsers/page?address='+encodeURIComponent('/'+ctx.target+'?noredirect=1&isUserEntityOverride=1&isdtp=p1'));let clicked=false;for(let i=0;i<45&&!clicked;i++){for(const f of page.frames()){if(!ctx.allowed.includes(new URL(f.url()).hostname))continue;const b=f.locator('input[name=login]').first();if(await b.count()){await b.evaluate(e=>e.click());clicked=true;break;}}if(!clicked)await page.waitForTimeout(300);}if(!clicked)throw Error('No aparece Login As');await untilActor(ctx.target);}
+ return {actor:ctx.actor,identityVerified:true};
+},{actor,target,technical,adminLoginUrl,allowedUsers:users.map(u=>u.id)});console.log(JSON.stringify(r));})().catch(reportError);

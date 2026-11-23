@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <applicationVisibilities><application>P06_Renovaciones</application><visible>true</visible></applicationVisibilities>
+    <description>Consulta de contratos y actualización comercial de seguimientos asignados. Sin creación, eliminación ni reasignación.</description>
+    <fieldPermissions><editable>true</editable><field>SeguimientoRenovacion__c.Notas__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>SeguimientoRenovacion__c.Aplicable__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>SeguimientoRenovacion__c.DiasRestantes__c</field><readable>true</readable></fieldPermissions>
+    <label>P06 Comercial</label>
+    <objectPermissions>
+    <allowCreate>false</allowCreate>
+    <allowDelete>false</allowDelete>
+    <allowEdit>false</allowEdit>
+    <allowRead>true</allowRead>
+    <modifyAllRecords>false</modifyAllRecords>
+    <object>Account</object>
+    <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+    <allowCreate>false</allowCreate>
+    <allowDelete>false</allowDelete>
+    <allowEdit>false</allowEdit>
+    <allowRead>true</allowRead>
+    <modifyAllRecords>false</modifyAllRecords>
+    <object>ContratoComercial__c</object>
+    <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+    <allowCreate>false</allowCreate>
+    <allowDelete>false</allowDelete>
+    <allowEdit>true</allowEdit>
+    <allowRead>true</allowRead>
+    <modifyAllRecords>false</modifyAllRecords>
+    <object>SeguimientoRenovacion__c</object>
+    <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
+    <tabSettings><tab>ContratoComercial__c</tab><visibility>Visible</visibility></tabSettings>
+    <tabSettings><tab>SeguimientoRenovacion__c</tab><visibility>Visible</visibility></tabSettings>
+    <tabSettings><tab>standard-report</tab><visibility>Visible</visibility></tabSettings>
+    <userPermissions><enabled>true</enabled><name>ApiEnabled</name></userPermissions>
+    <userPermissions><enabled>true</enabled><name>LightningExperienceUser</name></userPermissions>
+    <userPermissions><enabled>true</enabled><name>PreventClassicExperience</name></userPermissions>
+    <userPermissions><enabled>true</enabled><name>RunReports</name></userPermissions>
+</PermissionSet>

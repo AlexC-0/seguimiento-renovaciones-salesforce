@@ -1,0 +1,79 @@
+{
+  "actor": "B",
+  "stage": "comercial-b-final",
+  "identityVerified": true,
+  "timestamp": "2026-11-23T14:44:55.920Z",
+  "reportName": "Seguimientos de renovación pendientes",
+  "reportTotal": 4,
+  "queryTotal": 4,
+  "sameRecordIds": true,
+  "allData": true,
+  "groupedByOwner": true,
+  "expiryAscendingWithinGroups": true,
+  "rows": [
+    {
+      "id": "a03g700000tHw4tAAC",
+      "name": "SEG-000013",
+      "contract": "CON-000011",
+      "account": "P06-F2-1795443152067 Cuenta B",
+      "capturedExpiry": "2026-12-01",
+      "state": "Pendiente",
+      "days": 8,
+      "applicable": true
+    },
+    {
+      "id": "a03g700000tIEbOAAW",
+      "name": "SEG-000014",
+      "contract": "CON-000012",
+      "account": "P06-F2-1795443152067 Cuenta B",
+      "capturedExpiry": "2026-12-05",
+      "state": "En curso",
+      "days": 12,
+      "applicable": true
+    },
+    {
+      "id": "a03g700000tJLU5AAO",
+      "name": "SEG-000015",
+      "contract": "CON-000013",
+      "account": "P06-F2-1795443152067 Cuenta A",
+      "capturedExpiry": "2026-12-11",
+      "state": "Pendiente",
+      "days": 18,
+      "applicable": true
+    },
+    {
+      "id": "a03g700000tJLYvAAO",
+      "name": "SEG-000016",
+      "contract": "CON-000014",
+      "account": "P06-F2-1795443152067 Cuenta A",
+      "capturedExpiry": "2026-12-12",
+      "state": "Pendiente",
+      "days": 19,
+      "applicable": true
+    }
+  ],
+  "filters": [
+    {
+      "column": "SeguimientoRenovacion__c.Estado__c",
+      "filterType": "fieldValue",
+      "isRunPageEditable": false,
+      "operator": "equals",
+      "value": "Pendiente"
+    },
+    {
+      "column": "SeguimientoRenovacion__c.Estado__c",
+      "filterType": "fieldValue",
+      "isRunPageEditable": false,
+      "operator": "equals",
+      "value": "En curso"
+    },
+    {
+      "column": "SeguimientoRenovacion__c.Aplicable__c",
+      "filterType": "fieldValue",
+      "isRunPageEditable": false,
+      "operator": "equals",
+      "value": "Verdadero"
+    }
+  ],
+  "pass": true
+}

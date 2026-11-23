@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns><field>CUST_NAME</field></columns>
+    <columns><field>FK_NAME</field></columns>
+    <columns><field>FK_$ContratoComercial__c.Cuenta__c</field></columns>
+    <columns><field>SeguimientoRenovacion__c.FechaVencimientoCapturada__c</field></columns>
+    <columns><field>SeguimientoRenovacion__c.Estado__c</field></columns>
+    <columns><field>SeguimientoRenovacion__c.DiasRestantes__c</field></columns>
+    <description>Pendientes de seguimiento de renovaciones. Pendientes y en curso aplicables, incluidos atrasados, según la visibilidad del usuario.</description>
+    <filter>
+        <booleanFilter>(1 OR 2) AND 3</booleanFilter>
+        <criteriaItems><column>SeguimientoRenovacion__c.Estado__c</column><operator>equals</operator><value>Pendiente</value></criteriaItems>
+        <criteriaItems><column>SeguimientoRenovacion__c.Estado__c</column><operator>equals</operator><value>En curso</value></criteriaItems>
+        <criteriaItems><column>SeguimientoRenovacion__c.Aplicable__c</column><operator>equals</operator><value>True</value></criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown><field>CUST_OWNER_NAME</field><sortOrder>Asc</sortOrder></groupingsDown>
+    <name>Seguimientos de renovación pendientes</name>
+    <reportType>CustomEntity$SeguimientoRenovacion__c@SeguimientoRenovacion__c.Contrato__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>SeguimientoRenovacion__c.FechaVencimientoCapturada__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter><dateColumn>CUST_CREATED_DATE</dateColumn><interval>INTERVAL_CUSTOM</interval></timeFrameFilter>
+</Report>

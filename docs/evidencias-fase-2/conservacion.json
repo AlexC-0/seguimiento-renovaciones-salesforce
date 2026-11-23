@@ -1,0 +1,766 @@
+{
+  "timestamp": "2026-11-23T14:44:41.191Z",
+  "historicos": {
+    "esperados": 19,
+    "conservados": 19,
+    "sinCambiosPersistidos": true,
+    "camposDeActividadExcluidos": [
+      "LastViewedDate",
+      "LastReferencedDate"
+    ],
+    "registros": [
+      {
+        "objeto": "Account",
+        "id": "001g700001LxvUqAAJ",
+        "conservado": true,
+        "camposModificados": []
+      },
+      {
+        "objeto": "ContratoComercial__c",
+        "id": "a00g700002b45UUAAY",
+        "conservado": true,
+        "camposModificados": []
+      },
+      {
+        "objeto": "Account",
+        "id": "001g700001LwEu5AAF",
+        "conservado": true,
+        "camposModificados": []
+      },
+      {
+        "objeto": "ContratoComercial__c",
+        "id": "a00g700002b50XJAAY",
+        "conservado": true,
+        "camposModificados": []
+      },
+      {
+        "objeto": "ContratoComercial__c",
+        "id": "a00g700002b50XKAAY",
+        "conservado": true,
+        "camposModificados": []
+      },
+      {
+        "objeto": "EjecucionRenovacion__c",
+        "id": "a01g700001LwEu6AAF",
+        "conservado": true,
+        "camposModificados": []
+      },
+      {
+        "objeto": "EjecucionRenovacion__c",
+        "id": "a01g700001LwEu7AAF",
+        "conservado": true,
+        "camposModificados": []
+      },
+      {
+        "objeto": "SeguimientoRenovacion__c",
+        "id": "a03g700000tIYOYAA4",
+        "conservado": true,
+        "camposModificados": []
+      },
+      {
+        "objeto": "SeguimientoRenovacion__c",
+        "id": "a03g700000tIYOZAA4",
+        "conservado": true,
+        "camposModificados": []
+      },
+      {
+        "objeto": "SeguimientoRenovacion__c",
+        "id": "a03g700000tIYOaAAO",
+        "conservado": true,
+        "camposModificados": []
+      },
+      {
+        "objeto": "SeguimientoRenovacion__c",
+        "id": "a03g700000tIYObAAO",
+        "conservado": true,
+        "camposModificados": []
+      },
+      {
+        "objeto": "SeguimientoRenovacion__c",
+        "id": "a03g700000tIYOdAAO",
+        "conservado": true,
+        "camposModificados": []
+      },
+      {
+        "objeto": "EjecucionRenovacion__c",
+        "id": "a01g700001LwKQ1AAN",
+        "conservado": true,
+        "camposModificados": []
+      },
+      {
+        "objeto": "Account",
+        "id": "001g700001LyNmjAAF",
+        "conservado": true,
+        "camposModificados": []
+      },
+      {
+        "objeto": "ContratoComercial__c",
+        "id": "a00g700002b50vVAAQ",
+        "conservado": true,
+        "camposModificados": []
+      },
+      {
+        "objeto": "EjecucionRenovacion__c",
+        "id": "a01g700001LyNmkAAF",
+        "conservado": true,
+        "camposModificados": []
+      },
+      {
+        "objeto": "EjecucionRenovacion__c",
+        "id": "a01g700001LyNmlAAF",
+        "conservado": true,
+        "camposModificados": []
+      },
+      {
+        "objeto": "IncidenciaRenovacion__c",
+        "id": "a02g700000F1C05AAF",
+        "conservado": true,
+        "camposModificados": []
+      },
+      {
+        "objeto": "IncidenciaRenovacion__c",
+        "id": "a02g700000F1C06AAF",
+        "conservado": true,
+        "camposModificados": []
+      }
+    ]
+  },
+  "fase2": {
+    "total": 31,
+    "registros": [
+      {
+        "objeto": "Account",
+        "id": "001g700001LzBDFAA3",
+        "funcion": "cuenta_A",
+        "conservado": true
+      },
+      {
+        "objeto": "Account",
+        "id": "001g700001Ly6SiAAJ",
+        "funcion": "cuenta_B",
+        "conservado": true
+      },
+      {
+        "objeto": "EjecucionRenovacion__c",
+        "id": "a01g700001LyA7yAAF",
+        "funcion": "ejecucion",
+        "conservado": true
+      },
+      {
+        "objeto": "ContratoComercial__c",
+        "id": "a00g700002b5b2DAAQ",
+        "funcion": "contrato_a_pendiente",
+        "conservado": true
+      },
+      {
+        "objeto": "SeguimientoRenovacion__c",
+        "id": "a03g700000tJLInAAO",
+        "funcion": "a_pendiente",
+        "conservado": true
+      },
+      {
+        "objeto": "ContratoComercial__c",
+        "id": "a00g700002b5b3pAAA",
+        "funcion": "contrato_a_en_curso",
+        "conservado": true
+      },
+      {
+        "objeto": "SeguimientoRenovacion__c",
+        "id": "a03g700000tIytTAAS",
+        "funcion": "a_en_curso",
+        "conservado": true
+      },
+      {
+        "objeto": "ContratoComercial__c",
+        "id": "a00g700002b5A6sAAE",
+        "funcion": "contrato_a_atrasado",
+        "conservado": true
+      },
+      {
+        "objeto": "SeguimientoRenovacion__c",
+        "id": "a03g700000tJLKPAA4",
+        "funcion": "a_atrasado",
+        "conservado": true
+      },
+      {
+        "objeto": "ContratoComercial__c",
+        "id": "a00g700002b3POYAA2",
+        "funcion": "contrato_a_cerrado",
+        "conservado": true
+      },
+      {
+        "objeto": "SeguimientoRenovacion__c",
+        "id": "a03g700000tJLM1AAO",
+        "funcion": "a_cerrado",
+        "conservado": true
+      },
+      {
+        "objeto": "ContratoComercial__c",
+        "id": "a00g700002b5b73AAA",
+        "funcion": "contrato_a_descartado",
+        "conservado": true
+      },
+      {
+        "objeto": "SeguimientoRenovacion__c",
+        "id": "a03g700000tJL9MAAW",
+        "funcion": "a_descartado",
+        "conservado": true
+      },
+      {
+        "objeto": "ContratoComercial__c",
+        "id": "a00g700002b3V33AAE",
+        "funcion": "contrato_a_inactivo",
+        "conservado": true
+      },
+      {
+        "objeto": "SeguimientoRenovacion__c",
+        "id": "a03g700000tIAyyAAG",
+        "funcion": "a_inactivo",
+        "conservado": true
+      },
+      {
+        "objeto": "ContratoComercial__c",
+        "id": "a00g700002b5bBtAAI",
+        "funcion": "contrato_a_fecha_distinta",
+        "conservado": true
+      },
+      {
+        "objeto": "SeguimientoRenovacion__c",
+        "id": "a03g700000tJLNdAAO",
+        "funcion": "a_fecha_distinta",
+        "conservado": true
+      },
+      {
+        "objeto": "ContratoComercial__c",
+        "id": "a00g700002b3iXuAAI",
+        "funcion": "contrato_b_pendiente",
+        "conservado": true
+      },
+      {
+        "objeto": "SeguimientoRenovacion__c",
+        "id": "a03g700000tHw4tAAC",
+        "funcion": "b_pendiente",
+        "conservado": true
+      },
+      {
+        "objeto": "ContratoComercial__c",
+        "id": "a00g700002b5GXGAA2",
+        "funcion": "contrato_b_en_curso",
+        "conservado": true
+      },
+      {
+        "objeto": "SeguimientoRenovacion__c",
+        "id": "a03g700000tIEbOAAW",
+        "funcion": "b_en_curso",
+        "conservado": true
+      },
+      {
+        "objeto": "ContratoComercial__c",
+        "id": "a00g700002b5bDVAAY",
+        "funcion": "contrato_cambio_contrato",
+        "conservado": true
+      },
+      {
+        "objeto": "SeguimientoRenovacion__c",
+        "id": "a03g700000tJLU5AAO",
+        "funcion": "cambio_contrato",
+        "conservado": true
+      },
+      {
+        "objeto": "ContratoComercial__c",
+        "id": "a00g700002b59M7AAI",
+        "funcion": "contrato_reasignacion",
+        "conservado": true
+      },
+      {
+        "objeto": "SeguimientoRenovacion__c",
+        "id": "a03g700000tJLYvAAO",
+        "funcion": "reasignacion",
+        "conservado": true
+      },
+      {
+        "objeto": "ContratoComercial__c",
+        "id": "a00g700002b5SleAAE",
+        "funcion": "contrato_borrado_desechable",
+        "conservado": true
+      },
+      {
+        "objeto": "SeguimientoRenovacion__c",
+        "id": "a03g700000tJLc9AAG",
+        "funcion": "borrado_desechable",
+        "conservado": true
+      },
+      {
+        "objeto": "IncidenciaRenovacion__c",
+        "id": "a02g700000F1KLpAAN",
+        "funcion": "incidencia",
+        "conservado": true
+      },
+      {
+        "objeto": "EjecucionRenovacion__c",
+        "id": "a01g700001Lw2svAAB",
+        "funcion": "ejecucion_desechable",
+        "conservado": true
+      },
+      {
+        "objeto": "IncidenciaRenovacion__c",
+        "id": "a02g700000F1Ny1AAF",
+        "funcion": "incidencia_desechable",
+        "conservado": true
+      },
+      {
+        "objeto": "ContratoComercial__c",
+        "id": "a00g700002b5sCjAAI",
+        "funcion": "contrato_coordinacion",
+        "conservado": true
+      }
+    ]
+  },
+  "archivosAnteriores": [
+    {
+      "archivo": "docs/evidencias-fase-1b.json",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "2b429be9dcb3f60426131c67d90bea246c33a7b1dc0c232af2870ba1c8029ee5"
+    },
+    {
+      "archivo": "docs/evidencias-fase-1b/P06-1B-20261123T132719-b12376f4-contratos.json",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": true,
+      "sha256ContenidoLF": "1d186171d3e4b0afed4e8ba3d34f448443a115861e18e8935e1274ce652e23eb"
+    },
+    {
+      "archivo": "docs/evidencias-fase-1b/P06-1B-20261123T132811-bff184d2-seguimientos.json",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": true,
+      "sha256ContenidoLF": "08712d72e0ddd8a32c868cf4293e206cfe711190dd6672411a5bc1ec9e9c7762"
+    },
+    {
+      "archivo": "docs/evidencias-fase-1b/P06-1B-20261123T133354-b17fd935-seguimientos.json",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": true,
+      "sha256ContenidoLF": "2aa06266ea12e7dba493c5d60680c32689be7e5ef2535c4550d4a8021fbe91de"
+    },
+    {
+      "archivo": "docs/evidencias-fase-1b/P06-1B-20261123T133432-f8cc7f15-ejecuciones.json",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": true,
+      "sha256ContenidoLF": "f72dfe232ebbc7b6ac90bf22d18e0538a02cc8b946bb51020c81ddbf0cb14b3a"
+    },
+    {
+      "archivo": "docs/evidencias-fase-1b/P06-1B-20261123T133507-a51f9870-incidencias.json",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": true,
+      "sha256ContenidoLF": "62b0cc028197a591abc33fceef1fa9ad0b4da4b263d11b5371f053bc43af7c9e"
+    },
+    {
+      "archivo": "docs/evidencias-fase-1b/conservacion.json",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": true,
+      "sha256ContenidoLF": "441b2f8ed775f3e66bea0a1f5da0ec2aa92668e061d291a808bfa8a78dd7e697"
+    },
+    {
+      "archivo": "force-app/main/default/objects/ContratoComercial__c/ContratoComercial__c.object-meta.xml",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "d7fd7cb058375a1a5b04e0d7a2b56a1618ecbf1cdedcb6e5834a90719b05061f"
+    },
+    {
+      "archivo": "force-app/main/default/objects/ContratoComercial__c/fields/Cuenta__c.field-meta.xml",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "51520540616a25221d8a5217283f0f3e00868affa3a3702e65ea42a41e0c6d53"
+    },
+    {
+      "archivo": "force-app/main/default/objects/ContratoComercial__c/fields/Estado__c.field-meta.xml",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "5ee5f171eac89a61c3104a8b67f3b64b9d72b8cd0e78d0394fed3952924d4b7e"
+    },
+    {
+      "archivo": "force-app/main/default/objects/ContratoComercial__c/fields/FechaInicio__c.field-meta.xml",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "a93cdf982b0fc37ac2b271be2ef6590f951b044059b43d91a4fc39ad541910ee"
+    },
+    {
+      "archivo": "force-app/main/default/objects/ContratoComercial__c/fields/FechaVencimiento__c.field-meta.xml",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "beea1399e41be8cb1796d619f5669b78ae6d0bff370a2a30593bc92ae2c18708"
+    },
+    {
+      "archivo": "force-app/main/default/objects/ContratoComercial__c/validationRules/FechasCoherentes.validationRule-meta.xml",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "5c6fa03abca2809d55b9d24f01c6d251eb5737127f38185f237da2ad684e286c"
+    },
+    {
+      "archivo": "force-app/main/default/objects/ContratoComercial__c/validationRules/ResponsableUsuario.validationRule-meta.xml",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "a27d314999496e5081705241e155b6291ad447480752887428b161a3b6c6c5d6"
+    },
+    {
+      "archivo": "force-app/main/default/objects/EjecucionRenovacion__c/EjecucionRenovacion__c.object-meta.xml",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "40af438465b1576d4b356a709f4758dd56dbf35053ec1e4b7fc8c4ed4a79aca8"
+    },
+    {
+      "archivo": "force-app/main/default/objects/EjecucionRenovacion__c/fields/AsyncApexJobId__c.field-meta.xml",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "266131cddac4378f580ebb1292e155176cbf04b3ec459e49d72a8e8bb16ba7d8"
+    },
+    {
+      "archivo": "force-app/main/default/objects/EjecucionRenovacion__c/fields/Creados__c.field-meta.xml",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "47e479ea1fdb66f95af2e36c5715626291222d532ca95105379de9b3e9c76ab3"
+    },
+    {
+      "archivo": "force-app/main/default/objects/EjecucionRenovacion__c/fields/Estado__c.field-meta.xml",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "abac3616a8530398dc2cff012f28d6fca198c2125ac09d4101fb36f93a02bae3"
+    },
+    {
+      "archivo": "force-app/main/default/objects/EjecucionRenovacion__c/fields/Evaluados__c.field-meta.xml",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "968ed10ddd007aa918deca59483cefbaeddee479a9136bb04d49d23f4877fa4d"
+    },
+    {
+      "archivo": "force-app/main/default/objects/EjecucionRenovacion__c/fields/Fallidos__c.field-meta.xml",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "ea71ec8f50d281902a906fdee02f8f7d6a66bb63b69f74972eb24a561ff01721"
+    },
+    {
+      "archivo": "force-app/main/default/objects/EjecucionRenovacion__c/fields/FechaCorte__c.field-meta.xml",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "e512a82de53fc68aa5439dccf3320e675f2f3abdb663ce66cc596f584a083c12"
+    },
+    {
+      "archivo": "force-app/main/default/objects/EjecucionRenovacion__c/fields/FinVentana__c.field-meta.xml",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "e83cba71de5348886869299320081d771cc3c01639a39c49650534f9867313aa"
+    },
+    {
+      "archivo": "force-app/main/default/objects/EjecucionRenovacion__c/fields/Finalizacion__c.field-meta.xml",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "ee2614c9ceeb7cf36dbd24d445d7592d0287ee0a770aa6e270fff2e785f4a050"
+    },
+    {
+      "archivo": "force-app/main/default/objects/EjecucionRenovacion__c/fields/InicioVentana__c.field-meta.xml",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "e3a62453c742041ab219874078182a3bf84d2953ab0a258bf0802e5a3ccd29a8"
+    },
+    {
+      "archivo": "force-app/main/default/objects/EjecucionRenovacion__c/fields/Inicio__c.field-meta.xml",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "b60d24ae95b0f449037ae25bcf397a2d313268e6ff6500b20f2370a3cc945931"
+    },
+    {
+      "archivo": "force-app/main/default/objects/EjecucionRenovacion__c/fields/LotesFallidos__c.field-meta.xml",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "a2838b7865a9d63e3f1c530a3b76673b9acff107a63a48b075d0b93bf7e57e21"
+    },
+    {
+      "archivo": "force-app/main/default/objects/EjecucionRenovacion__c/fields/Omitidos__c.field-meta.xml",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "5d37b030e006743c5c5e8b185bea76a8f6b05045da04c40bb2d65fa17a5cf398"
+    },
+    {
+      "archivo": "force-app/main/default/objects/EjecucionRenovacion__c/fields/RequiereReconciliacion__c.field-meta.xml",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "0d723b8f7e47ac5d8b4b004f6629b562c329a636f24573b78d747864c0b0e6d1"
+    },
+    {
+      "archivo": "force-app/main/default/objects/EjecucionRenovacion__c/fields/Solicitante__c.field-meta.xml",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "b133853228a8882130347f2000fecbd19b47360108dfba19bd8b6c8a1977ede2"
+    },
+    {
+      "archivo": "force-app/main/default/objects/EjecucionRenovacion__c/fields/YaExistentes__c.field-meta.xml",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "f355e190ed7e3b6646faa6250169059722dcb600e932df435292b362e22590d9"
+    },
+    {
+      "archivo": "force-app/main/default/objects/EjecucionRenovacion__c/fields/ZonaHoraria__c.field-meta.xml",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "b046b4bf4eeed7ebda454e3ec0ef7e9d04d6e7dfae43314dc54195d7345ccc59"
+    },
+    {
+      "archivo": "force-app/main/default/objects/EjecucionRenovacion__c/validationRules/CompletadaSinErrores.validationRule-meta.xml",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "4064ee35aca2720450531132bd33604e58ee4ae487539bd2e2b960582e32c4f5"
+    },
+    {
+      "archivo": "force-app/main/default/objects/EjecucionRenovacion__c/validationRules/ContadoresNoNegativos.validationRule-meta.xml",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "5d604b8ae90edccd32e7862141b03e0894fec3c9f7d578d78a964585cab8b6db"
+    },
+    {
+      "archivo": "force-app/main/default/objects/EjecucionRenovacion__c/validationRules/ContextoInmutable.validationRule-meta.xml",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "3709d1969d6a16f850844543d634b354cf8ea689ce8d092e9c01c6c17b75d523"
+    },
+    {
+      "archivo": "force-app/main/default/objects/EjecucionRenovacion__c/validationRules/EstadoInicialEncolada.validationRule-meta.xml",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "3fbf0e28fdc81976cd16241ee3a149ed3fc7ee9d06b0be681369ec4f5e9b198e"
+    },
+    {
+      "archivo": "force-app/main/default/objects/EjecucionRenovacion__c/validationRules/FinalizacionCoherente.validationRule-meta.xml",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "03a68ac18b6d75fb07d9d499c9d8776630d20bef8b7f1db9ef38e5507adc98f3"
+    },
+    {
+      "archivo": "force-app/main/default/objects/EjecucionRenovacion__c/validationRules/FinalizacionSegunEstado.validationRule-meta.xml",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "8b45fbcb91415507be5a1dfc2f6bd13a13603ebbd48ee86020927a120b37ddc4"
+    },
+    {
+      "archivo": "force-app/main/default/objects/EjecucionRenovacion__c/validationRules/JobAsignadoInmutable.validationRule-meta.xml",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "2d72eb095b6eb810470ede5b47e5b2f69da725a67e1c7bd1537436e3eed894ce"
+    },
+    {
+      "archivo": "force-app/main/default/objects/EjecucionRenovacion__c/validationRules/ResultadosConfirmadosCoherentes.validationRule-meta.xml",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "284999fdcc8488421047546e3a3f61670c9210fb93521ff3644eb9950284ff63"
+    },
+    {
+      "archivo": "force-app/main/default/objects/EjecucionRenovacion__c/validationRules/SolicitanteObligatorio.validationRule-meta.xml",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "2e6e24df22c081531a97c34b1b39fd60d37a9cae1bcb136ff35a9cd0b629e338"
+    },
+    {
+      "archivo": "force-app/main/default/objects/EjecucionRenovacion__c/validationRules/VentanaCoherente.validationRule-meta.xml",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "4d25e61237b8bb1ed088a261e6710666f3163dfd3dce91c7932ac990127a1073"
+    },
+    {
+      "archivo": "force-app/main/default/objects/IncidenciaRenovacion__c/IncidenciaRenovacion__c.object-meta.xml",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "e6eae24ad66325eaa65703ddca700f2c11058c23f5903cf5aec964aede45b383"
+    },
+    {
+      "archivo": "force-app/main/default/objects/IncidenciaRenovacion__c/fields/CamposAfectados__c.field-meta.xml",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "ca7bdc79a58c232869d7f96afbabb45378c54a36348c976cd7ce8350a9ff97a5"
+    },
+    {
+      "archivo": "force-app/main/default/objects/IncidenciaRenovacion__c/fields/ClaveIntentada__c.field-meta.xml",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "f72b0038e71766655e4ad34bf1ef3393ba94b818a7d0233dce2a4952638849c3"
+    },
+    {
+      "archivo": "force-app/main/default/objects/IncidenciaRenovacion__c/fields/CodigoError__c.field-meta.xml",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "9b8e33d0d545eb20bac359b643ed17270fa258a16010eaa8e7a317c1c81d313d"
+    },
+    {
+      "archivo": "force-app/main/default/objects/IncidenciaRenovacion__c/fields/Contrato__c.field-meta.xml",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "b1de8e5506e0c5ece15a7aa9ac538e048d8fc452c014aed14e8f15690ea59f23"
+    },
+    {
+      "archivo": "force-app/main/default/objects/IncidenciaRenovacion__c/fields/Ejecucion__c.field-meta.xml",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "66409216b2e2d4b064e3f38737971973462cfcc8dd2c06ba501f381379a97fe4"
+    },
+    {
+      "archivo": "force-app/main/default/objects/IncidenciaRenovacion__c/fields/Etapa__c.field-meta.xml",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "13ce07e01cd6e193667e08c726ac3651f88cc67e15c94b2710874edf848537a9"
+    },
+    {
+      "archivo": "force-app/main/default/objects/IncidenciaRenovacion__c/fields/Mensaje__c.field-meta.xml",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "76a7368a29c04348baeb3d7c68c308b23f85a9a3d4e3785723451bee7e7bb8f4"
+    },
+    {
+      "archivo": "force-app/main/default/objects/IncidenciaRenovacion__c/validationRules/IncidenciaInmutable.validationRule-meta.xml",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "e103d4422f03ff11e837908c5eda3428135651fdd48d6063d88e8eceb836a2d1"
+    },
+    {
+      "archivo": "force-app/main/default/objects/IncidenciaRenovacion__c/validationRules/MensajeObligatorio.validationRule-meta.xml",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "8ebc12f3ef8824189ffc7050fa3915d54c25256384864b46376aa439ead90f89"
+    },
+    {
+      "archivo": "force-app/main/default/objects/SeguimientoRenovacion__c/SeguimientoRenovacion__c.object-meta.xml",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "c4122ec52681b9c8dfc31056b32612a7fe972b15312507f9f51bd1878d340311"
+    },
+    {
+      "archivo": "force-app/main/default/objects/SeguimientoRenovacion__c/fields/Aplicable__c.field-meta.xml",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "d6653ee2e4f36ec5b1030194f0a7a3ac67b4264dff2da88b461e8d11618ca9cf"
+    },
+    {
+      "archivo": "force-app/main/default/objects/SeguimientoRenovacion__c/fields/ClaveIdentidad__c.field-meta.xml",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "c21f952014df05886959620c5ab8b4ea0597a38e1547a7a781ab2b7496194fde"
+    },
+    {
+      "archivo": "force-app/main/default/objects/SeguimientoRenovacion__c/fields/Contrato__c.field-meta.xml",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "1c66665dc36bb141028e8a723a955bf7c70aa11d827b066183315aa9dc7dc943"
+    },
+    {
+      "archivo": "force-app/main/default/objects/SeguimientoRenovacion__c/fields/DiasRestantes__c.field-meta.xml",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "ff99ad54d696e3e11742309971fd1eaff30c7c0f60e9c3ca532cbcf577384438"
+    },
+    {
+      "archivo": "force-app/main/default/objects/SeguimientoRenovacion__c/fields/Ejecucion__c.field-meta.xml",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "414d966ab8df6af99e77eebfb7b3be311082e269ac0de7307f56d6fff44dcabe"
+    },
+    {
+      "archivo": "force-app/main/default/objects/SeguimientoRenovacion__c/fields/Estado__c.field-meta.xml",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "d838a73b2438a51b3aef8b3b46fc4d447250583410e0cef21403701224ef7b2d"
+    },
+    {
+      "archivo": "force-app/main/default/objects/SeguimientoRenovacion__c/fields/FechaVencimientoCapturada__c.field-meta.xml",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "0e6aa1bfafbb83f0205750b419a630c860f6b4b685501f1b27a1eb698e85ce58"
+    },
+    {
+      "archivo": "force-app/main/default/objects/SeguimientoRenovacion__c/fields/Notas__c.field-meta.xml",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "7c77dd3e700cbbf9fc7db309172c8099b72b8a9c8a107cbe673c4d7817aa5d1e"
+    },
+    {
+      "archivo": "force-app/main/default/objects/SeguimientoRenovacion__c/validationRules/EstadoInicialPendiente.validationRule-meta.xml",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "7adc6baee1d0355037fcc6d5f5f7c3509d6fa2a037f9750a0af0234d5162c721"
+    },
+    {
+      "archivo": "force-app/main/default/objects/SeguimientoRenovacion__c/validationRules/IdentidadYOrigenInmutables.validationRule-meta.xml",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "4ab2865778c8d6cece41fb252a3c2cd759f4d753edc097bbd2a74565f81f7761"
+    },
+    {
+      "archivo": "force-app/main/default/objects/SeguimientoRenovacion__c/validationRules/NotaObligatoriaAlFinalizar.validationRule-meta.xml",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "78840ca01b7e6a908ef2a4103e34ba8a701c55ab3f4ee770e477408406f7f014"
+    },
+    {
+      "archivo": "force-app/main/default/objects/SeguimientoRenovacion__c/validationRules/ResponsableUsuario.validationRule-meta.xml",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "d5e3e4f31b19145e132a402baff259a8117a2a4cdf5e80014f5654beb9c6992b"
+    },
+    {
+      "archivo": "force-app/main/default/objects/SeguimientoRenovacion__c/validationRules/TransicionEstadoPermitida.validationRule-meta.xml",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "29288ab745a27124063465eeec132ca59b32c1eb8aa691d6aef60590fde1d282"
+    },
+    {
+      "archivo": "force-app/main/default/permissionsets/P06_VerificacionModelo.permissionset-meta.xml",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "802715e56112743ab6c0d1ebc0154e9f3dcf02c0631e4a737aef0941e5d03cd2"
+    },
+    {
+      "archivo": "scripts/fase-1b/cli.ps1",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "5abfb65a9dc177b68aa55177d53592a9f26f3e837e4cd4f87d5aca8e4e12a559"
+    },
+    {
+      "archivo": "scripts/fase-1b/contratos.apex",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "4cdf2b2c032f6af0f1ac0f925abbe430f908b580976c374ca48d8cfe0aa51879"
+    },
+    {
+      "archivo": "scripts/fase-1b/ejecuciones.apex",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "b29c415d8989da5f3d336cc1711d92a8af0705b1dd0f76dcd2b4fa38b234d6f3"
+    },
+    {
+      "archivo": "scripts/fase-1b/ejecutar-comprobacion.ps1",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "72611ad4e6b61da538b2cce8f561d33dad98b6d4965d5dd42c14411160068c63"
+    },
+    {
+      "archivo": "scripts/fase-1b/incidencias.apex",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "9147f4cd87902292a8840eadbec675737a7101c52d78cd01d34e9d1603623dac"
+    },
+    {
+      "archivo": "scripts/fase-1b/inspeccionar-destino.ps1",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "3345a243df8c9e016c661b60cc5a6aea3ab0a72a84a0b71c836288e1dcbeecd2"
+    },
+    {
+      "archivo": "scripts/fase-1b/seguimientos.apex",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "5fd1ebe59c949c09c5a2663087a7c2c2125997708cf362c04eb2e0a1d8c717b4"
+    },
+    {
+      "archivo": "scripts/fase-1b/soporte.apex",
+      "sinCambios": true,
+      "diferenciaSoloFinDeLinea": false,
+      "sha256ContenidoLF": "52cc4497b1b5b21c30fb66223a568f5f956c80b5df81bf0ad6655f974d05c328"
+    }
+  ],
+  "comparacionArchivos": "Contenido normalizado a LF para comparar el checkout Windows con los blobs Git; no se han escrito los archivos historicos."
+}

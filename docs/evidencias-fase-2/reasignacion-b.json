@@ -1,0 +1,42 @@
+{
+  "actor": "B",
+  "role": "comercial",
+  "identityVerified": true,
+  "timestamp": "2026-11-23T14:37:58.361Z",
+  "checks": [
+    {
+      "id": "contrato_con_otro_propietario",
+      "status": 200,
+      "pass": true
+    },
+    {
+      "id": "seguimiento_conserva_responsable",
+      "status": 200,
+      "pass": true
+    },
+    {
+      "id": "nuevo_responsable_lee",
+      "status": 200,
+      "pass": true
+    },
+    {
+      "id": "nuevo_responsable_edita",
+      "status": 204,
+      "pass": true
+    },
+    {
+      "id": "nuevo_responsable_lee_contrato",
+      "status": 200,
+      "pass": true
+    },
+    {
+      "id": "contrato_compartido_no_editable",
+      "status": 400,
+      "pass": true
+    },
+    {
+      "id": "contrato_cambia_owner_sin_cambiar_follow",
+      "pass": true
+    }
+  ]
+}

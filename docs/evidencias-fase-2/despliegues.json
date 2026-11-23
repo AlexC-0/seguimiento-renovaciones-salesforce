@@ -1,0 +1,95 @@
+[
+  {
+    "tipo": "validacion-inicial",
+    "id": "0Afg700000KyzzaCAB",
+    "status": "Failed",
+    "done": true,
+    "success": false,
+    "checkOnly": true,
+    "numberComponentsTotal": 35,
+    "numberComponentsDeployed": 29,
+    "numberComponentErrors": 6
+  },
+  {
+    "tipo": "validacion-inicial",
+    "id": "0Afg700000KyniJCAR",
+    "status": "Failed",
+    "done": true,
+    "success": false,
+    "checkOnly": true,
+    "numberComponentsTotal": 35,
+    "numberComponentsDeployed": 31,
+    "numberComponentErrors": 4
+  },
+  {
+    "tipo": "validacion-inicial",
+    "id": "0Afg700000KzDw8CAF",
+    "status": "Failed",
+    "done": true,
+    "success": false,
+    "checkOnly": true,
+    "numberComponentsTotal": 35,
+    "numberComponentsDeployed": 31,
+    "numberComponentErrors": 4
+  },
+  {
+    "tipo": "validacion-principal",
+    "id": "0Afg700000KyM3nCAF",
+    "status": "Succeeded",
+    "done": true,
+    "success": true,
+    "checkOnly": true,
+    "numberComponentsTotal": 35,
+    "numberComponentsDeployed": 35,
+    "numberComponentErrors": 0
+  },
+  {
+    "tipo": "despliegue-principal",
+    "id": "0Afg700000KzRFuCAN",
+    "status": "Succeeded",
+    "done": true,
+    "success": true,
+    "checkOnly": false,
+    "numberComponentsTotal": 35,
+    "numberComponentsDeployed": 35,
+    "numberComponentErrors": 0
+  },
+  {
+    "tipo": "validacion-perfil",
+    "id": "0Afg700000KzYNpCAN",
+    "status": "Succeeded",
+    "done": true,
+    "success": true,
+    "checkOnly": true
+  },
+  {
+    "tipo": "despliegue-perfil",
+    "id": "0Afg700000Kz9MECAZ",
+    "status": "Succeeded",
+    "done": true,
+    "success": true,
+    "checkOnly": false
+  },
+  {
+    "tipo": "validacion-navegacion",
+    "id": "0Afg700000KzeUrCAJ",
+    "status": "Succeeded",
+    "done": true,
+    "success": true,
+    "checkOnly": true,
+    "numberComponentsTotal": 2,
+    "numberComponentsDeployed": 2,
+    "numberComponentErrors": 0
+  },
+  {
+    "tipo": "despliegue-navegacion",
+    "id": "0Afg700000KzeoDCAR",
+    "status": "Succeeded",
+    "done": true,
+    "success": true,
+    "checkOnly": false,
+    "numberComponentsTotal": 2,
+    "numberComponentsDeployed": 2,
+    "numberComponentErrors": 0
+  }
+]
