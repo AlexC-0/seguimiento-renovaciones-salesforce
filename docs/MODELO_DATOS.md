@@ -2,7 +2,7 @@
 
 ## Convenciones
 
-Definición local de fase 1A. Los cuatro objetos usan propietario independiente y visibilidad interna y externa `Private` en sus metadatos. No hay relaciones master-detail ni borrado en cascada.
+Modelo de fase 1A corregido, validado y desplegado en fase 1B. Los cuatro objetos usan propietario independiente y visibilidad interna y externa `Private` en sus metadatos. No hay relaciones master-detail ni borrado en cascada.
 
 Los nombres API de estados coinciden con sus etiquetas, incluidos espacios y acentos. Las listas son restringidas. Los valores no indicados como iniciales no se rellenan automáticamente. No se crean campos económicos ni objetos adicionales.
 
@@ -42,7 +42,7 @@ La obligatoriedad declarativa se aplica al dato, no solo a la página. Las fórm
 | `InicioVentana__c` | Date | Sí | Inicio de ventana |
 | `FinVentana__c` | Date | Sí | Fin de ventana |
 | `ZonaHoraria__c` | Text(80) | Sí | TimeZoneSidKey del solicitante capturada al lanzar. No cambia durante la ejecución. |
-| `Solicitante__c` | Lookup → User | Sí | Solicitante. Usuario estándar; no se configura borrado en cascada. |
+| `Solicitante__c` | Lookup → User | Sí, por validación | SolicitanteObligatorio rechaza el valor vacío; ContextoInmutable impide cambiarlo después de crear. Sin restricción de eliminación ni cascada sobre User. |
 | `AsyncApexJobId__c` | Text(18) | No | Id de 18 caracteres devuelto por el futuro lanzamiento. Vacío hasta conocerlo; no es una relación ni acredita existencia del job. |
 | `Inicio__c` | DateTime | Sí; NOW() | Instante de registro del lanzamiento, incluida la espera en cola. No mide exclusivamente el procesamiento del Batch. |
 | `Finalizacion__c` | DateTime | No | Finalización |
@@ -73,7 +73,7 @@ La obligatoriedad declarativa se aplica al dato, no solo a la página. Las fórm
 - Contrato → seguimiento: lookup obligatorio con Restrict.
 - Ejecución → seguimiento e incidencia: lookups obligatorios con Restrict.
 - Contrato → incidencia: lookup opcional con Restrict; se informa cuando se conoce el contrato.
-- Usuario → ejecución: solicitante obligatorio. No se fuerza una política de eliminación sobre User: Salesforce permite desactivar usuarios, no borrarlos.
+- Usuario → ejecución: solicitante obligatorio mediante validación. El lookup declara required=false y omite deleteConstraint porque Salesforce rechaza la combinación de obligatoriedad universal y restricciones de eliminación sobre User. La regla SolicitanteObligatorio rechaza el valor vacío en cada guardado y ContextoInmutable conserva el solicitante original.
 
 Los lookups no comparten propietario ni conceden acceso automáticamente al padre. La relación de origen de un seguimiento es obligatoria y no se puede cambiar; repetir una ejecución no religa seguimientos existentes.
 
@@ -103,20 +103,20 @@ RequiereReconciliacion parte de false y debe activarse ante incertidumbre; no ha
 
 Las incidencias son anexos inmutables: cualquier actualización se rechaza. Una aclaración se guarda como otra incidencia de etapa Reconciliación. No se obliga a informar contrato o clave cuando el error sea de selección, lote o finalización y no se conozcan.
 
-## Validaciones preparadas
+## Validaciones desplegadas
 
-| Objeto | Reglas locales |
+| Objeto | Reglas del modelo |
 |---|---|
 | Contrato | Vencimiento no anterior a inicio; propietario usuario |
 | Seguimiento | Propietario usuario; creación en Pendiente; transiciones permitidas; nota con contenido en estados terminales; identidad y origen inmutables |
-| Ejecución | Ventana exacta; contexto inmutable; job asignable una vez; finalización coherente y ajustada al estado; contadores no negativos; igualdad de resultados; creación Encolada; Completada sin errores ni reconciliación |
+| Ejecución | Ventana exacta; solicitante obligatorio; contexto inmutable; job asignable una vez; finalización coherente y ajustada al estado; contadores no negativos; igualdad de resultados; creación Encolada; Completada sin errores ni reconciliación |
 | Incidencia | Mensaje con contenido; rechazo de toda actualización |
 
-Las listas restringidas y la obligatoriedad de los campos complementan estas 18 reglas. Su compilación y comportamiento en Salesforce están pendientes. Se revisaron las fórmulas localmente; no se ejecutaron como reglas de Salesforce.
+Las listas restringidas y la obligatoriedad de los campos complementan estas 19 reglas activas. Salesforce aceptó y desplegó los 58 componentes del modelo. Los bloques anónimos verificaron 117 casos declarativos; no acreditan todas las operaciones o excepciones de plataforma ni la matriz de acceso.
 
 ## Diseño de acceso pendiente
 
-R = lectura, C = creación, U = edición. Ningún rol ordinario tendrá Delete en los cuatro objetos. La tabla es diseño: no hay permission sets, reglas de compartición ni controles de transferencia desplegados.
+R = lectura, C = creación, U = edición. Ningún rol ordinario tendrá Delete en los cuatro objetos. La tabla es diseño: no hay permisos de roles comerciales, reglas de compartición ni controles de transferencia implementados. El único Permission Set desplegado es P06_VerificacionModelo, limitado a la cuenta técnica y a once campos necesarios para las comprobaciones.
 
 | Objeto / ámbito | Comercial | Coordinación comercial | Operador técnico |
 |---|---|---|---|
@@ -145,4 +145,14 @@ El lanzamiento técnico de clases mediante Apex anónimo requiere permisos espec
 
 La validación de propietario usuario cubre los guardados que ejecutan validaciones. Algunas operaciones de transferencia masiva o de Salesforce Classic no las ejecutan; no se habilitarán como alternativa a los controles de acceso. Esta limitación debe comprobarse en el entorno dedicado según [validaciones y cambios de propietario](https://help.salesforce.com/s/articleView?id=000385142&language=en_US&type=1).
 
-Preparado localmente: Private, restricciones de referencias, campos únicos y reglas declarativas. Diseñado: roles, CRUD/FLS, registros y transferencia. Pendiente: configuración completa, control de identidad mediante Apex y verificación real. No existe todavía seguridad desplegada o comprobada.
+Desplegado: Private, restricciones de referencias, campo único y reglas declarativas. El permiso técnico permite leer Aplicable__c, DiasRestantes__c y AsyncApexJobId__c, y leer/editar Notas__c, Solicitante__c, Finalizacion__c, RequiereReconciliacion__c, Contrato__c de incidencia, ClaveIntentada__c, Mensaje__c y CamposAfectados__c. No añade permisos de sistema, objetos o eliminación. Diseñado y pendiente: roles comerciales, CRUD/FLS completo, compartición, transferencia y control canónico de identidad.
+
+## Comprobaciones realizadas en fase 1B
+
+La validación remota detectó que el lookup a User no admite la configuración de obligatoriedad universal prevista. Se mantiene el requisito mediante SolicitanteObligatorio, sin cambiar ContextoInmutable. El modelo conserva cuatro objetos y 35 campos y pasa de 18 a 19 reglas activas. La obligatoriedad mediante validación sigue el [mecanismo documentado de Salesforce](https://help.salesforce.com/s/articleView?id=000003107&language=en_US&type=1). Las comprobaciones reproducibles de [FASE-1B.md](FASE-1B.md) están compiladas y ejecutadas: 12 casos de contratos, 51 de seguimientos y aplicabilidad, 37 de ejecuciones y 17 de incidencias, todos correctos.
+
+Los scripts utilizan fixtures propios y verifican el código de error y, para las validaciones personalizadas, un fragmento específico del mensaje esperado. Un rechazo por otra causa no se contabiliza como éxito. Las operaciones exploratorias se revierten incluso si fueran aceptadas inesperadamente; los registros base se conservan y se incluyen en un inventario.
+
+Las ejecuciones de comprobación no representan jobs Batch. Se conservan sin AsyncApexJobId y sin contadores de procesamiento ficticios; los valores sintéticos para comprobar la ecuación y sus rechazos quedan bajo rollback. La prueba de unicidad se limita a la misma clave exacta.
+
+No se han ejecutado pruebas de eliminación ni por roles. La configuración completa de acceso y transferencia sigue pendiente. La prueba de cambio de solicitante utilizó otro usuario estándar activo existente. También se rechazaron alta y actualización con solicitante vacío. No se crearon usuarios.

@@ -1,0 +1,148 @@
+{
+    "api":  "65.0",
+    "suite":  "incidencias",
+    "marca":  "P06-1B-20261123T133507-a51f9870",
+    "fechaUtc":  "2026-11-23T13:35:15.9680740Z",
+    "despliegue":  "0Afg700000KzBhNCAV",
+    "compilado":  true,
+    "ejecutado":  true,
+    "inventarioPendiente":  false,
+    "correcto":  true,
+    "diagnosticoCompilacion":  null,
+    "casos":  [
+                  {
+                      "caso":  "FIX-cuenta-incidencias",
+                      "esperado":  "fixture creado",
+                      "observado":  "fixture creado",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "FIX-contrato-incidencia",
+                      "esperado":  "fixture creado",
+                      "observado":  "fixture creado",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "FIX-ejecucion-incidencia",
+                      "esperado":  "fixture creado",
+                      "observado":  "fixture creado",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "FIX-ejecucion-alternativa",
+                      "esperado":  "fixture creado",
+                      "observado":  "fixture creado",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "FIX-incidencia-base",
+                      "esperado":  "fixture creado",
+                      "observado":  "fixture creado",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "I-MESSAGE-null",
+                      "esperado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION / requiere un mensaje con contenido",
+                      "observado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION; regla esperada=true",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "I-MESSAGE-empty",
+                      "esperado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION / requiere un mensaje con contenido",
+                      "observado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION; regla esperada=true",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "I-MESSAGE-spaces",
+                      "esperado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION / requiere un mensaje con contenido",
+                      "observado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION; regla esperada=true",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "I-IMMUTABLE-Mensaje__c",
+                      "esperado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION / evidencias inmutables",
+                      "observado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION; regla esperada=true",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "I-IMMUTABLE-Contrato__c",
+                      "esperado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION / evidencias inmutables",
+                      "observado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION; regla esperada=true",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "I-IMMUTABLE-Ejecucion__c",
+                      "esperado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION / evidencias inmutables",
+                      "observado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION; regla esperada=true",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "I-IMMUTABLE-ClaveIntentada__c",
+                      "esperado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION / evidencias inmutables",
+                      "observado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION; regla esperada=true",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "I-IMMUTABLE-Etapa__c",
+                      "esperado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION / evidencias inmutables",
+                      "observado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION; regla esperada=true",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "I-IMMUTABLE-CodigoError__c",
+                      "esperado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION / evidencias inmutables",
+                      "observado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION; regla esperada=true",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "I-IMMUTABLE-CamposAfectados__c",
+                      "esperado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION / evidencias inmutables",
+                      "observado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION; regla esperada=true",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "I-RELATIONS-PRESERVED",
+                      "esperado":  "referencias originales conservadas",
+                      "observado":  "comparación de referencias",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "FIX-incidencia-sin-contrato",
+                      "esperado":  "fixture creado",
+                      "observado":  "fixture creado",
+                      "resultado":  "correcto"
+                  }
+              ],
+    "registrosConservados":  [
+                                 {
+                                     "objeto":  "Account",
+                                     "id":  "001g700001LyNmjAAF",
+                                     "funcion":  "cuenta-incidencias"
+                                 },
+                                 {
+                                     "objeto":  "ContratoComercial__c",
+                                     "id":  "a00g700002b50vVAAQ",
+                                     "funcion":  "contrato-incidencia"
+                                 },
+                                 {
+                                     "objeto":  "EjecucionRenovacion__c",
+                                     "id":  "a01g700001LyNmkAAF",
+                                     "funcion":  "ejecucion-incidencia"
+                                 },
+                                 {
+                                     "objeto":  "EjecucionRenovacion__c",
+                                     "id":  "a01g700001LyNmlAAF",
+                                     "funcion":  "ejecucion-alternativa"
+                                 },
+                                 {
+                                     "objeto":  "IncidenciaRenovacion__c",
+                                     "id":  "a02g700000F1C05AAF",
+                                     "funcion":  "incidencia-base"
+                                 },
+                                 {
+                                     "objeto":  "IncidenciaRenovacion__c",
+                                     "id":  "a02g700000F1C06AAF",
+                                     "funcion":  "incidencia-sin-contrato"
+                                 }
+                             ]
+}

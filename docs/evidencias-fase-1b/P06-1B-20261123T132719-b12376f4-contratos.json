@@ -1,0 +1,97 @@
+{
+    "api":  "65.0",
+    "suite":  "contratos",
+    "marca":  "P06-1B-20261123T132719-b12376f4",
+    "fechaUtc":  "2026-11-23T13:27:28.4568070Z",
+    "despliegue":  "0Afg700000KzBhNCAV",
+    "compilado":  true,
+    "ejecutado":  true,
+    "inventarioPendiente":  false,
+    "correcto":  true,
+    "casos":  [
+                  {
+                      "caso":  "FIX-cuenta-contratos",
+                      "esperado":  "fixture creado",
+                      "observado":  "fixture creado",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "FIX-contrato-base",
+                      "esperado":  "fixture creado",
+                      "observado":  "fixture creado",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "C-DEFAULT",
+                      "esperado":  "Borrador",
+                      "observado":  "Borrador",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "C-REQUIRED-Cuenta__c",
+                      "esperado":  "rechazado: REQUIRED_FIELD_MISSING / ",
+                      "observado":  "rechazado: REQUIRED_FIELD_MISSING; regla esperada=true",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "C-REQUIRED-FechaInicio__c",
+                      "esperado":  "rechazado: REQUIRED_FIELD_MISSING / ",
+                      "observado":  "rechazado: REQUIRED_FIELD_MISSING; regla esperada=true",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "C-REQUIRED-FechaVencimiento__c",
+                      "esperado":  "rechazado: REQUIRED_FIELD_MISSING / ",
+                      "observado":  "rechazado: REQUIRED_FIELD_MISSING; regla esperada=true",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "C-DATES",
+                      "esperado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION / El vencimiento no puede",
+                      "observado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION; regla esperada=true",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "C-STATE-Borrador",
+                      "esperado":  "aceptado",
+                      "observado":  "aceptado",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "C-STATE-Activo",
+                      "esperado":  "aceptado",
+                      "observado":  "aceptado",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "C-STATE-Inactivo",
+                      "esperado":  "aceptado",
+                      "observado":  "aceptado",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "C-INVALID-STATE",
+                      "esperado":  "rechazado: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST / ",
+                      "observado":  "rechazado: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST; regla esperada=true",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "C-PRESERVE-ACTIVE",
+                      "esperado":  "actualización válida",
+                      "observado":  "actualización válida",
+                      "resultado":  "correcto"
+                  }
+              ],
+    "registrosConservados":  [
+                                 {
+                                     "objeto":  "Account",
+                                     "id":  "001g700001LxvUqAAJ",
+                                     "funcion":  "cuenta-contratos"
+                                 },
+                                 {
+                                     "objeto":  "ContratoComercial__c",
+                                     "id":  "a00g700002b45UUAAY",
+                                     "funcion":  "contrato-base"
+                                 }
+                             ]
+}

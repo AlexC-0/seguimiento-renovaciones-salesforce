@@ -1,0 +1,39 @@
+{
+    "tipo":  "lectura_posterior_de_fixtures",
+    "fechaUtc":  "2026-11-23T13:37:14.5456854Z",
+    "api":  "65.0",
+    "correcto":  true,
+    "registrosEsperados":  19,
+    "objetos":  [
+                    {
+                        "objeto":  "Account",
+                        "esperados":  3,
+                        "encontrados":  3,
+                        "correcto":  true
+                    },
+                    {
+                        "objeto":  "ContratoComercial__c",
+                        "esperados":  4,
+                        "encontrados":  4,
+                        "correcto":  true
+                    },
+                    {
+                        "objeto":  "EjecucionRenovacion__c",
+                        "esperados":  5,
+                        "encontrados":  5,
+                        "correcto":  true
+                    },
+                    {
+                        "objeto":  "SeguimientoRenovacion__c",
+                        "esperados":  5,
+                        "encontrados":  5,
+                        "correcto":  true
+                    },
+                    {
+                        "objeto":  "IncidenciaRenovacion__c",
+                        "esperados":  2,
+                        "encontrados":  2,
+                        "correcto":  true
+                    }
+                ]
+}

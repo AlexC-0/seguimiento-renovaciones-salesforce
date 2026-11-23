@@ -16,7 +16,9 @@ No delegar tareas. No atribuir éxito a pruebas no ejecutadas. Distinguir inspec
 
 ## Alcance
 
-Fase 1A: estructura Salesforce DX y modelo declarativo local. No ejecutar operaciones contra una organización. La implementación de Batch, servicios, triggers, generación canónica de identidad, reconciliación, permisos completos e informes corresponde a fases posteriores.
+Fase 1B: validación y despliegue del modelo declarativo y comprobaciones acotadas con datos ficticios. Las operaciones remotas se limitan al destino exclusivo de P06 identificado expresamente y verificado como no productivo. No inferir autorización de alias, sesiones o destinos por defecto. Si falta identificación o autenticación, preparar el trabajo local y mantener bloqueada la ejecución remota. Utilizar la cuenta existente identificada expresamente para P06 y autenticarla mediante Chrome habitual. No iniciar otro registro ni abrir perfiles temporales de navegador. Contrastar el usuario autenticado con la identidad indicada antes de asignar el alias P06. Los desafíos de acceso y la introducción de credenciales se completarán directamente en Salesforce cuando requieran intervención del titular.
+
+Antes de escribir en el destino, comprobar colisiones de nombres y detenerse ante componentes de origen desconocido. Validar sin aplicar cambios y desplegar solo los mismos metadatos aceptados. Conservar identificadores de operación, resultados e inventario de fixtures; no ejecutar limpiezas ni borrar evidencias. No desactivar validaciones para superar errores. Está autorizado el Permission Set P06_VerificacionModelo, limitado a once campos del modelo y asignado únicamente a la cuenta técnica P06: tres campos de lectura y ocho de lectura/escritura, sin permisos de sistema, objetos ni eliminación. Batch, triggers, servicios, generación canónica, permisos completos e informes siguen fuera de esta fase.
 
 Conservar el alcance y las exclusiones de docs/PROJECT_BRIEF.md. No presentar el campo único como idempotencia integral ni el diseño de acceso como seguridad verificada. Mantener separados los resultados confirmados por registro y los lotes totalmente revertidos.
 

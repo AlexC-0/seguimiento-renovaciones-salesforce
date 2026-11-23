@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>ContratoComercial__c</members>
+        <members>SeguimientoRenovacion__c</members>
+        <members>EjecucionRenovacion__c</members>
+        <members>IncidenciaRenovacion__c</members>
+        <name>CustomObject</name>
+    </types>
+    <version>65.0</version>
+</Package>

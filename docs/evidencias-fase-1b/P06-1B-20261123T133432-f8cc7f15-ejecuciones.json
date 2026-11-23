@@ -1,0 +1,243 @@
+{
+    "api":  "65.0",
+    "suite":  "ejecuciones",
+    "marca":  "P06-1B-20261123T133432-f8cc7f15",
+    "fechaUtc":  "2026-11-23T13:34:42.6362485Z",
+    "despliegue":  "0Afg700000KzBhNCAV",
+    "compilado":  true,
+    "ejecutado":  true,
+    "inventarioPendiente":  false,
+    "correcto":  true,
+    "diagnosticoCompilacion":  null,
+    "casos":  [
+                  {
+                      "caso":  "FIX-ejecucion-base",
+                      "esperado":  "fixture creado",
+                      "observado":  "fixture creado",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "E-INITIAL",
+                      "esperado":  "Encolada, sin job y sin finalización",
+                      "observado":  "Encolada",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "E-COUNTERS-DEFAULT",
+                      "esperado":  "contadores cero y sin reconciliación",
+                      "observado":  "valores iniciales",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "E-REQUESTER-REQUIRED-INSERT",
+                      "esperado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION / requiere un solicitante",
+                      "observado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION; regla esperada=true",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "E-REQUESTER-REQUIRED-UPDATE",
+                      "esperado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION / requiere un solicitante",
+                      "observado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION,FIELD_CUSTOM_VALIDATION_EXCEPTION; regla esperada=true",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "E-INITIAL-INVALID",
+                      "esperado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION / inicialmente como Encolada",
+                      "observado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION; regla esperada=true",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "E-WINDOW-InicioVentana__c",
+                      "esperado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION / La ventana debe comenzar",
+                      "observado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION; regla esperada=true",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "E-WINDOW-FinVentana__c",
+                      "esperado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION / La ventana debe comenzar",
+                      "observado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION; regla esperada=true",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "E-CONTEXT-FechaCorte__c",
+                      "esperado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION / son inmutables",
+                      "observado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION,FIELD_CUSTOM_VALIDATION_EXCEPTION; regla esperada=true",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "E-CONTEXT-InicioVentana__c",
+                      "esperado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION / son inmutables",
+                      "observado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION,FIELD_CUSTOM_VALIDATION_EXCEPTION; regla esperada=true",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "E-CONTEXT-FinVentana__c",
+                      "esperado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION / son inmutables",
+                      "observado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION,FIELD_CUSTOM_VALIDATION_EXCEPTION; regla esperada=true",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "E-CONTEXT-ZonaHoraria__c",
+                      "esperado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION / son inmutables",
+                      "observado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION; regla esperada=true",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "E-CONTEXT-Inicio__c",
+                      "esperado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION / son inmutables",
+                      "observado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION; regla esperada=true",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "E-CONTEXT-Solicitante__c",
+                      "esperado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION / son inmutables",
+                      "observado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION; regla esperada=true",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "E-NEGATIVE-Evaluados__c",
+                      "esperado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION / no pueden ser negativos",
+                      "observado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION,FIELD_CUSTOM_VALIDATION_EXCEPTION; regla esperada=true",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "E-NEGATIVE-Creados__c",
+                      "esperado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION / no pueden ser negativos",
+                      "observado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION,FIELD_CUSTOM_VALIDATION_EXCEPTION; regla esperada=true",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "E-NEGATIVE-YaExistentes__c",
+                      "esperado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION / no pueden ser negativos",
+                      "observado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION,FIELD_CUSTOM_VALIDATION_EXCEPTION; regla esperada=true",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "E-NEGATIVE-Omitidos__c",
+                      "esperado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION / no pueden ser negativos",
+                      "observado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION,FIELD_CUSTOM_VALIDATION_EXCEPTION; regla esperada=true",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "E-NEGATIVE-Fallidos__c",
+                      "esperado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION / no pueden ser negativos",
+                      "observado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION,FIELD_CUSTOM_VALIDATION_EXCEPTION; regla esperada=true",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "E-NEGATIVE-LotesFallidos__c",
+                      "esperado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION / no pueden ser negativos",
+                      "observado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION; regla esperada=true",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "E-TOTAL-MISMATCH",
+                      "esperado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION / Evaluados debe ser igual",
+                      "observado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION; regla esperada=true",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "E-TOTAL-MATCH",
+                      "esperado":  "aceptado",
+                      "observado":  "aceptado",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "E-FINAL-REQUIRED-Completada",
+                      "esperado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION / Los estados finales requieren",
+                      "observado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION; regla esperada=true",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "E-FINAL-VALID-Completada",
+                      "esperado":  "aceptado",
+                      "observado":  "aceptado",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "E-FINAL-REQUIRED-Completada con incidencias",
+                      "esperado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION / Los estados finales requieren",
+                      "observado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION; regla esperada=true",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "E-FINAL-VALID-Completada con incidencias",
+                      "esperado":  "aceptado",
+                      "observado":  "aceptado",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "E-FINAL-REQUIRED-Fallida",
+                      "esperado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION / Los estados finales requieren",
+                      "observado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION; regla esperada=true",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "E-FINAL-VALID-Fallida",
+                      "esperado":  "aceptado",
+                      "observado":  "aceptado",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "E-FINAL-REQUIRED-Abortada",
+                      "esperado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION / Los estados finales requieren",
+                      "observado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION; regla esperada=true",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "E-FINAL-VALID-Abortada",
+                      "esperado":  "aceptado",
+                      "observado":  "aceptado",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "E-FINAL-BEFORE-START",
+                      "esperado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION / no puede ser anterior al inicio",
+                      "observado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION; regla esperada=true",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "E-OPEN-WITH-END",
+                      "esperado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION / Los estados finales requieren",
+                      "observado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION; regla esperada=true",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "E-COMPLETE-ERROR-Fallidos__c",
+                      "esperado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION / no puede marcarse como Completada",
+                      "observado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION; regla esperada=true",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "E-COMPLETE-ERROR-LotesFallidos__c",
+                      "esperado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION / no puede marcarse como Completada",
+                      "observado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION; regla esperada=true",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "E-COMPLETE-ERROR-RequiereReconciliacion__c",
+                      "esperado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION / no puede marcarse como Completada",
+                      "observado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION; regla esperada=true",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "E-INVALID-STATE",
+                      "esperado":  "rechazado: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST / ",
+                      "observado":  "rechazado: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST; regla esperada=true",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "E-FIXTURE-PRESERVED",
+                      "esperado":  "Encolada, sin job ni resultados de procesamiento",
+                      "observado":  "Encolada",
+                      "resultado":  "correcto"
+                  }
+              ],
+    "registrosConservados":  [
+                                 {
+                                     "objeto":  "EjecucionRenovacion__c",
+                                     "id":  "a01g700001LwKQ1AAN",
+                                     "funcion":  "ejecucion-base"
+                                 }
+                             ]
+}

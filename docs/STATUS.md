@@ -4,9 +4,11 @@ Fecha: 23/11/2026.
 
 ## Situación
 
-Fase 1A preparada localmente sobre la referencia ee75f7650491caf4c3b4e80ac079867dc35b2fa8. La fase 1 funcional no está completada: no hay organización seleccionada, compilación por Salesforce, despliegue ni pruebas funcionales.
+Fase 1B completada sobre la referencia publicada 3c6341eff29d9faee09c8d248f516377de45029d. Destino exclusivo P06 verificado como Developer Edition, API 65.0, sin colisiones iniciales con los cuatro objetos del modelo.
 
-La inspección previa encontró el repositorio en main, sin cambios pendientes, con el remoto del proyecto ya configurado. No se ha modificado el remoto ni el historial.
+El modelo está aplicado: cuatro objetos, 35 campos y 19 validaciones. Se han ejecutado 117 comprobaciones correctas mediante cuatro bloques de Apex anónimo y se conservan 19 fixtures. La matriz de acceso comercial y el procesamiento siguen pendientes; esta fase no completa toda la funcionalidad de V1.
+
+El repositorio permanece en main, con el remoto del proyecto conservado. No se han ejecutado staging, commits ni push.
 
 ## Antecedentes
 
@@ -26,7 +28,7 @@ La fase 0 inspeccionó el entorno sin modificaciones. Después se preparó la ba
 
 El [modelo técnico](MODELO_DATOS.md) contiene el diccionario y las decisiones. Los [criterios de aceptación](PROJECT_BRIEF.md) describen las comprobaciones funcionales posteriores.
 
-## Comprobaciones locales
+## Comprobaciones locales de fase 1A
 
 | Comprobación | Resultado y alcance |
 |---|---|
@@ -40,28 +42,62 @@ El [modelo técnico](MODELO_DATOS.md) contiene el diccionario y las decisiones. 
 
 La conversión se escribió en una carpeta temporal fuera del repositorio. El lanzador mantiene avisos auxiliares de acceso denegado al consultar procesos de Windows; la operación local devolvió éxito. No se cambió la configuración global para eliminarlos.
 
-No se ha creado infraestructura de pruebas ni instalado herramientas. La revisión de fórmulas incluye su lógica declarativa y referencias, pero no ejecuta las reglas en Salesforce.
+En fase 1A no se creó infraestructura de pruebas ni se instalaron herramientas. La revisión de fórmulas incluye su lógica declarativa y referencias, pero no ejecuta las reglas en Salesforce.
+
+## Resultados de fase 1B
+
+| Operación | Identificador | Resultado |
+|---|---|---|
+| Primera validación del modelo | 0Afg700000KyMYSCA3 | Fallida: lookup a User obligatorio sin restricción; error dependiente en ContextoInmutable |
+| Segunda validación del modelo | 0Afg700000Kyf3ECAR | Fallida: User no admite Restrict; error dependiente en ContextoInmutable |
+| Validación final del modelo | 0Afg700000KytqwCAB | Succeeded, checkOnly=true, 58/58 componentes |
+| Despliegue del modelo | 0Afg700000KzBhNCAV | Succeeded, checkOnly=false, 58/58 componentes |
+| Validación del permiso técnico | 0Afg700000KydvrCAB | Succeeded, checkOnly=true, 1/1 componente |
+| Despliegue del permiso técnico | 0Afg700000KzDmPCAV | Succeeded, checkOnly=false, 1/1 componente |
+
+Las operaciones finales constan terminadas, con success=true y cero errores. Se aplicaron los mismos archivos validados, con contraste de hashes. No se ejecutaron despliegues destructivos.
+
+La corrección del lookup Solicitante__c cambia required a false y omite deleteConstraint, porque Salesforce rechaza la obligatoriedad universal junto a las restricciones de eliminación sobre User. La nueva regla SolicitanteObligatorio rechaza valores vacíos en cada guardado. ContextoInmutable conserva la prohibición de modificar el solicitante. Se comprobaron alta sin solicitante, intento de vaciarlo y cambio a otro usuario existente; el requisito funcional se mantiene.
+
+La cuenta técnica no veía los campos opcionales y calculados tras desplegar el modelo. Se añadió P06_VerificacionModelo: once campos, ocho de lectura/escritura y tres de lectura, asignado solo a esa cuenta. No concede permisos de sistema, de objeto ni eliminación; no modifica perfiles ni configura roles comerciales.
+
+## Comprobaciones funcionales
+
+| Grupo | Casos correctos | Registros conservados |
+|---|---:|---:|
+| Contratos | 12/12 | 2 |
+| Seguimientos y aplicabilidad | 51/51 | 10 |
+| Ejecuciones | 37/37 | 1 |
+| Incidencias | 17/17 | 6 |
+| Total | 117/117 | 19 |
+
+Se conservan 3 cuentas, 4 contratos, 5 ejecuciones de modelo, 5 seguimientos y 2 incidencias. Las operaciones exploratorias se revirtieron mediante savepoints; no se borraron fixtures. Una lectura posterior por sus identificadores confirma la conservación de los 19 registros.
+
+El primer bloque de seguimientos no compiló por falta de acceso a Notas__c y no creó registros. Se conserva su JSON original sin convertirlo en éxito; el intento posterior con acceso técnico es independiente. El ejecutor recoge errores de compilación desde result o data según la respuesta de la CLI.
+
+Las ejecuciones son fixtures Encolada, sin AsyncApexJobId ni resultados inventados de procesamiento. Los valores sintéticos usados para probar contadores se revirtieron. Hubo un segundo usuario estándar activo disponible para la comprobación del solicitante; no se crearon usuarios.
 
 ## Niveles de validación
 
 | Nivel | Estado |
 |---|---|
-| Metadatos locales | Preparados |
-| Revisión estática y conversión de formato | Realizadas |
-| Compilación y aceptación por Salesforce | Pendientes |
-| Despliegue | No realizado |
-| Pruebas Apex | No realizadas; no existen clases en esta fase |
-| Pruebas funcionales de AC-01 a AC-20 | Pendientes |
-| Seguridad completa y verificación por roles | Pendientes |
+| Revisión estática y conversión local de fase 1A | Realizadas; evidencia histórica conservada |
+| Compilación y aceptación del modelo por Salesforce | Correctas, API 65.0 |
+| Despliegue aplicado | Modelo y permiso técnico, con resultados finales verificados |
+| Pruebas Apex automatizadas | No ejecutadas; no hay clases desplegables |
+| Comprobaciones mediante Apex anónimo | Cuatro bloques compilados y ejecutados; 117/117 casos |
+| Conservación de fixtures | 19/19 registros confirmados por lectura posterior |
+| Seguridad completa por roles | Pendiente |
+| Batch, concurrencia e identidad canónica | Pendientes |
 
-## Revisión editorial
+## Evidencias y límites
 
-Alcance: archivos nuevos o modificados de fase 1A, incluidas las instrucciones locales. Se revisaron atribuciones, firmas automáticas, nombres personales, relatos internos y redacción de limitaciones. No se revisó contenido remoto ni se reescribió historial.
+El [procedimiento](FASE-1B.md), el [registro agregado](evidencias-fase-1b.json) y los JSON de [conservación](evidencias-fase-1b/conservacion.json) contienen resultados e inventarios. No se publican tokens, credenciales, usuarios reales, direcciones de instancia ni logs completos.
+
+La clave única solo acredita rechazo de una clave exacta duplicada. No demuestra generación canónica, idempotencia integral ni solapamiento. Las comprobaciones con la cuenta técnica no acreditan la matriz comercial, las transferencias ni la protección completa frente a eliminación. La inmutabilidad de AsyncApexJobId una vez asignado no se prueba mediante identificadores ficticios.
+
+Las comprobaciones locales finales cubren sintaxis de scripts, XML, enlaces, coherencia de evidencias, exclusiones y diferencias Git. La documentación distingue resultados actuales e históricos y conserva las limitaciones.
 
 ## Trabajo posterior
 
-La API es provisional hasta verificar el destino dedicado. La clave única no sustituye la generación y comprobación canónica. Batch, servicio de lanzamiento, concurrencia, persistencia de errores de lotes revertidos y reconciliación siguen sin implementar.
-
-No hay permission sets, compartición completa, controles de reasignación comprobados, informe ni datos. Las restricciones declarativas no demuestran por sí solas seguridad o conservación integral del historial.
-
-El siguiente paso para fase 1B es seleccionar el entorno exclusivo de P06, identificar sus capacidades y usuarios disponibles, comprobar la API y preparar la validación del modelo en Salesforce. La creación y autenticación son manuales; cualquier despliegue o comprobación remota requiere autorización específica de esa fase.
+La gestión comercial y la configuración de acceso son el siguiente alcance previsto. No se ha iniciado Batch, servicio de lanzamiento, reconciliación de lotes, programación, informe ni integración. No se han añadido usuarios o privilegios administrativos. Los criterios AC-01 a AC-20 se mantienen como aceptación integral futura; las comprobaciones declarativas de esta fase no sustituyen su ejecución completa.

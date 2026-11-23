@@ -1,0 +1,601 @@
+{
+    "fase":  "1B",
+    "fecha":  "2026-11-23",
+    "estado":  "completada",
+    "referenciaInicial":  "3c6341eff29d9faee09c8d248f516377de45029d",
+    "api":  "65.0",
+    "destino":  {
+                    "tipo":  "Developer Edition",
+                    "alias":  "p06-renovaciones-dev",
+                    "identidadVerificada":  true,
+                    "cuentaCoincideConIdentificacionExpresa":  true,
+                    "conexionVerificada":  true,
+                    "noProductivoVerificado":  true,
+                    "isSandbox":  false,
+                    "apiVerificadaEnDestino":  true,
+                    "colisionesIniciales":  [
+
+                                            ],
+                    "accountCreateable":  true,
+                    "licencias":  [
+                                      {
+                                          "Name":  "Salesforce",
+                                          "Total":  4,
+                                          "Used":  2
+                                      },
+                                      {
+                                          "Name":  "Salesforce Platform",
+                                          "Total":  6,
+                                          "Used":  0
+                                      }
+                                  ],
+                    "usuariosActivosPorTipo":  [
+                                                   {
+                                                       "Type":  "AutomatedProcess",
+                                                       "Count":  2
+                                                   },
+                                                   {
+                                                       "Type":  "CloudIntegrationUser",
+                                                       "Count":  1
+                                                   },
+                                                   {
+                                                       "Type":  "Standard",
+                                                       "Count":  4
+                                                   },
+                                                   {
+                                                       "Type":  "CsnOnly",
+                                                       "Count":  1
+                                                   }
+                                               ],
+                    "estadoAutenticacion":  "autenticacion_exclusiva_verificada",
+                    "aliasIncorrectoRetirado":  true
+                },
+    "modelo":  {
+                   "objetos":  4,
+                   "campos":  35,
+                   "validaciones":  19,
+                   "componentes":  [
+                                       {
+                                           "tipo":  "CustomObject",
+                                           "nombre":  "ContratoComercial__c"
+                                       },
+                                       {
+                                           "tipo":  "CustomField",
+                                           "nombre":  "ContratoComercial__c.Cuenta__c"
+                                       },
+                                       {
+                                           "tipo":  "CustomField",
+                                           "nombre":  "ContratoComercial__c.Estado__c"
+                                       },
+                                       {
+                                           "tipo":  "CustomField",
+                                           "nombre":  "ContratoComercial__c.FechaInicio__c"
+                                       },
+                                       {
+                                           "tipo":  "CustomField",
+                                           "nombre":  "ContratoComercial__c.FechaVencimiento__c"
+                                       },
+                                       {
+                                           "tipo":  "ValidationRule",
+                                           "nombre":  "ContratoComercial__c.FechasCoherentes"
+                                       },
+                                       {
+                                           "tipo":  "ValidationRule",
+                                           "nombre":  "ContratoComercial__c.ResponsableUsuario"
+                                       },
+                                       {
+                                           "tipo":  "CustomObject",
+                                           "nombre":  "EjecucionRenovacion__c"
+                                       },
+                                       {
+                                           "tipo":  "CustomField",
+                                           "nombre":  "EjecucionRenovacion__c.AsyncApexJobId__c"
+                                       },
+                                       {
+                                           "tipo":  "CustomField",
+                                           "nombre":  "EjecucionRenovacion__c.Creados__c"
+                                       },
+                                       {
+                                           "tipo":  "CustomField",
+                                           "nombre":  "EjecucionRenovacion__c.Estado__c"
+                                       },
+                                       {
+                                           "tipo":  "CustomField",
+                                           "nombre":  "EjecucionRenovacion__c.Evaluados__c"
+                                       },
+                                       {
+                                           "tipo":  "CustomField",
+                                           "nombre":  "EjecucionRenovacion__c.Fallidos__c"
+                                       },
+                                       {
+                                           "tipo":  "CustomField",
+                                           "nombre":  "EjecucionRenovacion__c.FechaCorte__c"
+                                       },
+                                       {
+                                           "tipo":  "CustomField",
+                                           "nombre":  "EjecucionRenovacion__c.Finalizacion__c"
+                                       },
+                                       {
+                                           "tipo":  "CustomField",
+                                           "nombre":  "EjecucionRenovacion__c.FinVentana__c"
+                                       },
+                                       {
+                                           "tipo":  "CustomField",
+                                           "nombre":  "EjecucionRenovacion__c.Inicio__c"
+                                       },
+                                       {
+                                           "tipo":  "CustomField",
+                                           "nombre":  "EjecucionRenovacion__c.InicioVentana__c"
+                                       },
+                                       {
+                                           "tipo":  "CustomField",
+                                           "nombre":  "EjecucionRenovacion__c.LotesFallidos__c"
+                                       },
+                                       {
+                                           "tipo":  "CustomField",
+                                           "nombre":  "EjecucionRenovacion__c.Omitidos__c"
+                                       },
+                                       {
+                                           "tipo":  "CustomField",
+                                           "nombre":  "EjecucionRenovacion__c.RequiereReconciliacion__c"
+                                       },
+                                       {
+                                           "tipo":  "CustomField",
+                                           "nombre":  "EjecucionRenovacion__c.Solicitante__c"
+                                       },
+                                       {
+                                           "tipo":  "CustomField",
+                                           "nombre":  "EjecucionRenovacion__c.YaExistentes__c"
+                                       },
+                                       {
+                                           "tipo":  "CustomField",
+                                           "nombre":  "EjecucionRenovacion__c.ZonaHoraria__c"
+                                       },
+                                       {
+                                           "tipo":  "ValidationRule",
+                                           "nombre":  "EjecucionRenovacion__c.CompletadaSinErrores"
+                                       },
+                                       {
+                                           "tipo":  "ValidationRule",
+                                           "nombre":  "EjecucionRenovacion__c.ContadoresNoNegativos"
+                                       },
+                                       {
+                                           "tipo":  "ValidationRule",
+                                           "nombre":  "EjecucionRenovacion__c.ContextoInmutable"
+                                       },
+                                       {
+                                           "tipo":  "ValidationRule",
+                                           "nombre":  "EjecucionRenovacion__c.EstadoInicialEncolada"
+                                       },
+                                       {
+                                           "tipo":  "ValidationRule",
+                                           "nombre":  "EjecucionRenovacion__c.FinalizacionCoherente"
+                                       },
+                                       {
+                                           "tipo":  "ValidationRule",
+                                           "nombre":  "EjecucionRenovacion__c.FinalizacionSegunEstado"
+                                       },
+                                       {
+                                           "tipo":  "ValidationRule",
+                                           "nombre":  "EjecucionRenovacion__c.JobAsignadoInmutable"
+                                       },
+                                       {
+                                           "tipo":  "ValidationRule",
+                                           "nombre":  "EjecucionRenovacion__c.ResultadosConfirmadosCoherentes"
+                                       },
+                                       {
+                                           "tipo":  "ValidationRule",
+                                           "nombre":  "EjecucionRenovacion__c.SolicitanteObligatorio"
+                                       },
+                                       {
+                                           "tipo":  "ValidationRule",
+                                           "nombre":  "EjecucionRenovacion__c.VentanaCoherente"
+                                       },
+                                       {
+                                           "tipo":  "CustomField",
+                                           "nombre":  "IncidenciaRenovacion__c.CamposAfectados__c"
+                                       },
+                                       {
+                                           "tipo":  "CustomField",
+                                           "nombre":  "IncidenciaRenovacion__c.ClaveIntentada__c"
+                                       },
+                                       {
+                                           "tipo":  "CustomField",
+                                           "nombre":  "IncidenciaRenovacion__c.CodigoError__c"
+                                       },
+                                       {
+                                           "tipo":  "CustomField",
+                                           "nombre":  "IncidenciaRenovacion__c.Contrato__c"
+                                       },
+                                       {
+                                           "tipo":  "CustomField",
+                                           "nombre":  "IncidenciaRenovacion__c.Ejecucion__c"
+                                       },
+                                       {
+                                           "tipo":  "CustomField",
+                                           "nombre":  "IncidenciaRenovacion__c.Etapa__c"
+                                       },
+                                       {
+                                           "tipo":  "CustomField",
+                                           "nombre":  "IncidenciaRenovacion__c.Mensaje__c"
+                                       },
+                                       {
+                                           "tipo":  "CustomObject",
+                                           "nombre":  "IncidenciaRenovacion__c"
+                                       },
+                                       {
+                                           "tipo":  "ValidationRule",
+                                           "nombre":  "IncidenciaRenovacion__c.IncidenciaInmutable"
+                                       },
+                                       {
+                                           "tipo":  "ValidationRule",
+                                           "nombre":  "IncidenciaRenovacion__c.MensajeObligatorio"
+                                       },
+                                       {
+                                           "tipo":  "CustomField",
+                                           "nombre":  "SeguimientoRenovacion__c.Aplicable__c"
+                                       },
+                                       {
+                                           "tipo":  "CustomField",
+                                           "nombre":  "SeguimientoRenovacion__c.ClaveIdentidad__c"
+                                       },
+                                       {
+                                           "tipo":  "CustomField",
+                                           "nombre":  "SeguimientoRenovacion__c.Contrato__c"
+                                       },
+                                       {
+                                           "tipo":  "CustomField",
+                                           "nombre":  "SeguimientoRenovacion__c.DiasRestantes__c"
+                                       },
+                                       {
+                                           "tipo":  "CustomField",
+                                           "nombre":  "SeguimientoRenovacion__c.Ejecucion__c"
+                                       },
+                                       {
+                                           "tipo":  "CustomField",
+                                           "nombre":  "SeguimientoRenovacion__c.Estado__c"
+                                       },
+                                       {
+                                           "tipo":  "CustomField",
+                                           "nombre":  "SeguimientoRenovacion__c.FechaVencimientoCapturada__c"
+                                       },
+                                       {
+                                           "tipo":  "CustomField",
+                                           "nombre":  "SeguimientoRenovacion__c.Notas__c"
+                                       },
+                                       {
+                                           "tipo":  "CustomObject",
+                                           "nombre":  "SeguimientoRenovacion__c"
+                                       },
+                                       {
+                                           "tipo":  "ValidationRule",
+                                           "nombre":  "SeguimientoRenovacion__c.EstadoInicialPendiente"
+                                       },
+                                       {
+                                           "tipo":  "ValidationRule",
+                                           "nombre":  "SeguimientoRenovacion__c.IdentidadYOrigenInmutables"
+                                       },
+                                       {
+                                           "tipo":  "ValidationRule",
+                                           "nombre":  "SeguimientoRenovacion__c.NotaObligatoriaAlFinalizar"
+                                       },
+                                       {
+                                           "tipo":  "ValidationRule",
+                                           "nombre":  "SeguimientoRenovacion__c.ResponsableUsuario"
+                                       },
+                                       {
+                                           "tipo":  "ValidationRule",
+                                           "nombre":  "SeguimientoRenovacion__c.TransicionEstadoPermitida"
+                                       }
+                                   ],
+                   "correcciones":  [
+                                        "Solicitante__c: required=false y sin deleteConstraint por incompatibilidad del lookup obligatorio a User.",
+                                        "SolicitanteObligatorio: ISBLANK(Solicitante__c) impide valores vacíos; ContextoInmutable permanece activo."
+                                    ]
+               },
+    "validacionesModelo":  {
+                               "value":  [
+                                             {
+                                                 "id":  "0Afg700000KyMYSCA3",
+                                                 "status":  "Failed",
+                                                 "checkOnly":  true,
+                                                 "errores":  [
+                                                                 {
+                                                                     "componente":  "EjecucionRenovacion__c.Solicitante__c",
+                                                                     "motivo":  "El lookup universalmente obligatorio exige una restricción de eliminación."
+                                                                 },
+                                                                 {
+                                                                     "componente":  "EjecucionRenovacion__c.ContextoInmutable",
+                                                                     "motivo":  "Solicitante__c no disponible debido al error del campo."
+                                                                 }
+                                                             ]
+                                             },
+                                             {
+                                                 "id":  "0Afg700000Kyf3ECAR",
+                                                 "status":  "Failed",
+                                                 "checkOnly":  true,
+                                                 "errores":  [
+                                                                 {
+                                                                     "componente":  "EjecucionRenovacion__c.Solicitante__c",
+                                                                     "motivo":  "Salesforce no admite cascada ni Restrict en un lookup a User."
+                                                                 },
+                                                                 {
+                                                                     "componente":  "EjecucionRenovacion__c.ContextoInmutable",
+                                                                     "motivo":  "Solicitante__c no disponible debido al error del campo."
+                                                                 }
+                                                             ]
+                                             },
+                                             {
+                                                 "id":  "0Afg700000KytqwCAB",
+                                                 "status":  "Succeeded",
+                                                 "checkOnly":  true,
+                                                 "componentes":  58,
+                                                 "errores":  [
+
+                                                             ]
+                                             }
+                                         ],
+                               "Count":  3
+                           },
+    "validacionRemota":  {
+                             "id":  "0Afg700000KytqwCAB",
+                             "status":  "Succeeded",
+                             "done":  true,
+                             "success":  true,
+                             "checkOnly":  true,
+                             "numberComponentsDeployed":  58,
+                             "numberComponentsTotal":  58,
+                             "numberComponentErrors":  0
+                         },
+    "despliegue":  {
+                       "id":  "0Afg700000KzBhNCAV",
+                       "status":  "Succeeded",
+                       "done":  true,
+                       "success":  true,
+                       "checkOnly":  false,
+                       "numberComponentsDeployed":  58,
+                       "numberComponentsTotal":  58,
+                       "numberComponentErrors":  0
+                   },
+    "permisoTecnico":  {
+                           "nombre":  "P06_VerificacionModelo",
+                           "campos":  11,
+                           "lecturaEscritura":  8,
+                           "soloLectura":  3,
+                           "permisosSistema":  0,
+                           "permisosObjeto":  0,
+                           "asignadoSoloACuentaTecnicaP06":  true,
+                           "validacion":  {
+                                              "id":  "0Afg700000KydvrCAB",
+                                              "status":  "Succeeded",
+                                              "done":  true,
+                                              "success":  true,
+                                              "checkOnly":  true
+                                          },
+                           "despliegue":  {
+                                              "id":  "0Afg700000KzDmPCAV",
+                                              "status":  "Succeeded",
+                                              "done":  true,
+                                              "success":  true,
+                                              "checkOnly":  false
+                                          },
+                           "matrizComercialVerificada":  false
+                       },
+    "comprobacionesFuncionales":  {
+                                      "estado":  "correctas",
+                                      "tipo":  "bloques_apex_anonimos",
+                                      "casosEjecutados":  117,
+                                      "casosCorrectos":  117,
+                                      "casosOmitidos":  0,
+                                      "grupos":  [
+                                                     {
+                                                         "suite":  "contratos",
+                                                         "casos":  12,
+                                                         "registros":  2,
+                                                         "compilado":  true,
+                                                         "ejecutado":  true,
+                                                         "correcto":  true
+                                                     },
+                                                     {
+                                                         "suite":  "seguimientos",
+                                                         "casos":  51,
+                                                         "registros":  10,
+                                                         "compilado":  true,
+                                                         "ejecutado":  true,
+                                                         "correcto":  true
+                                                     },
+                                                     {
+                                                         "suite":  "ejecuciones",
+                                                         "casos":  37,
+                                                         "registros":  1,
+                                                         "compilado":  true,
+                                                         "ejecutado":  true,
+                                                         "correcto":  true
+                                                     },
+                                                     {
+                                                         "suite":  "incidencias",
+                                                         "casos":  17,
+                                                         "registros":  6,
+                                                         "compilado":  true,
+                                                         "ejecutado":  true,
+                                                         "correcto":  true
+                                                     }
+                                                 ],
+                                      "registrosCreados":  [
+                                                               {
+                                                                   "objeto":  "Account",
+                                                                   "id":  "001g700001LxvUqAAJ",
+                                                                   "funcion":  "cuenta-contratos"
+                                                               },
+                                                               {
+                                                                   "objeto":  "ContratoComercial__c",
+                                                                   "id":  "a00g700002b45UUAAY",
+                                                                   "funcion":  "contrato-base"
+                                                               },
+                                                               {
+                                                                   "objeto":  "Account",
+                                                                   "id":  "001g700001LwEu5AAF",
+                                                                   "funcion":  "cuenta-seguimientos"
+                                                               },
+                                                               {
+                                                                   "objeto":  "ContratoComercial__c",
+                                                                   "id":  "a00g700002b50XJAAY",
+                                                                   "funcion":  "contrato-actual"
+                                                               },
+                                                               {
+                                                                   "objeto":  "ContratoComercial__c",
+                                                                   "id":  "a00g700002b50XKAAY",
+                                                                   "funcion":  "contrato-atrasado"
+                                                               },
+                                                               {
+                                                                   "objeto":  "EjecucionRenovacion__c",
+                                                                   "id":  "a01g700001LwEu6AAF",
+                                                                   "funcion":  "ejecucion-modelo"
+                                                               },
+                                                               {
+                                                                   "objeto":  "EjecucionRenovacion__c",
+                                                                   "id":  "a01g700001LwEu7AAF",
+                                                                   "funcion":  "ejecucion-alternativa"
+                                                               },
+                                                               {
+                                                                   "objeto":  "SeguimientoRenovacion__c",
+                                                                   "id":  "a03g700000tIYOYAA4",
+                                                                   "funcion":  "seguimiento-0"
+                                                               },
+                                                               {
+                                                                   "objeto":  "SeguimientoRenovacion__c",
+                                                                   "id":  "a03g700000tIYOZAA4",
+                                                                   "funcion":  "seguimiento-1"
+                                                               },
+                                                               {
+                                                                   "objeto":  "SeguimientoRenovacion__c",
+                                                                   "id":  "a03g700000tIYOaAAO",
+                                                                   "funcion":  "seguimiento-2"
+                                                               },
+                                                               {
+                                                                   "objeto":  "SeguimientoRenovacion__c",
+                                                                   "id":  "a03g700000tIYObAAO",
+                                                                   "funcion":  "seguimiento-3"
+                                                               },
+                                                               {
+                                                                   "objeto":  "SeguimientoRenovacion__c",
+                                                                   "id":  "a03g700000tIYOdAAO",
+                                                                   "funcion":  "seguimiento-atrasado"
+                                                               },
+                                                               {
+                                                                   "objeto":  "EjecucionRenovacion__c",
+                                                                   "id":  "a01g700001LwKQ1AAN",
+                                                                   "funcion":  "ejecucion-base"
+                                                               },
+                                                               {
+                                                                   "objeto":  "Account",
+                                                                   "id":  "001g700001LyNmjAAF",
+                                                                   "funcion":  "cuenta-incidencias"
+                                                               },
+                                                               {
+                                                                   "objeto":  "ContratoComercial__c",
+                                                                   "id":  "a00g700002b50vVAAQ",
+                                                                   "funcion":  "contrato-incidencia"
+                                                               },
+                                                               {
+                                                                   "objeto":  "EjecucionRenovacion__c",
+                                                                   "id":  "a01g700001LyNmkAAF",
+                                                                   "funcion":  "ejecucion-incidencia"
+                                                               },
+                                                               {
+                                                                   "objeto":  "EjecucionRenovacion__c",
+                                                                   "id":  "a01g700001LyNmlAAF",
+                                                                   "funcion":  "ejecucion-alternativa"
+                                                               },
+                                                               {
+                                                                   "objeto":  "IncidenciaRenovacion__c",
+                                                                   "id":  "a02g700000F1C05AAF",
+                                                                   "funcion":  "incidencia-base"
+                                                               },
+                                                               {
+                                                                   "objeto":  "IncidenciaRenovacion__c",
+                                                                   "id":  "a02g700000F1C06AAF",
+                                                                   "funcion":  "incidencia-sin-contrato"
+                                                               }
+                                                           ],
+                                      "archivosDeEvidencia":  [
+                                                                  "evidencias-fase-1b/P06-1B-20261123T132719-b12376f4-contratos.json",
+                                                                  "evidencias-fase-1b/P06-1B-20261123T132811-bff184d2-seguimientos.json",
+                                                                  "evidencias-fase-1b/P06-1B-20261123T133354-b17fd935-seguimientos.json",
+                                                                  "evidencias-fase-1b/P06-1B-20261123T133432-f8cc7f15-ejecuciones.json",
+                                                                  "evidencias-fase-1b/P06-1B-20261123T133507-a51f9870-incidencias.json"
+                                                              ],
+                                      "intentoPrevioSinEjecucion":  {
+                                                                        "archivo":  "evidencias-fase-1b/P06-1B-20261123T132811-bff184d2-seguimientos.json",
+                                                                        "compilado":  false,
+                                                                        "ejecutado":  false,
+                                                                        "registros":  0,
+                                                                        "causa":  "La cuenta técnica no veía Notas__c; FieldDefinition confirmó su existencia y describe no lo mostraba. Se resolvió con el permiso técnico de once campos."
+                                                                    }
+                                  },
+    "conservacion":  {
+                         "tipo":  "lectura_posterior_de_fixtures",
+                         "fechaUtc":  "2026-11-23T13:37:14.5456854Z",
+                         "api":  "65.0",
+                         "correcto":  true,
+                         "registrosEsperados":  19,
+                         "objetos":  [
+                                         {
+                                             "objeto":  "Account",
+                                             "esperados":  3,
+                                             "encontrados":  3,
+                                             "correcto":  true
+                                         },
+                                         {
+                                             "objeto":  "ContratoComercial__c",
+                                             "esperados":  4,
+                                             "encontrados":  4,
+                                             "correcto":  true
+                                         },
+                                         {
+                                             "objeto":  "EjecucionRenovacion__c",
+                                             "esperados":  5,
+                                             "encontrados":  5,
+                                             "correcto":  true
+                                         },
+                                         {
+                                             "objeto":  "SeguimientoRenovacion__c",
+                                             "esperados":  5,
+                                             "encontrados":  5,
+                                             "correcto":  true
+                                         },
+                                         {
+                                             "objeto":  "IncidenciaRenovacion__c",
+                                             "esperados":  2,
+                                             "encontrados":  2,
+                                             "correcto":  true
+                                         }
+                                     ]
+                     },
+    "comprobacionesLocales":  {
+                                  "sintaxisPowerShell":  "correcta",
+                                  "xmlModelo":  "58_archivos_bien_formados",
+                                  "conversionMetadataApiHistorica":  "correcta_para_modelo_inicial_de_57_componentes",
+                                  "modeloAplicadoCoincideConHashesValidados":  true,
+                                  "permisoTecnico":  "11_campos_sin_permisos_de_sistema_u_objeto",
+                                  "compilacionApex":  "cuatro_bloques_correctos",
+                                  "pruebasApexAutomatizadas":  "no_ejecutadas_no_hay_clases_desplegables",
+                                  "revisionFinal":  {
+                                                        "scriptsPowerShell":  3,
+                                                        "bloquesPowerShellDocumentados":  8,
+                                                        "xmlBienFormados":  61,
+                                                        "enlacesLocales":  20,
+                                                        "archivosRevisados":  26,
+                                                        "errores":  0,
+                                                        "archivosStaged":  0,
+                                                        "estadoPrivadoIgnorado":  true
+                                                    }
+                              },
+    "limitaciones":  [
+                         "La clave exacta única no acredita generación canónica, concurrencia ni idempotencia integral.",
+                         "No se implementan Batch, servicio de lanzamiento, reconciliación, programación, informes ni integraciones.",
+                         "La matriz de acceso comercial, compartición y transferencia siguen pendientes.",
+                         "No se realizaron pruebas de eliminación ni asignación de identificadores AsyncApexJob ficticios.",
+                         "Los fixtures de ejecución no representan trabajos Batch ni resultados reales de procesamiento."
+                     ]
+}

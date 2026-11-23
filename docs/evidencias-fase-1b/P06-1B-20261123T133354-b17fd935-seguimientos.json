@@ -1,0 +1,372 @@
+{
+    "api":  "65.0",
+    "suite":  "seguimientos",
+    "marca":  "P06-1B-20261123T133354-b17fd935",
+    "fechaUtc":  "2026-11-23T13:34:05.0835981Z",
+    "despliegue":  "0Afg700000KzBhNCAV",
+    "compilado":  true,
+    "ejecutado":  true,
+    "inventarioPendiente":  false,
+    "correcto":  true,
+    "diagnosticoCompilacion":  null,
+    "casos":  [
+                  {
+                      "caso":  "FIX-cuenta-seguimientos",
+                      "esperado":  "fixture creado",
+                      "observado":  "fixture creado",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "FIX-contrato-actual",
+                      "esperado":  "fixture creado",
+                      "observado":  "fixture creado",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "FIX-contrato-atrasado",
+                      "esperado":  "fixture creado",
+                      "observado":  "fixture creado",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "FIX-ejecucion-modelo",
+                      "esperado":  "fixture creado",
+                      "observado":  "fixture creado",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "FIX-ejecucion-alternativa",
+                      "esperado":  "fixture creado",
+                      "observado":  "fixture creado",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "FIX-seguimiento-0",
+                      "esperado":  "fixture creado",
+                      "observado":  "fixture creado",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "FIX-seguimiento-1",
+                      "esperado":  "fixture creado",
+                      "observado":  "fixture creado",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "S-PREPARE-1",
+                      "esperado":  "actualización válida",
+                      "observado":  "actualización válida",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "FIX-seguimiento-2",
+                      "esperado":  "fixture creado",
+                      "observado":  "fixture creado",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "S-PREPARE-2",
+                      "esperado":  "actualización válida",
+                      "observado":  "actualización válida",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "FIX-seguimiento-3",
+                      "esperado":  "fixture creado",
+                      "observado":  "fixture creado",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "S-PREPARE-3",
+                      "esperado":  "actualización válida",
+                      "observado":  "actualización válida",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "S-INITIAL",
+                      "esperado":  "Pendiente",
+                      "observado":  "Pendiente",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "S-UNIQUE",
+                      "esperado":  "rechazado: DUPLICATE_VALUE / ",
+                      "observado":  "rechazado: DUPLICATE_VALUE; regla esperada=true",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "S-INITIAL-INVALID",
+                      "esperado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION / debe crearse en estado Pendiente",
+                      "observado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION; regla esperada=true",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "S-IMMUTABLE-Contrato",
+                      "esperado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION / No se pueden modificar",
+                      "observado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION; regla esperada=true",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "S-IMMUTABLE-Fecha",
+                      "esperado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION / No se pueden modificar",
+                      "observado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION; regla esperada=true",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "S-IMMUTABLE-Clave",
+                      "esperado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION / No se pueden modificar",
+                      "observado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION; regla esperada=true",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "S-IMMUTABLE-Ejecucion",
+                      "esperado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION / No se pueden modificar",
+                      "observado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION; regla esperada=true",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "S-TRANSITION-0-0",
+                      "esperado":  "aceptado",
+                      "observado":  "aceptado",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "S-TRANSITION-0-1",
+                      "esperado":  "aceptado",
+                      "observado":  "aceptado",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "S-TRANSITION-0-2",
+                      "esperado":  "aceptado",
+                      "observado":  "aceptado",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "S-TRANSITION-0-3",
+                      "esperado":  "aceptado",
+                      "observado":  "aceptado",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "S-TRANSITION-1-0",
+                      "esperado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION / Solo se permite pasar",
+                      "observado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION; regla esperada=true",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "S-TRANSITION-1-1",
+                      "esperado":  "aceptado",
+                      "observado":  "aceptado",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "S-TRANSITION-1-2",
+                      "esperado":  "aceptado",
+                      "observado":  "aceptado",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "S-TRANSITION-1-3",
+                      "esperado":  "aceptado",
+                      "observado":  "aceptado",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "S-TRANSITION-2-0",
+                      "esperado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION / Solo se permite pasar",
+                      "observado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION; regla esperada=true",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "S-TRANSITION-2-1",
+                      "esperado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION / Solo se permite pasar",
+                      "observado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION; regla esperada=true",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "S-TRANSITION-2-2",
+                      "esperado":  "aceptado",
+                      "observado":  "aceptado",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "S-TRANSITION-2-3",
+                      "esperado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION / Solo se permite pasar",
+                      "observado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION; regla esperada=true",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "S-TRANSITION-3-0",
+                      "esperado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION / Solo se permite pasar",
+                      "observado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION; regla esperada=true",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "S-TRANSITION-3-1",
+                      "esperado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION / Solo se permite pasar",
+                      "observado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION; regla esperada=true",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "S-TRANSITION-3-2",
+                      "esperado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION / Solo se permite pasar",
+                      "observado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION; regla esperada=true",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "S-TRANSITION-3-3",
+                      "esperado":  "aceptado",
+                      "observado":  "aceptado",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "S-NOTE-Cerrado-null",
+                      "esperado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION / se necesita una nota con contenido",
+                      "observado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION; regla esperada=true",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "S-NOTE-Cerrado-spaces",
+                      "esperado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION / se necesita una nota con contenido",
+                      "observado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION; regla esperada=true",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "S-NOTE-Descartado-null",
+                      "esperado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION / se necesita una nota con contenido",
+                      "observado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION; regla esperada=true",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "S-NOTE-Descartado-spaces",
+                      "esperado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION / se necesita una nota con contenido",
+                      "observado":  "rechazado: FIELD_CUSTOM_VALIDATION_EXCEPTION; regla esperada=true",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "S-INVALID-STATE",
+                      "esperado":  "rechazado: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST / ",
+                      "observado":  "rechazado: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST; regla esperada=true",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "S-CLOSE-FIXTURE",
+                      "esperado":  "actualización válida",
+                      "observado":  "actualización válida",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "A-ACTIVE-MATCH",
+                      "esperado":  "aplicable y Cerrado",
+                      "observado":  "true/Cerrado",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "A-CHANGE-DATE",
+                      "esperado":  "actualización válida",
+                      "observado":  "actualización válida",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "A-DATE-DIFFERS",
+                      "esperado":  "no aplicable",
+                      "observado":  "false",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "A-RESTORE-DATE",
+                      "esperado":  "actualización válida",
+                      "observado":  "actualización válida",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "A-RESTORED-CLOSED",
+                      "esperado":  "aplicable y Cerrado",
+                      "observado":  "true/Cerrado",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "A-DEACTIVATE",
+                      "esperado":  "actualización válida",
+                      "observado":  "actualización válida",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "A-INACTIVE",
+                      "esperado":  "no aplicable",
+                      "observado":  "false",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "A-RESTORE-ACTIVE",
+                      "esperado":  "actualización válida",
+                      "observado":  "actualización válida",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "FIX-seguimiento-atrasado",
+                      "esperado":  "fixture creado",
+                      "observado":  "fixture creado",
+                      "resultado":  "correcto"
+                  },
+                  {
+                      "caso":  "A-OVERDUE",
+                      "esperado":  "aplicable, días negativos y Pendiente",
+                      "observado":  "true/-1/Pendiente",
+                      "resultado":  "correcto"
+                  }
+              ],
+    "registrosConservados":  [
+                                 {
+                                     "objeto":  "Account",
+                                     "id":  "001g700001LwEu5AAF",
+                                     "funcion":  "cuenta-seguimientos"
+                                 },
+                                 {
+                                     "objeto":  "ContratoComercial__c",
+                                     "id":  "a00g700002b50XJAAY",
+                                     "funcion":  "contrato-actual"
+                                 },
+                                 {
+                                     "objeto":  "ContratoComercial__c",
+                                     "id":  "a00g700002b50XKAAY",
+                                     "funcion":  "contrato-atrasado"
+                                 },
+                                 {
+                                     "objeto":  "EjecucionRenovacion__c",
+                                     "id":  "a01g700001LwEu6AAF",
+                                     "funcion":  "ejecucion-modelo"
+                                 },
+                                 {
+                                     "objeto":  "EjecucionRenovacion__c",
+                                     "id":  "a01g700001LwEu7AAF",
+                                     "funcion":  "ejecucion-alternativa"
+                                 },
+                                 {
+                                     "objeto":  "SeguimientoRenovacion__c",
+                                     "id":  "a03g700000tIYOYAA4",
+                                     "funcion":  "seguimiento-0"
+                                 },
+                                 {
+                                     "objeto":  "SeguimientoRenovacion__c",
+                                     "id":  "a03g700000tIYOZAA4",
+                                     "funcion":  "seguimiento-1"
+                                 },
+                                 {
+                                     "objeto":  "SeguimientoRenovacion__c",
+                                     "id":  "a03g700000tIYOaAAO",
+                                     "funcion":  "seguimiento-2"
+                                 },
+                                 {
+                                     "objeto":  "SeguimientoRenovacion__c",
+                                     "id":  "a03g700000tIYObAAO",
+                                     "funcion":  "seguimiento-3"
+                                 },
+                                 {
+                                     "objeto":  "SeguimientoRenovacion__c",
+                                     "id":  "a03g700000tIYOdAAO",
+                                     "funcion":  "seguimiento-atrasado"
+                                 }
+                             ]
+}

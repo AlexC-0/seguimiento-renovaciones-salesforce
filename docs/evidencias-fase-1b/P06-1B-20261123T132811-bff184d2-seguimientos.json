@@ -1,0 +1,17 @@
+{
+    "api":  "65.0",
+    "suite":  "seguimientos",
+    "marca":  "P06-1B-20261123T132811-bff184d2",
+    "fechaUtc":  "2026-11-23T13:28:20.2409723Z",
+    "despliegue":  "0Afg700000KzBhNCAV",
+    "compilado":  false,
+    "ejecutado":  false,
+    "inventarioPendiente":  false,
+    "correcto":  false,
+    "casos":  [
+
+              ],
+    "registrosConservados":  [
+
+                             ]
+}

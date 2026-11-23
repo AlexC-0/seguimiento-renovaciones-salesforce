@@ -1,6 +1,6 @@
 # Entorno
 
-Inspección local realizada el 23/11/2026. Las versiones corresponden a las herramientas detectadas; no constituyen una validación completa de compatibilidad.
+Inspección local y verificación del destino realizadas el 23/11/2026. Las versiones de herramientas corresponden al inventario inicial; no constituyen una revisión general de compatibilidad.
 
 ## Herramientas detectadas
 
@@ -13,42 +13,46 @@ Inspección local realizada el 23/11/2026. Las versiones corresponden a las herr
 | VS Code | 1.147.0 | Versión del ejecutable instalado |
 | Paquete principal Salesforce y extensión Apex | 68.12.0 | Manifiestos locales detectados; activación no comprobada |
 
-Salesforce CLI permitirá desplegar y ejecutar pruebas cuando exista un destino autorizado. Git permite versionar el proyecto. Java y las extensiones son auxiliares del editor.
+Salesforce CLI se utilizó para validar, desplegar y comprobar el modelo en el destino P06. Git permite versionar el proyecto. Java y las extensiones son auxiliares del editor.
 
-## Organización
+## Destino de fase 1B
 
-No se ha seleccionado ni validado una organización para P06. La inspección encontró alias locales de otros proyectos, que no constituyen destinos autorizados para este proyecto.
+Cuenta existente identificada expresamente para P06 y autenticada desde Chrome habitual. Alias local: `p06-renovaciones-dev`. La identidad recibida por la CLI coincidió con la cuenta indicada. No se ha creado otra organización ni se ha establecido un destino global.
 
-No se encontraron los archivos globales de configuración comprobados ni valores en SF_TARGET_ORG, SF_TARGET_DEV_HUB, SFDX_DEFAULTUSERNAME o SFDX_DEFAULTDEVHUBUSERNAME. El alcance fue la configuración global y esas variables del proceso; no se inspeccionaron configuraciones de otros proyectos ni archivos de autenticación.
+La consulta de Organization confirmó Developer Edition, IsSandbox=false y conexión con API 65.0. La edición de desarrollo y la identidad explícita acreditan el destino no productivo; IsSandbox=false aislado no lo demuestra. No existían los cuatro nombres de objetos P06 antes del despliegue.
 
-No se comprobaron conexiones, tipos de organización ni vigencia de sesiones. La ausencia de valores en esas fuentes no demuestra que no existan organizaciones autenticadas o un Dev Hub disponible por otra vía.
+El identificador de organización se conserva en el estado local excluido de Git para vincular operaciones. No se publican usuarios, direcciones de instancia ni archivos de autenticación. Cada comando remoto especifica el destino.
 
-## Entorno propuesto
+## Capacidades y acceso
 
-Se propone una Developer Edition dedicada o un Playground exclusivo, sujeto a confirmar disponibilidad, capacidades y usuarios suficientes. La elección debe permitir conservar datos y evidencias durante varias sesiones.
+| Capacidad | Resultado observado |
+|---|---|
+| Licencias Salesforce | 4 totales, 2 utilizadas |
+| Licencias Salesforce Platform | 6 totales, 0 utilizadas |
+| Usuarios activos de tipo Standard | 4 |
+| Otros tipos activos | AutomatedProcess: 2; CloudIntegrationUser: 1; CsnOnly: 1 |
+| Creación de Account por la cuenta técnica | Disponible |
+| API 65.0 | Consultas, validación, despliegue y bloques anónimos correctos |
+| Segundo usuario estándar para probar Solicitante | Disponible; comprobación ejecutada |
 
-Una scratch org queda condicionada a disponer de un Dev Hub autorizado y a definir cómo se conservarán datos y evidencias. No se ha identificado un Dev Hub en las fuentes locales revisadas.
+Los tipos Standard no equivalen necesariamente a cuatro cuentas comerciales utilizables. El inventario agregado de licencias no acredita permisos efectivos por rol ni garantiza disponibilidad para una configuración futura.
 
-La creación y autenticación del entorno se realizarán manualmente. No se reutilizarán organizaciones, datos ni configuración de otros proyectos.
+El despliegue de objetos no hizo visibles los campos opcionales y calculados a la cuenta técnica. P06_VerificacionModelo concede acceso a once campos del modelo: ocho editables y tres de lectura. Está asignado solo a la cuenta técnica existente, sin permisos de sistema, objetos ni eliminación y sin modificar perfiles. Se conservan permiso y asignación para reproducir las comprobaciones. Los roles comerciales siguen sin implementar.
 
-## Comprobaciones pendientes
+## API y despliegues
 
-- Identidad y tipo de la organización exclusiva de P06.
-- Capacidades y usuarios disponibles para verificar permisos por función.
-- Conexión de la CLI con el destino autorizado.
-- Runtime Java utilizado por las extensiones y funcionamiento del servicio de lenguaje Apex.
-- Compilación y aceptación de los metadatos por Salesforce; alcance de los avisos auxiliares del lanzador de la CLI.
+sourceApiVersion=65.0, correspondiente a Winter ’26 según la [documentación de Salesforce](https://developer.salesforce.com/blogs/2025/09/take-a-deep-dive-into-metadata-api-deployments). Su compatibilidad con este destino quedó verificada mediante validación y despliegue del modelo y ejecución de los cuatro bloques anónimos.
 
-## Novedades comprobadas en fase 1A
+El manifiesto del modelo incluye únicamente cuatro CustomObject y sus hijos: 35 campos y 19 reglas. El permiso técnico tiene un manifiesto separado. Se utilizó NoTestRun en Developer Edition; esto no acredita pruebas Apex automatizadas. Los identificadores y estados finales están en [STATUS.md](STATUS.md) y [evidencias-fase-1b.json](evidencias-fase-1b.json).
 
-El repositorio contiene ahora sfdx-project.json con un único paquete fuente force-app. No configura target-org, Dev Hub ni URL de organización. No se ha repetido el inventario de herramientas ni comprobado una conexión remota.
+## Antecedentes locales
 
-Se consultó la ayuda local de sf project convert source. La conversión local con --root-dir force-app y --api-version 65.0 finalizó con status 0 y conservó los cuatro objetos, 35 campos y 18 validaciones en formato Metadata API. La salida se generó en una carpeta temporal externa al repositorio. Los avisos de acceso denegado a consultas de procesos siguen apareciendo; no impidieron esta conversión.
+La inspección inicial no encontró los archivos globales de configuración comprobados ni valores en SF_TARGET_ORG, SF_TARGET_DEV_HUB, SFDX_DEFAULTUSERNAME o SFDX_DEFAULTDEVHUBUSERNAME. Ese resultado tenía alcance local y no acreditaba ausencia de organizaciones autenticadas por otras vías.
 
-## Versión API provisional
+En fase 1A se convirtió el modelo inicial de cuatro objetos, 35 campos y 18 reglas con status 0, sin validación remota. Al preparar fase 1B se repitió la conversión con el manifiesto acotado, también correcta. Son resultados anteriores a la corrección del lookup y no se presentan como compilación de Salesforce.
 
-sourceApiVersion se fija en 65.0, correspondiente a Winter ’26, como referencia explícita y conservadora para los tipos de metadatos utilizados. La decisión no procede de la versión de las extensiones ni afirma que sea la API más reciente. Salesforce identifica esa correspondencia en su [documentación de Metadata API para Winter ’26](https://developer.salesforce.com/blogs/2025/09/take-a-deep-dive-into-metadata-api-deployments).
+El lanzador de CLI emitió avisos auxiliares de acceso denegado al consultar procesos de Windows en comprobaciones locales. No se cambiaron herramientas ni configuración global para eliminarlos. No se inspeccionaron otros repositorios ni se reutilizaron organizaciones ajenas. La asociación incorrecta inicial del alias P06 se retiró antes de consultar ese destino; las demás credenciales y alias se conservaron.
 
-La CLI instalada ha aceptado esa versión para convertir los archivos localmente. Esto no demuestra compatibilidad con una organización: antes de desplegar se deberá comprobar que el destino dedicado admite API 65.0, los tipos y propiedades empleados, y compila las fórmulas y validaciones. Si no la admite, se revisará explícitamente la configuración y el modelo antes de operar.
+## Límites pendientes
 
-No se incluyen dependencias, plantillas de ejemplo ni configuración de creación de organizaciones. Los metadatos tienen deploymentStatus=Deployed como definición del estado previsto del objeto al instalarlo; ese valor no significa que se haya ejecutado un despliegue.
+No se ha comprobado el runtime Java efectivo de las extensiones ni el funcionamiento del servicio de lenguaje Apex. No se han creado usuarios, concedido privilegios administrativos, configurado roles comerciales ni ejecutado pruebas por rol. No hay servicios, túneles, integraciones o procesos Batch asociados a esta fase.

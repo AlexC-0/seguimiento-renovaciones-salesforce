@@ -5,6 +5,6 @@
     <referenceTo>User</referenceTo>
     <relationshipLabel>Ejecución de renovación</relationshipLabel>
     <relationshipName>EjecucionesRenovacion</relationshipName>
-    <required>true</required>
+    <required>false</required>
     <type>Lookup</type>
 </CustomField>
