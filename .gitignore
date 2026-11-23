@@ -1,0 +1,21 @@
+# Estado local de Salesforce y autenticación
+.sf/
+.sfdx/
+
+# Variables y credenciales locales
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+
+# Dependencias y resultados locales
+node_modules/
+coverage/
+*.log
+
+# Archivos temporales del sistema
+.DS_Store
+Thumbs.db
