@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CompletadaSinErrores</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(ISPICKVAL(Estado__c, "Completada"), OR(Fallidos__c &gt; 0, LotesFallidos__c &gt; 0, RequiereReconciliacion__c))</errorConditionFormula>
+    <errorDisplayField>Estado__c</errorDisplayField>
+    <errorMessage>Una ejecución con fallos o reconciliación pendiente no puede marcarse como Completada.</errorMessage>
+</ValidationRule>

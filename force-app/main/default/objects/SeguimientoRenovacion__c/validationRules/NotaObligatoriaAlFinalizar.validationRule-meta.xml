@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NotaObligatoriaAlFinalizar</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    OR(ISPICKVAL(Estado__c, "Cerrado"), ISPICKVAL(Estado__c, "Descartado")),
+    LEN(TRIM(Notas__c)) = 0
+)</errorConditionFormula>
+    <errorDisplayField>Notas__c</errorDisplayField>
+    <errorMessage>Para cerrar o descartar se necesita una nota con contenido.</errorMessage>
+</ValidationRule>

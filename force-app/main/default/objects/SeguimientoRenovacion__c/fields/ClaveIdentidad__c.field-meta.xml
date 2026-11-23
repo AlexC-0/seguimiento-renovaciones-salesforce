@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ClaveIdentidad__c</fullName>
+    <caseSensitive>false</caseSensitive>
+    <description>Identidad prevista: Id de contrato de 18 caracteres, separador | y fecha YYYY-MM-DD. La generación y comprobación canónica mediante Apex están pendientes.</description>
+    <externalId>false</externalId>
+    <label>Clave de identidad</label>
+    <length>29</length>
+    <required>true</required>
+    <type>Text</type>
+    <unique>true</unique>
+</CustomField>

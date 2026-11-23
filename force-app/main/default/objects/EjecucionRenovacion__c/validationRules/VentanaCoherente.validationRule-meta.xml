@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VentanaCoherente</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR(InicioVentana__c &lt;&gt; FechaCorte__c, FinVentana__c &lt;&gt; FechaCorte__c + 30)</errorConditionFormula>
+    <errorMessage>La ventana debe comenzar en la fecha de corte y finalizar 30 días después, con ambos límites incluidos.</errorMessage>
+</ValidationRule>

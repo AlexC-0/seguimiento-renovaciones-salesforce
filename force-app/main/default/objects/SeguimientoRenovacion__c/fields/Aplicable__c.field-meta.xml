@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Aplicable__c</fullName>
+    <description>Activo y mismo vencimiento. No depende de la fecha actual ni del estado del seguimiento.</description>
+    <formula>AND(
+    ISPICKVAL(Contrato__r.Estado__c, "Activo"),
+    FechaVencimientoCapturada__c = Contrato__r.FechaVencimiento__c
+)</formula>
+    <formulaTreatBlanksAs>BlankAsBlank</formulaTreatBlanksAs>
+    <label>Aplicable</label>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,11 @@
+{
+  "packageDirectories": [
+    {
+      "path": "force-app",
+      "default": true
+    }
+  ],
+  "name": "seguimiento-renovaciones-salesforce",
+  "namespace": "",
+  "sourceApiVersion": "65.0"
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Evidencia técnica inmutable de una incidencia relacionada con una ejecución.</description>
+    <enableActivities>false</enableActivities>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <externalSharingModel>Private</externalSharingModel>
+    <label>Incidencia de renovación</label>
+    <nameField>
+        <displayFormat>INC-{000000}</displayFormat>
+        <label>Número de incidencia de renovación</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Incidencias de renovación</pluralLabel>
+    <sharingModel>Private</sharingModel>
+</CustomObject>

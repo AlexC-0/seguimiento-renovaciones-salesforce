@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FinalizacionCoherente</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(NOT(ISBLANK(Finalizacion__c)), Finalizacion__c &lt; Inicio__c)</errorConditionFormula>
+    <errorDisplayField>Finalizacion__c</errorDisplayField>
+    <errorMessage>La finalización no puede ser anterior al inicio.</errorMessage>
+</ValidationRule>

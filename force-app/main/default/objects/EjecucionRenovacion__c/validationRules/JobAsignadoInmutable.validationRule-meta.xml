@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>JobAsignadoInmutable</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(NOT(ISNEW()), NOT(ISBLANK(PRIORVALUE(AsyncApexJobId__c))), ISCHANGED(AsyncApexJobId__c))</errorConditionFormula>
+    <errorDisplayField>AsyncApexJobId__c</errorDisplayField>
+    <errorMessage>El identificador del trabajo no se puede cambiar una vez asignado.</errorMessage>
+</ValidationRule>

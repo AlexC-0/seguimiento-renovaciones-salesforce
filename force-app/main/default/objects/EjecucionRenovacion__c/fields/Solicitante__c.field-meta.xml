@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Solicitante__c</fullName>
+    <label>Solicitante</label>
+    <referenceTo>User</referenceTo>
+    <relationshipLabel>Ejecución de renovación</relationshipLabel>
+    <relationshipName>EjecucionesRenovacion</relationshipName>
+    <required>true</required>
+    <type>Lookup</type>
+</CustomField>

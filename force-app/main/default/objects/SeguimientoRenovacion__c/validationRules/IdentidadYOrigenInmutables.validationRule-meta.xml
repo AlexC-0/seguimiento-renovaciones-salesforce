@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IdentidadYOrigenInmutables</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    NOT(ISNEW()),
+    OR(ISCHANGED(Contrato__c), ISCHANGED(FechaVencimientoCapturada__c), ISCHANGED(ClaveIdentidad__c), ISCHANGED(Ejecucion__c))
+)</errorConditionFormula>
+    <errorMessage>No se pueden modificar el contrato, el vencimiento capturado, la clave ni la ejecución de origen.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ContextoInmutable</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    NOT(ISNEW()),
+    OR(ISCHANGED(FechaCorte__c), ISCHANGED(InicioVentana__c), ISCHANGED(FinVentana__c), ISCHANGED(ZonaHoraria__c), ISCHANGED(Solicitante__c), ISCHANGED(Inicio__c))
+)</errorConditionFormula>
+    <errorMessage>La fecha de corte, la ventana, la zona horaria, el solicitante y el inicio son inmutables.</errorMessage>
+</ValidationRule>

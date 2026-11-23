@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TransicionEstadoPermitida</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    NOT(ISNEW()),
+    ISCHANGED(Estado__c),
+    NOT(
+        OR(
+            AND(
+                ISPICKVAL(PRIORVALUE(Estado__c), "Pendiente"),
+                OR(ISPICKVAL(Estado__c, "En curso"), ISPICKVAL(Estado__c, "Cerrado"), ISPICKVAL(Estado__c, "Descartado"))
+            ),
+            AND(
+                ISPICKVAL(PRIORVALUE(Estado__c), "En curso"),
+                OR(ISPICKVAL(Estado__c, "Cerrado"), ISPICKVAL(Estado__c, "Descartado"))
+            )
+        )
+    )
+)</errorConditionFormula>
+    <errorDisplayField>Estado__c</errorDisplayField>
+    <errorMessage>Solo se permite pasar de Pendiente a En curso, Cerrado o Descartado, y de En curso a Cerrado o Descartado.</errorMessage>
+</ValidationRule>

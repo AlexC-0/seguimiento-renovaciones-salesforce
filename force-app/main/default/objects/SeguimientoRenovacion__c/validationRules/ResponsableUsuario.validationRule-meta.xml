@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ResponsableUsuario</fullName>
+    <active>true</active>
+    <errorConditionFormula>LEFT(OwnerId, 3) &lt;&gt; "005"</errorConditionFormula>
+    <errorMessage>El responsable del seguimiento debe ser un usuario.</errorMessage>
+</ValidationRule>

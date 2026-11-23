@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ZonaHoraria__c</fullName>
+    <description>TimeZoneSidKey del solicitante capturada al lanzar. No cambia durante la ejecución.</description>
+    <label>Zona horaria de referencia</label>
+    <length>80</length>
+    <required>true</required>
+    <type>Text</type>
+</CustomField>

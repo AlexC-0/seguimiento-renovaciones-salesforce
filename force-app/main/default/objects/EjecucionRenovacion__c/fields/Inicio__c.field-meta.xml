@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Inicio__c</fullName>
+    <defaultValue>NOW()</defaultValue>
+    <description>Instante de registro del lanzamiento, incluida la espera en cola. No mide exclusivamente el procesamiento del Batch.</description>
+    <label>Inicio</label>
+    <required>true</required>
+    <type>DateTime</type>
+</CustomField>

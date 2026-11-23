@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ContadoresNoNegativos</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR(Evaluados__c &lt; 0, Creados__c &lt; 0, YaExistentes__c &lt; 0, Omitidos__c &lt; 0, Fallidos__c &lt; 0, LotesFallidos__c &lt; 0)</errorConditionFormula>
+    <errorMessage>Los contadores no pueden ser negativos.</errorMessage>
+</ValidationRule>

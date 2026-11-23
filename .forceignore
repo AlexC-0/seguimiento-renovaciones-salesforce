@@ -1,0 +1,16 @@
+# Archivos locales y documentación ajenos a los metadatos
+**/.git/**
+**/.sf/**
+**/.sfdx/**
+**/.env
+**/.env.*
+**/*.key
+**/*.pem
+**/*.p12
+**/*.pfx
+**/*.log
+**/node_modules/**
+**/coverage/**
+**/*.md
+**/.DS_Store
+**/Thumbs.db

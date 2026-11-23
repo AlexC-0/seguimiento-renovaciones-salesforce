@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mensaje__c</fullName>
+    <description>Detalle técnico sin secretos. Su presencia se exige mediante validación; el procesamiento deberá respetar el límite de longitud.</description>
+    <label>Mensaje</label>
+    <length>32768</length>
+    <type>LongTextArea</type>
+    <visibleLines>5</visibleLines>
+</CustomField>

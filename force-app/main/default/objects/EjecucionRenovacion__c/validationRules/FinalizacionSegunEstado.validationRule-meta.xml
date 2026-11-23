@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FinalizacionSegunEstado</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR(
+    AND(
+        OR(ISPICKVAL(Estado__c, "Encolada"), ISPICKVAL(Estado__c, "En curso")),
+        NOT(ISBLANK(Finalizacion__c))
+    ),
+    AND(
+        NOT(OR(ISPICKVAL(Estado__c, "Encolada"), ISPICKVAL(Estado__c, "En curso"))),
+        ISBLANK(Finalizacion__c)
+    )
+)</errorConditionFormula>
+    <errorDisplayField>Finalizacion__c</errorDisplayField>
+    <errorMessage>Los estados finales requieren finalización; Encolada y En curso deben mantenerla vacía.</errorMessage>
+</ValidationRule>

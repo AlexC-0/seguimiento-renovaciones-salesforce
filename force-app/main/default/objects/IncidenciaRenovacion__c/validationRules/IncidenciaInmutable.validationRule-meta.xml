@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IncidenciaInmutable</fullName>
+    <active>true</active>
+    <errorConditionFormula>NOT(ISNEW())</errorConditionFormula>
+    <errorMessage>Las incidencias son evidencias inmutables. Una aclaración o reconciliación debe registrarse como una incidencia nueva.</errorMessage>
+</ValidationRule>

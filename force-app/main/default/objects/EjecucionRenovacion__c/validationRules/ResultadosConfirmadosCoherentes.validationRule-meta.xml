@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ResultadosConfirmadosCoherentes</fullName>
+    <active>true</active>
+    <errorConditionFormula>Evaluados__c &lt;&gt; Creados__c + YaExistentes__c + Omitidos__c + Fallidos__c</errorConditionFormula>
+    <errorDisplayField>Evaluados__c</errorDisplayField>
+    <errorMessage>Evaluados debe ser igual a creados, ya existentes, omitidos y fallidos confirmados.</errorMessage>
+</ValidationRule>

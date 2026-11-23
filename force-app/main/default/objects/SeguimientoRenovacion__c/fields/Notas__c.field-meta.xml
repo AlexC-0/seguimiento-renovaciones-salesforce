@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Notas__c</fullName>
+    <description>Nota comercial breve de hasta 255 caracteres. Obligatoria y no vacía al cerrar o descartar.</description>
+    <label>Notas</label>
+    <required>false</required>
+    <type>TextArea</type>
+</CustomField>

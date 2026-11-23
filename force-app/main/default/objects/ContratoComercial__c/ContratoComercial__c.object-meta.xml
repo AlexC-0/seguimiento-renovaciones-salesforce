@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Contrato ficticio con fechas, estado y responsabilidad comercial.</description>
+    <enableActivities>false</enableActivities>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <externalSharingModel>Private</externalSharingModel>
+    <label>Contrato comercial</label>
+    <nameField>
+        <displayFormat>CON-{000000}</displayFormat>
+        <label>Número de contrato comercial</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Contratos comerciales</pluralLabel>
+    <sharingModel>Private</sharingModel>
+</CustomObject>
