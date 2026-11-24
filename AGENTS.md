@@ -1,5 +1,13 @@
 # P06 — Seguimiento de renovaciones
 
+## Estado vigente: V1 cerrada
+
+Aceptación del 24/11/2026 como demostración técnica sobre la referencia revisada 4af11abf473f0d1d7443e5539174c301f58e7d18. V1 cerrada y aceptada dentro del alcance demostrado, con límites de verificación documentados; sin implantación productiva ni datos reales. Ver [CIERRE-V1](docs/CIERRE-V1.md) y [ACEPTACION-V1](docs/ACEPTACION-V1.md). La referencia técnica no es el futuro commit documental de cierre.
+
+El alcance vigente es exclusivamente documental. No acceder a Salesforce, ejecutar pruebas o demostraciones ni modificar código, metadatos, permisos, datos o configuración. Conservar los inventarios de 432 registros de negocio y una compartición manual adicional. No ejecutar staging, commits, push, etiquetas, releases ni equivalentes; la publicación es manual.
+
+Los límites aceptados no son tareas pendientes automáticas. Ampliaciones, nuevos ensayos, instalaciones y operaciones posteriores requieren un nuevo alcance explícito. Las autorizaciones de fases anteriores son antecedentes cerrados y no habilitan actuaciones nuevas. Conservar los documentos y JSON históricos, incluidos intentos fallidos y estados de aceptación anteriores; prevalece este estado vigente.
+
 ## Ámbito
 
 Trabajar exclusivamente en este repositorio. No inspeccionar ni modificar otros proyectos. Conservar los cambios existentes y comprobar ruta, raíz, rama, remotos y estado Git antes de editar. Leer README.md, docs/PROJECT_BRIEF.md, docs/STATUS.md y docs/ENVIRONMENT.md; consultar docs/MODELO_DATOS.md para cambios en metadatos.
@@ -14,7 +22,7 @@ No imprimir ni versionar secretos, tokens, archivos de autenticación o enlaces 
 
 No delegar tareas. No atribuir éxito a pruebas no ejecutadas. Distinguir inspección local, revisión estática, conversión de formato, compilación por Salesforce, despliegue y comprobación funcional.
 
-## Estado comprobado de fase 3
+## Antecedente: estado comprobado de fase 3
 
 Lanzamiento manual, Batch, identidad canónica y contraste implementados. Validación 0Afg700000L0MUHCA3 y despliegue 0Afg700000L0NQLCA3: 14/14 Apex. Dos jobs consecutivos, tres lotes cada uno: 120 creados y luego 120 existentes sin cambios. Se conservan 50 registros históricos, 34 archivos históricos y 247 registros nuevos. Ver docs/FASE-3.md. Login As=false, asignaciones comerciales intactas. No presentar repetición como solapamiento ni cerrar V1; fallos adversos y recuperación corresponden a otro alcance.
 
@@ -22,7 +30,7 @@ Lanzamiento manual, Batch, identidad canónica y contraste implementados. Valida
 
 Fase 2 completada: gestión comercial estándar, acceso por función, compartición e informe comprobados; 19 fixtures históricos y 31 nuevos conservados. Ver docs/FASE-2.md y docs/ACCESO.md. Login As restaurado a false y conexión temporal de navegador detenida. Las autorizaciones temporales de esta comprobación están cerradas; no son tareas pendientes. No iniciar el procesamiento de fases posteriores sin un nuevo encargo.
 
-## Alcance vigente de fase 5
+## Antecedente: alcance de fase 5
 
 Validación funcional de cambios de vencimiento y responsable, matriz AC-01 a AC-20 y preparación documental del cierre sobre 69622d3013fbc77fc69877dcadddfde3dbae6be2. Destino exclusivo p06-renovaciones-dev, API 65.0; conservar los 422 registros y todas las evidencias previas. Usar dos contratos nuevos con filtros explícitos; no repetir ensayos adversos históricos ni instalación limpia.
 
@@ -76,7 +84,7 @@ Utilizar castellano y redacción técnica directa. Documentar objetivos, configu
 
 Los títulos propuestos de commit seguirán el formato `tipo: descripción`, sin paréntesis ni ámbitos entre paréntesis.
 
-## Resultado de fase 5
+## Antecedente: resultado de fase 5
 
 Recorrido real completado con dos contratos nuevos y tres jobs: dos creaciones originales, dos alternativas y dos existentes sin nuevas creaciones al restaurar. No se reabrió el cerrado ni se modificaron notas, propietario u origen de seguimientos existentes. Transferencia técnica B a A y compartición Manual Read para B comprobadas; no atribuirlas a una sesión comercial nueva. P06_F5_ReasignacionTemporal y su asignación retirados, permiso efectivo original restaurado.
 

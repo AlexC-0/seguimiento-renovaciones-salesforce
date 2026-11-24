@@ -2,6 +2,8 @@
 
 Guía revisada a 24/11/2026 contra los metadatos actuales. La aplicación está desplegada incrementalmente en la organización de demostración. **No se ha ejecutado ni validado remotamente una instalación limpia con el manifiesto completo.** Los comandos siguientes son un procedimiento para un destino futuro autorizado, no operaciones realizadas en fase 5.
 
+La ausencia de instalación limpia y de operación integral con un perfil técnico mínimo independiente son límites aceptados del [cierre de V1](CIERRE-V1.md). Esta guía se conserva como referencia; cualquier instalación u operación posterior requiere un nuevo alcance explícito y no es una tarea automática de V1.
+
 ## Requisitos y comprobación del destino
 
 Organización Salesforce dedicada que admita Apex, objetos personalizados, API 65.0, funciones, grupos, perfiles, Permission Sets e informes. El entorno comprobado es Developer Edition. El perfil P06_BaseComercial declara licencia Salesforce; los usuarios comerciales requieren licencias compatibles y disponibles. No se garantiza compatibilidad de cualquier edición o conjunto de funciones.
@@ -63,7 +65,7 @@ Las identidades, asignaciones y miembros de grupos no están incluidos en el paq
 | Operador técnico | P06_OperadorRenovaciones y grupo P06_Operadores sobre una identidad técnica autorizada. El Permission Set no concede Author Apex ni es un perfil técnico autónomo |
 | Propietarios del ámbito | Añadir a P06_Propietarios los propietarios de registros P06, incluidos los de ejecuciones e incidencias. Un propietario fuera del grupo no queda cubierto automáticamente por sus reglas |
 
-El lanzamiento documentado usa Apex anónimo y requiere que el operador ya tenga esa capacidad autorizada. La demostración utilizó un perfil administrativo previo; no demuestra suficiencia del Permission Set aislado ni justifica conceder privilegios administrativos nuevos. No asignar Author Apex a comerciales o coordinación. La definición y comprobación de un perfil técnico mínimo siguen pendientes de aceptación.
+El lanzamiento documentado usa Apex anónimo y requiere que el operador ya tenga esa capacidad autorizada. La demostración utilizó un perfil administrativo previo; no demuestra suficiencia del Permission Set aislado ni justifica conceder privilegios administrativos nuevos. No asignar Author Apex a comerciales o coordinación. La ausencia de demostración integral con un perfil técnico mínimo independiente se acepta como límite de V1.
 
 Verificar Private de los cuatro objetos, jerarquía, grupos sin inclusión automática de superiores, reglas efectivas, acceso a carpeta, aplicación, pestañas y layouts. Las asignaciones de layout del perfil comercial están en metadatos; revisar por separado los perfiles técnicos existentes. Account y User son dependencias estándar: la aplicación no configura su compartición global. Documentar su visibilidad efectiva; en demostración Account conserva ReadWrite interno y solo lectura por permisos comerciales.
 
@@ -81,4 +83,4 @@ El manifiesto excluye P06_VerificacionModelo, las tres reglas temporales F4A/F4B
 
 La [inspección del manifiesto](evidencias-fase-5/instalacion-inspeccion.json) y la [conversión local](evidencias-fase-5/instalacion-conversion.json) verifican 36 miembros y 42 archivos MDAPI, con cuatro objetos, 35 campos, 21 reglas, cinco listas y tres Permission Sets. Una primera conversión produjo solo package.xml pese a devolver estado cero; se conserva como insuficiente. La segunda indicó force-app como raíz y un directorio temporal externo a .sf, y produjo el contenido completo. No se atribuye una causa interna no demostrada.
 
-La conversión es local y no prueba compilación, compatibilidad de una organización vacía, asignaciones manuales ni funcionamiento tras instalar. Referencia: [Salesforce CLI project convert source](https://developer.salesforce.com/docs/platform/salesforce-cli-reference/guide/cli_reference_project_convert_source.html). La decisión sobre instalación limpia sigue abierta en [ACEPTACION-V1](ACEPTACION-V1.md).
+La conversión es local y no prueba compilación, compatibilidad de una organización vacía, asignaciones manuales ni funcionamiento tras instalar. Referencia: [Salesforce CLI project convert source](https://developer.salesforce.com/docs/platform/salesforce-cli-reference/guide/cli_reference_project_convert_source.html). La ausencia de instalación limpia se acepta como límite de entrega en [ACEPTACION-V1](ACEPTACION-V1.md), sin convertir la conversión local en validación remota.

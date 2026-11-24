@@ -1,5 +1,7 @@
 # Definición del proyecto
 
+Estado vigente: V1 cerrada y aceptada el 24/11/2026 como demostración técnica dentro del alcance comprobado, con los [límites de verificación aceptados](CIERRE-V1.md). Sin implantación productiva ni datos reales. Se conservan los criterios originales; la aceptación no acredita todos sus escenarios. Ampliaciones y operaciones posteriores requieren un nuevo alcance explícito.
+
 ## Objetivo y alcance
 
 Preparar seguimiento comercial sobre contratos ficticios próximos a vencer en Salesforce, con trazabilidad de ejecuciones e incidencias y protección frente a duplicados.
@@ -44,9 +46,9 @@ La recuperación será manual, con revisión de resultados persistidos, incidenc
 
 ## Criterios de aceptación funcional
 
-La [matriz consolidada AC-01 a AC-20](ACEPTACION-V1.md) contiene evidencia, nivel, cobertura parcial y decisiones pendientes después de fase 5. El [recorrido funcional](FASE-5.md) completa cambios de vencimiento y responsable sin cerrar V1. Los criterios exigidos de la tabla siguiente se conservan.
+La [matriz consolidada AC-01 a AC-20](ACEPTACION-V1.md) contiene evidencia, nivel, cobertura parcial y límites aceptados. El [recorrido funcional](FASE-5.md) documenta los cambios de vencimiento y responsable y la aceptación pendiente al terminar aquella fase; la decisión posterior se registra en [CIERRE-V1](CIERRE-V1.md). Los criterios exigidos de la tabla siguiente se conservan.
 
-La tabla define la aceptación integral de V1. Fase 1B comprobó el modelo declarativo con 117 casos; fase 2 comprobó las funciones comerciales de AC-14, las denegaciones ordinarias de AC-15, el informe AC-16 y la conservación de AC-17. Fase 3 incorpora operador, procesamiento, identidad y repetición, con pruebas unitarias y dos jobs reales de tres lotes. [FASE-3.md](FASE-3.md) conserva esa evidencia histórica. [FASE-4A.md](FASE-4A.md) añade solapamiento observado, rechazo individual y recuperación manual. La fase 4B añade reversión completa de lote y aborto previo al inicio. La colisión de inserción, el cruce real de medianoche, el cambio estacional y el aborto durante el procesamiento siguen sin demostración real; no se equipara esta cobertura con la aceptación completa de V1.
+La tabla define la aceptación integral de V1. Fase 1B comprobó el modelo declarativo con 117 casos; fase 2 comprobó las funciones comerciales de AC-14, las denegaciones ordinarias de AC-15, el informe AC-16 y la conservación de AC-17. Fase 3 incorpora operador, procesamiento, identidad y repetición, con pruebas unitarias y dos jobs reales de tres lotes. [FASE-3.md](FASE-3.md) conserva esa evidencia histórica. [FASE-4A.md](FASE-4A.md) añade solapamiento observado, rechazo individual y recuperación manual. La fase 4B añade reversión completa de lote y aborto previo al inicio. La colisión de inserción, el cruce real de medianoche, el cambio estacional y el aborto durante el procesamiento siguen sin demostración real; no se equipara la aceptación con límites a la verificación íntegra de estos criterios.
 
 | ID | Escenario | Resultado exigido |
 |---|---|---|
@@ -70,6 +72,8 @@ La tabla define la aceptación integral de V1. Fase 1B comprobó el modelo decla
 | AC-18 | Claves mal formadas o distintas para la misma pareja | La protección canónica rechaza la inconsistencia; la aceptación integral exige verificar además inserción concurrente |
 | AC-19 | Permisos de lanzamiento | Solo el operador autorizado lanza y consulta; los comerciales carecen de Author Apex |
 | AC-20 | Zona horaria y cambio horario estacional | Corte coherente con la referencia capturada; los días de calendario no se convierten en intervalos horarios fijos |
+
+Los apartados de fases siguientes conservan su cobertura y estado de aceptación históricos, anteriores al cierre documental.
 
 ## Cobertura añadida en fase 4A
 

@@ -4,6 +4,12 @@ Proyecto independiente para gestionar el seguimiento comercial de contratos fict
 
 ## Estado
 
+**V1 cerrada y aceptada el 24/11/2026 dentro del alcance demostrado, con límites de verificación documentados. Sin implantación productiva ni datos reales.** Referencia técnica revisada: 4af11abf473f0d1d7443e5539174c301f58e7d18. El [registro de cierre](docs/CIERRE-V1.md) recoge la aceptación y sus límites; la publicación documental es un paso separado.
+
+Se conserva el inventario de 432 registros de negocio y una compartición manual adicional. Las coberturas parciales de la matriz mantienen su nivel de evidencia. Ampliaciones y operaciones posteriores requieren un nuevo alcance explícito.
+
+### Resultados históricos que sustentan la aceptación
+
 Fase 5 comprobada el 24/11/2026: cambio de vencimiento, transferencia y restauración con tres jobs; creaciones 2, 2 y 0, con dos existentes al restaurar y sin reabrir el cerrado. Los 422 registros anteriores y 133 archivos históricos siguen intactos; se conservan diez registros nuevos y una compartición de lectura. El permiso temporal está retirado. [Resultados](docs/FASE-5.md), [matriz de aceptación](docs/ACEPTACION-V1.md) y [guía de instalación](docs/INSTALACION.md).
 
 Fase 3 implementada, validada y desplegada en la Developer Edition exclusiva P06, API 65.0. El lanzamiento manual captura una fecha y zona horaria, selecciona contratos Activos en la ventana inclusiva de 30 días y crea seguimientos mediante Batch Apex. La identidad canónica protege las inserciones y la repetición conserva los seguimientos existentes.
@@ -16,7 +22,7 @@ Fase 4A comprobada el 24/11/2026: dos jobs observados simultáneamente en Proces
 
 Fase 4B comprobada: reversión completa de un lote con conservación del otro, aborto antes de comenzar y dos recuperaciones manuales que conservan historia. Los 374 registros anteriores y 82 evidencias siguen intactos; quedan 48 nuevos. Las reglas temporales están inactivas y la traza retirada. [Resultados](docs/FASE-4B.md).
 
-V1 sigue abierta. No se acreditan aborto a mitad del procesamiento, errores reales de start/finish, colisión de inserción, cruce de medianoche ni cambio estacional. Estos ensayos no acreditan rendimiento general.
+Límites aceptados de la demostración: no se acreditan aborto a mitad del procesamiento, errores reales de start/finish, colisión de inserción, cruce de medianoche ni cambio estacional. Estos ensayos no acreditan rendimiento general.
 
 ## Funciones
 
@@ -53,8 +59,9 @@ No se añaden LWC, Flow, integraciones, comunicaciones, programación ni reinten
 
 ## Documentación
 
+- [Cierre de V1 y límites aceptados](docs/CIERRE-V1.md)
 - [Fase 5: validación funcional](docs/FASE-5.md) y [evidencias](docs/evidencias-fase-5.json)
-- [Matriz AC-01 a AC-20 y propuesta de cierre](docs/ACEPTACION-V1.md)
+- [Matriz AC-01 a AC-20 y aceptación con límites](docs/ACEPTACION-V1.md)
 - [Instalación y configuración manual](docs/INSTALACION.md)
 - [Fase 4B: reversión, aborto y recuperación](docs/FASE-4B.md)
 - [Evidencias de fase 4B](docs/evidencias-fase-4b.json)

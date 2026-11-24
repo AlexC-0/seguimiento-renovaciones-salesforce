@@ -2,6 +2,18 @@
 
 Fecha: 24/11/2026.
 
+## Cierre de V1
+
+V1 cerrada y aceptada el 24/11/2026 dentro del alcance demostrado, con límites de verificación documentados. Sin implantación productiva ni datos reales. Referencia técnica revisada: 4af11abf473f0d1d7443e5539174c301f58e7d18. [Registro de cierre](CIERRE-V1.md) y [matriz de aceptación](ACEPTACION-V1.md).
+
+La decisión sustituye la aceptación pendiente de fase 5 y mantiene las coberturas parciales como tales. Se conservan 432 registros de negocio y una compartición manual adicional según los inventarios históricos. No se han consultado de nuevo en Salesforce para registrar el cierre.
+
+El cierre es documental; su publicación es un paso separado y no tiene un hash de commit atribuido aquí. No se modifican código, metadatos, permisos, datos o configuración. Los límites aceptados no constituyen tareas automáticas; cualquier ampliación u operación posterior requiere un nuevo alcance explícito.
+
+## Historial de fases
+
+Los apartados siguientes conservan los resultados y el estado de aceptación de cada fase en su momento, incluidas sus indicaciones de V1 abierta. No describen el estado vigente ni habilitan nuevas operaciones.
+
 ## Fase 5
 
 Comprobada sobre 69622d3013fbc77fc69877dcadddfde3dbae6be2. Dos contratos nuevos, tres jobs completos: dos seguimientos originales, dos alternativos y cero duplicados al restaurar las fechas. Cerrado y En curso conservan notas, estado, propietario y origen. La transferencia de un contrato de B a A conserva el seguimiento antiguo en B y asigna el nuevo a A; Read manual del contrato para B verificado mediante UserRecordAccess. No hubo sesión comercial nueva.

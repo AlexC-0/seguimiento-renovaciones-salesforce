@@ -1,5 +1,7 @@
 # Uso de Renovaciones de contratos
 
+V1 cerrada y aceptada como demostración técnica dentro del alcance documentado, sin implantación productiva ni datos reales. Ver [CIERRE-V1](CIERRE-V1.md). Los procedimientos siguientes se conservan como referencia de uso; su ejecución posterior requiere un nuevo alcance explícito y no se deriva automáticamente del cierre.
+
 ## Comercial
 
 Abrir la aplicación Renovaciones de contratos desde el iniciador de aplicaciones. Contratos comerciales permite consultar fechas, estado, cuenta y seguimientos relacionados. Seguimientos de renovación ofrece la lista Mis pendientes y el detalle de cada seguimiento accesible.
