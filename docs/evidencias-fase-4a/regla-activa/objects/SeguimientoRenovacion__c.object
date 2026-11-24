@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+  <validationRules>
+    <fullName>P06_F4A_RechazoAcotado</fullName>
+    <active>true</active>
+    <description>Ensayo F4A limitado a un contrato ficticio nuevo. Conservar inactiva tras comprobar el rechazo.</description>
+    <errorConditionFormula>AND(ISNEW(), CASESAFEID(Contrato__c) = "a00g700002bMxmHAAS")</errorConditionFormula>
+    <errorDisplayField>Contrato__c</errorDisplayField>
+    <errorMessage>P06_F4A_RECHAZO_INDIVIDUAL: creación bloqueada solo para el contrato del ensayo.</errorMessage>
+  </validationRules>
+</CustomObject>

@@ -22,7 +22,19 @@ Lanzamiento manual, Batch, identidad canónica y contraste implementados. Valida
 
 Fase 2 completada: gestión comercial estándar, acceso por función, compartición e informe comprobados; 19 fixtures históricos y 31 nuevos conservados. Ver docs/FASE-2.md y docs/ACCESO.md. Login As restaurado a false y conexión temporal de navegador detenida. Las autorizaciones temporales de esta comprobación están cerradas; no son tareas pendientes. No iniciar el procesamiento de fases posteriores sin un nuevo encargo.
 
-## Revisión acotada de fase 3
+## Alcance vigente de fase 4A
+
+Comprobar solapamiento observado, rechazo individual real y recuperación por nuevo lanzamiento manual, sobre 563b4399447898a1d86c5bc0312aded2c15ce897. Destino exclusivo p06-renovaciones-dev, API 65.0, identidad verificada antes de escribir. Conservar los 297 registros previos y sus evidencias mediante inventario completo y comparación final. Usar solo contratos nuevos inventariados y filtros explícitos de Id.
+
+Hasta tres intentos de solapamiento con conjuntos nuevos de 30 contratos y lotes de 5, sin esperas ni consumo artificial de CPU en Apex. Distinguir encolado, Processing observado y colisión de inserción acreditada. Se autoriza una regla temporal de rechazo limitada a ISNEW y al Id exacto de un contrato nuevo; mantenerla fuera del paquete de aplicación, conservar recibos y dejarla inactiva verificada al terminar.
+
+No cambiar usuarios, permisos comerciales, configuración global o Login As. No borrar registros de ensayo ni evidencias. No ensayar abortos ni reversión total de lotes, añadir infraestructura o declarar cerrada V1. Validar antes de desplegar correcciones mínimas si un resultado acredita un defecto.
+
+## Resultado de fase 4A
+
+Comprobados dos jobs con Processing observado sobre 30 contratos, un rechazo individual entre cinco y recuperación por nueva ejecución con un creado y cuatro existentes. Conservar los 297 registros anteriores, los 77 nuevos y todas las evidencias, incluidos intentos no satisfactorios. La regla P06_F4A_RechazoAcotado queda inactiva, fuera del paquete de aplicación. No reactivarla ni relanzar estos ensayos por inercia. Informe técnico y SOQL: 160 IDs coincidentes; Login As=false. No se modificó la aplicación; tres regresiones del observador correctas. Ver docs/FASE-4A.md. Colisión de inserción, abortos, reversión total de lotes y casos temporales siguen sin evidencia real; V1 abierta.
+
+## Antecedente: revisión acotada de fase 3
 
 Revisión sobre 31528e267a3f2d65ba41015dc1ef9a5838c56195. Resolver trazabilidad de fuentes y diagnóstico de reconciliación. Conservar los 50 registros históricos, los 247 de fase 3 y todas sus evidencias. No relanzar demostraciones, iniciar ensayos reales de fase 4, habilitar Login As, ampliar permisos ni crear usuarios persistentes. Validar y desplegar únicamente las clases corregidas con manifest/revision-fase-3.xml. Ver docs/REVISION-FASE-3.md.
 

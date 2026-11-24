@@ -38,13 +38,13 @@ En cada actualización persistida debe cumplirse:
 
 `evaluados = creados + ya existentes + omitidos + fallidos`
 
-Los contadores representan resultados confirmados por registro, no intentos en memoria. Los lotes completamente revertidos se contabilizan aparte y no permiten inferir cuántos resultados individuales se persistieron. finish y el contraste manual señalan reconciliación ante incertidumbre. Las pruebas verifican rollback y señalización de un cierre incoherente; la demostración real de interrupciones y recuperación queda para la siguiente fase.
+Los contadores representan resultados confirmados por registro, no intentos en memoria. Los lotes completamente revertidos se contabilizan aparte y no permiten inferir cuántos resultados individuales se persistieron. finish y el contraste manual señalan reconciliación ante incertidumbre. Las pruebas verifican rollback y señalización de un cierre incoherente; la fase 4A demuestra rechazo individual y recuperación mediante otra ejecución. Interrupciones y reversión total de un lote siguen sin ensayo real.
 
 La recuperación será manual, con revisión de resultados persistidos, incidencias y estado del trabajo antes de decidir un nuevo lanzamiento. No se inventarán resultados ni se alterarán evidencias anteriores para cuadrar contadores. La resolución de una incertidumbre podrá dejar constancia en una nueva incidencia de reconciliación sin borrar el contador histórico de lotes fallidos.
 
 ## Criterios de aceptación funcional
 
-La tabla define la aceptación integral de V1. Fase 1B comprobó el modelo declarativo con 117 casos; fase 2 comprobó las funciones comerciales de AC-14, las denegaciones ordinarias de AC-15, el informe AC-16 y la conservación de AC-17. Fase 3 incorpora operador, procesamiento, identidad y repetición, con pruebas unitarias y dos jobs reales de tres lotes. [FASE-3.md](FASE-3.md) separa esas evidencias de solapamiento, cruce real de medianoche, cambio estacional e interrupciones todavía no demostrados; no se equiparan con la aceptación completa de V1.
+La tabla define la aceptación integral de V1. Fase 1B comprobó el modelo declarativo con 117 casos; fase 2 comprobó las funciones comerciales de AC-14, las denegaciones ordinarias de AC-15, el informe AC-16 y la conservación de AC-17. Fase 3 incorpora operador, procesamiento, identidad y repetición, con pruebas unitarias y dos jobs reales de tres lotes. [FASE-3.md](FASE-3.md) conserva esa evidencia histórica. [FASE-4A.md](FASE-4A.md) añade solapamiento observado, rechazo individual y recuperación manual. La colisión de inserción, el cruce real de medianoche, el cambio estacional y las interrupciones siguen sin demostración real; no se equipara esta cobertura con la aceptación completa de V1.
 
 | ID | Escenario | Resultado exigido |
 |---|---|---|
@@ -68,6 +68,20 @@ La tabla define la aceptación integral de V1. Fase 1B comprobó el modelo decla
 | AC-18 | Claves mal formadas o distintas para la misma pareja | La protección canónica rechaza la inconsistencia; la aceptación integral exige verificar además inserción concurrente |
 | AC-19 | Permisos de lanzamiento | Solo el operador autorizado lanza y consulta; los comerciales carecen de Author Apex |
 | AC-20 | Zona horaria y cambio horario estacional | Corte coherente con la referencia capturada; los días de calendario no se convierten en intervalos horarios fijos |
+
+## Cobertura añadida en fase 4A
+
+| Criterio | Evidencia real añadida | Límite |
+|---|---|---|
+| AC-05 | Recuperación reconoce cuatro existentes y conserva propietario, origen, notas y estado, incluido Cerrado | Conjunto de cinco contratos |
+| AC-06 | Dos jobs Processing en las mismas consultas; 30 parejas con un seguimiento cada una | Colisión de inserción y errores reales de bloqueo/acceso no acreditados |
+| AC-07 | Un execute: cuatro creaciones y un rechazo, una incidencia, ecuación correcta y cero lotes fallidos | Rechazo individual por regla limitada a un Id |
+| AC-09 | Lectura previa, causa desactivada, nueva ejecución crea solo el pendiente; historia y contraste conservados | No cubre aborto ni recuperación de lote totalmente revertido |
+| AC-16 | Analytics y SOQL coinciden en 160 IDs, con 34 nuevos incluidos y un cerrado excluido | Cuenta técnica; no es una nueva sesión comercial |
+| AC-17 | 297 registros anteriores y 51 evidencias intactos, 77 nuevos conservados | Campos temporales y de visualización separados |
+| AC-18 | Claves canónicas del conjunto solapado coinciden con las parejas capturadas | Inserción concurrente sobre la misma identidad no demostrada |
+
+AC-08, cruce real de medianoche de AC-03 y cambio estacional de AC-20 siguen pendientes de evidencia real. Tres regresiones locales verifican el observador del ensayo; las 20 pruebas Apex son el resultado histórico de la revisión de fase 3 y no se repitieron. V1 sigue abierta.
 
 ## Límites de fase 1A
 

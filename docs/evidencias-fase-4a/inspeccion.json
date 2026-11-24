@@ -1,0 +1,62 @@
+{
+  "timestamp": "2026-11-24T08:18:51.672Z",
+  "baseline": "563b4399447898a1d86c5bc0312aded2c15ce897",
+  "target": "p06-renovaciones-dev",
+  "apiVersion": "65.0",
+  "records": 297,
+  "queries": [
+    {
+      "object": "Account",
+      "requested": 6,
+      "retrieved": 6,
+      "pages": 1,
+      "done": true
+    },
+    {
+      "object": "ContratoComercial__c",
+      "requested": 141,
+      "retrieved": 141,
+      "pages": 1,
+      "done": true
+    },
+    {
+      "object": "EjecucionRenovacion__c",
+      "requested": 9,
+      "retrieved": 9,
+      "pages": 1,
+      "done": true
+    },
+    {
+      "object": "SeguimientoRenovacion__c",
+      "requested": 137,
+      "retrieved": 137,
+      "pages": 1,
+      "done": true
+    },
+    {
+      "object": "IncidenciaRenovacion__c",
+      "requested": 4,
+      "retrieved": 4,
+      "pages": 1,
+      "done": true
+    }
+  ],
+  "priorEvidenceFiles": 51,
+  "limits": {
+    "dailyApi": {
+      "Max": 15000,
+      "Remaining": 14999
+    },
+    "dailyAsync": {
+      "Max": 250000,
+      "Remaining": 250000
+    },
+    "activeBatchJobs": 0
+  },
+  "timezone": "Europe/Paris",
+  "loginAs": false,
+  "tools": {
+    "node": "v24.13.0",
+    "salesforceCli": "2.158.7"
+  }
+}

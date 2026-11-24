@@ -1,0 +1,35 @@
+{
+  "timestamp": "2026-11-24T08:25:36.185Z",
+  "name": "P06_F4A_RechazoAcotado",
+  "contract": "a00g700002bMxmHAAS",
+  "formula": "AND(ISNEW(), CASESAFEID(Contrato__c) = \"a00g700002bMxmHAAS\")",
+  "initial": "ausente",
+  "scope": "Solo ISNEW y el Id exacto de un contrato nuevo del conjunto parcial",
+  "priorRules": [
+    {
+      "name": "EstadoInicialPendiente",
+      "active": true
+    },
+    {
+      "name": "IdentidadYOrigenInmutables",
+      "active": true
+    },
+    {
+      "name": "NotaObligatoriaAlFinalizar",
+      "active": true
+    },
+    {
+      "name": "ReasignacionAutorizada",
+      "active": true
+    },
+    {
+      "name": "ResponsableUsuario",
+      "active": true
+    },
+    {
+      "name": "TransicionEstadoPermitida",
+      "active": true
+    }
+  ],
+  "applicationPackageUnchanged": true
+}

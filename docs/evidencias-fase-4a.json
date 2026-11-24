@@ -1,0 +1,102 @@
+{
+  "phase": "4A",
+  "date": "2026-11-24",
+  "baseline": "563b4399447898a1d86c5bc0312aded2c15ce897",
+  "target": "p06-renovaciones-dev",
+  "apiVersion": "65.0",
+  "status": "Comprobada dentro del alcance; V1 abierta",
+  "context": {
+    "identity": "Cuenta técnica existente",
+    "cut": "2026-11-24",
+    "end": "2026-12-24",
+    "timezone": "Europe/Paris",
+    "batchSize": 5
+  },
+  "results": {
+    "overlap": {
+      "contracts": 30,
+      "jobs": 2,
+      "jointProcessingObservations": 2,
+      "created": 30,
+      "existing": 30,
+      "uniqueFollows": 30,
+      "collisionDemonstrated": false
+    },
+    "partial": {
+      "contracts": 5,
+      "jobs": 1,
+      "scopes": 1,
+      "created": 4,
+      "failed": 1,
+      "incidents": 1,
+      "failedScopes": 0
+    },
+    "recovery": {
+      "sameContracts": 5,
+      "jobs": 1,
+      "created": 1,
+      "existing": 4,
+      "previousFollowsUnchanged": true,
+      "originalAttemptAndIncidentUnchanged": true
+    },
+    "contrast": {
+      "passesPerExecution": 2,
+      "duplicateIncidents": 0
+    },
+    "report": {
+      "identity": "técnica",
+      "sameIdentityForReportAndSoql": true,
+      "total": 160,
+      "newIncluded": 34,
+      "newExcluded": 1
+    },
+    "preservation": {
+      "previousRecords": 297,
+      "newRecords": 77,
+      "newRecordCounts": {
+        "Account": 2,
+        "ContratoComercial__c": 35,
+        "EjecucionRenovacion__c": 4,
+        "SeguimientoRenovacion__c": 35,
+        "IncidenciaRenovacion__c": 1
+      },
+      "previousEvidenceFiles": 51,
+      "persistentChanges": 0
+    },
+    "temporaryRule": {
+      "name": "P06_F4A_RechazoAcotado",
+      "initial": "ausente",
+      "final": "inactiva",
+      "outsideApplicationPackage": true
+    },
+    "applicationChanged": false,
+    "apexTestsRun": false,
+    "localObserverTests": 3
+  },
+  "evidence": {
+    "inspection": "evidencias-fase-4a/inspeccion.json",
+    "inventory": "evidencias-fase-4a/inventario.json",
+    "overlap": "evidencias-fase-4a/solapamiento-1-confirmacion-final.json",
+    "partial": "evidencias-fase-4a/parcial-comprobacion.json",
+    "recovery": "evidencias-fase-4a/recuperacion-comprobacion.json",
+    "contrast": "evidencias-fase-4a/contraste-repetido.json",
+    "ruleActive": "evidencias-fase-4a/regla-activa-recibos.json",
+    "ruleInactive": "evidencias-fase-4a/regla-inactiva-recibos.json",
+    "report": "evidencias-fase-4a/informe.json",
+    "preservation": "evidencias-fase-4a/conservacion-final.json",
+    "localChecks": "evidencias-fase-4a/revision-local.json"
+  },
+  "preservedUnsuccessfulEvidence": [
+    "evidencias-fase-4a/solapamiento-1-compilacion-inicial.json",
+    "evidencias-fase-4a/solapamiento-1-comprobacion.json",
+    "evidencias-fase-4a/regla-validacion-inicial-fallida.json",
+    "evidencias-fase-4a/regla-validacion-zip-fallida.json"
+  ],
+  "pendingRealEvidence": [
+    "Colisión de inserción sobre una misma identidad",
+    "Abortos y reversión completa de lote",
+    "Recuperación posterior a aborto o reversión completa",
+    "Cruce de medianoche y cambio horario estacional"
+  ],
+  "v1Closed": false
+}

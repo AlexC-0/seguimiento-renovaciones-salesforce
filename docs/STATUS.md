@@ -2,6 +2,18 @@
 
 Fecha: 24/11/2026.
 
+## Fase 4A
+
+Comprobada sobre 563b4399447898a1d86c5bc0312aded2c15ce897. Dos trabajos sobre los mismos 30 contratos se observaron Processing en dos consultas completas, con 2/6 y 5/6 lotes cada uno. Resultado final: 30 creados y 30 existentes entre ambas ejecuciones, 30 identidades únicas y ningún seguimiento sobrescrito. No se acredita una colisión de inserción.
+
+Un lote independiente de cinco contratos creó cuatro seguimientos y rechazó uno mediante regla temporal limitada a un Id nuevo. Conserva una incidencia, Completada con incidencias y cero lotes fallidos. La regla quedó inactiva antes de recuperar. Una nueva ejecución creó solo el pendiente y reconoció cuatro existentes, incluido un cerrado y otro con notas. El intento original y su incidencia siguen intactos; dos contrastes por ejecución no duplicaron diagnósticos.
+
+Conservación final: 297 registros anteriores sin cambios persistidos, 77 nuevos inventariados y 51 archivos históricos de evidencia idénticos en bytes. Informe y SOQL coinciden en 160 IDs bajo la misma cuenta técnica: 34 nuevos incluidos y uno cerrado excluido. Login As=false, usuarios y asignaciones comerciales intactos.
+
+Sin cambios ni despliegue de aplicación. Se corrigieron observación y empaquetado de los procedimientos del ensayo; tres regresiones Node correctas. Se conservan el fallo de compilación inicial, dos validaciones de empaquetado rechazadas y la comprobación prematura de cierre. Las validaciones y despliegues finales de la única regla temporal terminaron Succeeded; su estado final es inactiva, no ausencia.
+
+V1 sigue abierta. Colisión de inserción, abortos, reversión total de lote y recuperación posterior, medianoche y cambio estacional permanecen fuera de la evidencia real obtenida. [Detalle de fase 4A](FASE-4A.md) y [evidencias](evidencias-fase-4a.json).
+
 ## Revisión acotada de fase 3
 
 Completada sobre 31528e267a3f2d65ba41015dc1ef9a5838c56195. Las tres discrepancias de huella se explican por un CRLF final local convertido a LF en el blob Git. Los recibos originales coinciden con los bytes locales capturados. La lectura de las clases remotas omite el LF final; el contenido coincide al aplicar las normalizaciones explícitas N1 y N2. Se conservan las huellas originales y se añade un contraste reproducible; no había una diferencia funcional oculta.

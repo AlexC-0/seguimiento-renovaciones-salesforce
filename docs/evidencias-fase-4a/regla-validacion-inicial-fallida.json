@@ -1,0 +1,15 @@
+{
+  "id": "0Afg700000L70yTCAR",
+  "status": "Failed",
+  "done": true,
+  "success": false,
+  "checkOnly": true,
+  "failures": [
+    {
+      "name": "package.xml",
+      "problem": "No package.xml found"
+    }
+  ],
+  "effect": "Validación sin aplicar; ningún mecanismo de rechazo activado.",
+  "correction": "ZIP explícito con package.xml en la raíz y objects/; se conserva el recibo del primer intento."
+}

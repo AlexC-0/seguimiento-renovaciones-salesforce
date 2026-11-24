@@ -1,0 +1,41 @@
+{
+  "timestamp": "2026-11-24T08:36:51.489Z",
+  "observations": [
+    {
+      "reconciliation": false,
+      "executionState": "Completada con incidencias",
+      "jobState": "Completed",
+      "job": "707g700001DaDwPAAV",
+      "execution": "a01g700001MMzdxAAD",
+      "pass": 1
+    },
+    {
+      "reconciliation": false,
+      "executionState": "Completada",
+      "jobState": "Completed",
+      "job": "707g700001DYEnkAAH",
+      "execution": "a01g700001MLpryAAD",
+      "pass": 1
+    },
+    {
+      "reconciliation": false,
+      "executionState": "Completada con incidencias",
+      "jobState": "Completed",
+      "job": "707g700001DaDwPAAV",
+      "execution": "a01g700001MMzdxAAD",
+      "pass": 2
+    },
+    {
+      "reconciliation": false,
+      "executionState": "Completada",
+      "jobState": "Completed",
+      "job": "707g700001DYEnkAAH",
+      "execution": "a01g700001MLpryAAD",
+      "pass": 2
+    }
+  ],
+  "beforeIncidents": 1,
+  "afterIncidents": 1,
+  "historyUnchanged": true,
+  "pass": true
+}

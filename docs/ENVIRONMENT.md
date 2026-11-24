@@ -84,3 +84,11 @@ Se verificó la misma Developer Edition mediante el recibo privado y API 65.0 an
 Las lecturas de ApexClass.Body se guardan en carpetas privadas separadas antes y después del despliegue, sin sobrescribir las fuentes de trabajo. Los recibos de validación y despliegue también quedan separados de los de fase 3. El manifiesto acota tres clases y no despliega permisos, modelo ni configuración funcional adicional. Login As sigue false, con asignaciones comerciales intactas y sin usuarios persistentes nuevos.
 
 La [trazabilidad inicial](evidencias-revision-fase-3/trazabilidad-inicial.json) diferencia bytes originales, UTF-8 con CRLF convertido a LF y contenido sin un LF final. La [comprobación final](evidencias-revision-fase-3/comprobacion-final.json) confirma fuentes remotas equivalentes al nuevo paquete validado, 20 pruebas y conservación de 297 registros.
+
+## Entorno de fase 4A
+
+El 24/11/2026 se comprobó el destino p06-renovaciones-dev con API 65.0 y la identidad técnica existente. Node 24.13.0 y Salesforce CLI 2.158.7 se reutilizaron sin instalaciones ni cambios globales. Al inicio había cero Batch activos, 14999 solicitudes API y 250000 ejecuciones asíncronas disponibles en los límites consultados; son una instantánea, no capacidad garantizada.
+
+Los ensayos usaron CLI/API y no requirieron navegador ni Login As. Corte 2026-11-24, fin 2026-12-24 y zona Salesforce Europe/Paris. Los timestamps de evidencia están en UTC. Usuarios y permisos comerciales conservados.
+
+La única configuración temporal fue P06_F4A_RechazoAcotado, inicialmente ausente, limitada a la creación para un contrato nuevo exacto. Se validó antes de cada despliegue y quedó inactiva verificada. Los paquetes MDAPI se conservan bajo docs/evidencias-fase-4a, fuera del paquete de aplicación. ZIP con manifiesto raíz y separadores /; los rechazos de empaquetado anteriores se conservan. No hubo cambios de aplicación, servicios, túneles ni reintentos automáticos. [Resultados y recibos](FASE-4A.md).

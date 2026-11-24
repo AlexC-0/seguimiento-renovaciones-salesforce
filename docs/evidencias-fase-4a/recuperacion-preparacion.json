@@ -1,0 +1,22 @@
+{
+  "timestamp": "2026-11-24T08:36:15.144Z",
+  "originalJob": "707g700001DaDwPAAV",
+  "originalExecution": "a01g700001MMzdxAAD",
+  "originalState": "Completada con incidencias",
+  "priorFollows": 4,
+  "originalIncidents": 1,
+  "temporaryRuleActive": false,
+  "samples": [
+    {
+      "id": "a03g700000tTfo9AAC",
+      "state": "Cerrado",
+      "notes": "P06 F4A: cierre ficticio previo a recuperación."
+    },
+    {
+      "id": "a03g700000tTfoAAAS",
+      "state": "En curso",
+      "notes": "P06 F4A: nota que debe conservar la recuperación."
+    }
+  ],
+  "context": "Preparación técnica de dos seguimientos nuevos; no acredita una nueva sesión comercial."
+}

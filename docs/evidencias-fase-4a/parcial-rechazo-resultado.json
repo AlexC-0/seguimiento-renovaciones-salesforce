@@ -1,0 +1,381 @@
+{
+  "label": "parcial",
+  "run": "rechazo",
+  "timestamp": "2026-11-24T08:33:19.481Z",
+  "receipts": [
+    {
+      "batchSize": 5,
+      "scope": 5,
+      "timezone": "Europe/Paris",
+      "end": "2026-12-24",
+      "cut": "2026-11-24",
+      "job": "707g700001DaDwPAAV",
+      "execution": "a01g700001MMzdxAAD"
+    }
+  ],
+  "queueObservedAt": "2026-11-24T08:33:16.482Z",
+  "queueBeforeCommit": [
+    {
+      "Id": "707g700001DaDwPAAV",
+      "Status": "Holding",
+      "JobItemsProcessed": 0,
+      "TotalJobItems": 0,
+      "NumberOfErrors": 0
+    }
+  ],
+  "queueObservationContext": "Observación dentro de la transacción de lanzamiento, antes del commit; no acredita procesamiento.",
+  "observations": [
+    {
+      "requestedAt": "2026-11-24T08:33:03.686Z",
+      "receivedAt": "2026-11-24T08:33:03.915Z",
+      "jobs": [],
+      "queryComplete": true,
+      "pages": 1
+    },
+    {
+      "requestedAt": "2026-11-24T08:33:04.309Z",
+      "receivedAt": "2026-11-24T08:33:04.523Z",
+      "jobs": [],
+      "queryComplete": true,
+      "pages": 1
+    },
+    {
+      "requestedAt": "2026-11-24T08:33:04.738Z",
+      "receivedAt": "2026-11-24T08:33:04.922Z",
+      "jobs": [],
+      "queryComplete": true,
+      "pages": 1
+    },
+    {
+      "requestedAt": "2026-11-24T08:33:05.133Z",
+      "receivedAt": "2026-11-24T08:33:05.330Z",
+      "jobs": [],
+      "queryComplete": true,
+      "pages": 1
+    },
+    {
+      "requestedAt": "2026-11-24T08:33:05.544Z",
+      "receivedAt": "2026-11-24T08:33:06.040Z",
+      "jobs": [],
+      "queryComplete": true,
+      "pages": 1
+    },
+    {
+      "requestedAt": "2026-11-24T08:33:06.242Z",
+      "receivedAt": "2026-11-24T08:33:06.442Z",
+      "jobs": [],
+      "queryComplete": true,
+      "pages": 1
+    },
+    {
+      "requestedAt": "2026-11-24T08:33:06.658Z",
+      "receivedAt": "2026-11-24T08:33:06.819Z",
+      "jobs": [],
+      "queryComplete": true,
+      "pages": 1
+    },
+    {
+      "requestedAt": "2026-11-24T08:33:07.032Z",
+      "receivedAt": "2026-11-24T08:33:07.230Z",
+      "jobs": [],
+      "queryComplete": true,
+      "pages": 1
+    },
+    {
+      "requestedAt": "2026-11-24T08:33:07.446Z",
+      "receivedAt": "2026-11-24T08:33:07.895Z",
+      "jobs": [],
+      "queryComplete": true,
+      "pages": 1
+    },
+    {
+      "requestedAt": "2026-11-24T08:33:08.110Z",
+      "receivedAt": "2026-11-24T08:33:08.287Z",
+      "jobs": [],
+      "queryComplete": true,
+      "pages": 1
+    },
+    {
+      "requestedAt": "2026-11-24T08:33:08.491Z",
+      "receivedAt": "2026-11-24T08:33:08.694Z",
+      "jobs": [],
+      "queryComplete": true,
+      "pages": 1
+    },
+    {
+      "requestedAt": "2026-11-24T08:33:08.903Z",
+      "receivedAt": "2026-11-24T08:33:09.103Z",
+      "jobs": [],
+      "queryComplete": true,
+      "pages": 1
+    },
+    {
+      "requestedAt": "2026-11-24T08:33:09.316Z",
+      "receivedAt": "2026-11-24T08:33:09.487Z",
+      "jobs": [],
+      "queryComplete": true,
+      "pages": 1
+    },
+    {
+      "requestedAt": "2026-11-24T08:33:09.701Z",
+      "receivedAt": "2026-11-24T08:33:09.861Z",
+      "jobs": [],
+      "queryComplete": true,
+      "pages": 1
+    },
+    {
+      "requestedAt": "2026-11-24T08:33:10.074Z",
+      "receivedAt": "2026-11-24T08:33:10.537Z",
+      "jobs": [],
+      "queryComplete": true,
+      "pages": 1
+    },
+    {
+      "requestedAt": "2026-11-24T08:33:10.754Z",
+      "receivedAt": "2026-11-24T08:33:11.098Z",
+      "jobs": [],
+      "queryComplete": true,
+      "pages": 1
+    },
+    {
+      "requestedAt": "2026-11-24T08:33:11.310Z",
+      "receivedAt": "2026-11-24T08:33:11.587Z",
+      "jobs": [],
+      "queryComplete": true,
+      "pages": 1
+    },
+    {
+      "requestedAt": "2026-11-24T08:33:11.800Z",
+      "receivedAt": "2026-11-24T08:33:11.984Z",
+      "jobs": [],
+      "queryComplete": true,
+      "pages": 1
+    },
+    {
+      "requestedAt": "2026-11-24T08:33:12.195Z",
+      "receivedAt": "2026-11-24T08:33:12.349Z",
+      "jobs": [],
+      "queryComplete": true,
+      "pages": 1
+    },
+    {
+      "requestedAt": "2026-11-24T08:33:12.559Z",
+      "receivedAt": "2026-11-24T08:33:13.033Z",
+      "jobs": [],
+      "queryComplete": true,
+      "pages": 1
+    },
+    {
+      "requestedAt": "2026-11-24T08:33:13.242Z",
+      "receivedAt": "2026-11-24T08:33:13.447Z",
+      "jobs": [],
+      "queryComplete": true,
+      "pages": 1
+    },
+    {
+      "requestedAt": "2026-11-24T08:33:13.655Z",
+      "receivedAt": "2026-11-24T08:33:13.828Z",
+      "jobs": [],
+      "queryComplete": true,
+      "pages": 1
+    },
+    {
+      "requestedAt": "2026-11-24T08:33:14.035Z",
+      "receivedAt": "2026-11-24T08:33:14.207Z",
+      "jobs": [],
+      "queryComplete": true,
+      "pages": 1
+    },
+    {
+      "requestedAt": "2026-11-24T08:33:14.428Z",
+      "receivedAt": "2026-11-24T08:33:14.619Z",
+      "jobs": [],
+      "queryComplete": true,
+      "pages": 1
+    },
+    {
+      "requestedAt": "2026-11-24T08:33:14.838Z",
+      "receivedAt": "2026-11-24T08:33:15.272Z",
+      "jobs": [],
+      "queryComplete": true,
+      "pages": 1
+    },
+    {
+      "requestedAt": "2026-11-24T08:33:15.487Z",
+      "receivedAt": "2026-11-24T08:33:15.657Z",
+      "jobs": [],
+      "queryComplete": true,
+      "pages": 1
+    },
+    {
+      "requestedAt": "2026-11-24T08:33:15.862Z",
+      "receivedAt": "2026-11-24T08:33:16.072Z",
+      "jobs": [],
+      "queryComplete": true,
+      "pages": 1
+    },
+    {
+      "requestedAt": "2026-11-24T08:33:16.284Z",
+      "receivedAt": "2026-11-24T08:33:16.463Z",
+      "jobs": [],
+      "queryComplete": true,
+      "pages": 1
+    },
+    {
+      "requestedAt": "2026-11-24T08:33:16.679Z",
+      "receivedAt": "2026-11-24T08:33:16.867Z",
+      "jobs": [
+        {
+          "Id": "707g700001DaDwPAAV",
+          "Status": "Queued",
+          "JobItemsProcessed": 0,
+          "TotalJobItems": 0,
+          "NumberOfErrors": 0,
+          "CreatedDate": "2026-11-24T08:33:16.000+0000",
+          "CompletedDate": null
+        }
+      ],
+      "queryComplete": true,
+      "pages": 1
+    },
+    {
+      "requestedAt": "2026-11-24T08:33:17.247Z",
+      "receivedAt": "2026-11-24T08:33:17.456Z",
+      "jobs": [
+        {
+          "Id": "707g700001DaDwPAAV",
+          "Status": "Processing",
+          "JobItemsProcessed": 0,
+          "TotalJobItems": 1,
+          "NumberOfErrors": 0,
+          "CreatedDate": "2026-11-24T08:33:16.000+0000",
+          "CompletedDate": null
+        }
+      ],
+      "queryComplete": true,
+      "pages": 1
+    },
+    {
+      "requestedAt": "2026-11-24T08:33:17.852Z",
+      "receivedAt": "2026-11-24T08:33:18.051Z",
+      "jobs": [
+        {
+          "Id": "707g700001DaDwPAAV",
+          "Status": "Completed",
+          "JobItemsProcessed": 1,
+          "TotalJobItems": 1,
+          "NumberOfErrors": 0,
+          "CreatedDate": "2026-11-24T08:33:16.000+0000",
+          "CompletedDate": "2026-11-24T08:33:17.000+0000"
+        }
+      ],
+      "queryComplete": true,
+      "pages": 1,
+      "executionClosures": [
+        {
+          "Id": "a01g700001MMzdxAAD",
+          "AsyncApexJobId__c": "707g700001DaDwPAAV",
+          "Estado__c": "Completada con incidencias",
+          "Finalizacion__c": "2026-11-24T08:33:17.000+0000"
+        }
+      ]
+    }
+  ],
+  "overlapObserved": false,
+  "overlapCriterion": "Ambos jobs con Status=Processing en una misma respuesta SOQL completa.",
+  "insertionCollisionDemonstrated": false,
+  "insertionCollisionLimit": "YaExistentes no distingue consulta previa de confirmación tras DUPLICATE_VALUE; no se capturó esa ruta interna.",
+  "jobs": [
+    {
+      "Id": "707g700001DaDwPAAV",
+      "Status": "Completed",
+      "JobItemsProcessed": 1,
+      "TotalJobItems": 1,
+      "NumberOfErrors": 0,
+      "CreatedDate": "2026-11-24T08:33:16.000+0000",
+      "CompletedDate": "2026-11-24T08:33:17.000+0000"
+    }
+  ],
+  "executions": [
+    {
+      "id": "a01g700001MMzdxAAD",
+      "job": "707g700001DaDwPAAV",
+      "state": "Completada con incidencias",
+      "cut": "2026-11-24",
+      "end": "2026-12-24",
+      "timezone": "Europe/Paris",
+      "reconciliation": false,
+      "counts": {
+        "Evaluados": 5,
+        "Creados": 4,
+        "YaExistentes": 0,
+        "Omitidos": 0,
+        "Fallidos": 1,
+        "LotesFallidos": 0
+      }
+    }
+  ],
+  "follows": [
+    {
+      "id": "a03g700000tTfo9AAC",
+      "contract": "a00g700002bMxmIAAS",
+      "capture": "2026-12-05",
+      "key": "a00g700002bMxmIAAS|2026-12-05",
+      "state": "Pendiente",
+      "notes": null,
+      "origin": "a01g700001MMzdxAAD",
+      "ownerMatchesContract": true,
+      "created": "2026-11-24T08:33:17.000+0000",
+      "lastModified": "2026-11-24T08:33:17.000+0000"
+    },
+    {
+      "id": "a03g700000tTfoAAAS",
+      "contract": "a00g700002bMxmJAAS",
+      "capture": "2026-12-06",
+      "key": "a00g700002bMxmJAAS|2026-12-06",
+      "state": "Pendiente",
+      "notes": null,
+      "origin": "a01g700001MMzdxAAD",
+      "ownerMatchesContract": true,
+      "created": "2026-11-24T08:33:17.000+0000",
+      "lastModified": "2026-11-24T08:33:17.000+0000"
+    },
+    {
+      "id": "a03g700000tTfoBAAS",
+      "contract": "a00g700002bMxmKAAS",
+      "capture": "2026-12-07",
+      "key": "a00g700002bMxmKAAS|2026-12-07",
+      "state": "Pendiente",
+      "notes": null,
+      "origin": "a01g700001MMzdxAAD",
+      "ownerMatchesContract": true,
+      "created": "2026-11-24T08:33:17.000+0000",
+      "lastModified": "2026-11-24T08:33:17.000+0000"
+    },
+    {
+      "id": "a03g700000tTfoCAAS",
+      "contract": "a00g700002bMxmLAAS",
+      "capture": "2026-12-08",
+      "key": "a00g700002bMxmLAAS|2026-12-08",
+      "state": "Pendiente",
+      "notes": null,
+      "origin": "a01g700001MMzdxAAD",
+      "ownerMatchesContract": true,
+      "created": "2026-11-24T08:33:17.000+0000",
+      "lastModified": "2026-11-24T08:33:17.000+0000"
+    }
+  ],
+  "incidents": [
+    {
+      "id": "a02g700000F7pI5AAJ",
+      "execution": "a01g700001MMzdxAAD",
+      "contract": "a00g700002bMxmHAAS",
+      "key": "a00g700002bMxmHAAS|2026-12-04",
+      "stage": "Creación",
+      "code": "FIELD_CUSTOM_VALIDATION_EXCEPTION",
+      "message": "P06_F4A_RECHAZO_INDIVIDUAL: creación bloqueada solo para el contrato del ensayo.",
+      "fields": "Contrato__c"
+    }
+  ],
+  "overwrites": []
+}

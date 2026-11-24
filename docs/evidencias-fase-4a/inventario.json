@@ -1,0 +1,390 @@
+{
+  "timestamp": "2026-11-24T08:36:36.268Z",
+  "records": [
+    {
+      "objeto": "Account",
+      "id": "001g700001MLmPSAA1",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002bMsxtAAC",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002bMsxuAAC",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002bMsxvAAC",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002bMsxwAAC",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002bMsxxAAC",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002bMsxyAAC",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002bMsxzAAC",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002bMsy0AAC",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002bMsy1AAC",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002bMsy2AAC",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002bMsy3AAC",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002bMsy4AAC",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002bMsy5AAC",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002bMsy6AAC",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002bMsy7AAC",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002bMsy8AAC",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002bMsy9AAC",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002bMsyAAAS",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002bMsyBAAS",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002bMsyCAAS",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002bMsyDAAS",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002bMsyEAAS",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002bMsyFAAS",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002bMsyGAAS",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002bMsyHAAS",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002bMsyIAAS",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002bMsyJAAS",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002bMsyKAAS",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002bMsyLAAS",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002bMsyMAAS",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "EjecucionRenovacion__c",
+      "id": "a01g700001MMo2bAAD",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "EjecucionRenovacion__c",
+      "id": "a01g700001MMo2cAAD",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tTMVJAA4",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tTMVKAA4",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tTMVLAA4",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tTMVMAA4",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tTMVNAA4",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tTMVOAA4",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tTMVPAA4",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tTMVQAA4",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tTMVRAA4",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tTMVSAA4",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tTMVTAA4",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tTMVUAA4",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tTMVVAA4",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tTMVWAA4",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tTMVXAA4",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tTMVYAA4",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tTMVZAA4",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tTMVaAAO",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tTMVbAAO",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tTMVcAAO",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tTMVdAAO",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tTMVeAAO",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tTMVfAAO",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tTMVgAAO",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tTMVhAAO",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tTMViAAO",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tTMVjAAO",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tTMVkAAO",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tTMVlAAO",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tTMVmAAO",
+      "scenario": "solapamiento-1"
+    },
+    {
+      "objeto": "Account",
+      "id": "001g700001MMqcHAAT",
+      "scenario": "parcial"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002bMxmHAAS",
+      "scenario": "parcial"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002bMxmIAAS",
+      "scenario": "parcial"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002bMxmJAAS",
+      "scenario": "parcial"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002bMxmKAAS",
+      "scenario": "parcial"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002bMxmLAAS",
+      "scenario": "parcial"
+    },
+    {
+      "objeto": "EjecucionRenovacion__c",
+      "id": "a01g700001MMzdxAAD",
+      "scenario": "parcial"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tTfo9AAC",
+      "scenario": "parcial"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tTfoAAAS",
+      "scenario": "parcial"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tTfoBAAS",
+      "scenario": "parcial"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tTfoCAAS",
+      "scenario": "parcial"
+    },
+    {
+      "objeto": "IncidenciaRenovacion__c",
+      "id": "a02g700000F7pI5AAJ",
+      "scenario": "parcial"
+    },
+    {
+      "objeto": "EjecucionRenovacion__c",
+      "id": "a01g700001MLpryAAD",
+      "scenario": "parcial"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tSQCMAA4",
+      "scenario": "parcial"
+    }
+  ]
+}

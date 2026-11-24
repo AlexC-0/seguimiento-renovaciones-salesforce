@@ -1,0 +1,108 @@
+{
+  "timestamp": "2026-11-24T08:24:16.375Z",
+  "pass": true,
+  "overlapObserved": true,
+  "jointProcessingObservations": [
+    {
+      "requestedAt": "2026-11-24T08:21:42.455Z",
+      "receivedAt": "2026-11-24T08:21:42.630Z",
+      "jobs": [
+        {
+          "Id": "707g700001DZaILAA1",
+          "Status": "Processing",
+          "JobItemsProcessed": 2,
+          "TotalJobItems": 6,
+          "NumberOfErrors": 0,
+          "CreatedDate": "2026-11-24T08:21:38.000+0000",
+          "CompletedDate": null
+        },
+        {
+          "Id": "707g700001DZaINAA1",
+          "Status": "Processing",
+          "JobItemsProcessed": 2,
+          "TotalJobItems": 6,
+          "NumberOfErrors": 0,
+          "CreatedDate": "2026-11-24T08:21:38.000+0000",
+          "CompletedDate": null
+        }
+      ],
+      "queryComplete": true,
+      "pages": 1
+    },
+    {
+      "requestedAt": "2026-11-24T08:21:43.030Z",
+      "receivedAt": "2026-11-24T08:21:43.230Z",
+      "jobs": [
+        {
+          "Id": "707g700001DZaILAA1",
+          "Status": "Processing",
+          "JobItemsProcessed": 5,
+          "TotalJobItems": 6,
+          "NumberOfErrors": 0,
+          "CreatedDate": "2026-11-24T08:21:38.000+0000",
+          "CompletedDate": null
+        },
+        {
+          "Id": "707g700001DZaINAA1",
+          "Status": "Processing",
+          "JobItemsProcessed": 5,
+          "TotalJobItems": 6,
+          "NumberOfErrors": 0,
+          "CreatedDate": "2026-11-24T08:21:38.000+0000",
+          "CompletedDate": null
+        }
+      ],
+      "queryComplete": true,
+      "pages": 1
+    }
+  ],
+  "initialResultPreserved": "solapamiento-1-doble-corregido-resultado.json",
+  "initialCheckPreserved": "solapamiento-1-comprobacion.json",
+  "observationFinding": "El primer estado Completed de los jobs precedió al cierre persistido de una ejecución; la lectura posterior confirma ambos cierres. No se relanzó ni corrigió la aplicación.",
+  "jobs": [
+    {
+      "Id": "707g700001DZaILAA1",
+      "Status": "Completed",
+      "JobItemsProcessed": 6,
+      "TotalJobItems": 6,
+      "NumberOfErrors": 0,
+      "CompletedDate": "2026-11-24T08:21:47.000+0000"
+    },
+    {
+      "Id": "707g700001DZaINAA1",
+      "Status": "Completed",
+      "JobItemsProcessed": 6,
+      "TotalJobItems": 6,
+      "NumberOfErrors": 0,
+      "CompletedDate": "2026-11-24T08:21:43.000+0000"
+    }
+  ],
+  "executions": [
+    {
+      "id": "a01g700001MMo2bAAD",
+      "state": "Completada",
+      "final": "2026-11-24T08:21:47.000+0000",
+      "created": 30,
+      "existing": 0,
+      "evaluated": 30,
+      "failed": 0,
+      "failedScopes": 0,
+      "reconciliation": false
+    },
+    {
+      "id": "a01g700001MMo2cAAD",
+      "state": "Completada",
+      "final": "2026-11-24T08:21:43.000+0000",
+      "created": 0,
+      "existing": 30,
+      "evaluated": 30,
+      "failed": 0,
+      "failedScopes": 0,
+      "reconciliation": false
+    }
+  ],
+  "follows": 30,
+  "changedFollows": [],
+  "incidents": 0,
+  "collisionDemonstrated": false
+}

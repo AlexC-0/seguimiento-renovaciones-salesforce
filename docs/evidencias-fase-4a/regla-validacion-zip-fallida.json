@@ -1,0 +1,19 @@
+{
+  "id": "0Afg700000L72c5CAB",
+  "status": "Failed",
+  "done": true,
+  "success": false,
+  "checkOnly": true,
+  "failures": [
+    {
+      "name": "SeguimientoRenovacion__c.P06_F4A_RechazoAcotado",
+      "problem": "An object 'SeguimientoRenovacion__c.P06_F4A_RechazoAcotado' of type ValidationRule was named in package.xml, but was not found in zipped directory"
+    }
+  ],
+  "observedZipEntries": [
+    "package.xml",
+    "objects\\SeguimientoRenovacion__c.object"
+  ],
+  "correction": "Entradas ZIP explícitas con separador /; definición de regla sin cambios.",
+  "effect": "Validación sin aplicar; regla no activada."
+}

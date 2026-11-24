@@ -1,0 +1,20 @@
+{
+  "label": "parcial",
+  "run": "rechazo",
+  "started": "2026-11-24T08:33:03.656Z",
+  "scope": [
+    "a00g700002bMxmHAAS",
+    "a00g700002bMxmIAAS",
+    "a00g700002bMxmJAAS",
+    "a00g700002bMxmKAAS",
+    "a00g700002bMxmLAAS"
+  ],
+  "batchSize": 5,
+  "copies": 1,
+  "priorFollows": 0,
+  "sourceHash": "016c58c573f501d8551177e2cb09f73666aa66fa60480e84caf055fe6469219a",
+  "cut": "2026-11-24",
+  "end": "2026-12-24",
+  "timezone": "Europe/Paris",
+  "expectedCandidatesPerJob": 5
+}

@@ -1,0 +1,41 @@
+{
+  "label": "parcial",
+  "timestamp": "2026-11-24T08:25:29.156Z",
+  "cut": "2026-11-24",
+  "end": "2026-12-24",
+  "timezone": "Europe/Paris",
+  "eligible": 5,
+  "account": "001g700001MMqcHAAT",
+  "contracts": [
+    {
+      "id": "a00g700002bMxmHAAS",
+      "expiry": "2026-12-04"
+    },
+    {
+      "id": "a00g700002bMxmIAAS",
+      "expiry": "2026-12-05"
+    },
+    {
+      "id": "a00g700002bMxmJAAS",
+      "expiry": "2026-12-06"
+    },
+    {
+      "id": "a00g700002bMxmKAAS",
+      "expiry": "2026-12-07"
+    },
+    {
+      "id": "a00g700002bMxmLAAS",
+      "expiry": "2026-12-08"
+    }
+  ],
+  "initialFollows": 0,
+  "queryChecks": [
+    {
+      "object": "ContratoComercial__c",
+      "requested": 5,
+      "retrieved": 5,
+      "pages": 1,
+      "done": true
+    }
+  ]
+}

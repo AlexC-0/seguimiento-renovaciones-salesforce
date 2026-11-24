@@ -1,0 +1,141 @@
+{
+  "label": "solapamiento-1",
+  "timestamp": "2026-11-24T08:20:05.504Z",
+  "cut": "2026-11-24",
+  "end": "2026-12-24",
+  "timezone": "Europe/Paris",
+  "eligible": 30,
+  "account": "001g700001MLmPSAA1",
+  "contracts": [
+    {
+      "id": "a00g700002bMsxtAAC",
+      "expiry": "2026-12-04"
+    },
+    {
+      "id": "a00g700002bMsxuAAC",
+      "expiry": "2026-12-05"
+    },
+    {
+      "id": "a00g700002bMsxvAAC",
+      "expiry": "2026-12-06"
+    },
+    {
+      "id": "a00g700002bMsxwAAC",
+      "expiry": "2026-12-07"
+    },
+    {
+      "id": "a00g700002bMsxxAAC",
+      "expiry": "2026-12-08"
+    },
+    {
+      "id": "a00g700002bMsxyAAC",
+      "expiry": "2026-12-09"
+    },
+    {
+      "id": "a00g700002bMsxzAAC",
+      "expiry": "2026-12-10"
+    },
+    {
+      "id": "a00g700002bMsy0AAC",
+      "expiry": "2026-12-11"
+    },
+    {
+      "id": "a00g700002bMsy1AAC",
+      "expiry": "2026-12-12"
+    },
+    {
+      "id": "a00g700002bMsy2AAC",
+      "expiry": "2026-12-13"
+    },
+    {
+      "id": "a00g700002bMsy3AAC",
+      "expiry": "2026-12-04"
+    },
+    {
+      "id": "a00g700002bMsy4AAC",
+      "expiry": "2026-12-05"
+    },
+    {
+      "id": "a00g700002bMsy5AAC",
+      "expiry": "2026-12-06"
+    },
+    {
+      "id": "a00g700002bMsy6AAC",
+      "expiry": "2026-12-07"
+    },
+    {
+      "id": "a00g700002bMsy7AAC",
+      "expiry": "2026-12-08"
+    },
+    {
+      "id": "a00g700002bMsy8AAC",
+      "expiry": "2026-12-09"
+    },
+    {
+      "id": "a00g700002bMsy9AAC",
+      "expiry": "2026-12-10"
+    },
+    {
+      "id": "a00g700002bMsyAAAS",
+      "expiry": "2026-12-11"
+    },
+    {
+      "id": "a00g700002bMsyBAAS",
+      "expiry": "2026-12-12"
+    },
+    {
+      "id": "a00g700002bMsyCAAS",
+      "expiry": "2026-12-13"
+    },
+    {
+      "id": "a00g700002bMsyDAAS",
+      "expiry": "2026-12-04"
+    },
+    {
+      "id": "a00g700002bMsyEAAS",
+      "expiry": "2026-12-05"
+    },
+    {
+      "id": "a00g700002bMsyFAAS",
+      "expiry": "2026-12-06"
+    },
+    {
+      "id": "a00g700002bMsyGAAS",
+      "expiry": "2026-12-07"
+    },
+    {
+      "id": "a00g700002bMsyHAAS",
+      "expiry": "2026-12-08"
+    },
+    {
+      "id": "a00g700002bMsyIAAS",
+      "expiry": "2026-12-09"
+    },
+    {
+      "id": "a00g700002bMsyJAAS",
+      "expiry": "2026-12-10"
+    },
+    {
+      "id": "a00g700002bMsyKAAS",
+      "expiry": "2026-12-11"
+    },
+    {
+      "id": "a00g700002bMsyLAAS",
+      "expiry": "2026-12-12"
+    },
+    {
+      "id": "a00g700002bMsyMAAS",
+      "expiry": "2026-12-13"
+    }
+  ],
+  "initialFollows": 0,
+  "queryChecks": [
+    {
+      "object": "ContratoComercial__c",
+      "requested": 30,
+      "retrieved": 30,
+      "pages": 1,
+      "done": true
+    }
+  ]
+}

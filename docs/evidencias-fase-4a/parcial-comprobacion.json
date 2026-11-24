@@ -1,0 +1,34 @@
+{
+  "timestamp": "2026-11-24T08:33:19.482Z",
+  "pass": true,
+  "job": "707g700001DaDwPAAV",
+  "execution": "a01g700001MMzdxAAD",
+  "state": "Completada con incidencias",
+  "expected": {
+    "evaluated": 5,
+    "created": 4,
+    "failed": 1,
+    "failedScopes": 0
+  },
+  "observed": {
+    "evaluated": 5,
+    "created": 4,
+    "existing": 0,
+    "omitted": 0,
+    "failed": 1,
+    "failedScopes": 0
+  },
+  "rejectedContract": "a00g700002bMxmHAAS",
+  "rejectedFollowAbsent": true,
+  "incident": {
+    "id": "a02g700000F7pI5AAJ",
+    "execution": "a01g700001MMzdxAAD",
+    "contract": "a00g700002bMxmHAAS",
+    "key": "a00g700002bMxmHAAS|2026-12-04",
+    "stage": "Creación",
+    "code": "FIELD_CUSTOM_VALIDATION_EXCEPTION",
+    "message": "P06_F4A_RECHAZO_INDIVIDUAL: creación bloqueada solo para el contrato del ensayo.",
+    "fields": "Contrato__c"
+  },
+  "reconciliation": false
+}

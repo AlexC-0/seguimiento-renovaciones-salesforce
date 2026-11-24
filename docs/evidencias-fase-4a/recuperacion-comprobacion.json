@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-11-24T08:36:36.663Z",
+  "pass": true,
+  "job": "707g700001DYEnkAAH",
+  "execution": "a01g700001MLpryAAD",
+  "state": "Completada",
+  "created": 1,
+  "existing": 4,
+  "failed": 0,
+  "failedScopes": 0,
+  "newFollow": "a03g700000tSQCMAA4",
+  "newFollowContract": "a00g700002bMxmHAAS",
+  "existingUnchanged": true,
+  "originalExecutionAndIncidentUnchanged": true,
+  "originalState": "Completada con incidencias",
+  "originalIncidents": 1,
+  "applicationRetry": false
+}

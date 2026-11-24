@@ -10,7 +10,9 @@ Revisión acotada del 24/11/2026: diagnóstico de reconciliación corregido y tr
 
 Pruebas Apex: 20/20 correctas, incluidas las 14 anteriores y seis regresiones. Demostración real: 120 contratos elegibles, cuatro controles excluidos y tres lotes de tamaño máximo 50. El primer lanzamiento creó 120 seguimientos; la repetición reconoció los 120 existentes sin modificarlos. Se conservan los 50 registros históricos y 247 registros nuevos inventariados.
 
-V1 sigue abierta: faltan las demostraciones de solapamiento real, interrupciones, fallos adversos y recuperación manual. Dos lanzamientos consecutivos no acreditan concurrencia ni rendimiento general.
+Fase 4A comprobada el 24/11/2026: dos jobs observados simultáneamente en Processing sobre 30 contratos; rechazo individual real de uno entre cinco y recuperación manual con una creación y cuatro existentes. Los 297 registros anteriores y 51 archivos de evidencia se conservan; quedan 77 registros nuevos inventariados. La regla temporal de ensayo está inactiva. [Resultados y límites](docs/FASE-4A.md).
+
+V1 sigue abierta: quedan sin demostrar la colisión de inserción, los abortos, la reversión completa de un lote y su recuperación, así como los casos temporales indicados en los criterios. El solapamiento observado no acredita rendimiento general.
 
 ## Funciones
 
@@ -20,7 +22,7 @@ V1 sigue abierta: faltan las demostraciones de solapamiento real, interrupciones
 - Informe Seguimientos de renovación pendientes: Pendiente o En curso y Aplicable=true, incluidos atrasados; agrupación por responsable y orden de vencimiento.
 - Compartición manual de contratos tras transferencias, con revisión explícita de concesiones. No existe sincronización automática de propietarios.
 
-Se mantienen cuatro objetos, 35 campos y 21 validaciones. Account conserva ReadWrite interno; el permiso comercial solo concede lectura. Los detalles están en [Acceso](docs/ACCESO.md).
+El paquete de aplicación mantiene cuatro objetos, 35 campos y 21 validaciones. La organización conserva además la regla de ensayo de fase 4A inactiva. Account conserva ReadWrite interno; el permiso comercial solo concede lectura. Los detalles están en [Acceso](docs/ACCESO.md).
 
 ## Estructura
 
@@ -37,11 +39,15 @@ Se mantienen cuatro objetos, 35 campos y 21 validaciones. Account conserva ReadW
 | scripts/fase-3 | Lanzamiento, contraste, demostración y conservación |
 | scripts/revision-fase-3 | Trazabilidad reproducible y conservación de la revisión |
 | docs/evidencias-fase-3 | Resultados sanitizados e inventario |
+| scripts/fase-4a | Ensayos acotados, recuperación y conservación |
+| docs/evidencias-fase-4a | Resultados por escenario y regla temporal fuera de la aplicación |
 
 No se añaden LWC, Flow, integraciones, comunicaciones, programación ni reintentos. El estado de autenticación y los inventarios privados quedan excluidos de Git.
 
 ## Documentación
 
+- [Fase 4A: solapamiento, rechazo individual y recuperación](docs/FASE-4A.md)
+- [Evidencias de fase 4A](docs/evidencias-fase-4a.json)
 - [Fase 3: resultados y procedimiento](docs/FASE-3.md)
 - [Decisiones transaccionales](docs/DECISIONES-FASE-3.md)
 - [Evidencias de fase 3](docs/evidencias-fase-3.json)

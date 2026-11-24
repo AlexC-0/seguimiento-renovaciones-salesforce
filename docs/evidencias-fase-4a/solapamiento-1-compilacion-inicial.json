@@ -1,0 +1,9 @@
+{
+  "timestamp": "2026-11-24T08:21:24.825Z",
+  "compiled": false,
+  "success": false,
+  "problem": "No se puede utilizar el nivel de acceso SYSTEM_MODE en una ejecución anónima de Apex.",
+  "newJobs": 0,
+  "newFollows": 0,
+  "correction": "Consulta de observación en USER_MODE; sin cambios de aplicación."
+}

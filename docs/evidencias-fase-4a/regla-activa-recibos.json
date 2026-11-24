@@ -1,0 +1,28 @@
+{
+  "timestamp": "2026-11-24T08:33:02.705Z",
+  "validation": {
+    "id": "0Afg700000L73gDCAR",
+    "status": "Succeeded",
+    "done": true,
+    "success": true,
+    "checkOnly": true,
+    "components": 1,
+    "tests": 0
+  },
+  "deployment": {
+    "id": "0Afg700000L73mfCAB",
+    "status": "Succeeded",
+    "done": true,
+    "success": true,
+    "checkOnly": false,
+    "components": 1,
+    "tests": 0
+  },
+  "readback": {
+    "name": "P06_F4A_RechazoAcotado",
+    "active": true,
+    "formula": "AND(ISNEW(), CASESAFEID(Contrato__c) = \"a00g700002bMxmHAAS\")"
+  },
+  "previousRulesUnchanged": true,
+  "temporaryRuleOutsideApplicationPackage": true
+}

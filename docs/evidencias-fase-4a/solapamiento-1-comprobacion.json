@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-11-24T08:21:45.485Z",
+  "attempt": 1,
+  "overlapObserved": true,
+  "insertionCollisionDemonstrated": false,
+  "uniqueFollows": 30,
+  "canonicalKeys": true,
+  "accounting": true,
+  "confirmedCreations": 30,
+  "existing": 30,
+  "noOverwrites": true,
+  "incidents": 0,
+  "pass": false
+}

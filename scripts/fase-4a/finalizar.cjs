@@ -1,0 +1,38 @@
+'use strict';
+const h=require('./comun.cjs'),rule=require('./regla.cjs');
+(async()=>{
+ const c=await h.connect(process.argv[2]);const state=h.read('estado.json'),before=h.read('antes.json');
+ if(!state.groups.parcial?.recoveryVerified||!Object.values(state.groups).some(x=>x.overlapVerified))throw Error('Faltan ensayos verificados.');
+ const oldRows=[],checks=[];
+ for(const object of [...new Set(before.rows.map(x=>x.object))]){const r=await h.records(c,object,before.rows.filter(x=>x.object===object).map(x=>x.row.Id));oldRows.push(...r.rows);checks.push(...r.checks);}
+ const oldChanges=h.changed(before.rows.map(x=>x.row),oldRows);
+ const inv=Object.entries(state.groups).flatMap(([scenario,g])=>g.records.map(x=>({...x,scenario})));if(new Set(inv.map(x=>x.id)).size!==inv.length)throw Error('Inventario nuevo duplicado.');
+ const newRows=[];for(const object of [...new Set(inv.map(x=>x.objeto))]){const r=await h.records(c,object,inv.filter(x=>x.objeto===object).map(x=>x.id));newRows.push(...r.rows);checks.push(...r.checks);}
+ const priorFiles=before.evidence.map(x=>({file:x.file,unchangedBytes:h.hash(h.fs.readFileSync(h.path.join(h.root,x.file)))===x.sha256}));
+ const application=before.application.map(x=>({file:x.file,unchangedBytes:h.hash(h.fs.readFileSync(h.path.join(h.root,x.file)))===x.sha256}));
+ const settings=h.read('regla.json');const object=await rule.object(c);const actual=object.validationRules.find(x=>x.fullName===rule.ruleName);
+ const previousRulesUnchanged=settings.originalRules.every(x=>JSON.stringify(x)===JSON.stringify(object.validationRules.find(y=>y.fullName===x.fullName)));
+ const users=h.readJSON(h.path.join(h.root,'.sf/p06-fase-2/usuarios.json')).users;
+ const assignments=(await h.queryAll(c,'SELECT AssigneeId, PermissionSetId FROM PermissionSetAssignment WHERE AssigneeId IN '+h.ids(users.map(x=>x.id))+' ORDER BY AssigneeId, PermissionSetId')).rows;
+ const userRows=(await h.queryAll(c,'SELECT Id, ProfileId, UserRoleId, IsActive FROM User WHERE Id IN '+h.ids(users.map(x=>x.id))+' ORDER BY Id')).rows;
+ const security=await c.metadata.read('SecuritySettings','Security');
+ const expectedJobs=Object.values(state.groups).flatMap(x=>Object.values(x.runs).flatMap(r=>r.receipt?.receipts.map(x=>x.job)||[]));
+ const jobs=(await h.queryAll(c,'SELECT Id,Status,NumberOfErrors,JobItemsProcessed,TotalJobItems,CompletedDate FROM AsyncApexJob WHERE Id IN '+h.ids(expectedJobs))).rows;
+ const contractChanges=Object.keys(state.groups).flatMap(label=>{const initial=h.read(label+'-contratos-iniciales.json');return h.changed(initial,newRows.filter(x=>initial.some(y=>y.Id===x.Id)));});
+ const allFollows=newRows.filter(x=>inv.find(y=>y.id===x.Id)?.objeto==='SeguimientoRenovacion__c');
+ const expectedReport=allFollows.filter(x=>['Pendiente','En curso'].includes(x.Estado__c)&&x.Aplicable__c);
+ const reportRecord=(await h.queryAll(c,"SELECT Id FROM Report WHERE DeveloperName='PendientesRenovaciones'")).rows;
+ if(reportRecord.length!==1)throw Error('Informe no identificado de forma única.');
+ const report=await c.request('/services/data/v65.0/analytics/reports/'+reportRecord[0].Id+'?includeDetails=true');
+ const soql=await h.queryAll(c,"SELECT Id,Estado__c,Aplicable__c,Contrato__c,FechaVencimientoCapturada__c,DiasRestantes__c FROM SeguimientoRenovacion__c WHERE Estado__c IN ('Pendiente','En curso') AND Aplicable__c=true ORDER BY FechaVencimientoCapturada__c");
+ const reportIds=Object.entries(report.factMap).filter(([k,v])=>k!=='T!T'&&v.rows).flatMap(([,v])=>v.rows.map(row=>row.dataCells[0].value)).sort();const queryIds=soql.rows.map(x=>x.Id).sort();
+ const newIds=new Set(allFollows.map(x=>x.Id));const observedNew=reportIds.filter(x=>newIds.has(x));
+ const closed=state.groups.parcial.samplesPrepared.find(x=>x.state==='Cerrado').id;
+ const reportPass=report.allData===true&&JSON.stringify(reportIds)===JSON.stringify(queryIds)&&report.factMap['T!T'].aggregates[0].value===soql.total&&JSON.stringify(observedNew.sort())===JSON.stringify(expectedReport.map(x=>x.Id).sort())&&!reportIds.includes(closed);
+ h.save('informe-final.json',{report,soql});
+ h.publish('informe.json',{timestamp:new Date().toISOString(),context:'Cuenta técnica existente; misma conexión para Analytics REST y SOQL. No es una nueva sesión comercial.',reportTotal:report.factMap['T!T'].aggregates[0].value,queryTotal:soql.total,queryPages:soql.pages,queryComplete:soql.done,reportComplete:report.allData,sameIds:JSON.stringify(reportIds)===JSON.stringify(queryIds),newExpected:expectedReport.length,newObserved:observedNew.length,newIncludedIds:observedNew,newExcluded:[{id:closed,reason:'Estado Cerrado'}],pass:reportPass});
+ const pass=oldRows.length===297&&oldChanges.length===0&&newRows.length===inv.length&&contractChanges.length===0&&priorFiles.every(x=>x.unchangedBytes)&&application.every(x=>x.unchangedBytes)&&actual.active===false&&actual.errorConditionFormula===settings.formula&&!settings.restoreRequired&&previousRulesUnchanged&&object.sharingModel==='Private'&&object.externalSharingModel==='Private'&&JSON.stringify(assignments)===JSON.stringify(before.assignments)&&JSON.stringify(userRows)===JSON.stringify(before.users)&&security.enableAdminLoginAsAnyUser===false&&jobs.length===expectedJobs.length&&jobs.every(x=>x.Status==='Completed'&&x.NumberOfErrors===0)&&reportPass;
+ h.save('despues.json',{timestamp:new Date().toISOString(),oldRows,newRows,assignments,users:userRows,jobs});
+ h.publish('conservacion-final.json',{timestamp:new Date().toISOString(),previousRecords:oldRows.length,previousChanges:oldChanges,newRecords:newRows.length,newRecordCounts:inv.reduce((a,x)=>({...a,[x.objeto]:(a[x.objeto]||0)+1}),{}),newContractChanges:contractChanges,queryChecks:checks,ignoredFields:h.ignore,priorEvidenceFiles:priorFiles,applicationFiles:application,applicationUnchanged:application.every(x=>x.unchangedBytes),commercialAssignmentsUnchanged:JSON.stringify(assignments)===JSON.stringify(before.assignments),commercialUsersUnchanged:JSON.stringify(userRows)===JSON.stringify(before.users),loginAs:security.enableAdminLoginAsAnyUser,temporaryRule:{name:actual.fullName,active:actual.active,formula:actual.errorConditionFormula,initial:settings.initial,previousRulesUnchanged,outsideApplicationPackage:true},sharing:{internal:object.sharingModel,external:object.externalSharingModel},jobs:jobs.map(({attributes,...x})=>x),pass});
+ console.log(JSON.stringify({previousRecords:oldRows.length,previousChanged:oldChanges.length,newRecords:newRows.length,previousEvidenceUnchanged:priorFiles.filter(x=>x.unchangedBytes).length,applicationUnchanged:application.every(x=>x.unchangedBytes),ruleActive:actual.active,reportTotal:soql.total,newReportRows:observedNew.length,pass}));if(!pass)throw Error('Conservación o informe no conformes.');
+})().catch(h.reportError);
