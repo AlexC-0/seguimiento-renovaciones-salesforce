@@ -1,0 +1,80 @@
+{
+  "phase": "5",
+  "date": "2026-11-24",
+  "baseline": "69622d3013fbc77fc69877dcadddfde3dbae6be2",
+  "target": "p06-renovaciones-dev",
+  "apiVersion": "65.0",
+  "functionalJourney": {
+    "file": "evidencias-fase-5/recorrido-final.json",
+    "created": [
+      2,
+      2,
+      0
+    ],
+    "existing": [
+      0,
+      0,
+      2
+    ],
+    "pass": true
+  },
+  "preservation": {
+    "file": "evidencias-fase-5/conservacion-final.json",
+    "previousRecords": 422,
+    "newBusinessRecords": 10,
+    "manualShares": 1,
+    "priorEvidenceFiles": 133
+  },
+  "reports": [
+    {
+      "file": "evidencias-fase-5/01-original-informe.json",
+      "total": 181,
+      "newIncluded": 2,
+      "pass": true
+    },
+    {
+      "file": "evidencias-fase-5/02-estados-informe.json",
+      "total": 180,
+      "newIncluded": 1,
+      "pass": true
+    },
+    {
+      "file": "evidencias-fase-5/04-fechas-alternativas-informe.json",
+      "total": 179,
+      "newIncluded": 0,
+      "pass": true
+    },
+    {
+      "file": "evidencias-fase-5/05-alternativa-informe.json",
+      "total": 181,
+      "newIncluded": 2,
+      "pass": true
+    },
+    {
+      "file": "evidencias-fase-5/06-restauracion-fechas-informe.json",
+      "total": 180,
+      "newIncluded": 1,
+      "pass": true
+    },
+    {
+      "file": "evidencias-fase-5/07-repeticion-informe.json",
+      "total": 180,
+      "newIncluded": 1,
+      "pass": true
+    }
+  ],
+  "temporaryPermissionRestored": "evidencias-fase-5/permiso-restaurado.json",
+  "installation": {
+    "manifest": "../manifest/instalacion-v1.xml",
+    "explicitMembers": 36,
+    "convertedFiles": 42,
+    "evidence": "evidencias-fase-5/instalacion-conversion.json",
+    "cleanInstallationExecuted": false
+  },
+  "localChecks": "evidencias-fase-5/revision-local.json",
+  "acceptance": "ACEPTACION-V1.md",
+  "v1Closed": false,
+  "newApplicationDefectObserved": false,
+  "applicationChanged": false,
+  "apexTestsRerun": false
+}

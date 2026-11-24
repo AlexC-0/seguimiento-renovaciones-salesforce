@@ -2,6 +2,16 @@
 
 Fecha: 24/11/2026.
 
+## Fase 5
+
+Comprobada sobre 69622d3013fbc77fc69877dcadddfde3dbae6be2. Dos contratos nuevos, tres jobs completos: dos seguimientos originales, dos alternativos y cero duplicados al restaurar las fechas. Cerrado y En curso conservan notas, estado, propietario y origen. La transferencia de un contrato de B a A conserva el seguimiento antiguo en B y asigna el nuevo a A; Read manual del contrato para B verificado mediante UserRecordAccess. No hubo sesión comercial nueva.
+
+Se retiraron la asignación y el Permission Set temporal de reasignación de la cuenta técnica; permisos originales efectivos restaurados. Usuarios, grupos, roles y perfiles conservados, Login As=false y tres reglas de ensayo inactivas. 422 registros anteriores, diez nuevos y 133 evidencias históricas conservados; una compartición manual adicional. Informe y SOQL coinciden en IDs en seis pasos, con 180 filas al final.
+
+Sin defecto nuevo ni cambio de aplicación. Matriz AC-01 a AC-20 consolidada, uso actualizado, guía de instalación y manifiesto de 36 miembros. Conversión local completa de 42 archivos; instalación limpia y validación remota del paquete conjunto no ejecutadas. Los 20/20 Apex siguen siendo evidencia de la revisión de fase 3; no se repitió esa batería ni los ensayos de fase 4B.
+
+V1 permanece abierta. [Resultados y comprobaciones](FASE-5.md), [evidencias](evidencias-fase-5.json) y [decisiones de aceptación pendientes](ACEPTACION-V1.md). La preparación del cierre no equivale a aceptación ni publicación; staging, commit y push son manuales.
+
 ## Fase 4B
 
 Comprobada sobre abfcba0e7aa682084fc93fb23fe6c0ba9cd9e998. Un execute revirtió cuatro inserciones tentativas al rechazarse su auditoría; sus cinco miembros están identificados en la traza. El otro lote conservó cinco seguimientos. Job Completed con un error; ejecución Fallida, Evaluados=5, Creados=5, LotesFallidos=1 y reconciliación marcada. finish dejó una incidencia; dos contrastes posteriores no la duplicaron.

@@ -1,0 +1,31 @@
+{
+  "timestamp": "2026-11-24T09:29:29.570Z",
+  "context": "Misma identidad técnica para Analytics y SOQL; no es sesión comercial.",
+  "reportTotal": 181,
+  "queryTotal": 181,
+  "queryComplete": true,
+  "queryPages": 1,
+  "reportComplete": true,
+  "sameIds": true,
+  "expectedNewIds": [
+    "a03g700000tTz0PAAS",
+    "a03g700000tTz0QAAS"
+  ],
+  "newIncludedIds": [
+    "a03g700000tTz0PAAS",
+    "a03g700000tTz0QAAS"
+  ],
+  "newExcluded": [
+    {
+      "id": "a03g700000tTyp7AAC",
+      "state": "Cerrado",
+      "applicable": false
+    },
+    {
+      "id": "a03g700000tTyp8AAC",
+      "state": "En curso",
+      "applicable": false
+    }
+  ],
+  "pass": true
+}

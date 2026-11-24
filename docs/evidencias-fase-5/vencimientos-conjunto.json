@@ -1,0 +1,29 @@
+{
+  "label": "vencimientos",
+  "timestamp": "2026-11-24T09:27:17.200Z",
+  "cut": "2026-11-24",
+  "end": "2026-12-24",
+  "timezone": "Europe/Paris",
+  "eligible": 2,
+  "account": "001g700001MOHaPAAX",
+  "contracts": [
+    {
+      "id": "a00g700002bOEDBAA4",
+      "expiry": "2026-12-04"
+    },
+    {
+      "id": "a00g700002bOEDCAA4",
+      "expiry": "2026-12-05"
+    }
+  ],
+  "initialFollows": 0,
+  "queryChecks": [
+    {
+      "object": "ContratoComercial__c",
+      "requested": 2,
+      "retrieved": 2,
+      "pages": 1,
+      "done": true
+    }
+  ]
+}

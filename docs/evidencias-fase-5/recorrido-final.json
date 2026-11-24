@@ -1,0 +1,59 @@
+{
+  "timestamp": "2026-11-24T09:29:57.021Z",
+  "pass": true,
+  "contracts": [
+    {
+      "id": "a00g700002bOEDBAA4",
+      "original": "2026-12-04",
+      "alternative": "2026-12-14",
+      "final": "2026-12-04",
+      "finalOwner": "A"
+    },
+    {
+      "id": "a00g700002bOEDCAA4",
+      "original": "2026-12-05",
+      "alternative": "2026-12-15",
+      "final": "2026-12-05",
+      "finalOwner": "B"
+    }
+  ],
+  "jobs": [
+    {
+      "job": "707g700001DZpg1AAD",
+      "execution": "a01g700001MMoCIAA1",
+      "created": 2,
+      "existing": 0,
+      "state": "Completada"
+    },
+    {
+      "job": "707g700001DaBDHAA3",
+      "execution": "a01g700001MOIOPAA5",
+      "created": 2,
+      "existing": 0,
+      "state": "Completada"
+    },
+    {
+      "job": "707g700001DZw9XAAT",
+      "execution": "a01g700001MNACoAAP",
+      "created": 0,
+      "existing": 2,
+      "state": "Completada"
+    }
+  ],
+  "originalFollowIds": [
+    "a03g700000tTyp7AAC",
+    "a03g700000tTyp8AAC"
+  ],
+  "alternativeFollowIds": [
+    "a03g700000tTz0PAAS",
+    "a03g700000tTz0QAAS"
+  ],
+  "closedNotReopened": true,
+  "originalOpenApplicable": true,
+  "alternativeFollowsApplicable": false,
+  "historyPersistedUnchanged": true,
+  "previousExecutionsUnchanged": true,
+  "transferVerified": true,
+  "accessVerifiedBy": "UserRecordAccess desde identidad técnica",
+  "newCommercialSession": false
+}

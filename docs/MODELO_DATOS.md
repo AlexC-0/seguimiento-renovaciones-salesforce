@@ -43,7 +43,7 @@ La obligatoriedad declarativa se aplica al dato, no solo a la página. Las fórm
 | `FinVentana__c` | Date | Sí | Fin de ventana |
 | `ZonaHoraria__c` | Text(80) | Sí | TimeZoneSidKey del solicitante capturada al lanzar. No cambia durante la ejecución. |
 | `Solicitante__c` | Lookup → User | Sí, por validación | SolicitanteObligatorio rechaza el valor vacío; ContextoInmutable impide cambiarlo después de crear. Sin restricción de eliminación ni cascada sobre User. |
-| `AsyncApexJobId__c` | Text(18) | No | Id de 18 caracteres devuelto por el futuro lanzamiento. Vacío hasta conocerlo; no es una relación ni acredita existencia del job. |
+| `AsyncApexJobId__c` | Text(18) | No | Id de 18 caracteres devuelto por Database.executeBatch en el lanzamiento implementado. Vacío hasta conocerlo; no es una relación ni acredita existencia del job. |
 | `Inicio__c` | DateTime | Sí; NOW() | Instante de registro del lanzamiento, incluida la espera en cola. No mide exclusivamente el procesamiento del Batch. |
 | `Finalizacion__c` | DateTime | No | Finalización |
 | `Estado__c` | Picklist | Sí; Encolada | Encolada, En curso, Completada, Completada con incidencias, Fallida, Abortada |
@@ -64,8 +64,8 @@ La obligatoriedad declarativa se aplica al dato, no solo a la página. Las fórm
 | `ClaveIntentada__c` | Text(255) | No | Valor intentado, si se conoce. Puede ser inválido y no está sujeto a la unicidad de los seguimientos. |
 | `Etapa__c` | Picklist | Sí | Selección, Relectura, Creación, Lote, Finalización, Reconciliación. Etapa en la que se detectó la incidencia; sin valor inicial para evitar atribuciones incorrectas. |
 | `CodigoError__c` | Text(255) | Sí | Código de error |
-| `Mensaje__c` | LongTextArea(32768) | Sí, por validación | Detalle técnico sin secretos. Su presencia se exige mediante validación; el procesamiento deberá respetar el límite de longitud. |
-| `CamposAfectados__c` | Text(255) | No | Nombres API separados por punto y coma, cuando estén disponibles. El procesamiento deberá gestionar el límite sin perder el registro de incidencia. |
+| `Mensaje__c` | LongTextArea(32768) | Sí, por validación | Detalle técnico sin secretos. Su presencia se exige mediante validación; el procesamiento sanea y limita la longitud. |
+| `CamposAfectados__c` | Text(255) | No | Nombres API separados por punto y coma, cuando estén disponibles. El procesamiento limita la longitud; un error al persistir auditoría revierte el lote. |
 
 ## Relaciones y conservación
 
@@ -83,7 +83,7 @@ Restrict protege referencias activas, pero no sustituye la retirada del permiso 
 
 `ClaveIdentidad__c` es Text(29), obligatoria, única y sin distinción de mayúsculas. No es External ID: no se prevé upsert comercial ni integración. La representación canónica es Id de 18 caracteres, separador `|` y vencimiento ISO capturado. El trigger before insert calcula la clave ausente y rechaza una incompatible; también protege una pareja histórica representada por otra clave sin reescribirla. La validación impide modificar contrato, fecha capturada, clave y ejecución después de insertar. La restricción única conserva la protección frente a carreras sobre la clave canónica.
 
-`Notas__c` es TextArea de 255 caracteres para una nota comercial breve. `Mensaje__c` admite 32.768 caracteres para diagnóstico técnico y requiere contenido mediante una validación. El resto de textos de incidencia admite 255 caracteres; la clave intentada puede ser incorrecta y por eso admite más que la clave válida. La fase de procesamiento deberá gestionar longitudes y saneamiento de mensajes sin exponer secretos ni perder incidencias por un segundo error de registro. No se ha implementado ese tratamiento.
+`Notas__c` es TextArea de 255 caracteres para una nota comercial breve. `Mensaje__c` admite 32.768 caracteres para diagnóstico técnico y requiere contenido mediante una validación. El resto de textos de incidencia admite 255 caracteres; la clave intentada puede ser incorrecta y por eso admite más que la clave válida. LoteRenovaciones.sanear limita longitudes y sustituye patrones sensibles; entradasInvalidasYSaneamiento cubre esos casos en RenovacionesTest. Si el guardado de la auditoría falla, la transacción de execute se revierte: no se oculta como un éxito parcial. La fase 4B acredita esa reversión real; no se garantiza la detección universal de secretos.
 
 ## Fórmulas
 

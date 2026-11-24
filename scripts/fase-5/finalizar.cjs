@@ -1,0 +1,31 @@
+'use strict';
+const h=require('./comun.cjs');
+(async()=>{
+ const c=await h.connect(process.argv[2]),before=h.read('antes.json'),state=h.read('estado.json'),group=state.groups.vencimientos;
+ if(!group?.verified)throw Error('Recorrido no comprobado.');
+ const checks=[],oldRows=[],newRows=[];
+ for(const object of [...new Set(before.rows.map(x=>x.object))]){const r=await h.records(c,object,before.rows.filter(x=>x.object===object).map(x=>x.row.Id));oldRows.push(...r.rows);checks.push(...r.checks);}
+ for(const object of [...new Set(group.records.map(x=>x.objeto))]){const r=await h.records(c,object,group.records.filter(x=>x.objeto===object).map(x=>x.id));newRows.push(...r.rows);checks.push(...r.checks);}
+ const oldChanges=h.changed(before.rows.map(x=>x.row),oldRows);const finalSnapshot=h.read('07-repeticion-completo.json');const newChanges=h.changed([...finalSnapshot.contracts,...finalSnapshot.follows],newRows);
+ const priorEvidence=before.evidence.map(x=>({file:x.file,unchanged:h.hash(h.fs.readFileSync(h.path.join(h.root,x.file)))===x.sha256}));const application=before.application.map(x=>({file:x.file,unchanged:h.hash(h.fs.readFileSync(h.path.join(h.root,x.file)))===x.sha256}));
+ const users=before.users.map(x=>x.Id);const userRows=(await h.queryAll(c,'SELECT Id, ProfileId, UserRoleId, IsActive FROM User WHERE Id IN '+h.ids(users)+' ORDER BY Id')).rows;
+ const assignments=(await h.queryAll(c,'SELECT AssigneeId, PermissionSetId FROM PermissionSetAssignment WHERE AssigneeId IN '+h.ids(users)+' ORDER BY AssigneeId, PermissionSetId')).rows;
+ const groups=(await h.queryAll(c,"SELECT Id,GroupId,UserOrGroupId FROM GroupMember WHERE Group.DeveloperName LIKE 'P06_%' ORDER BY Id")).rows;
+ const trace=await c.tooling.query('SELECT Id, TracedEntityId, DebugLevelId, LogType, StartDate, ExpirationDate FROM TraceFlag');const tracesBefore=h.read('trazas-previas.json');
+ const rulesBefore=h.read('reglas-previas.json'),ruleChecks=[];
+ for(const [object,rules] of Object.entries(rulesBefore)){const now=await c.metadata.read('CustomObject',object);ruleChecks.push({object,allRulesUnchanged:JSON.stringify(now.validationRules)===JSON.stringify(rules),temporaryRules:now.validationRules.filter(x=>x.fullName.startsWith('P06_F4')).map(x=>({name:x.fullName,active:x.active}))});}
+ const permission=(await h.queryAll(c,"SELECT Id FROM PermissionSet WHERE Name='P06_F5_ReasignacionTemporal'")).rows;
+ const effective=await c.tooling.executeAnonymous("System.assert(!FeatureManagement.checkPermission('P06_Reasignar'),'Concesión temporal todavía efectiva');");
+ const security=await c.metadata.read('SecuritySettings','Security');
+ const jobIds=Object.values(group.runs).map(x=>x.receipt.job);const jobs=(await h.queryAll(c,'SELECT Id,Status,NumberOfErrors,JobItemsProcessed,TotalJobItems,CompletedDate FROM AsyncApexJob WHERE Id IN '+h.ids(jobIds))).rows;
+ const share=await h.queryAll(c,'SELECT Id,ParentId,UserOrGroupId,AccessLevel,RowCause FROM ContratoComercial__Share WHERE Id IN '+h.ids([group.share.id]));
+ const shareValid=share.rows.length===1&&share.rows[0].ParentId===group.share.parent&&share.rows[0].UserOrGroupId===before.commercial&&share.rows[0].AccessLevel==='Read'&&share.rows[0].RowCause==='Manual';
+ const userSame=JSON.stringify(userRows)===JSON.stringify(before.users),assignmentsSame=JSON.stringify(assignments)===JSON.stringify(before.assignments),groupsSame=JSON.stringify(groups)===JSON.stringify(h.read('grupos-previos.json'));
+ const tracesSame=trace.done&&trace.records.length===tracesBefore.length&&h.changed(tracesBefore,trace.records).length===0;
+ const executionIds=Object.values(group.runs).map(x=>x.receipt.execution);const executions=newRows.filter(x=>executionIds.includes(x.Id));const follows=newRows.filter(x=>x.ClaveIdentidad__c);
+ const counts=executions.every(x=>x.Evaluados__c===2&&x.Evaluados__c===x.Creados__c+x.YaExistentes__c+x.Omitidos__c+x.Fallidos__c&&x.Estado__c==='Completada'&&!x.RequiereReconciliacion__c&&x.Fallidos__c===0&&x.LotesFallidos__c===0)&&executions.reduce((n,x)=>n+x.Creados__c,0)===4&&follows.length===4&&new Set(follows.map(x=>x.ClaveIdentidad__c)).size===4;
+ const pass=oldRows.length===422&&!oldChanges.length&&newRows.length===10&&!newChanges.length&&new Set(group.records.map(x=>x.id)).size===10&&priorEvidence.every(x=>x.unchanged)&&application.every(x=>x.unchanged)&&userSame&&assignmentsSame&&groupsSame&&tracesSame&&permission.length===0&&effective.compiled&&effective.success&&ruleChecks.every(x=>x.allRulesUnchanged&&x.temporaryRules.every(r=>!r.active))&&security.enableAdminLoginAsAnyUser===false&&jobs.length===3&&jobs.every(x=>x.Status==='Completed'&&x.NumberOfErrors===0)&&shareValid&&counts;
+ h.save('despues.json',{timestamp:new Date().toISOString(),oldRows,newRows,users:userRows,assignments,groups,share:share.rows,jobs});
+ h.publish('conservacion-final.json',{timestamp:new Date().toISOString(),previousRecords:oldRows.length,previousChanges:oldChanges,newBusinessRecords:newRows.length,newRecordCounts:group.records.reduce((r,x)=>({...r,[x.objeto]:(r[x.objeto]||0)+1}),{}),newChangesAfterJourney:newChanges,manualShares:1,manualShareVerified:shareValid,priorEvidence,application,applicationFilesUnchanged:application.every(x=>x.unchanged),newInstallationManifest:'manifest/instalacion-v1.xml',usersUnchanged:userSame,assignmentsUnchanged:assignmentsSame,groupsUnchanged:groupsSame,traceFlagsUnchanged:tracesSame,temporaryPermissionAbsent:permission.length===0,temporaryPermissionEffective:false,ruleChecks,loginAs:security.enableAdminLoginAsAnyUser,queries:checks,ignoredFields:h.ignore,confirmedCountsAndUniqueIdentities:counts,jobs:jobs.map(({attributes,...x})=>x),pass});
+ console.log(JSON.stringify({previousRecords:oldRows.length,previousChanges:oldChanges.length,newRecords:newRows.length,manualShares:1,priorEvidenceUnchanged:priorEvidence.filter(x=>x.unchanged).length,temporaryPermissionAbsent:permission.length===0,pass}));if(!pass)throw Error('Conservación final no conforme.');
+})().catch(h.reportError);

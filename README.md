@@ -4,6 +4,8 @@ Proyecto independiente para gestionar el seguimiento comercial de contratos fict
 
 ## Estado
 
+Fase 5 comprobada el 24/11/2026: cambio de vencimiento, transferencia y restauración con tres jobs; creaciones 2, 2 y 0, con dos existentes al restaurar y sin reabrir el cerrado. Los 422 registros anteriores y 133 archivos históricos siguen intactos; se conservan diez registros nuevos y una compartición de lectura. El permiso temporal está retirado. [Resultados](docs/FASE-5.md), [matriz de aceptación](docs/ACEPTACION-V1.md) y [guía de instalación](docs/INSTALACION.md).
+
 Fase 3 implementada, validada y desplegada en la Developer Edition exclusiva P06, API 65.0. El lanzamiento manual captura una fecha y zona horaria, selecciona contratos Activos en la ventana inclusiva de 30 días y crea seguimientos mediante Batch Apex. La identidad canónica protege las inserciones y la repetición conserva los seguimientos existentes.
 
 Revisión acotada del 24/11/2026: diagnóstico de reconciliación corregido y trazabilidad de fuentes contrastada. [Resultados y límites](docs/REVISION-FASE-3.md).
@@ -30,6 +32,8 @@ El paquete de aplicación mantiene cuatro objetos, 35 campos y 21 validaciones. 
 
 | Ruta | Contenido |
 |---|---|
+| manifest/instalacion-v1.xml | Paquete conjunto de 36 miembros; conversión local comprobada, instalación limpia no ejecutada |
+| scripts/fase-5 y docs/evidencias-fase-5 | Recorrido de vencimiento/responsable, conservación y permiso temporal retirado |
 | force-app/main/default | Modelo, aplicación estándar, permisos, compartición, informe, cuatro clases Apex y un trigger |
 | manifest/modelo-p06.xml | Modelo declarativo de fase 1B |
 | manifest/verificacion-p06.xml | Permiso técnico de verificación separado |
@@ -49,6 +53,9 @@ No se añaden LWC, Flow, integraciones, comunicaciones, programación ni reinten
 
 ## Documentación
 
+- [Fase 5: validación funcional](docs/FASE-5.md) y [evidencias](docs/evidencias-fase-5.json)
+- [Matriz AC-01 a AC-20 y propuesta de cierre](docs/ACEPTACION-V1.md)
+- [Instalación y configuración manual](docs/INSTALACION.md)
 - [Fase 4B: reversión, aborto y recuperación](docs/FASE-4B.md)
 - [Evidencias de fase 4B](docs/evidencias-fase-4b.json)
 - [Fase 4A: solapamiento, rechazo individual y recuperación](docs/FASE-4A.md)

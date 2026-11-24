@@ -1,0 +1,109 @@
+{
+  "maximumMs": 120000,
+  "samples": [
+    {
+      "requestedAt": "2026-11-24T09:29:47.780Z",
+      "receivedAt": "2026-11-24T09:29:48.212Z",
+      "elapsed": 432,
+      "job": {
+        "Id": "707g700001DZw9XAAT",
+        "Status": "Holding",
+        "NumberOfErrors": 0,
+        "JobItemsProcessed": 0,
+        "TotalJobItems": 0,
+        "CompletedDate": null
+      },
+      "execution": {
+        "Id": "a01g700001MNACoAAP",
+        "Estado__c": "Encolada",
+        "Finalizacion__c": null,
+        "RequiereReconciliacion__c": false,
+        "Evaluados__c": 0,
+        "Creados__c": 0,
+        "YaExistentes__c": 0,
+        "Omitidos__c": 0,
+        "Fallidos__c": 0,
+        "LotesFallidos__c": 0
+      }
+    },
+    {
+      "requestedAt": "2026-11-24T09:29:49.221Z",
+      "receivedAt": "2026-11-24T09:29:49.981Z",
+      "elapsed": 2201,
+      "job": {
+        "Id": "707g700001DZw9XAAT",
+        "Status": "Completed",
+        "NumberOfErrors": 0,
+        "JobItemsProcessed": 1,
+        "TotalJobItems": 1,
+        "CompletedDate": "2026-11-24T09:29:48.000+0000"
+      },
+      "execution": {
+        "Id": "a01g700001MNACoAAP",
+        "Estado__c": "Completada",
+        "Finalizacion__c": "2026-11-24T09:29:48.000+0000",
+        "RequiereReconciliacion__c": false,
+        "Evaluados__c": 2,
+        "Creados__c": 0,
+        "YaExistentes__c": 2,
+        "Omitidos__c": 0,
+        "Fallidos__c": 0,
+        "LotesFallidos__c": 0
+      }
+    },
+    {
+      "requestedAt": "2026-11-24T09:29:50.982Z",
+      "receivedAt": "2026-11-24T09:29:51.311Z",
+      "elapsed": 3531,
+      "job": {
+        "Id": "707g700001DZw9XAAT",
+        "Status": "Completed",
+        "NumberOfErrors": 0,
+        "JobItemsProcessed": 1,
+        "TotalJobItems": 1,
+        "CompletedDate": "2026-11-24T09:29:48.000+0000"
+      },
+      "execution": {
+        "Id": "a01g700001MNACoAAP",
+        "Estado__c": "Completada",
+        "Finalizacion__c": "2026-11-24T09:29:48.000+0000",
+        "RequiereReconciliacion__c": false,
+        "Evaluados__c": 2,
+        "Creados__c": 0,
+        "YaExistentes__c": 2,
+        "Omitidos__c": 0,
+        "Fallidos__c": 0,
+        "LotesFallidos__c": 0
+      }
+    },
+    {
+      "requestedAt": "2026-11-24T09:29:52.325Z",
+      "receivedAt": "2026-11-24T09:29:52.701Z",
+      "elapsed": 4921,
+      "job": {
+        "Id": "707g700001DZw9XAAT",
+        "Status": "Completed",
+        "NumberOfErrors": 0,
+        "JobItemsProcessed": 1,
+        "TotalJobItems": 1,
+        "CompletedDate": "2026-11-24T09:29:48.000+0000"
+      },
+      "execution": {
+        "Id": "a01g700001MNACoAAP",
+        "Estado__c": "Completada",
+        "Finalizacion__c": "2026-11-24T09:29:48.000+0000",
+        "RequiereReconciliacion__c": false,
+        "Evaluados__c": 2,
+        "Creados__c": 0,
+        "YaExistentes__c": 2,
+        "Omitidos__c": 0,
+        "Fallidos__c": 0,
+        "LotesFallidos__c": 0
+      }
+    }
+  ],
+  "verdict": {
+    "stop": true,
+    "reason": "terminal y cierre estables"
+  }
+}

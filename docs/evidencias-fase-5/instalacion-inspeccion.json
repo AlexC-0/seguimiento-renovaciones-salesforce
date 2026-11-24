@@ -1,0 +1,123 @@
+{
+  "timestamp": "2026-11-24T09:28:15.059Z",
+  "manifest": "manifest/instalacion-v1.xml",
+  "apiVersion": "65.0",
+  "types": [
+    {
+      "type": "CustomObject",
+      "members": [
+        "ContratoComercial__c",
+        "EjecucionRenovacion__c",
+        "IncidenciaRenovacion__c",
+        "SeguimientoRenovacion__c"
+      ]
+    },
+    {
+      "type": "CustomPermission",
+      "members": [
+        "P06_ProcesarRenovaciones",
+        "P06_Reasignar"
+      ]
+    },
+    {
+      "type": "ApexClass",
+      "members": [
+        "IdentidadRenovacion",
+        "LoteRenovaciones",
+        "RenovacionesTest",
+        "ServicioRenovaciones"
+      ]
+    },
+    {
+      "type": "ApexTrigger",
+      "members": [
+        "ValidarIdentidadRenovacion"
+      ]
+    },
+    {
+      "type": "Group",
+      "members": [
+        "P06_Comerciales",
+        "P06_Coordinacion",
+        "P06_Operadores",
+        "P06_Propietarios"
+      ]
+    },
+    {
+      "type": "Role",
+      "members": [
+        "P06_Comercial",
+        "P06_Coordinacion"
+      ]
+    },
+    {
+      "type": "SharingRules",
+      "members": [
+        "ContratoComercial__c",
+        "EjecucionRenovacion__c",
+        "IncidenciaRenovacion__c",
+        "SeguimientoRenovacion__c"
+      ]
+    },
+    {
+      "type": "CustomTab",
+      "members": [
+        "ContratoComercial__c",
+        "EjecucionRenovacion__c",
+        "IncidenciaRenovacion__c",
+        "SeguimientoRenovacion__c"
+      ]
+    },
+    {
+      "type": "CustomApplication",
+      "members": [
+        "P06_Renovaciones"
+      ]
+    },
+    {
+      "type": "Layout",
+      "members": [
+        "ContratoComercial__c-P06 Gestión",
+        "EjecucionRenovacion__c-P06 Gestión",
+        "IncidenciaRenovacion__c-P06 Gestión",
+        "SeguimientoRenovacion__c-P06 Gestión"
+      ]
+    },
+    {
+      "type": "PermissionSet",
+      "members": [
+        "P06_Comercial",
+        "P06_Coordinacion",
+        "P06_OperadorRenovaciones"
+      ]
+    },
+    {
+      "type": "Profile",
+      "members": [
+        "P06_BaseComercial"
+      ]
+    },
+    {
+      "type": "ReportFolder",
+      "members": [
+        "P06_Renovaciones"
+      ]
+    },
+    {
+      "type": "Report",
+      "members": [
+        "P06_Renovaciones/PendientesRenovaciones"
+      ]
+    }
+  ],
+  "explicitMembers": 36,
+  "exclusions": [
+    "P06_VerificacionModelo",
+    "Reglas temporales F4A/F4B",
+    "P06_F5_ReasignacionTemporal",
+    "Usuarios y asignaciones de demostración",
+    "Datos ficticios y scripts históricos",
+    "Recibos privados"
+  ],
+  "cleanInstallationExecuted": false
+}

@@ -1,0 +1,1135 @@
+{
+  "timestamp": "2026-11-24T09:31:09.589Z",
+  "previousRecords": 422,
+  "previousChanges": [],
+  "newBusinessRecords": 10,
+  "newRecordCounts": {
+    "Account": 1,
+    "ContratoComercial__c": 2,
+    "EjecucionRenovacion__c": 3,
+    "SeguimientoRenovacion__c": 4
+  },
+  "newChangesAfterJourney": [],
+  "manualShares": 1,
+  "manualShareVerified": true,
+  "priorEvidence": [
+    {
+      "file": "docs/evidencias-fase-1b.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-1b/P06-1B-20261123T132719-b12376f4-contratos.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-1b/P06-1B-20261123T132811-bff184d2-seguimientos.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-1b/P06-1B-20261123T133354-b17fd935-seguimientos.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-1b/P06-1B-20261123T133432-f8cc7f15-ejecuciones.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-1b/P06-1B-20261123T133507-a51f9870-incidencias.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-1b/conservacion.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-2.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-2/acceso-comerciales.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-2/acceso-coordinacion.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-2/acceso-final.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-2/comercial-a-criterios-iniciales.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-2/comercial-a.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-2/comercial-b.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-2/configuracion.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-2/conservacion.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-2/coordinacion.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-2/despliegues.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-2/fixtures.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-2/informe-comercial-a-inicial.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-2/informe-comercial-a-reasignado.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-2/informe-comercial-b-final.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-2/informe-comercial-b-reasignado.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-2/informe-comercial-b.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-2/informe-coordinacion-final.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-2/informe-coordinacion-inicial.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-2/interfaz.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-2/reasignacion-a.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-2/reasignacion-b.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-2/reasignacion-ui-b.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-2/reasignacion-ui-coordinacion.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-2/restauracion.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-2/revision-local.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-2/transferencia-multiple-a.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-3.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-3/acceso-informe.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-3/conjunto.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-3/conservacion.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-3/contraste-manual.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-3/despliegue-pruebas.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-3/inventario.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-3/muestras-repeticion.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-3/previo-primero.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-3/previo-repeticion.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-3/primero.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-3/repeticion.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-3/revision-local.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4a.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4a/conservacion-final.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4a/contraste-repetido.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4a/informe.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4a/inspeccion.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4a/inventario.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4a/parcial-comprobacion.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4a/parcial-conjunto.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4a/parcial-rechazo-previo.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4a/parcial-rechazo-resultado.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4a/parcial-recuperacion-previo.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4a/parcial-recuperacion-resultado.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4a/recuperacion-comprobacion.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4a/recuperacion-preparacion.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4a/regla-activa-recibos.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4a/regla-activa/objects/SeguimientoRenovacion__c.object",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4a/regla-activa/package.xml",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4a/regla-inactiva-recibos.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4a/regla-inactiva/objects/SeguimientoRenovacion__c.object",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4a/regla-inactiva/package.xml",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4a/regla-inicial.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4a/regla-validacion-inicial-fallida.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4a/regla-validacion-zip-fallida.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4a/revision-local.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4a/solapamiento-1-compilacion-inicial.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4a/solapamiento-1-comprobacion.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4a/solapamiento-1-confirmacion-final.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4a/solapamiento-1-conjunto.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4a/solapamiento-1-doble-corregido-previo.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4a/solapamiento-1-doble-corregido-resultado.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4a/solapamiento-1-doble-previo.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4b.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4b/aborto-1-aborto-antes-contraste.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4b/aborto-1-aborto-contraste-1.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4b/aborto-1-aborto-contraste-2.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4b/aborto-1-aborto-contraste.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4b/aborto-1-aborto-lanzamiento.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4b/aborto-1-aborto-observaciones.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4b/aborto-1-aborto-resultado.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4b/aborto-1-clasificacion.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4b/aborto-1-comprobacion.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4b/aborto-1-conjunto.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4b/aborto-1-recuperacion-comprobacion.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4b/aborto-1-recuperacion-lanzamiento.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4b/aborto-1-recuperacion-observaciones.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4b/aborto-1-recuperacion-prevista.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4b/aborto-1-recuperacion-resultado.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4b/aborto-1-revision-manual.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4b/conservacion-final.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4b/incidencias-procedimiento.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4b/informe.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4b/inspeccion.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4b/inventario.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4b/pruebas-observador.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4b/reglas-activas-recibos.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4b/reglas-activas/objects/IncidenciaRenovacion__c.object",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4b/reglas-activas/objects/SeguimientoRenovacion__c.object",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4b/reglas-activas/package.xml",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4b/reglas-inactivas-recibos.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4b/reglas-inactivas/objects/IncidenciaRenovacion__c.object",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4b/reglas-inactivas/objects/SeguimientoRenovacion__c.object",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4b/reglas-inactivas/package.xml",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4b/reglas-iniciales.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4b/reversion-comprobacion.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4b/reversion-conjunto.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4b/reversion-fallo-antes-contraste.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4b/reversion-fallo-contraste-1.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4b/reversion-fallo-contraste-2.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4b/reversion-fallo-contraste.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4b/reversion-fallo-lanzamiento.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4b/reversion-fallo-observaciones.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4b/reversion-fallo-resultado.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4b/reversion-prueba-lotes.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4b/reversion-recuperacion-comprobacion.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4b/reversion-recuperacion-lanzamiento.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4b/reversion-recuperacion-observaciones.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4b/reversion-recuperacion-prevista.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4b/reversion-recuperacion-resultado.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4b/reversion-revision-manual.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4b/revision-local.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4b/traza-inicial.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-fase-4b/traza-restaurada.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-revision-fase-3/comprobacion-final.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-revision-fase-3/revision-local.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-revision-fase-3/trazabilidad-inicial.json",
+      "unchanged": true
+    },
+    {
+      "file": "docs/evidencias-revision-fase-3/trazabilidad-reproducida.json",
+      "unchanged": true
+    }
+  ],
+  "application": [
+    {
+      "file": "force-app/main/default/applications/P06_Renovaciones.app-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/classes/IdentidadRenovacion.cls",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/classes/IdentidadRenovacion.cls-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/classes/LoteRenovaciones.cls",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/classes/LoteRenovaciones.cls-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/classes/RenovacionesTest.cls",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/classes/RenovacionesTest.cls-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/classes/ServicioRenovaciones.cls",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/classes/ServicioRenovaciones.cls-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/customPermissions/P06_ProcesarRenovaciones.customPermission-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/customPermissions/P06_Reasignar.customPermission-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/groups/P06_Comerciales.group-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/groups/P06_Coordinacion.group-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/groups/P06_Operadores.group-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/groups/P06_Propietarios.group-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/layouts/ContratoComercial__c-P06 Gestión.layout-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/layouts/EjecucionRenovacion__c-P06 Gestión.layout-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/layouts/IncidenciaRenovacion__c-P06 Gestión.layout-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/layouts/SeguimientoRenovacion__c-P06 Gestión.layout-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/ContratoComercial__c/ContratoComercial__c.object-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/ContratoComercial__c/fields/Cuenta__c.field-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/ContratoComercial__c/fields/Estado__c.field-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/ContratoComercial__c/fields/FechaInicio__c.field-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/ContratoComercial__c/fields/FechaVencimiento__c.field-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/ContratoComercial__c/listViews/P06_Contratos.listView-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/ContratoComercial__c/validationRules/FechasCoherentes.validationRule-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/ContratoComercial__c/validationRules/ReasignacionAutorizada.validationRule-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/ContratoComercial__c/validationRules/ResponsableUsuario.validationRule-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/EjecucionRenovacion__c/EjecucionRenovacion__c.object-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/EjecucionRenovacion__c/fields/AsyncApexJobId__c.field-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/EjecucionRenovacion__c/fields/Creados__c.field-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/EjecucionRenovacion__c/fields/Estado__c.field-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/EjecucionRenovacion__c/fields/Evaluados__c.field-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/EjecucionRenovacion__c/fields/Fallidos__c.field-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/EjecucionRenovacion__c/fields/FechaCorte__c.field-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/EjecucionRenovacion__c/fields/FinVentana__c.field-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/EjecucionRenovacion__c/fields/Finalizacion__c.field-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/EjecucionRenovacion__c/fields/InicioVentana__c.field-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/EjecucionRenovacion__c/fields/Inicio__c.field-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/EjecucionRenovacion__c/fields/LotesFallidos__c.field-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/EjecucionRenovacion__c/fields/Omitidos__c.field-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/EjecucionRenovacion__c/fields/RequiereReconciliacion__c.field-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/EjecucionRenovacion__c/fields/Solicitante__c.field-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/EjecucionRenovacion__c/fields/YaExistentes__c.field-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/EjecucionRenovacion__c/fields/ZonaHoraria__c.field-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/EjecucionRenovacion__c/listViews/P06_Ejecuciones.listView-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/EjecucionRenovacion__c/validationRules/CompletadaSinErrores.validationRule-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/EjecucionRenovacion__c/validationRules/ContadoresNoNegativos.validationRule-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/EjecucionRenovacion__c/validationRules/ContextoInmutable.validationRule-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/EjecucionRenovacion__c/validationRules/EstadoInicialEncolada.validationRule-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/EjecucionRenovacion__c/validationRules/FinalizacionCoherente.validationRule-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/EjecucionRenovacion__c/validationRules/FinalizacionSegunEstado.validationRule-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/EjecucionRenovacion__c/validationRules/JobAsignadoInmutable.validationRule-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/EjecucionRenovacion__c/validationRules/ResultadosConfirmadosCoherentes.validationRule-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/EjecucionRenovacion__c/validationRules/SolicitanteObligatorio.validationRule-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/EjecucionRenovacion__c/validationRules/VentanaCoherente.validationRule-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/IncidenciaRenovacion__c/IncidenciaRenovacion__c.object-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/IncidenciaRenovacion__c/fields/CamposAfectados__c.field-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/IncidenciaRenovacion__c/fields/ClaveIntentada__c.field-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/IncidenciaRenovacion__c/fields/CodigoError__c.field-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/IncidenciaRenovacion__c/fields/Contrato__c.field-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/IncidenciaRenovacion__c/fields/Ejecucion__c.field-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/IncidenciaRenovacion__c/fields/Etapa__c.field-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/IncidenciaRenovacion__c/fields/Mensaje__c.field-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/IncidenciaRenovacion__c/listViews/P06_Incidencias.listView-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/IncidenciaRenovacion__c/validationRules/IncidenciaInmutable.validationRule-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/IncidenciaRenovacion__c/validationRules/MensajeObligatorio.validationRule-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/SeguimientoRenovacion__c/SeguimientoRenovacion__c.object-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/SeguimientoRenovacion__c/fields/Aplicable__c.field-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/SeguimientoRenovacion__c/fields/ClaveIdentidad__c.field-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/SeguimientoRenovacion__c/fields/Contrato__c.field-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/SeguimientoRenovacion__c/fields/DiasRestantes__c.field-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/SeguimientoRenovacion__c/fields/Ejecucion__c.field-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/SeguimientoRenovacion__c/fields/Estado__c.field-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/SeguimientoRenovacion__c/fields/FechaVencimientoCapturada__c.field-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/SeguimientoRenovacion__c/fields/Notas__c.field-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/SeguimientoRenovacion__c/listViews/P06_MisPendientes.listView-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/SeguimientoRenovacion__c/listViews/P06_Pendientes.listView-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/SeguimientoRenovacion__c/validationRules/EstadoInicialPendiente.validationRule-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/SeguimientoRenovacion__c/validationRules/IdentidadYOrigenInmutables.validationRule-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/SeguimientoRenovacion__c/validationRules/NotaObligatoriaAlFinalizar.validationRule-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/SeguimientoRenovacion__c/validationRules/ReasignacionAutorizada.validationRule-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/SeguimientoRenovacion__c/validationRules/ResponsableUsuario.validationRule-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/objects/SeguimientoRenovacion__c/validationRules/TransicionEstadoPermitida.validationRule-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/permissionsets/P06_Comercial.permissionset-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/permissionsets/P06_Coordinacion.permissionset-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/permissionsets/P06_OperadorRenovaciones.permissionset-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/permissionsets/P06_VerificacionModelo.permissionset-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/profiles/P06_BaseComercial.profile-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/reports/P06_Renovaciones.reportFolder-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/reports/P06_Renovaciones/PendientesRenovaciones.report-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/roles/P06_Comercial.role-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/roles/P06_Coordinacion.role-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/sharingRules/ContratoComercial__c.sharingRules-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/sharingRules/EjecucionRenovacion__c.sharingRules-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/sharingRules/IncidenciaRenovacion__c.sharingRules-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/sharingRules/SeguimientoRenovacion__c.sharingRules-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/tabs/ContratoComercial__c.tab-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/tabs/EjecucionRenovacion__c.tab-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/tabs/IncidenciaRenovacion__c.tab-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/tabs/SeguimientoRenovacion__c.tab-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/triggers/ValidarIdentidadRenovacion.trigger",
+      "unchanged": true
+    },
+    {
+      "file": "force-app/main/default/triggers/ValidarIdentidadRenovacion.trigger-meta.xml",
+      "unchanged": true
+    },
+    {
+      "file": "manifest/fase-2-navegacion.xml",
+      "unchanged": true
+    },
+    {
+      "file": "manifest/fase-2.xml",
+      "unchanged": true
+    },
+    {
+      "file": "manifest/fase-3.xml",
+      "unchanged": true
+    },
+    {
+      "file": "manifest/modelo-p06.xml",
+      "unchanged": true
+    },
+    {
+      "file": "manifest/revision-fase-3.xml",
+      "unchanged": true
+    },
+    {
+      "file": "manifest/verificacion-p06.xml",
+      "unchanged": true
+    }
+  ],
+  "applicationFilesUnchanged": true,
+  "newInstallationManifest": "manifest/instalacion-v1.xml",
+  "usersUnchanged": true,
+  "assignmentsUnchanged": true,
+  "groupsUnchanged": true,
+  "traceFlagsUnchanged": true,
+  "temporaryPermissionAbsent": true,
+  "temporaryPermissionEffective": false,
+  "ruleChecks": [
+    {
+      "object": "SeguimientoRenovacion__c",
+      "allRulesUnchanged": true,
+      "temporaryRules": [
+        {
+          "name": "P06_F4A_RechazoAcotado",
+          "active": false
+        },
+        {
+          "name": "P06_F4B_RechazoSeguimiento",
+          "active": false
+        }
+      ]
+    },
+    {
+      "object": "IncidenciaRenovacion__c",
+      "allRulesUnchanged": true,
+      "temporaryRules": [
+        {
+          "name": "P06_F4B_RechazoAuditoria",
+          "active": false
+        }
+      ]
+    }
+  ],
+  "loginAs": false,
+  "queries": [
+    {
+      "object": "Account",
+      "requested": 10,
+      "retrieved": 10,
+      "pages": 1,
+      "done": true
+    },
+    {
+      "object": "ContratoComercial__c",
+      "requested": 150,
+      "retrieved": 150,
+      "pages": 1,
+      "done": true
+    },
+    {
+      "object": "ContratoComercial__c",
+      "requested": 46,
+      "retrieved": 46,
+      "pages": 1,
+      "done": true
+    },
+    {
+      "object": "EjecucionRenovacion__c",
+      "requested": 17,
+      "retrieved": 17,
+      "pages": 1,
+      "done": true
+    },
+    {
+      "object": "SeguimientoRenovacion__c",
+      "requested": 150,
+      "retrieved": 150,
+      "pages": 1,
+      "done": true
+    },
+    {
+      "object": "SeguimientoRenovacion__c",
+      "requested": 42,
+      "retrieved": 42,
+      "pages": 1,
+      "done": true
+    },
+    {
+      "object": "IncidenciaRenovacion__c",
+      "requested": 7,
+      "retrieved": 7,
+      "pages": 1,
+      "done": true
+    },
+    {
+      "object": "Account",
+      "requested": 1,
+      "retrieved": 1,
+      "pages": 1,
+      "done": true
+    },
+    {
+      "object": "ContratoComercial__c",
+      "requested": 2,
+      "retrieved": 2,
+      "pages": 1,
+      "done": true
+    },
+    {
+      "object": "EjecucionRenovacion__c",
+      "requested": 3,
+      "retrieved": 3,
+      "pages": 1,
+      "done": true
+    },
+    {
+      "object": "SeguimientoRenovacion__c",
+      "requested": 4,
+      "retrieved": 4,
+      "pages": 1,
+      "done": true
+    }
+  ],
+  "ignoredFields": [
+    "attributes",
+    "LastViewedDate",
+    "LastReferencedDate",
+    "DiasRestantes__c"
+  ],
+  "confirmedCountsAndUniqueIdentities": true,
+  "jobs": [
+    {
+      "Id": "707g700001DZpg1AAD",
+      "Status": "Completed",
+      "NumberOfErrors": 0,
+      "JobItemsProcessed": 1,
+      "TotalJobItems": 1,
+      "CompletedDate": "2026-11-24T09:27:31.000+0000"
+    },
+    {
+      "Id": "707g700001DZw9XAAT",
+      "Status": "Completed",
+      "NumberOfErrors": 0,
+      "JobItemsProcessed": 1,
+      "TotalJobItems": 1,
+      "CompletedDate": "2026-11-24T09:29:48.000+0000"
+    },
+    {
+      "Id": "707g700001DaBDHAA3",
+      "Status": "Completed",
+      "NumberOfErrors": 0,
+      "JobItemsProcessed": 1,
+      "TotalJobItems": 1,
+      "CompletedDate": "2026-11-24T09:29:20.000+0000"
+    }
+  ],
+  "pass": true
+}

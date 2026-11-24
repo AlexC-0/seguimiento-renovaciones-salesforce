@@ -1,0 +1,78 @@
+{
+  "timestamp": "2026-11-24T09:38:55.381Z",
+  "scope": "Inspección local; sin repetir ensayos remotos, despliegues o pruebas Apex",
+  "baseline": "69622d3013fbc77fc69877dcadddfde3dbae6be2",
+  "headUnchanged": true,
+  "indexEmpty": true,
+  "scriptsChecked": [
+    "scripts/fase-5/comun.cjs",
+    "scripts/fase-5/finalizar.cjs",
+    "scripts/fase-5/inspeccionar.cjs",
+    "scripts/fase-5/motor.cjs",
+    "scripts/fase-5/permiso.cjs",
+    "scripts/fase-5/preparar.cjs",
+    "scripts/fase-5/recorrido.cjs",
+    "scripts/fase-5/revisar-local.cjs"
+  ],
+  "jsonFilesChecked": 37,
+  "xmlChecked": [
+    {
+      "file": "manifest/instalacion-v1.xml",
+      "valid": true
+    },
+    {
+      "file": "docs/evidencias-fase-5/permiso-alta/package.xml",
+      "valid": true
+    },
+    {
+      "file": "docs/evidencias-fase-5/permiso-alta/permissionsets/P06_F5_ReasignacionTemporal.permissionset",
+      "valid": true
+    },
+    {
+      "file": "docs/evidencias-fase-5/permiso-retirada/destructiveChangesPost.xml",
+      "valid": true
+    },
+    {
+      "file": "docs/evidencias-fase-5/permiso-retirada/package.xml",
+      "valid": true
+    }
+  ],
+  "relativeLinksChecked": 158,
+  "acceptanceCriteria": [
+    "AC-01",
+    "AC-02",
+    "AC-03",
+    "AC-04",
+    "AC-05",
+    "AC-06",
+    "AC-07",
+    "AC-08",
+    "AC-09",
+    "AC-10",
+    "AC-11",
+    "AC-12",
+    "AC-13",
+    "AC-14",
+    "AC-15",
+    "AC-16",
+    "AC-17",
+    "AC-18",
+    "AC-19",
+    "AC-20"
+  ],
+  "publicFilesScanned": 62,
+  "sensitivePatternFindings": [],
+  "secretScanLimit": "Patrones delimitados y revisión; no garantía universal",
+  "priorEvidenceFiles": 133,
+  "priorEvidenceUnchanged": true,
+  "applicationAndHistoricalManifestsUnchanged": true,
+  "newManifestMembers": 36,
+  "reportComparisons": 6,
+  "remotePreservationEvidence": "conservacion-final.json",
+  "apexTestsRerun": false,
+  "cleanInstallationExecuted": false,
+  "stagingCommitPushExecuted": false,
+  "gitDiffCheck": true,
+  "errors": [],
+  "pass": true
+}

@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-11-24T09:29:53.838Z",
+  "records": [
+    {
+      "objeto": "Account",
+      "id": "001g700001MOHaPAAX",
+      "scenario": "vencimientos"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002bOEDBAA4",
+      "scenario": "vencimientos"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002bOEDCAA4",
+      "scenario": "vencimientos"
+    },
+    {
+      "objeto": "EjecucionRenovacion__c",
+      "id": "a01g700001MMoCIAA1",
+      "scenario": "vencimientos"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tTyp7AAC",
+      "scenario": "vencimientos"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tTyp8AAC",
+      "scenario": "vencimientos"
+    },
+    {
+      "objeto": "EjecucionRenovacion__c",
+      "id": "a01g700001MOIOPAA5",
+      "scenario": "vencimientos"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tTz0PAAS",
+      "scenario": "vencimientos"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tTz0QAAS",
+      "scenario": "vencimientos"
+    },
+    {
+      "objeto": "EjecucionRenovacion__c",
+      "id": "a01g700001MNACoAAP",
+      "scenario": "vencimientos"
+    }
+  ]
+}

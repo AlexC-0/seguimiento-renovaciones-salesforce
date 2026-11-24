@@ -6,7 +6,7 @@ Preparar seguimiento comercial sobre contratos ficticios próximos a vencer en S
 
 La V1 utiliza Account y User estándar y cuatro objetos propios: ContratoComercial__c, SeguimientoRenovacion__c, EjecucionRenovacion__c e IncidenciaRenovacion__c. El [modelo técnico](MODELO_DATOS.md) concentra campos, relaciones, validaciones y diseño de acceso.
 
-Se utilizarán páginas, listas e informes estándar. Se excluyen LWC, Flow, integraciones, comunicaciones externas, renovación automática, programación y reintentos automáticos. No se presuponen licencias adicionales ni usuarios de prueba suficientes.
+Se utilizan páginas, listas e informes estándar. Se excluyen LWC, Flow, integraciones, comunicaciones externas, renovación automática, programación y reintentos automáticos. No se presuponen licencias adicionales ni usuarios de prueba suficientes.
 
 ## Selección y ventana
 
@@ -14,11 +14,11 @@ El lanzamiento de fase 3 fija una sola fecha de corte a partir de la fecha local
 
 Solo serán elegibles contratos Activos con vencimiento dentro de esa ventana. Los datos actuales se releerán antes de crear seguimientos de cada lote, usando siempre el corte original. Los contratos que entren después de la selección inicial podrán recogerse en otra ejecución. El procesamiento no recalculará el corte entre lotes ni al cruzar medianoche.
 
-La relectura reduce la obsolescencia; no demuestra por sí sola aislamiento frente a cambios concurrentes. La política transaccional y sus pruebas se implementarán con el Batch.
+La relectura reduce la obsolescencia; no demuestra por sí sola aislamiento frente a cambios concurrentes. La política transaccional está implementada en el Batch y documentada en [DECISIONES-FASE-3](DECISIONES-FASE-3.md); los ensayos reales y sus límites se consolidan en [ACEPTACION-V1](ACEPTACION-V1.md).
 
 ## Identidad y cambios
 
-La identidad prevista será `IdContrato18|YYYY-MM-DD`, de 29 caracteres. El Id se normalizará a 18 caracteres y la fecha se formará sin depender de la configuración regional. Responsable y ejecución quedan fuera de la clave.
+La identidad implementada es `IdContrato18|YYYY-MM-DD`, de 29 caracteres. El Id se normaliza a 18 caracteres y la fecha se forma sin depender de la configuración regional. Responsable y ejecución quedan fuera de la clave.
 
 El campo obligatorio y único está definido en metadatos. La fase 3 incorpora generación canónica y protección before insert: calcula la clave ausente y rechaza otra representación incompatible de la pareja. La unicidad del campo no demuestra la idempotencia del sistema completo.
 
@@ -43,6 +43,8 @@ Los contadores representan resultados confirmados por registro, no intentos en m
 La recuperación será manual, con revisión de resultados persistidos, incidencias y estado del trabajo antes de decidir un nuevo lanzamiento. No se inventarán resultados ni se alterarán evidencias anteriores para cuadrar contadores. La resolución de una incertidumbre podrá dejar constancia en una nueva incidencia de reconciliación sin borrar el contador histórico de lotes fallidos.
 
 ## Criterios de aceptación funcional
+
+La [matriz consolidada AC-01 a AC-20](ACEPTACION-V1.md) contiene evidencia, nivel, cobertura parcial y decisiones pendientes después de fase 5. El [recorrido funcional](FASE-5.md) completa cambios de vencimiento y responsable sin cerrar V1. Los criterios exigidos de la tabla siguiente se conservan.
 
 La tabla define la aceptación integral de V1. Fase 1B comprobó el modelo declarativo con 117 casos; fase 2 comprobó las funciones comerciales de AC-14, las denegaciones ordinarias de AC-15, el informe AC-16 y la conservación de AC-17. Fase 3 incorpora operador, procesamiento, identidad y repetición, con pruebas unitarias y dos jobs reales de tres lotes. [FASE-3.md](FASE-3.md) conserva esa evidencia histórica. [FASE-4A.md](FASE-4A.md) añade solapamiento observado, rechazo individual y recuperación manual. La fase 4B añade reversión completa de lote y aborto previo al inicio. La colisión de inserción, el cruce real de medianoche, el cambio estacional y el aborto durante el procesamiento siguen sin demostración real; no se equipara esta cobertura con la aceptación completa de V1.
 

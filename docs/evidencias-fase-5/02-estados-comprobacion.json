@@ -1,0 +1,96 @@
+{
+  "timestamp": "2026-11-24T09:27:40.298Z",
+  "expected": [
+    {
+      "id": "a03g700000tTyp7AAC",
+      "state": "Cerrado",
+      "owner": "B",
+      "applicable": true
+    },
+    {
+      "id": "a03g700000tTyp8AAC",
+      "state": "En curso",
+      "owner": "B",
+      "applicable": true
+    }
+  ],
+  "contracts": [
+    {
+      "Id": "a00g700002bOEDBAA4",
+      "IsDeleted": false,
+      "Name": "CON-000196",
+      "CreatedDate": "2026-11-24T09:27:17.000+0000",
+      "LastModifiedDate": "2026-11-24T09:27:17.000+0000",
+      "SystemModstamp": "2026-11-24T09:27:17.000+0000",
+      "LastViewedDate": "2026-11-24T09:27:17.000+0000",
+      "LastReferencedDate": "2026-11-24T09:27:17.000+0000",
+      "Cuenta__c": "001g700001MOHaPAAX",
+      "Estado__c": "Activo",
+      "FechaInicio__c": "2025-11-24",
+      "FechaVencimiento__c": "2026-12-04",
+      "ownerActor": "B"
+    },
+    {
+      "Id": "a00g700002bOEDCAA4",
+      "IsDeleted": false,
+      "Name": "CON-000197",
+      "CreatedDate": "2026-11-24T09:27:17.000+0000",
+      "LastModifiedDate": "2026-11-24T09:27:17.000+0000",
+      "SystemModstamp": "2026-11-24T09:27:17.000+0000",
+      "LastViewedDate": "2026-11-24T09:27:17.000+0000",
+      "LastReferencedDate": "2026-11-24T09:27:17.000+0000",
+      "Cuenta__c": "001g700001MOHaPAAX",
+      "Estado__c": "Activo",
+      "FechaInicio__c": "2025-11-24",
+      "FechaVencimiento__c": "2026-12-05",
+      "ownerActor": "B"
+    }
+  ],
+  "follows": [
+    {
+      "Id": "a03g700000tTyp7AAC",
+      "IsDeleted": false,
+      "Name": "SEG-000235",
+      "CreatedDate": "2026-11-24T09:27:30.000+0000",
+      "LastModifiedDate": "2026-11-24T09:27:39.000+0000",
+      "SystemModstamp": "2026-11-24T09:27:39.000+0000",
+      "LastViewedDate": "2026-11-24T09:27:39.000+0000",
+      "LastReferencedDate": "2026-11-24T09:27:39.000+0000",
+      "ClaveIdentidad__c": "a00g700002bOEDBAA4|2026-12-04",
+      "Contrato__c": "a00g700002bOEDBAA4",
+      "Ejecucion__c": "a01g700001MMoCIAA1",
+      "Estado__c": "Cerrado",
+      "FechaVencimientoCapturada__c": "2026-12-04",
+      "Notas__c": "P06 F5: cierre ficticio que no debe reabrirse.",
+      "Aplicable__c": true,
+      "DiasRestantes__c": 10,
+      "ownerActor": "B"
+    },
+    {
+      "Id": "a03g700000tTyp8AAC",
+      "IsDeleted": false,
+      "Name": "SEG-000236",
+      "CreatedDate": "2026-11-24T09:27:30.000+0000",
+      "LastModifiedDate": "2026-11-24T09:27:39.000+0000",
+      "SystemModstamp": "2026-11-24T09:27:39.000+0000",
+      "LastViewedDate": "2026-11-24T09:27:39.000+0000",
+      "LastReferencedDate": "2026-11-24T09:27:39.000+0000",
+      "ClaveIdentidad__c": "a00g700002bOEDCAA4|2026-12-05",
+      "Contrato__c": "a00g700002bOEDCAA4",
+      "Ejecucion__c": "a01g700001MMoCIAA1",
+      "Estado__c": "En curso",
+      "FechaVencimientoCapturada__c": "2026-12-05",
+      "Notas__c": "P06 F5: nota conservada al restaurar el vencimiento.",
+      "Aplicable__c": true,
+      "DiasRestantes__c": 11,
+      "ownerActor": "B"
+    }
+  ],
+  "persistentChanges": [],
+  "formulaFieldsComparedSeparately": [
+    "Aplicable__c",
+    "DiasRestantes__c"
+  ],
+  "canonicalUnique": true,
+  "pass": true
+}

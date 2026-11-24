@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-11-24T09:28:59.938Z",
+  "id": "02cg700000mara8AAA",
+  "parent": "a00g700002bOEDBAA4",
+  "actor": "B",
+  "access": "Read",
+  "rowCause": "Manual",
+  "reason": "B conserva el seguimiento original del contrato ahora propiedad de A",
+  "context": "Alta REST técnica; no se cambian grupos ni permisos comerciales"
+}

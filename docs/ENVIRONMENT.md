@@ -100,3 +100,11 @@ El 24/11/2026 se verificó el mismo destino P06 con API 65.0. Node 24.13.0 y CLI
 Se validaron y desplegaron dos reglas temporales limitadas a un contrato nuevo para rechazar seguimiento y auditoría de Creación. Ambas quedaron inactivas verificadas antes de recuperar; F4A permaneció inactiva. Los ZIP y recibos están fuera del paquete de aplicación. Una traza USER_DEBUG limitada al operador y su DebugLevel propios se retiraron después de recoger logs del rollback; la traza anterior no cambió.
 
 Cuatro jobs del ensayo, dos recuperaciones manuales. Corte 2026-11-24, fin 2026-12-24, Europe/Paris; evidencia en UTC. Conexión CLI/API sin navegador ni Login As. No se modificaron usuarios, permisos o configuración global. 48 registros nuevos conservados junto a los 374 anteriores. [Detalle y restauración](FASE-4B.md).
+
+## Entorno de fase 5
+
+El 24/11/2026 se verificaron Organization e identidad técnica frente a los recibos privados del destino exclusivo p06-renovaciones-dev, API 65.0. Node 24.13.0 y Salesforce CLI 2.158.7 reutilizados. Instantánea inicial: cero Batch activos, 14671 solicitudes API y 249994 ejecuciones asíncronas disponibles; no son garantías de capacidad. Corte 2026-11-24, fin 2026-12-24, Europe/Paris; timestamps públicos en UTC.
+
+Se utilizaron CLI/API para tres lanzamientos acotados y transferencia técnica de un contrato nuevo. P06_F5_ReasignacionTemporal concedió únicamente P06_Reasignar al operador existente durante la transferencia; asignación y componente retirados y ausencia efectiva comprobada. Paquetes y recibos quedan fuera de force-app. Usuarios, permisos originales, grupos, roles, perfiles y trazas conservados; Login As=false y tres reglas F4A/F4B inactivas. Se mantiene una compartición Manual Read nueva, necesaria para el propietario del seguimiento anterior.
+
+No se creó ni autenticó otra organización ni se usó navegador, Login As, servicios o túneles. Diez registros nuevos conservados junto a 422 anteriores. La conversión de instalación se realizó en un directorio temporal externo; no hubo instalación limpia ni despliegue del manifiesto conjunto. [Resultados](FASE-5.md) y [restauración/conservación](evidencias-fase-5/conservacion-final.json).

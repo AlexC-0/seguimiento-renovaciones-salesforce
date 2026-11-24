@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-11-24T09:28:12.412Z",
+  "name": "P06_F5_ReasignacionTemporal",
+  "packageSha256": "bfe446e770483fc8b2db80d0259d3f92fa84725cc4beb1043c4c80e7bb77ea56",
+  "validation": {
+    "id": "0Afg700000L7NjlCAF",
+    "status": "Succeeded",
+    "done": true,
+    "success": true,
+    "checkOnly": true,
+    "components": 1,
+    "tests": 0
+  },
+  "deployment": {
+    "id": "0Afg700000L7Na6CAF",
+    "status": "Succeeded",
+    "done": true,
+    "success": true,
+    "checkOnly": false,
+    "components": 1,
+    "tests": 0
+  },
+  "scope": "Solo permiso personalizado P06_Reasignar; sin CRUD ni permisos de sistema adicionales"
+}

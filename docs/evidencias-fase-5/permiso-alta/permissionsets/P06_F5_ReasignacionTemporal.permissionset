@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata"><customPermissions><enabled>true</enabled><name>P06_Reasignar</name></customPermissions><description>Concesión temporal de fase 5; retirar después de transferir un contrato ficticio nuevo.</description><label>P06 F5 Reasignación temporal</label></PermissionSet>

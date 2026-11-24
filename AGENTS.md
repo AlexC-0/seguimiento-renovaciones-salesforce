@@ -22,7 +22,15 @@ Lanzamiento manual, Batch, identidad canónica y contraste implementados. Valida
 
 Fase 2 completada: gestión comercial estándar, acceso por función, compartición e informe comprobados; 19 fixtures históricos y 31 nuevos conservados. Ver docs/FASE-2.md y docs/ACCESO.md. Login As restaurado a false y conexión temporal de navegador detenida. Las autorizaciones temporales de esta comprobación están cerradas; no son tareas pendientes. No iniciar el procesamiento de fases posteriores sin un nuevo encargo.
 
-## Alcance vigente de fase 4B
+## Alcance vigente de fase 5
+
+Validación funcional de cambios de vencimiento y responsable, matriz AC-01 a AC-20 y preparación documental del cierre sobre 69622d3013fbc77fc69877dcadddfde3dbae6be2. Destino exclusivo p06-renovaciones-dev, API 65.0; conservar los 422 registros y todas las evidencias previas. Usar dos contratos nuevos con filtros explícitos; no repetir ensayos adversos históricos ni instalación limpia.
+
+Mantener inactivas las tres reglas de ensayo anteriores y no activar Login As o trazas. Reasignación técnica autorizada mediante concesión temporal exclusiva de P06_Reasignar al operador existente; validar su componente fuera del paquete de aplicación, retirar asignación y componente al terminar y verificar permisos originales. No alterar usuarios ficticios, roles, perfiles o grupos. Comparticiones manuales solo para los contratos nuevos.
+
+Separar preparación técnica, UserRecordAccess y sesiones comerciales. Documentar cobertura parcial y decisiones de aceptación pendientes sin rebajar criterios ni cerrar V1. No ejecutar staging, commit, push ni equivalentes; la publicación es manual.
+
+## Antecedente: alcance de fase 4B
 
 Ensayos reales de reversión completa de execute por fallo de auditoría, aborto de un job identificado y recuperación manual sobre abfcba0e7aa682084fc93fb23fe6c0ba9cd9e998. Destino exclusivo p06-renovaciones-dev, API 65.0. Conservar los 374 registros anteriores y sus evidencias; contratos nuevos inventariados y selección explícita por IDs.
 
@@ -67,3 +75,9 @@ La demostración usa contratos nuevos inventariados y un filtro opcional de iden
 Utilizar castellano y redacción técnica directa. Documentar objetivos, configuración, funcionalidades, decisiones, cambios, comprobaciones y limitaciones. Excluir relatos de conversaciones, asignaciones personales, atribuciones de elaboración y firmas o coautorías automáticas. Conservar las licencias y los créditos legítimos de terceros. No copiar encargos operativos a archivos versionados.
 
 Los títulos propuestos de commit seguirán el formato `tipo: descripción`, sin paréntesis ni ámbitos entre paréntesis.
+
+## Resultado de fase 5
+
+Recorrido real completado con dos contratos nuevos y tres jobs: dos creaciones originales, dos alternativas y dos existentes sin nuevas creaciones al restaurar. No se reabrió el cerrado ni se modificaron notas, propietario u origen de seguimientos existentes. Transferencia técnica B a A y compartición Manual Read para B comprobadas; no atribuirlas a una sesión comercial nueva. P06_F5_ReasignacionTemporal y su asignación retirados, permiso efectivo original restaurado.
+
+Conservar los 422 registros anteriores, diez nuevos, una compartición justificada y 133 evidencias previas. No repetir los scripts de ensayo ni reactivar reglas o permisos temporales. Aplicación sin cambios, tres reglas F4A/F4B inactivas, Login As=false. Matriz AC-01 a AC-20 en docs/ACEPTACION-V1.md, resultados en docs/FASE-5.md y guía en docs/INSTALACION.md. Manifiesto conjunto revisado y convertido localmente; instalación limpia no ejecutada. V1 sigue abierta y requiere decisiones posteriores de aceptación. No ejecutar staging, commit ni push.

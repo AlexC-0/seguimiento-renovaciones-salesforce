@@ -1,0 +1,88 @@
+{
+  "timestamp": "2026-11-24T09:29:56.516Z",
+  "context": "UserRecordAccess consultado por cuenta técnica; no prueba acciones ni FLS desde una sesión comercial.",
+  "observations": [
+    {
+      "actor": "A",
+      "records": [
+        {
+          "RecordId": "a03g700000tTyp7AAC",
+          "HasReadAccess": true,
+          "HasEditAccess": true,
+          "HasDeleteAccess": false
+        },
+        {
+          "RecordId": "a00g700002bOEDBAA4",
+          "HasReadAccess": true,
+          "HasEditAccess": true,
+          "HasDeleteAccess": false
+        },
+        {
+          "RecordId": "a03g700000tTyp8AAC",
+          "HasReadAccess": true,
+          "HasEditAccess": true,
+          "HasDeleteAccess": false
+        },
+        {
+          "RecordId": "a00g700002bOEDCAA4",
+          "HasReadAccess": true,
+          "HasEditAccess": true,
+          "HasDeleteAccess": false
+        },
+        {
+          "RecordId": "a03g700000tTz0PAAS",
+          "HasReadAccess": true,
+          "HasEditAccess": true,
+          "HasDeleteAccess": false
+        },
+        {
+          "RecordId": "a03g700000tTz0QAAS",
+          "HasReadAccess": true,
+          "HasEditAccess": true,
+          "HasDeleteAccess": false
+        }
+      ]
+    },
+    {
+      "actor": "B",
+      "records": [
+        {
+          "RecordId": "a03g700000tTyp7AAC",
+          "HasReadAccess": true,
+          "HasEditAccess": true,
+          "HasDeleteAccess": false
+        },
+        {
+          "RecordId": "a00g700002bOEDBAA4",
+          "HasReadAccess": true,
+          "HasEditAccess": false,
+          "HasDeleteAccess": false
+        },
+        {
+          "RecordId": "a03g700000tTyp8AAC",
+          "HasReadAccess": true,
+          "HasEditAccess": true,
+          "HasDeleteAccess": false
+        },
+        {
+          "RecordId": "a00g700002bOEDCAA4",
+          "HasReadAccess": true,
+          "HasEditAccess": false,
+          "HasDeleteAccess": false
+        },
+        {
+          "RecordId": "a03g700000tTz0PAAS",
+          "HasReadAccess": false,
+          "HasEditAccess": false,
+          "HasDeleteAccess": false
+        },
+        {
+          "RecordId": "a03g700000tTz0QAAS",
+          "HasReadAccess": true,
+          "HasEditAccess": true,
+          "HasDeleteAccess": false
+        }
+      ]
+    }
+  ]
+}

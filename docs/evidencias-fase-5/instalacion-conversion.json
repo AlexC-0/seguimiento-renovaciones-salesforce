@@ -1,0 +1,30 @@
+{
+    "timestamp":  "2026-11-24T09:31:32.3041443Z",
+    "sourceManifest":  "manifest/instalacion-v1.xml",
+    "cliStatus":  0,
+    "convertedFiles":  42,
+    "objects":  4,
+    "fields":  35,
+    "validationRules":  21,
+    "listViews":  5,
+    "permissionSets":  [
+                           "P06_Comercial",
+                           "P06_Coordinacion",
+                           "P06_OperadorRenovaciones"
+                       ],
+    "trialComponentsExcluded":  true,
+    "cleanInstallationExecuted":  false,
+    "remoteValidationExecuted":  false,
+    "initialConversion":  {
+                              "cliStatus":  0,
+                              "files":  1,
+                              "onlyManifest":  true,
+                              "acceptedAsComplete":  false
+                          },
+    "secondConversion":  {
+                             "explicitRoot":  "force-app",
+                             "destination":  "directorio temporal fuera de .sf",
+                             "acceptedAsComplete":  true
+                         },
+    "pass":  true
+}
