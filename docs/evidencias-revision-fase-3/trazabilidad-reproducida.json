@@ -1,0 +1,67 @@
+{
+  "timestamp": "2026-11-24T07:56:09.148Z",
+  "baseline": "31528e267a3f2d65ba41015dc1ef9a5838c56195",
+  "coreAutocrlf": "true",
+  "attributes": [
+    "force-app/main/default/classes/IdentidadRenovacion.cls: text: unspecified",
+    "force-app/main/default/classes/IdentidadRenovacion.cls: eol: unspecified",
+    "force-app/main/default/classes/LoteRenovaciones.cls: text: unspecified",
+    "force-app/main/default/classes/LoteRenovaciones.cls: eol: unspecified",
+    "force-app/main/default/classes/ServicioRenovaciones.cls: text: unspecified",
+    "force-app/main/default/classes/ServicioRenovaciones.cls: eol: unspecified",
+    "force-app/main/default/classes/RenovacionesTest.cls: text: unspecified",
+    "force-app/main/default/classes/RenovacionesTest.cls: eol: unspecified"
+  ],
+  "method": "Reconstrucción reproducible del formato observado a partir del blob Git inmutable; hash-object sin -w aplica filtros sin escribir objetos ni índice. No consulta el estado remoto actual ni sustituye el recibo de la lectura inicial.",
+  "results": [
+    {
+      "file": "force-app/main/default/classes/IdentidadRenovacion.cls",
+      "gitBlobSha256": "25d4069c3bae11eb404f7aac3f1ea8e23e9a9ce94c9888f1afe264572e9ff755",
+      "originalBytesReconstructedSha256": "509f77b90d9672b82cccc48a3e4e44498379fa42120e4fce30f824c27600e171",
+      "remoteBodyReconstructedSha256": "54d1b27228a86a0774341bd2025bc8e518864474baf2e13c553f8e09d010b772",
+      "originalReceiptsMatch": true,
+      "remoteFormatMatchesObservation": true,
+      "normalizedContentMatches": true,
+      "objectId": "ec268cf9977dfd340918843221001b0ad12656a7",
+      "filteredObjectId": "ec268cf9977dfd340918843221001b0ad12656a7",
+      "gitCleanReproducesPublishedBlob": true
+    },
+    {
+      "file": "force-app/main/default/classes/LoteRenovaciones.cls",
+      "gitBlobSha256": "10ad47766620ba74fd42293422ccc1906e11a7648d082e1efe1f9f07c519efa6",
+      "originalBytesReconstructedSha256": "76c463d40231c472b17d13bea81045fd0552ad3cefdce662aa0ee61bac46845d",
+      "remoteBodyReconstructedSha256": "30b037a10dff400d691cefa60f2a7fe53def9a2147e18a7a8f820b2848865814",
+      "originalReceiptsMatch": true,
+      "remoteFormatMatchesObservation": true,
+      "normalizedContentMatches": true,
+      "objectId": "75ebdcfb11c32ecc939bb06a837b097cd21baf44",
+      "filteredObjectId": "75ebdcfb11c32ecc939bb06a837b097cd21baf44",
+      "gitCleanReproducesPublishedBlob": true
+    },
+    {
+      "file": "force-app/main/default/classes/ServicioRenovaciones.cls",
+      "gitBlobSha256": "72d7c42305dfae436780c6edfd65290f5ad6de5583e95bdb28dc466f7bb35862",
+      "originalBytesReconstructedSha256": "62de3aec766bb23c229d2638b8e6d47c454141526f41756085c8b5258cb2c5a1",
+      "remoteBodyReconstructedSha256": "6220a54158c8c4e8b56ea82deb2107c14408c5d26496090673b0f444da78d4f7",
+      "originalReceiptsMatch": true,
+      "remoteFormatMatchesObservation": true,
+      "normalizedContentMatches": true,
+      "objectId": "b588b96ea71f20c942988a18db4abd8371abd4ed",
+      "filteredObjectId": "b588b96ea71f20c942988a18db4abd8371abd4ed",
+      "gitCleanReproducesPublishedBlob": true
+    },
+    {
+      "file": "force-app/main/default/classes/RenovacionesTest.cls",
+      "gitBlobSha256": "1876c370f08364c958d2c9356e2e0551f7d7c0eb27b2587c59505357f4c4f70a",
+      "originalBytesReconstructedSha256": "1876c370f08364c958d2c9356e2e0551f7d7c0eb27b2587c59505357f4c4f70a",
+      "remoteBodyReconstructedSha256": "2cd7a1a3272e4dd04b596130a4489e367a21b2c0b7347c8885ea78b29e58740b",
+      "originalReceiptsMatch": true,
+      "remoteFormatMatchesObservation": true,
+      "normalizedContentMatches": true,
+      "objectId": "e8f22d0f41ab9d198e215780afde387fd43e0492",
+      "filteredObjectId": "e8f22d0f41ab9d198e215780afde387fd43e0492",
+      "gitCleanReproducesPublishedBlob": true
+    }
+  ],
+  "pass": true
+}

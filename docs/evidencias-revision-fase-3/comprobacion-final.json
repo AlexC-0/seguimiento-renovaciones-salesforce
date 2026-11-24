@@ -1,0 +1,443 @@
+{
+  "timestamp": "2026-11-24T07:59:21.626Z",
+  "baseline": "31528e267a3f2d65ba41015dc1ef9a5838c56195",
+  "target": "p06-renovaciones-dev",
+  "apiVersion": "65.0",
+  "validation": {
+    "id": "0Afg700000L6u8HCAR",
+    "status": "Succeeded",
+    "success": true,
+    "done": true,
+    "checkOnly": true,
+    "components": 3,
+    "totalComponents": 3,
+    "testsPassed": 20,
+    "testErrors": 0,
+    "methods": [
+      "autorizacionEnTodosLosPuntosDeEntrada",
+      "conjuntoVacioNuncaSeleccionaTodos",
+      "contrasteDetectaCierreIncoherenteSinInventarResultados",
+      "contrasteNoCierraTrabajosActivos",
+      "diagnosticoNoPersistidoRevierteActualizacion",
+      "duplicadoConfirmadoNoEsFallo",
+      "entradasInvalidasYSaneamiento",
+      "estadosAmbiguosNoInventanLotes",
+      "falloAlGuardarJobRevierteEjecucionYCola",
+      "falloDeContadoresRevierteTodoElLote",
+      "finishControladoDejaDiagnosticoAntesDelContraste",
+      "identidadNormalizadaYAlternativasRechazadas",
+      "limitesEstadosCorteYJobReal",
+      "marcaPreviaNoSustituyeDiagnostico",
+      "permisoPersonalizadoNoSustituyeCrud",
+      "relecturaOmiteCambiosYConservaCorte",
+      "repeticionConservaDatosComerciales",
+      "resultadosParcialesEIncidencias",
+      "resumenControladoRecuperaLotesYConservaHistoria",
+      "seleccionOrdinariaSinCandidatos"
+    ],
+    "coverage": [
+      {
+        "name": "ServicioRenovaciones",
+        "locations": 118,
+        "uncovered": 5,
+        "percent": 95.76
+      },
+      {
+        "name": "LoteRenovaciones",
+        "locations": 125,
+        "uncovered": 1,
+        "percent": 99.2
+      }
+    ]
+  },
+  "deployment": {
+    "id": "0Afg700000L6huECAR",
+    "status": "Succeeded",
+    "success": true,
+    "done": true,
+    "checkOnly": false,
+    "components": 3,
+    "totalComponents": 3,
+    "testsPassed": 20,
+    "testErrors": 0,
+    "methods": [
+      "autorizacionEnTodosLosPuntosDeEntrada",
+      "conjuntoVacioNuncaSeleccionaTodos",
+      "contrasteDetectaCierreIncoherenteSinInventarResultados",
+      "contrasteNoCierraTrabajosActivos",
+      "diagnosticoNoPersistidoRevierteActualizacion",
+      "duplicadoConfirmadoNoEsFallo",
+      "entradasInvalidasYSaneamiento",
+      "estadosAmbiguosNoInventanLotes",
+      "falloAlGuardarJobRevierteEjecucionYCola",
+      "falloDeContadoresRevierteTodoElLote",
+      "finishControladoDejaDiagnosticoAntesDelContraste",
+      "identidadNormalizadaYAlternativasRechazadas",
+      "limitesEstadosCorteYJobReal",
+      "marcaPreviaNoSustituyeDiagnostico",
+      "permisoPersonalizadoNoSustituyeCrud",
+      "relecturaOmiteCambiosYConservaCorte",
+      "repeticionConservaDatosComerciales",
+      "resultadosParcialesEIncidencias",
+      "resumenControladoRecuperaLotesYConservaHistoria",
+      "seleccionOrdinariaSinCandidatos"
+    ],
+    "coverage": [
+      {
+        "name": "ServicioRenovaciones",
+        "locations": 118,
+        "uncovered": 5,
+        "percent": 95.76
+      },
+      {
+        "name": "LoteRenovaciones",
+        "locations": 125,
+        "uncovered": 1,
+        "percent": 99.2
+      }
+    ]
+  },
+  "priorValidation": {
+    "id": "0Afg700000L6tqXCAR",
+    "status": "Failed",
+    "success": false,
+    "done": true,
+    "checkOnly": true,
+    "components": 3,
+    "totalComponents": 3,
+    "testsPassed": 19,
+    "testErrors": 1,
+    "methods": [
+      "autorizacionEnTodosLosPuntosDeEntrada",
+      "conjuntoVacioNuncaSeleccionaTodos",
+      "contrasteDetectaCierreIncoherenteSinInventarResultados",
+      "contrasteNoCierraTrabajosActivos",
+      "duplicadoConfirmadoNoEsFallo",
+      "entradasInvalidasYSaneamiento",
+      "estadosAmbiguosNoInventanLotes",
+      "falloAlGuardarJobRevierteEjecucionYCola",
+      "falloDeContadoresRevierteTodoElLote",
+      "finishControladoDejaDiagnosticoAntesDelContraste",
+      "identidadNormalizadaYAlternativasRechazadas",
+      "limitesEstadosCorteYJobReal",
+      "marcaPreviaNoSustituyeDiagnostico",
+      "permisoPersonalizadoNoSustituyeCrud",
+      "relecturaOmiteCambiosYConservaCorte",
+      "repeticionConservaDatosComerciales",
+      "resultadosParcialesEIncidencias",
+      "resumenControladoRecuperaLotesYConservaHistoria",
+      "seleccionOrdinariaSinCandidatos"
+    ],
+    "coverage": [
+      {
+        "name": "ServicioRenovaciones",
+        "locations": 118,
+        "uncovered": 5,
+        "percent": 95.76
+      },
+      {
+        "name": "LoteRenovaciones",
+        "locations": 125,
+        "uncovered": 1,
+        "percent": 99.2
+      }
+    ],
+    "reason": "La prueba de rechazo de creación de incidencia esperaba DmlException; USER_MODE devolvió TypeException. Corregida la aserción sin cambiar el mecanismo de rollback."
+  },
+  "sourceFiles": [
+    {
+      "file": "manifest/revision-fase-3.xml",
+      "sha256": "04d71b9b0b6ea2aa2c2967d3337f4f8a0cacb75a30787c679785385941f50a64",
+      "lfSha256": "04d71b9b0b6ea2aa2c2967d3337f4f8a0cacb75a30787c679785385941f50a64",
+      "contentSha256": "d032098125010e4c964427dc58476f3d19153a2a284ac73bded4b0f28886d13d",
+      "unchangedSinceValidation": true
+    },
+    {
+      "file": "force-app/main/default/classes/ServicioRenovaciones.cls",
+      "sha256": "5fe81455925f6a70ef17a9a8987647a984467322d4c811b89ad750762044fcc4",
+      "lfSha256": "5fe81455925f6a70ef17a9a8987647a984467322d4c811b89ad750762044fcc4",
+      "contentSha256": "6e95ee7adaacdb3fc0f9764ae663d58209c8de0ff2bfc2b7f1b35821a1df945f",
+      "unchangedSinceValidation": true
+    },
+    {
+      "file": "force-app/main/default/classes/ServicioRenovaciones.cls-meta.xml",
+      "sha256": "0347267b36e4cd542616bb80997ae7c7634cf64ed063b5bd68dd2493c8fca3ea",
+      "lfSha256": "0347267b36e4cd542616bb80997ae7c7634cf64ed063b5bd68dd2493c8fca3ea",
+      "contentSha256": "edf4b8812f32cca58afe625bf542fecb93b447621c70367d073b64d56c9897c6",
+      "unchangedSinceValidation": true
+    },
+    {
+      "file": "force-app/main/default/classes/LoteRenovaciones.cls",
+      "sha256": "092d5787b397c7acaaa6af6691c79db07eec8218c2256d42435683cc8a17e2ae",
+      "lfSha256": "092d5787b397c7acaaa6af6691c79db07eec8218c2256d42435683cc8a17e2ae",
+      "contentSha256": "6f64af1c410b907ff1eb8504eb2d51efd10ac79f25fed7d7c0721e165999dca1",
+      "unchangedSinceValidation": true
+    },
+    {
+      "file": "force-app/main/default/classes/LoteRenovaciones.cls-meta.xml",
+      "sha256": "0347267b36e4cd542616bb80997ae7c7634cf64ed063b5bd68dd2493c8fca3ea",
+      "lfSha256": "0347267b36e4cd542616bb80997ae7c7634cf64ed063b5bd68dd2493c8fca3ea",
+      "contentSha256": "edf4b8812f32cca58afe625bf542fecb93b447621c70367d073b64d56c9897c6",
+      "unchangedSinceValidation": true
+    },
+    {
+      "file": "force-app/main/default/classes/RenovacionesTest.cls",
+      "sha256": "b19037d6d93c3f5c15ff1b415590c296686c944c3566327e0b9289af944c7ea3",
+      "lfSha256": "b19037d6d93c3f5c15ff1b415590c296686c944c3566327e0b9289af944c7ea3",
+      "contentSha256": "d4ba195e05825a31b5714855f81d0f3922644a0b36607014ad2cdfa5d0249741",
+      "unchangedSinceValidation": true
+    },
+    {
+      "file": "force-app/main/default/classes/RenovacionesTest.cls-meta.xml",
+      "sha256": "0347267b36e4cd542616bb80997ae7c7634cf64ed063b5bd68dd2493c8fca3ea",
+      "lfSha256": "0347267b36e4cd542616bb80997ae7c7634cf64ed063b5bd68dd2493c8fca3ea",
+      "contentSha256": "edf4b8812f32cca58afe625bf542fecb93b447621c70367d073b64d56c9897c6",
+      "unchangedSinceValidation": true
+    }
+  ],
+  "remoteSources": [
+    {
+      "file": "force-app/main/default/classes/LoteRenovaciones.cls",
+      "apiVersion": 65,
+      "remoteByteHash": "6f64af1c410b907ff1eb8504eb2d51efd10ac79f25fed7d7c0721e165999dca1",
+      "remoteContentHash": "6f64af1c410b907ff1eb8504eb2d51efd10ac79f25fed7d7c0721e165999dca1",
+      "validatedContentHash": "6f64af1c410b907ff1eb8504eb2d51efd10ac79f25fed7d7c0721e165999dca1",
+      "sameContent": true
+    },
+    {
+      "file": "force-app/main/default/classes/RenovacionesTest.cls",
+      "apiVersion": 65,
+      "remoteByteHash": "d4ba195e05825a31b5714855f81d0f3922644a0b36607014ad2cdfa5d0249741",
+      "remoteContentHash": "d4ba195e05825a31b5714855f81d0f3922644a0b36607014ad2cdfa5d0249741",
+      "validatedContentHash": "d4ba195e05825a31b5714855f81d0f3922644a0b36607014ad2cdfa5d0249741",
+      "sameContent": true
+    },
+    {
+      "file": "force-app/main/default/classes/ServicioRenovaciones.cls",
+      "apiVersion": 65,
+      "remoteByteHash": "6e95ee7adaacdb3fc0f9764ae663d58209c8de0ff2bfc2b7f1b35821a1df945f",
+      "remoteContentHash": "6e95ee7adaacdb3fc0f9764ae663d58209c8de0ff2bfc2b7f1b35821a1df945f",
+      "validatedContentHash": "6e95ee7adaacdb3fc0f9764ae663d58209c8de0ff2bfc2b7f1b35821a1df945f",
+      "sameContent": true
+    }
+  ],
+  "normalization": "UTF-8; CRLF a LF y eliminación de exactamente un LF final para Body remoto; hashes de bytes conservados por separado.",
+  "previousTestsPreserved": true,
+  "addedTests": [
+    "contrasteNoCierraTrabajosActivos",
+    "diagnosticoNoPersistidoRevierteActualizacion",
+    "estadosAmbiguosNoInventanLotes",
+    "finishControladoDejaDiagnosticoAntesDelContraste",
+    "marcaPreviaNoSustituyeDiagnostico",
+    "resumenControladoRecuperaLotesYConservaHistoria"
+  ],
+  "conservation": {
+    "records": 297,
+    "historical": 50,
+    "phase3": 247,
+    "changed": [],
+    "ignoredFields": [
+      "attributes",
+      "LastViewedDate",
+      "LastReferencedDate",
+      "DiasRestantes__c"
+    ],
+    "evidenceFiles": [
+      {
+        "file": "docs/evidencias-fase-1b.json",
+        "unchangedBytes": true
+      },
+      {
+        "file": "docs/evidencias-fase-1b/P06-1B-20261123T132719-b12376f4-contratos.json",
+        "unchangedBytes": true
+      },
+      {
+        "file": "docs/evidencias-fase-1b/P06-1B-20261123T132811-bff184d2-seguimientos.json",
+        "unchangedBytes": true
+      },
+      {
+        "file": "docs/evidencias-fase-1b/P06-1B-20261123T133354-b17fd935-seguimientos.json",
+        "unchangedBytes": true
+      },
+      {
+        "file": "docs/evidencias-fase-1b/P06-1B-20261123T133432-f8cc7f15-ejecuciones.json",
+        "unchangedBytes": true
+      },
+      {
+        "file": "docs/evidencias-fase-1b/P06-1B-20261123T133507-a51f9870-incidencias.json",
+        "unchangedBytes": true
+      },
+      {
+        "file": "docs/evidencias-fase-1b/conservacion.json",
+        "unchangedBytes": true
+      },
+      {
+        "file": "docs/evidencias-fase-2.json",
+        "unchangedBytes": true
+      },
+      {
+        "file": "docs/evidencias-fase-2/acceso-comerciales.json",
+        "unchangedBytes": true
+      },
+      {
+        "file": "docs/evidencias-fase-2/acceso-coordinacion.json",
+        "unchangedBytes": true
+      },
+      {
+        "file": "docs/evidencias-fase-2/acceso-final.json",
+        "unchangedBytes": true
+      },
+      {
+        "file": "docs/evidencias-fase-2/comercial-a-criterios-iniciales.json",
+        "unchangedBytes": true
+      },
+      {
+        "file": "docs/evidencias-fase-2/comercial-a.json",
+        "unchangedBytes": true
+      },
+      {
+        "file": "docs/evidencias-fase-2/comercial-b.json",
+        "unchangedBytes": true
+      },
+      {
+        "file": "docs/evidencias-fase-2/configuracion.json",
+        "unchangedBytes": true
+      },
+      {
+        "file": "docs/evidencias-fase-2/conservacion.json",
+        "unchangedBytes": true
+      },
+      {
+        "file": "docs/evidencias-fase-2/coordinacion.json",
+        "unchangedBytes": true
+      },
+      {
+        "file": "docs/evidencias-fase-2/despliegues.json",
+        "unchangedBytes": true
+      },
+      {
+        "file": "docs/evidencias-fase-2/fixtures.json",
+        "unchangedBytes": true
+      },
+      {
+        "file": "docs/evidencias-fase-2/informe-comercial-a-inicial.json",
+        "unchangedBytes": true
+      },
+      {
+        "file": "docs/evidencias-fase-2/informe-comercial-a-reasignado.json",
+        "unchangedBytes": true
+      },
+      {
+        "file": "docs/evidencias-fase-2/informe-comercial-b-final.json",
+        "unchangedBytes": true
+      },
+      {
+        "file": "docs/evidencias-fase-2/informe-comercial-b-reasignado.json",
+        "unchangedBytes": true
+      },
+      {
+        "file": "docs/evidencias-fase-2/informe-comercial-b.json",
+        "unchangedBytes": true
+      },
+      {
+        "file": "docs/evidencias-fase-2/informe-coordinacion-final.json",
+        "unchangedBytes": true
+      },
+      {
+        "file": "docs/evidencias-fase-2/informe-coordinacion-inicial.json",
+        "unchangedBytes": true
+      },
+      {
+        "file": "docs/evidencias-fase-2/interfaz.json",
+        "unchangedBytes": true
+      },
+      {
+        "file": "docs/evidencias-fase-2/reasignacion-a.json",
+        "unchangedBytes": true
+      },
+      {
+        "file": "docs/evidencias-fase-2/reasignacion-b.json",
+        "unchangedBytes": true
+      },
+      {
+        "file": "docs/evidencias-fase-2/reasignacion-ui-b.json",
+        "unchangedBytes": true
+      },
+      {
+        "file": "docs/evidencias-fase-2/reasignacion-ui-coordinacion.json",
+        "unchangedBytes": true
+      },
+      {
+        "file": "docs/evidencias-fase-2/restauracion.json",
+        "unchangedBytes": true
+      },
+      {
+        "file": "docs/evidencias-fase-2/revision-local.json",
+        "unchangedBytes": true
+      },
+      {
+        "file": "docs/evidencias-fase-2/transferencia-multiple-a.json",
+        "unchangedBytes": true
+      },
+      {
+        "file": "docs/evidencias-fase-3.json",
+        "unchangedBytes": true
+      },
+      {
+        "file": "docs/evidencias-fase-3/acceso-informe.json",
+        "unchangedBytes": true
+      },
+      {
+        "file": "docs/evidencias-fase-3/conjunto.json",
+        "unchangedBytes": true
+      },
+      {
+        "file": "docs/evidencias-fase-3/conservacion.json",
+        "unchangedBytes": true
+      },
+      {
+        "file": "docs/evidencias-fase-3/contraste-manual.json",
+        "unchangedBytes": true
+      },
+      {
+        "file": "docs/evidencias-fase-3/despliegue-pruebas.json",
+        "unchangedBytes": true
+      },
+      {
+        "file": "docs/evidencias-fase-3/inventario.json",
+        "unchangedBytes": true
+      },
+      {
+        "file": "docs/evidencias-fase-3/muestras-repeticion.json",
+        "unchangedBytes": true
+      },
+      {
+        "file": "docs/evidencias-fase-3/previo-primero.json",
+        "unchangedBytes": true
+      },
+      {
+        "file": "docs/evidencias-fase-3/previo-repeticion.json",
+        "unchangedBytes": true
+      },
+      {
+        "file": "docs/evidencias-fase-3/primero.json",
+        "unchangedBytes": true
+      },
+      {
+        "file": "docs/evidencias-fase-3/repeticion.json",
+        "unchangedBytes": true
+      },
+      {
+        "file": "docs/evidencias-fase-3/revision-local.json",
+        "unchangedBytes": true
+      }
+    ],
+    "assignmentsUnchanged": true,
+    "forceignorePreserved": true
+  },
+  "newPersistentBatchJobs": 0,
+  "loginAs": false,
+  "realAdverseJobsExecuted": false,
+  "demonstrationsRelaunched": false,
+  "pass": true
+}

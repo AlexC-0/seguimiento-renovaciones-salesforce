@@ -155,8 +155,7 @@ public with sharing class LoteRenovaciones implements Database.Batchable<SObject
         }
     }
 
-    @TestVisible
-    private static String sanear(String texto, Integer maximo) {
+    public static String sanear(String texto, Integer maximo) {
         if (String.isBlank(texto)) return 'Sin detalle adicional.';
         String limpio = texto.replaceAll('(?i)https?://\\S+', '[URL]')
             .replaceAll('(?i)bearer\\s+[^\\s,;]+', 'Bearer [redactado]')
@@ -167,16 +166,6 @@ public with sharing class LoteRenovaciones implements Database.Batchable<SObject
     }
 
     public void finish(Database.BatchableContext contexto) {
-        EjecucionRenovacion__c ejecucion = validarContexto(contexto);
-        AsyncApexJob trabajo = ServicioRenovaciones.leerTrabajo(ejecucion);
-        if (trabajo.NumberOfErrors > 0) {
-            ejecucion.LotesFallidos__c = Math.max(ejecucion.LotesFallidos__c, trabajo.NumberOfErrors);
-            ejecucion.RequiereReconciliacion__c = true;
-            ejecucion.Estado__c = 'Fallida';
-        } else {
-            ejecucion.Estado__c = ejecucion.Fallidos__c > 0 ? 'Completada con incidencias' : 'Completada';
-        }
-        ejecucion.Finalizacion__c = System.now();
-        update as user ejecucion;
+        ServicioRenovaciones.finalizar(ejecucionId, contexto);
     }
 }

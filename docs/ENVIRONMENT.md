@@ -75,4 +75,12 @@ La cuenta técnica recibe P06_OperadorRenovaciones y pertenencia a P06_Operadore
 
 El corte observado es 23/11/2026 y la zona del usuario Salesforce es Europe/Paris; se conserva esa zona real en las dos ejecuciones. La ventana termina el 23/12/2026. Los tiempos de evidencia JSON se guardan en UTC.
 
-Validación 0Afg700000L0MUHCA3 y despliegue 0Afg700000L0NQLCA3 terminados correctamente, con 14 pruebas y 21 componentes procesados. El manifiesto contiene 13 miembros explícitos; Salesforce desglosa contenedores de compartición en sus componentes. Los hashes de los 19 archivos del paquete coinciden. [Resultados completos](evidencias-fase-3/despliegue-pruebas.json).
+Validación 0Afg700000L0MUHCA3 y despliegue 0Afg700000L0NQLCA3 terminados correctamente, con 14 pruebas y 21 componentes procesados. El manifiesto contiene 13 miembros explícitos; Salesforce desglosa contenedores de compartición en sus componentes. Las huellas registradas corresponden a los bytes locales de los 19 archivos; la revisión posterior distingue su formato de los blobs publicados y de ApexClass.Body. [Resultados completos](evidencias-fase-3/despliegue-pruebas.json).
+
+## Revisión del 24/11/2026
+
+Se verificó la misma Developer Edition mediante el recibo privado y API 65.0 antes de cada operación remota. La sesión CLI/API existente permitió la inspección, validación, despliegue y contraste; no se requirió navegador ni cambios de autenticación.
+
+Las lecturas de ApexClass.Body se guardan en carpetas privadas separadas antes y después del despliegue, sin sobrescribir las fuentes de trabajo. Los recibos de validación y despliegue también quedan separados de los de fase 3. El manifiesto acota tres clases y no despliega permisos, modelo ni configuración funcional adicional. Login As sigue false, con asignaciones comerciales intactas y sin usuarios persistentes nuevos.
+
+La [trazabilidad inicial](evidencias-revision-fase-3/trazabilidad-inicial.json) diferencia bytes originales, UTF-8 con CRLF convertido a LF y contenido sin un LF final. La [comprobación final](evidencias-revision-fase-3/comprobacion-final.json) confirma fuentes remotas equivalentes al nuevo paquete validado, 20 pruebas y conservación de 297 registros.

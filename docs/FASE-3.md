@@ -1,5 +1,7 @@
 # Fase 3 — Lanzamiento manual y procesamiento Batch
 
+La corrección del 24/11/2026 se documenta en [REVISION-FASE-3.md](REVISION-FASE-3.md). Los recibos, conteos y pruebas de la entrega inicial que figuran aquí siguen siendo históricos; la corrección incorpora seis regresiones y no repite la demostración.
+
 ## Resultado
 
 Implementación y demostración completadas el 23/11/2026 sobre 0716f9fc41d2b2142a79d9abd495f8236783ce03, en p06-renovaciones-dev, Developer Edition exclusiva P06, API 65.0. V1 sigue abierta: solapamiento real, interrupciones y recuperación adversa requieren la siguiente fase.
@@ -48,7 +50,7 @@ Resultado final: 14/14 en validación y 14/14 en despliegue. Cobertura por compo
 | Validación | 0Afg700000L0MUHCA3 | Succeeded, checkOnly=true, 14 pruebas correctas |
 | Despliegue | 0Afg700000L0NQLCA3 | Succeeded, checkOnly=false, 14 pruebas correctas |
 
-manifest/fase-3.xml contiene 13 miembros explícitos; Salesforce procesó 21 componentes al desglosar contenedores de compartición. Los hashes de los 19 archivos del paquete validado coinciden con las fuentes conservadas. No hay componentes destructivos ni errores ignorados.
+manifest/fase-3.xml contiene 13 miembros explícitos; Salesforce procesó 21 componentes al desglosar contenedores de compartición. Las huellas originales registran los bytes locales de los 19 archivos del paquete. El [contraste posterior](REVISION-FASE-3.md) explica las diferencias de formato con los blobs Git y Body remoto sin sustituir esas huellas. No hay componentes destructivos ni errores ignorados.
 
 Los intentos anteriores se conservan separados en [despliegue-pruebas.json](evidencias-fase-3/despliegue-pruebas.json): corrección de nombres de excepciones, clasificación de duplicados, saneamiento de mensajes largos, cobertura y aserciones de la prueba de rollback después de encolar. La validación intermedia 0Afg700000L0C1tCAF fue correcta antes de reforzar esa prueba; no sustituye la validación final. El primer intento de despliegue 0Afg700000L0NADCA3 falló por un nombre incorrecto de clase en el comando, ejecutó cero pruebas y revirtió el paquete por cobertura insuficiente.
 
@@ -108,8 +110,8 @@ La demostración utiliza preparar-demostracion.cjs, preparar-lanzamiento.cjs, co
 
 1. Copiar scripts/fase-3/contrastar-ejecucion.apex a un archivo local y sustituir null por el Id real de una ejecución del solicitante actual. La plantilla sin Id rechaza la ejecución.
 2. Ejecutarlo con sf apex run, API 65.0 y destino p06-renovaciones-dev, igual que el lanzamiento. Consulta el job vinculado, su clase, solicitante, estado y contadores de lotes.
-3. Si el job está en curso, el contraste no lo cierra. Si está terminado y el cierre es coherente, no cambia datos. Ante aborto, fallo o cierre incoherente, marca RequiereReconciliacion y Fallida o Abortada y registra una incidencia de contexto, siempre que sus permisos y persistencia funcionen.
-4. Revisar las incidencias y los seguimientos realmente persistidos por ejecución y pareja. Conservar contadores confirmados y LotesFallidos como unidad separada. Un cierre incierto no se convierte en Completada ni se completa contando candidatos teóricos.
+3. Si el job está en curso, el contraste no lo cierra. Si está terminado, el cierre es coherente y no hay incertidumbre, no cambia datos. Ante un problema, la versión corregida registra diagnóstico incluso si RequiereReconciliacion ya estaba activa. Repetir una observación no crea otra incidencia; novedades de estado, contadores del job o detalle saneado sí pueden registrarse. Se conserva la historia y se actualiza Fallida o Abortada con atomicidad entre modificación e incidencia.
+4. Revisar las incidencias y los seguimientos realmente persistidos por ejecución y pareja. Conservar contadores individuales confirmados. Para LotesFallidos se aplica la [política por estado del job](REVISION-FASE-3.md): un resumen completo admitido permite aumentar el contador mediante máximo; un origen o resumen ambiguo conserva el valor previo y deja diagnóstico. No se deducen fallos restando lotes procesados a totales ni multiplicando por tamaño de lote.
 5. No relanzar automáticamente ni borrar historia. La recuperación exige revisión explícita y un nuevo lanzamiento autorizado; el método no limpia la incertidumbre ni altera seguimientos anteriores. Si falla el propio contraste, conservar el error y revisar el job por separado; no se garantiza escritura durable cuando la plataforma o los permisos la impiden.
 
 ## Límites y siguiente fase

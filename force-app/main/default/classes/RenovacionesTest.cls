@@ -8,7 +8,7 @@ private with sharing class RenovacionesTest {
             roles.put(rol.DeveloperName, rol.Id);
         }
         List<User> usuarios = new List<User>();
-        for (String alias : new List<String>{'p06op', 'p06com', 'p06solo', 'p06fls'}) {
+        for (String alias : new List<String>{'p06op', 'p06com', 'p06solo', 'p06fls', 'p06diag'}) {
             usuarios.add(new User(Alias = alias, LastName = 'Prueba ' + alias,
                 Email = alias + '@example.invalid', Username = alias + '.' + Crypto.getRandomLong() + '@example.invalid',
                 ProfileId = perfil, TimeZoneSidKey = 'Pacific/Kiritimati', LocaleSidKey = 'es_ES',
@@ -37,6 +37,29 @@ private with sharing class RenovacionesTest {
         }
         insert campos;
         insert new PermissionSetAssignment(AssigneeId = usuarios[3].Id, PermissionSetId = incompleto.Id);
+        // Permiso transitorio: puede cerrar ejecuciones y leer incidencias, pero no crearlas.
+        PermissionSet sinDiagnostico = new PermissionSet(Name = 'P06_PruebaSinDiagnostico', Label = 'P06 Prueba sin creación de incidencia');
+        insert sinDiagnostico;
+        insert new SetupEntityAccess(ParentId = sinDiagnostico.Id,
+            SetupEntityId = [SELECT Id FROM CustomPermission WHERE DeveloperName = 'P06_ProcesarRenovaciones'].Id);
+        List<ObjectPermissions> objetosDiagnostico = new List<ObjectPermissions>();
+        for (String objeto : new List<String>{'ContratoComercial__c', 'SeguimientoRenovacion__c', 'EjecucionRenovacion__c', 'IncidenciaRenovacion__c'}) {
+            objetosDiagnostico.add(new ObjectPermissions(ParentId = sinDiagnostico.Id, SobjectType = objeto, PermissionsRead = true,
+                PermissionsCreate = objeto == 'EjecucionRenovacion__c' || objeto == 'SeguimientoRenovacion__c',
+                PermissionsEdit = objeto == 'EjecucionRenovacion__c'));
+        }
+        insert objetosDiagnostico;
+        List<FieldPermissions> camposDiagnostico = new List<FieldPermissions>();
+        for (String campo : new List<String>{'Solicitante__c', 'AsyncApexJobId__c', 'Finalizacion__c', 'RequiereReconciliacion__c'}) {
+            camposDiagnostico.add(new FieldPermissions(ParentId = sinDiagnostico.Id, SobjectType = 'EjecucionRenovacion__c',
+                Field = 'EjecucionRenovacion__c.' + campo, PermissionsRead = true, PermissionsEdit = true));
+        }
+        for (String campo : new List<String>{'Contrato__c', 'ClaveIntentada__c', 'Mensaje__c', 'CamposAfectados__c'}) {
+            camposDiagnostico.add(new FieldPermissions(ParentId = sinDiagnostico.Id, SobjectType = 'IncidenciaRenovacion__c',
+                Field = 'IncidenciaRenovacion__c.' + campo, PermissionsRead = true, PermissionsEdit = false));
+        }
+        insert camposDiagnostico;
+        insert new PermissionSetAssignment(AssigneeId = usuarios[4].Id, PermissionSetId = sinDiagnostico.Id);
         PermissionSet soloPermiso = new PermissionSet(Name = 'P06_PruebaSoloPermiso', Label = 'P06 Prueba solo permiso');
         insert soloPermiso;
         insert new SetupEntityAccess(ParentId = soloPermiso.Id,
@@ -382,6 +405,190 @@ private with sharing class RenovacionesTest {
             Boolean rechazo = false;
             try { new LoteRenovaciones(identificador, null); } catch (ServicioRenovaciones.ContextoInvalidoException e) { rechazo = true; }
             Assert.isTrue(rechazo, 'Una ejecución utilizada no admite otro Batch.');
+        }
+    }
+
+    private static EjecucionRenovacion__c cierreIncompleto() {
+        Test.startTest();
+        Id identificador = ServicioRenovaciones.lanzar(50, new Set<Id>());
+        Test.stopTest();
+        update as user new EjecucionRenovacion__c(Id = identificador, Estado__c = 'En curso', Finalizacion__c = null,
+            Evaluados__c = 7, Creados__c = 3, YaExistentes__c = 2, Omitidos__c = 1, Fallidos__c = 1);
+        return ServicioRenovaciones.leerEjecucion(identificador);
+    }
+
+    private static List<Decimal> individuales(EjecucionRenovacion__c e) {
+        return new List<Decimal>{e.Evaluados__c, e.Creados__c, e.YaExistentes__c, e.Omitidos__c, e.Fallidos__c};
+    }
+
+    // Observación simulada en memoria, con el Id de un job real de prueba. No modifica AsyncApexJob.
+    private static AsyncApexJob observacionControlada(EjecucionRenovacion__c e, String estado,
+                                                      Integer errores, Integer procesados, Integer total, String detalle) {
+        AsyncApexJob real = ServicioRenovaciones.leerTrabajo(e);
+        Map<String, Object> datos = (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(real));
+        datos.put('Status', estado);
+        datos.put('NumberOfErrors', errores);
+        datos.put('JobItemsProcessed', procesados);
+        datos.put('TotalJobItems', total);
+        datos.put('ExtendedStatus', detalle);
+        return (AsyncApexJob)JSON.deserialize(JSON.serialize(datos), AsyncApexJob.class);
+    }
+
+    @IsTest
+    static void marcaPreviaNoSustituyeDiagnostico() {
+        System.runAs(usuario('p06op')) {
+            EjecucionRenovacion__c e = cierreIncompleto();
+            List<Decimal> confirmados = individuales(e);
+            update as user new EjecucionRenovacion__c(Id = e.Id, Estado__c = 'Fallida',
+                Finalizacion__c = System.now(), RequiereReconciliacion__c = true, LotesFallidos__c = 2);
+            insert as user new IncidenciaRenovacion__c(Ejecucion__c = e.Id, Etapa__c = 'Reconciliación',
+                CodigoError__c = 'CONTRASTE_JOB', Mensaje__c = 'Diagnóstico anterior sin huella.');
+            IncidenciaRenovacion__c anterior = [SELECT Id, Mensaje__c FROM IncidenciaRenovacion__c WHERE Ejecucion__c = :e.Id];
+            ServicioRenovaciones.contrastar(e.Id);
+            EjecucionRenovacion__c resultado = ServicioRenovaciones.leerEjecucion(e.Id);
+            Assert.isTrue(resultado.RequiereReconciliacion__c);
+            Assert.areEqual('Fallida', resultado.Estado__c);
+            Assert.areEqual(2, resultado.LotesFallidos__c, 'Un cero posterior no borra el histórico confirmado.');
+            Assert.areEqual(confirmados, individuales(resultado));
+            Assert.areEqual(2, [SELECT COUNT() FROM IncidenciaRenovacion__c WHERE Ejecucion__c = :e.Id]);
+            Assert.areEqual(anterior.Mensaje__c, [SELECT Mensaje__c FROM IncidenciaRenovacion__c WHERE Id = :anterior.Id].Mensaje__c);
+            Integer dml = Limits.getDmlStatements();
+            ServicioRenovaciones.contrastar(e.Id);
+            Assert.areEqual(dml, Limits.getDmlStatements(), 'Sin novedades no hay escritura ni incidencia duplicada.');
+            Assert.areEqual(resultado.Finalizacion__c, ServicioRenovaciones.leerEjecucion(e.Id).Finalizacion__c);
+        }
+    }
+
+    @IsTest
+    static void resumenControladoRecuperaLotesYConservaHistoria() {
+        System.runAs(usuario('p06op')) {
+            EjecucionRenovacion__c e = cierreIncompleto();
+            List<Decimal> confirmados = individuales(e);
+            AsyncApexJob observado = observacionControlada(e, 'Completed', 2, 3, 3, 'Fallo controlado de lote');
+            ServicioRenovaciones.aplicarEstadoTrabajo(e, observado, false);
+            e = ServicioRenovaciones.leerEjecucion(e.Id);
+            Assert.areEqual(2, e.LotesFallidos__c);
+            Assert.areEqual('Fallida', e.Estado__c);
+            Assert.isTrue(e.RequiereReconciliacion__c);
+            Assert.areEqual(confirmados, individuales(e));
+            IncidenciaRenovacion__c primera = [SELECT Id, Mensaje__c, ClaveIntentada__c FROM IncidenciaRenovacion__c WHERE Ejecucion__c = :e.Id];
+            Assert.isTrue(primera.Mensaje__c.contains('NumberOfErrors=2'));
+            Integer dml = Limits.getDmlStatements();
+            ServicioRenovaciones.aplicarEstadoTrabajo(e, observado, false);
+            Assert.areEqual(dml, Limits.getDmlStatements());
+            observado = observacionControlada(e, 'Completed', 3, 3, 3, 'Otra observación controlada');
+            ServicioRenovaciones.aplicarEstadoTrabajo(e, observado, false);
+            e = ServicioRenovaciones.leerEjecucion(e.Id);
+            Assert.areEqual(3, e.LotesFallidos__c);
+            Assert.areEqual(2, [SELECT COUNT() FROM IncidenciaRenovacion__c WHERE Ejecucion__c = :e.Id]);
+            observado = observacionControlada(e, 'Completed', 3, 3, 3, 'Nuevo detalle sin cambiar contadores');
+            ServicioRenovaciones.aplicarEstadoTrabajo(e, observado, false);
+            e = ServicioRenovaciones.leerEjecucion(e.Id);
+            Assert.areEqual(3, [SELECT COUNT() FROM IncidenciaRenovacion__c WHERE Ejecucion__c = :e.Id]);
+            observado = observacionControlada(e, 'Completed', 1, 3, 3, 'Información posterior inferior');
+            ServicioRenovaciones.aplicarEstadoTrabajo(e, observado, false);
+            e = ServicioRenovaciones.leerEjecucion(e.Id);
+            Assert.areEqual(3, e.LotesFallidos__c);
+            Assert.areEqual(confirmados, individuales(e));
+            Assert.areEqual(primera.Mensaje__c, [SELECT Mensaje__c FROM IncidenciaRenovacion__c WHERE Id = :primera.Id].Mensaje__c);
+            Assert.areEqual(4, [SELECT COUNT() FROM IncidenciaRenovacion__c WHERE Ejecucion__c = :e.Id]);
+            Assert.areEqual('Completed', ServicioRenovaciones.leerTrabajo(e).Status);
+            Assert.areEqual(0, ServicioRenovaciones.leerTrabajo(e).NumberOfErrors, 'El job real no sufrió el fallo simulado.');
+        }
+    }
+
+    @IsTest
+    static void estadosAmbiguosNoInventanLotes() {
+        System.runAs(usuario('p06op')) {
+            EjecucionRenovacion__c e = cierreIncompleto();
+            List<Decimal> confirmados = individuales(e);
+            for (String estado : new List<String>{'Failed', 'Aborted', 'Completed'}) {
+                AsyncApexJob observado = observacionControlada(e, estado, 1, 0, 0, 'Fase del fallo no acreditada');
+                ServicioRenovaciones.aplicarEstadoTrabajo(e, observado, false);
+                e = ServicioRenovaciones.leerEjecucion(e.Id);
+                Assert.areEqual(0, e.LotesFallidos__c, 'Un error sin scopes no equivale a un lote de contratos.');
+                Assert.areEqual(estado == 'Aborted' ? 'Abortada' : 'Fallida', e.Estado__c);
+                Assert.isTrue(e.RequiereReconciliacion__c);
+                Assert.areEqual(confirmados, individuales(e));
+            }
+            ServicioRenovaciones.aplicarEstadoTrabajo(e, observacionControlada(e, 'Failed', 1, 3, 3, 'Fase desconocida con resumen completo'), false);
+            e = ServicioRenovaciones.leerEjecucion(e.Id);
+            Assert.areEqual(0, e.LotesFallidos__c, 'Failed no permite atribuir el error a execute aunque los totales coincidan.');
+            AsyncApexJob desconocido = observacionControlada(e, 'Failed', null, 2, 3, 'Número de errores ausente');
+            ServicioRenovaciones.aplicarEstadoTrabajo(e, desconocido, false);
+            Assert.areEqual(0, ServicioRenovaciones.leerEjecucion(e.Id).LotesFallidos__c);
+            Assert.areEqual(5, [SELECT COUNT() FROM IncidenciaRenovacion__c WHERE Ejecucion__c = :e.Id]);
+            Assert.areEqual(0, ServicioRenovaciones.leerTrabajo(e).NumberOfErrors);
+        }
+    }
+
+    @IsTest
+    static void finishControladoDejaDiagnosticoAntesDelContraste() {
+        System.runAs(usuario('p06op')) {
+            EjecucionRenovacion__c e = cierreIncompleto();
+            List<Decimal> confirmados = individuales(e);
+            ServicioRenovaciones.aplicarEstadoTrabajo(e,
+                observacionControlada(e, 'Processing', 1, 3, 3, 'Error controlado previo a finish'), true);
+            e = ServicioRenovaciones.leerEjecucion(e.Id);
+            Assert.isTrue(e.RequiereReconciliacion__c);
+            Assert.areEqual(1, e.LotesFallidos__c);
+            Assert.areEqual(1, [SELECT COUNT() FROM IncidenciaRenovacion__c WHERE Ejecucion__c = :e.Id]);
+            AsyncApexJob terminal = observacionControlada(e, 'Completed', 1, 3, 3, 'Error controlado previo a finish');
+            ServicioRenovaciones.aplicarEstadoTrabajo(e, terminal, false);
+            e = ServicioRenovaciones.leerEjecucion(e.Id);
+            ServicioRenovaciones.aplicarEstadoTrabajo(e, terminal, false);
+            Assert.areEqual(2, [SELECT COUNT() FROM IncidenciaRenovacion__c WHERE Ejecucion__c = :e.Id], 'El estado terminal aporta una observación nueva, una sola vez.');
+            Assert.areEqual(confirmados, individuales(e));
+        }
+    }
+
+    @IsTest
+    static void contrasteNoCierraTrabajosActivos() {
+        System.runAs(usuario('p06op')) {
+            Test.startTest();
+            Id identificador = ServicioRenovaciones.lanzar(50, new Set<Id>());
+            ServicioRenovaciones.contrastar(identificador);
+            EjecucionRenovacion__c e = ServicioRenovaciones.leerEjecucion(identificador);
+            Assert.areEqual('Encolada', e.Estado__c);
+            Assert.isNull(e.Finalizacion__c);
+            Assert.isFalse(e.RequiereReconciliacion__c);
+            Assert.areEqual(0, [SELECT COUNT() FROM IncidenciaRenovacion__c WHERE Ejecucion__c = :identificador]);
+            Test.stopTest();
+            update as user new EjecucionRenovacion__c(Id = identificador, Estado__c = 'En curso', Finalizacion__c = null);
+            e = ServicioRenovaciones.leerEjecucion(identificador);
+            for (String estado : new List<String>{'Holding', 'Queued', 'Preparing', 'Processing'}) {
+                Integer dml = Limits.getDmlStatements();
+                ServicioRenovaciones.aplicarEstadoTrabajo(e, observacionControlada(e, estado, 1, 1, 3, null), false);
+                Assert.areEqual(dml, Limits.getDmlStatements());
+                Assert.areEqual('En curso', ServicioRenovaciones.leerEjecucion(identificador).Estado__c);
+                Assert.isNull(ServicioRenovaciones.leerEjecucion(identificador).Finalizacion__c);
+            }
+        }
+    }
+
+    @IsTest
+    static void diagnosticoNoPersistidoRevierteActualizacion() {
+        System.runAs(usuario('p06diag')) {
+            EjecucionRenovacion__c e = ejecucion(hoy());
+            Test.startTest();
+            Id real = Database.executeBatch(new LoteRenovaciones(e.Id, new Set<Id>()), 50);
+            update as user new EjecucionRenovacion__c(Id = e.Id, AsyncApexJobId__c = String.valueOf(real));
+            Test.stopTest();
+            Assert.areEqual('Completed', ServicioRenovaciones.leerTrabajo(ServicioRenovaciones.leerEjecucion(e.Id)).Status);
+            update as user new EjecucionRenovacion__c(Id = e.Id, Estado__c = 'En curso', Finalizacion__c = null);
+            Boolean fallo = false;
+            try { ServicioRenovaciones.contrastar(e.Id); } catch (TypeException esperado) {
+                Assert.isTrue(esperado.getMessage().contains('INSERT not allowed on IncidenciaRenovacion__c'));
+                fallo = true;
+            }
+            Assert.isTrue(fallo, 'La falta de creación de incidencias debe propagarse.');
+            e = ServicioRenovaciones.leerEjecucion(e.Id);
+            Assert.areEqual('En curso', e.Estado__c);
+            Assert.isNull(e.Finalizacion__c);
+            Assert.isFalse(e.RequiereReconciliacion__c);
+            Assert.areEqual(0, e.LotesFallidos__c);
+            Assert.areEqual(new List<Decimal>{0, 0, 0, 0, 0}, individuales(e));
+            Assert.areEqual(0, [SELECT COUNT() FROM IncidenciaRenovacion__c WHERE Ejecucion__c = :e.Id]);
         }
     }
 }

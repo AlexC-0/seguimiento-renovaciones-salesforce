@@ -1,0 +1,201 @@
+{
+  "timestamp": "2026-11-24T07:52:05.971Z",
+  "baseline": "31528e267a3f2d65ba41015dc1ef9a5838c56195",
+  "target": "p06-renovaciones-dev",
+  "apiVersion": "65.0",
+  "normalization": "N1: decodificación UTF-8 estricta, sustituir exclusivamente CRLF por LF. N2: aplicar N1 y quitar exactamente un LF final si existe. No quitar BOM, espacios ni normalizar Unicode. N1 explica Git/local; N2 permite contrastar Body remoto sin LF final.",
+  "remoteSource": "Tooling API ApexClass.Body, guardado como UTF-8 en carpeta privada separada; no sobrescribe fuentes de trabajo.",
+  "sources": [
+    {
+      "file": "force-app/main/default/classes/IdentidadRenovacion.cls",
+      "publishedHash": "509f77b90d9672b82cccc48a3e4e44498379fa42120e4fce30f824c27600e171",
+      "privateReceiptHash": "509f77b90d9672b82cccc48a3e4e44498379fa42120e4fce30f824c27600e171",
+      "gitBlob": {
+        "bytes": 2812,
+        "sha256": "25d4069c3bae11eb404f7aac3f1ea8e23e9a9ce94c9888f1afe264572e9ff755",
+        "normalizedSha256": "25d4069c3bae11eb404f7aac3f1ea8e23e9a9ce94c9888f1afe264572e9ff755",
+        "contentSha256": "54d1b27228a86a0774341bd2025bc8e518864474baf2e13c553f8e09d010b772",
+        "finalLf": true,
+        "utf8": true,
+        "bom": false,
+        "crlf": 0,
+        "lfOnly": 49,
+        "crlfLines": []
+      },
+      "localBefore": {
+        "bytes": 2813,
+        "sha256": "509f77b90d9672b82cccc48a3e4e44498379fa42120e4fce30f824c27600e171",
+        "normalizedSha256": "25d4069c3bae11eb404f7aac3f1ea8e23e9a9ce94c9888f1afe264572e9ff755",
+        "contentSha256": "54d1b27228a86a0774341bd2025bc8e518864474baf2e13c553f8e09d010b772",
+        "finalLf": true,
+        "utf8": true,
+        "bom": false,
+        "crlf": 1,
+        "lfOnly": 48,
+        "crlfLines": [
+          49
+        ]
+      },
+      "remoteBefore": {
+        "bytes": 2811,
+        "sha256": "54d1b27228a86a0774341bd2025bc8e518864474baf2e13c553f8e09d010b772",
+        "normalizedSha256": "54d1b27228a86a0774341bd2025bc8e518864474baf2e13c553f8e09d010b772",
+        "contentSha256": "54d1b27228a86a0774341bd2025bc8e518864474baf2e13c553f8e09d010b772",
+        "finalLf": false,
+        "utf8": true,
+        "bom": false,
+        "crlf": 0,
+        "lfOnly": 48,
+        "crlfLines": []
+      },
+      "originalReceiptsAgree": true,
+      "localMatchesOriginalBytes": true,
+      "gitLocalEquivalentLF": true,
+      "equivalentNormalized": true
+    },
+    {
+      "file": "force-app/main/default/classes/LoteRenovaciones.cls",
+      "publishedHash": "76c463d40231c472b17d13bea81045fd0552ad3cefdce662aa0ee61bac46845d",
+      "privateReceiptHash": "76c463d40231c472b17d13bea81045fd0552ad3cefdce662aa0ee61bac46845d",
+      "gitBlob": {
+        "bytes": 9716,
+        "sha256": "10ad47766620ba74fd42293422ccc1906e11a7648d082e1efe1f9f07c519efa6",
+        "normalizedSha256": "10ad47766620ba74fd42293422ccc1906e11a7648d082e1efe1f9f07c519efa6",
+        "contentSha256": "30b037a10dff400d691cefa60f2a7fe53def9a2147e18a7a8f820b2848865814",
+        "finalLf": true,
+        "utf8": true,
+        "bom": false,
+        "crlf": 0,
+        "lfOnly": 182,
+        "crlfLines": []
+      },
+      "localBefore": {
+        "bytes": 9717,
+        "sha256": "76c463d40231c472b17d13bea81045fd0552ad3cefdce662aa0ee61bac46845d",
+        "normalizedSha256": "10ad47766620ba74fd42293422ccc1906e11a7648d082e1efe1f9f07c519efa6",
+        "contentSha256": "30b037a10dff400d691cefa60f2a7fe53def9a2147e18a7a8f820b2848865814",
+        "finalLf": true,
+        "utf8": true,
+        "bom": false,
+        "crlf": 1,
+        "lfOnly": 181,
+        "crlfLines": [
+          182
+        ]
+      },
+      "remoteBefore": {
+        "bytes": 9715,
+        "sha256": "30b037a10dff400d691cefa60f2a7fe53def9a2147e18a7a8f820b2848865814",
+        "normalizedSha256": "30b037a10dff400d691cefa60f2a7fe53def9a2147e18a7a8f820b2848865814",
+        "contentSha256": "30b037a10dff400d691cefa60f2a7fe53def9a2147e18a7a8f820b2848865814",
+        "finalLf": false,
+        "utf8": true,
+        "bom": false,
+        "crlf": 0,
+        "lfOnly": 181,
+        "crlfLines": []
+      },
+      "originalReceiptsAgree": true,
+      "localMatchesOriginalBytes": true,
+      "gitLocalEquivalentLF": true,
+      "equivalentNormalized": true
+    },
+    {
+      "file": "force-app/main/default/classes/ServicioRenovaciones.cls",
+      "publishedHash": "62de3aec766bb23c229d2638b8e6d47c454141526f41756085c8b5258cb2c5a1",
+      "privateReceiptHash": "62de3aec766bb23c229d2638b8e6d47c454141526f41756085c8b5258cb2c5a1",
+      "gitBlob": {
+        "bytes": 6316,
+        "sha256": "72d7c42305dfae436780c6edfd65290f5ad6de5583e95bdb28dc466f7bb35862",
+        "normalizedSha256": "72d7c42305dfae436780c6edfd65290f5ad6de5583e95bdb28dc466f7bb35862",
+        "contentSha256": "6220a54158c8c4e8b56ea82deb2107c14408c5d26496090673b0f444da78d4f7",
+        "finalLf": true,
+        "utf8": true,
+        "bom": false,
+        "crlf": 0,
+        "lfOnly": 111,
+        "crlfLines": []
+      },
+      "localBefore": {
+        "bytes": 6317,
+        "sha256": "62de3aec766bb23c229d2638b8e6d47c454141526f41756085c8b5258cb2c5a1",
+        "normalizedSha256": "72d7c42305dfae436780c6edfd65290f5ad6de5583e95bdb28dc466f7bb35862",
+        "contentSha256": "6220a54158c8c4e8b56ea82deb2107c14408c5d26496090673b0f444da78d4f7",
+        "finalLf": true,
+        "utf8": true,
+        "bom": false,
+        "crlf": 1,
+        "lfOnly": 110,
+        "crlfLines": [
+          111
+        ]
+      },
+      "remoteBefore": {
+        "bytes": 6315,
+        "sha256": "6220a54158c8c4e8b56ea82deb2107c14408c5d26496090673b0f444da78d4f7",
+        "normalizedSha256": "6220a54158c8c4e8b56ea82deb2107c14408c5d26496090673b0f444da78d4f7",
+        "contentSha256": "6220a54158c8c4e8b56ea82deb2107c14408c5d26496090673b0f444da78d4f7",
+        "finalLf": false,
+        "utf8": true,
+        "bom": false,
+        "crlf": 0,
+        "lfOnly": 110,
+        "crlfLines": []
+      },
+      "originalReceiptsAgree": true,
+      "localMatchesOriginalBytes": true,
+      "gitLocalEquivalentLF": true,
+      "equivalentNormalized": true
+    },
+    {
+      "file": "force-app/main/default/classes/RenovacionesTest.cls",
+      "publishedHash": "1876c370f08364c958d2c9356e2e0551f7d7c0eb27b2587c59505357f4c4f70a",
+      "privateReceiptHash": "1876c370f08364c958d2c9356e2e0551f7d7c0eb27b2587c59505357f4c4f70a",
+      "gitBlob": {
+        "bytes": 23632,
+        "sha256": "1876c370f08364c958d2c9356e2e0551f7d7c0eb27b2587c59505357f4c4f70a",
+        "normalizedSha256": "1876c370f08364c958d2c9356e2e0551f7d7c0eb27b2587c59505357f4c4f70a",
+        "contentSha256": "2cd7a1a3272e4dd04b596130a4489e367a21b2c0b7347c8885ea78b29e58740b",
+        "finalLf": true,
+        "utf8": true,
+        "bom": false,
+        "crlf": 0,
+        "lfOnly": 387,
+        "crlfLines": []
+      },
+      "localBefore": {
+        "bytes": 23632,
+        "sha256": "1876c370f08364c958d2c9356e2e0551f7d7c0eb27b2587c59505357f4c4f70a",
+        "normalizedSha256": "1876c370f08364c958d2c9356e2e0551f7d7c0eb27b2587c59505357f4c4f70a",
+        "contentSha256": "2cd7a1a3272e4dd04b596130a4489e367a21b2c0b7347c8885ea78b29e58740b",
+        "finalLf": true,
+        "utf8": true,
+        "bom": false,
+        "crlf": 0,
+        "lfOnly": 387,
+        "crlfLines": []
+      },
+      "remoteBefore": {
+        "bytes": 23631,
+        "sha256": "2cd7a1a3272e4dd04b596130a4489e367a21b2c0b7347c8885ea78b29e58740b",
+        "normalizedSha256": "2cd7a1a3272e4dd04b596130a4489e367a21b2c0b7347c8885ea78b29e58740b",
+        "contentSha256": "2cd7a1a3272e4dd04b596130a4489e367a21b2c0b7347c8885ea78b29e58740b",
+        "finalLf": false,
+        "utf8": true,
+        "bom": false,
+        "crlf": 0,
+        "lfOnly": 386,
+        "crlfLines": []
+      },
+      "originalReceiptsAgree": true,
+      "localMatchesOriginalBytes": true,
+      "gitLocalEquivalentLF": true,
+      "equivalentNormalized": true
+    }
+  ],
+  "historicalRecords": 50,
+  "phase3Records": 247,
+  "snapshotRecords": 297,
+  "evidenceFiles": 47,
+  "loginAs": false
+}

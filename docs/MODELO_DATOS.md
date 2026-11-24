@@ -95,7 +95,7 @@ Restrict protege referencias activas, pero no sustituye la retirada del permiso 
 
 Inicio representa el registro del lanzamiento, incluida la espera en cola; su valor inicial es NOW. Finalización queda vacía mientras la ejecución está Encolada o En curso y es obligatoria en los estados finales, nunca anterior a Inicio.
 
-La fecha de corte, sus dos límites, la zona horaria, el solicitante y el inicio no pueden cambiar tras crear la ejecución. AsyncApexJobId puede asignarse una vez; es texto, no lookup y no valida que exista un trabajo real. El estado inicial es Encolada. El futuro servicio debe registrar el lanzamiento antes de encolar y completar el identificador de forma coherente con la transacción.
+La fecha de corte, sus dos límites, la zona horaria, el solicitante y el inicio no pueden cambiar tras crear la ejecución. AsyncApexJobId puede asignarse una vez; es texto, no lookup y no valida que exista un trabajo real. El estado inicial es Encolada. ServicioRenovaciones registra el lanzamiento antes de encolar y completa el identificador en la misma transacción.
 
 Los seis contadores son no negativos. Cinco corresponden a resultados confirmados por registro; LotesFallidos tiene unidad lote. La igualdad de resultados se exige en cada guardado: LoteRenovaciones actualiza contadores, seguimientos e incidencias dentro de la misma transacción. Una ejecución con fallos o reconciliación pendiente no puede presentarse como Completada.
 
@@ -143,3 +143,9 @@ Los scripts utilizan fixtures propios y verifican el código de error y, para la
 Las ejecuciones de comprobación no representan jobs Batch. Se conservan sin AsyncApexJobId y sin contadores de procesamiento ficticios; los valores sintéticos para comprobar la ecuación y sus rechazos quedan bajo rollback. La prueba de unicidad se limita a la misma clave exacta.
 
 Al cierre de fase 1B no se habían ejecutado pruebas de eliminación ni por roles. Fase 2 incorpora esas comprobaciones para las funciones comerciales y de coordinación; los resultados anteriores siguen siendo históricos. La prueba de cambio de solicitante utilizó otro usuario estándar activo existente. También se rechazaron alta y actualización con solicitante vacío. No se crearon usuarios.
+
+## Diagnóstico de reconciliación revisado
+
+La revisión de fase 3 no añade campos ni cambia validaciones. En incidencias con CodigoError__c=CONTRASTE_JOB, ClaveIntentada__c contiene la huella versionada de la observación del job, no una identidad de seguimiento. Mensaje__c explica el estado, contadores informados y detalle saneado. Una observación nueva añade una incidencia; no se actualizan ni eliminan las previas.
+
+LotesFallidos conserva resultados históricos y solo puede aumentarse automáticamente bajo las condiciones de la [política de diagnóstico](REVISION-FASE-3.md). Cero en ese campo con RequiereReconciliacion=true no acredita ausencia de fallos: puede significar que no hay un número de lotes atribuible con certeza. Evaluados, Creados, YaExistentes, Omitidos y Fallidos no se reconstruyen a partir del job. La persistencia de diagnóstico y estado es atómica.

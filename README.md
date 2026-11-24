@@ -6,7 +6,9 @@ Proyecto independiente para gestionar el seguimiento comercial de contratos fict
 
 Fase 3 implementada, validada y desplegada en la Developer Edition exclusiva P06, API 65.0. El lanzamiento manual captura una fecha y zona horaria, selecciona contratos Activos en la ventana inclusiva de 30 días y crea seguimientos mediante Batch Apex. La identidad canónica protege las inserciones y la repetición conserva los seguimientos existentes.
 
-Pruebas Apex: 14/14 correctas. Demostración real: 120 contratos elegibles, cuatro controles excluidos y tres lotes de tamaño máximo 50. El primer lanzamiento creó 120 seguimientos; la repetición reconoció los 120 existentes sin modificarlos. Se conservan los 50 registros históricos y 247 registros nuevos inventariados.
+Revisión acotada del 24/11/2026: diagnóstico de reconciliación corregido y trazabilidad de fuentes contrastada. [Resultados y límites](docs/REVISION-FASE-3.md).
+
+Pruebas Apex: 20/20 correctas, incluidas las 14 anteriores y seis regresiones. Demostración real: 120 contratos elegibles, cuatro controles excluidos y tres lotes de tamaño máximo 50. El primer lanzamiento creó 120 seguimientos; la repetición reconoció los 120 existentes sin modificarlos. Se conservan los 50 registros históricos y 247 registros nuevos inventariados.
 
 V1 sigue abierta: faltan las demostraciones de solapamiento real, interrupciones, fallos adversos y recuperación manual. Dos lanzamientos consecutivos no acreditan concurrencia ni rendimiento general.
 
@@ -30,8 +32,10 @@ Se mantienen cuatro objetos, 35 campos y 21 validaciones. Account conserva ReadW
 | manifest/fase-2.xml | Gestión comercial |
 | manifest/fase-2-navegacion.xml | Navegación de Informes |
 | manifest/fase-3.xml | 13 miembros explícitos; Salesforce procesó 21 componentes |
+| manifest/revision-fase-3.xml | Tres clases de la corrección del diagnóstico |
 | scripts/fase-1b y scripts/fase-2 | Procedimientos y comprobaciones anteriores |
 | scripts/fase-3 | Lanzamiento, contraste, demostración y conservación |
+| scripts/revision-fase-3 | Trazabilidad reproducible y conservación de la revisión |
 | docs/evidencias-fase-3 | Resultados sanitizados e inventario |
 
 No se añaden LWC, Flow, integraciones, comunicaciones, programación ni reintentos. El estado de autenticación y los inventarios privados quedan excluidos de Git.

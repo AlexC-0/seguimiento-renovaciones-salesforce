@@ -71,7 +71,7 @@ public with sharing class ServicioRenovaciones {
         // Metadatos de plataforma del único job vinculado; no concede View Setup ni lee otros jobs.
         List<AsyncApexJob> trabajos = Database.queryWithBinds(
             'SELECT Id, Status, NumberOfErrors, JobItemsProcessed, TotalJobItems, CreatedById, ' +
-            'JobType, ApexClass.Name FROM AsyncApexJob WHERE Id = :trabajo AND CreatedById = :solicitante',
+            'JobType, ExtendedStatus, ApexClass.Name FROM AsyncApexJob WHERE Id = :trabajo AND CreatedById = :solicitante',
             new Map<String, Object>{'trabajo' => ejecucion.AsyncApexJobId__c, 'solicitante' => UserInfo.getUserId()},
             AccessLevel.SYSTEM_MODE);
         if (trabajos.size() != 1 || trabajos[0].JobType != 'BatchApex' ||
@@ -84,28 +84,80 @@ public with sharing class ServicioRenovaciones {
     public static AsyncApexJob contrastar(Id identificador) {
         EjecucionRenovacion__c ejecucion = leerEjecucion(identificador);
         AsyncApexJob trabajo = leerTrabajo(ejecucion);
-        if (!new Set<String>{'Completed', 'Failed', 'Aborted'}.contains(trabajo.Status)) return trabajo;
-        Boolean cierreValido = trabajo.Status == 'Completed' && trabajo.NumberOfErrors == 0 &&
-            trabajo.JobItemsProcessed == trabajo.TotalJobItems &&
-            new Set<String>{'Completada', 'Completada con incidencias'}.contains(ejecucion.Estado__c) &&
-            !ejecucion.RequiereReconciliacion__c;
-        if (!cierreValido && !ejecucion.RequiereReconciliacion__c) {
-            Savepoint punto = Database.setSavepoint();
-            try {
-                ejecucion.RequiereReconciliacion__c = true;
-                ejecucion.Estado__c = trabajo.Status == 'Aborted' ? 'Abortada' : 'Fallida';
-                ejecucion.Finalizacion__c = System.now();
-                update as user ejecucion;
-                insert as user new IncidenciaRenovacion__c(
-                    Ejecucion__c = ejecucion.Id, Etapa__c = 'Reconciliación', CodigoError__c = 'CONTRASTE_JOB',
-                    Mensaje__c = 'Job ' + trabajo.Status + '; lotes procesados=' + trabajo.JobItemsProcessed +
-                        '; lotes totales=' + trabajo.TotalJobItems + '; errores=' + trabajo.NumberOfErrors +
-                        '. Se requiere revisar resultados persistidos; no se infieren resultados individuales.');
-            } catch (Exception error) {
-                Database.rollback(punto);
-                throw error;
-            }
-        }
+        aplicarEstadoTrabajo(ejecucion, trabajo, false);
         return trabajo;
+    }
+
+    public static void finalizar(Id identificador, Database.BatchableContext contexto) {
+        EjecucionRenovacion__c ejecucion = leerEjecucion(identificador);
+        if (contexto == null || ejecucion.AsyncApexJobId__c != String.valueOf(contexto.getJobId())) {
+            throw new ContextoInvalidoException('El cierre no corresponde al trabajo registrado.');
+        }
+        aplicarEstadoTrabajo(ejecucion, leerTrabajo(ejecucion), true);
+    }
+
+    @TestVisible
+    private static void aplicarEstadoTrabajo(EjecucionRenovacion__c ejecucion, AsyncApexJob trabajo, Boolean desdeFinish) {
+        exigirPermiso();
+        if (ejecucion.Solicitante__c != UserInfo.getUserId() || trabajo.CreatedById != UserInfo.getUserId() ||
+            ejecucion.AsyncApexJobId__c != String.valueOf(trabajo.Id) || trabajo.JobType != 'BatchApex') {
+            throw new ContextoInvalidoException('El diagnóstico requiere el trabajo vinculado y su solicitante.');
+        }
+        Boolean terminal = new Set<String>{'Completed', 'Failed', 'Aborted'}.contains(trabajo.Status);
+        if (!terminal && !(desdeFinish && trabajo.Status == 'Processing')) return;
+        Boolean resumenCoherente = trabajo.NumberOfErrors != null && trabajo.NumberOfErrors >= 0 &&
+            trabajo.JobItemsProcessed != null && trabajo.TotalJobItems != null && trabajo.TotalJobItems >= 0 &&
+            trabajo.JobItemsProcessed == trabajo.TotalJobItems && trabajo.NumberOfErrors <= trabajo.TotalJobItems;
+        Boolean cierrePersistido = new Set<String>{'Completada', 'Completada con incidencias'}.contains(ejecucion.Estado__c) &&
+            ejecucion.Finalizacion__c != null;
+        Boolean problema = !resumenCoherente || trabajo.NumberOfErrors != 0 ||
+            trabajo.Status == 'Failed' || trabajo.Status == 'Aborted' ||
+            ejecucion.RequiereReconciliacion__c || ejecucion.LotesFallidos__c > 0 || (!desdeFinish && !cierrePersistido);
+        if (!problema) {
+            if (desdeFinish) {
+                update as user new EjecucionRenovacion__c(Id = ejecucion.Id,
+                    Estado__c = ejecucion.Fallidos__c > 0 ? 'Completada con incidencias' : 'Completada',
+                    Finalizacion__c = ejecucion.Finalizacion__c == null ? System.now() : ejecucion.Finalizacion__c);
+            }
+            return;
+        }
+        // Failed/Aborted no identifican la fase del error. No se infieren scopes ni contratos perdidos.
+        Boolean computable = resumenCoherente &&
+            (trabajo.Status == 'Completed' || (desdeFinish && trabajo.Status == 'Processing'));
+        Decimal lotes = computable ? Math.max(ejecucion.LotesFallidos__c, trabajo.NumberOfErrors) : ejecucion.LotesFallidos__c;
+        String estado = trabajo.Status == 'Aborted' ? 'Abortada' : 'Fallida';
+        String detalle = LoteRenovaciones.sanear(trabajo.ExtendedStatus, 4096);
+        // Observación estable: no incluye reloj ni el estado de ejecución que cambia este mismo método.
+        String observacion = JSON.serialize(new List<String>{'v1', String.valueOf(trabajo.Id), trabajo.Status,
+            String.valueOf(trabajo.NumberOfErrors), String.valueOf(trabajo.JobItemsProcessed),
+            String.valueOf(trabajo.TotalJobItems), detalle});
+        String huella = 'CONTRASTE_JOB:v1:' + EncodingUtil.convertToHex(Crypto.generateDigest('SHA-256', Blob.valueOf(observacion)));
+        List<IncidenciaRenovacion__c> anteriores = [SELECT Id FROM IncidenciaRenovacion__c
+            WHERE Ejecucion__c = :ejecucion.Id AND Etapa__c = 'Reconciliación'
+            AND CodigoError__c = 'CONTRASTE_JOB' AND ClaveIntentada__c = :huella WITH USER_MODE LIMIT 1];
+        Boolean actualizar = !ejecucion.RequiereReconciliacion__c || ejecucion.Estado__c != estado ||
+            ejecucion.LotesFallidos__c != lotes || ejecucion.Finalizacion__c == null;
+        if (!actualizar && !anteriores.isEmpty()) return;
+        Savepoint punto = Database.setSavepoint();
+        try {
+            if (actualizar) {
+                update as user new EjecucionRenovacion__c(Id = ejecucion.Id, Estado__c = estado,
+                    RequiereReconciliacion__c = true, LotesFallidos__c = lotes,
+                    Finalizacion__c = ejecucion.Finalizacion__c == null ? System.now() : ejecucion.Finalizacion__c);
+            }
+            if (anteriores.isEmpty()) {
+                insert as user new IncidenciaRenovacion__c(Ejecucion__c = ejecucion.Id,
+                    Etapa__c = 'Reconciliación', CodigoError__c = 'CONTRASTE_JOB', ClaveIntentada__c = huella,
+                    Mensaje__c = 'Job=' + trabajo.Id + '; estado=' + trabajo.Status +
+                        '; NumberOfErrors=' + trabajo.NumberOfErrors + '; JobItemsProcessed=' + trabajo.JobItemsProcessed +
+                        '; TotalJobItems=' + trabajo.TotalJobItems + '; LotesFallidos conservados=' + lotes + '. ' +
+                        (computable ? 'Resumen completo: máximo entre histórico y fallos de lote informados. ' :
+                            'Fase o resumen no concluyente: se conserva el contador previo de lotes. ') +
+                        'Los resultados individuales no se reconstruyen. Revisión manual pendiente. Detalle: ' + detalle);
+            }
+        } catch (Exception error) {
+            Database.rollback(punto);
+            throw error;
+        }
     }
 }

@@ -25,3 +25,13 @@ Un fallo al guardar incidencias o contadores revierte también los seguimientos 
 finish consulta el job real y cierra los resultados normales. Si informa lotes fallidos, marca Fallida y RequiereReconciliacion, conservando contadores confirmados. No es la única vía de detección: un contraste manual autorizado compara la ejecución con su AsyncApexJob después de que termine. Ante aborto, fallo o ejecución sin cierre coherente, señala reconciliación y añade contexto sin inventar resultados individuales. No limpia la incertidumbre ni lanza reintentos.
 
 Los ensayos de aborto, fallos excepcionales, solapamiento real y recuperación adversa quedan para la fase siguiente. Las pruebas unitarias con un lote y la demostración real de tres lotes son evidencias separadas.
+
+## Corrección acotada del diagnóstico
+
+Una marca de reconciliación expresa incertidumbre, pero no documenta la observación que la causó. finish y contrastar utilizan ahora aplicarEstadoTrabajo, tras verificar permiso, solicitante, job y bloqueo de la ejecución. El contraste manual retorna sin escritura para trabajos activos. El cierre desde finish exige el contexto vinculado y permite la observación Processing propia de ese callback.
+
+El diagnóstico registra estado, NumberOfErrors, JobItemsProcessed, TotalJobItems, contador de lotes conservado y ExtendedStatus saneado. Una huella SHA-256 versionada de job, estado, sus tres contadores y detalle saneado se guarda en ClaveIntentada__c bajo CodigoError__c=CONTRASTE_JOB. La consulta USER_MODE de esa huella, bajo el bloqueo de la ejecución, evita repetir la observación. No incorpora el reloj ni los campos que la misma operación cambia. Un cambio de esos datos permite otra incidencia; las anteriores, incluidas las que no tienen huella, permanecen intactas.
+
+La actualización usa solo estado, finalización, reconciliación y LotesFallidos; no reescribe resultados individuales. Si falta diagnóstico, actualización e inserción pertenecen al mismo savepoint: cualquier fallo revierte ambas y se propaga. Una observación ya registrada no requiere escrituras si la ejecución conserva el estado esperado. Una finalización existente no se sustituye; una ausente se registra al diagnosticar, sin atribuir esa hora al fin exacto del job.
+
+NumberOfErrors se utiliza como contador de lotes informado solo dentro de la política conservadora de [REVISION-FASE-3.md](REVISION-FASE-3.md). Completed o Processing dentro de finish, con resumen completo y límites coherentes, permiten tomar el máximo histórico. Failed, Aborted o un resumen incompleto/inconsistente conservan el contador anterior y registran la información observada, porque no acreditan la fase de fallo ni resultados individuales. La marca de reconciliación nunca se limpia automáticamente.

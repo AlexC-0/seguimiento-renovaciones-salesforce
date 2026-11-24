@@ -1,10 +1,20 @@
 # Estado del proyecto
 
-Fecha: 23/11/2026.
+Fecha: 24/11/2026.
 
-## Situación de fase 3
+## Revisión acotada de fase 3
 
-Fase 3 completada dentro del alcance de lanzamiento manual y procesamiento, sobre 0716f9fc41d2b2142a79d9abd495f8236783ce03. Validación 0Afg700000L0MUHCA3 y despliegue 0Afg700000L0NQLCA3 terminados Succeeded, con 21/21 componentes y 14/14 pruebas Apex. Fuentes validadas y desplegadas coincidentes.
+Completada sobre 31528e267a3f2d65ba41015dc1ef9a5838c56195. Las tres discrepancias de huella se explican por un CRLF final local convertido a LF en el blob Git. Los recibos originales coinciden con los bytes locales capturados. La lectura de las clases remotas omite el LF final; el contenido coincide al aplicar las normalizaciones explícitas N1 y N2. Se conservan las huellas originales y se añade un contraste reproducible; no había una diferencia funcional oculta.
+
+finish y contrastar comparten diagnóstico atómico, incluso con reconciliación previamente marcada. Una huella de la observación evita incidencias repetidas y conserva novedades. LotesFallidos solo aumenta con información admitida por la política documentada; los cinco contadores individuales no se reconstruyen ni se modifica automáticamente la marca de incertidumbre.
+
+Validación 0Afg700000L6u8HCAR y despliegue 0Afg700000L6huECAR terminados Succeeded: tres clases y 20/20 pruebas. Fuentes remotas contrastadas después del despliegue. Conservación: 297/297 registros, 47/47 archivos históricos de evidencia y asignaciones comerciales intactas. Cero jobs Batch persistentes nuevos; Login As=false. La primera validación registró 19/20 por una aserción del tipo de excepción CRUD; su recibo se conserva separado.
+
+Los estados adversos de las regresiones son observaciones controladas en memoria, vinculadas a jobs reales de prueba sin fallos. No se ejecutaron ensayos reales de solapamiento, aborto o recuperación, ni se relanzaron demostraciones. V1 sigue abierta. Véanse [REVISION-FASE-3.md](REVISION-FASE-3.md) y [comprobacion-final.json](evidencias-revision-fase-3/comprobacion-final.json).
+
+## Situación al cierre inicial de fase 3
+
+Fase 3 completada dentro del alcance de lanzamiento manual y procesamiento, sobre 0716f9fc41d2b2142a79d9abd495f8236783ce03. Validación 0Afg700000L0MUHCA3 y despliegue 0Afg700000L0NQLCA3 terminados Succeeded, con 21/21 componentes y 14/14 pruebas Apex. La comprobación original comparó las huellas de archivos locales del paquete; el contraste adicional con blobs publicados y Body remoto figura en la revisión del 24/11/2026.
 
 Dos jobs reales completaron tres lotes cada uno: 707g700001DKOHsAAP creó 120 seguimientos y 707g700001DLwdpAAD reconoció los mismos 120 sin cambios. Corte 23/11/2026, zona del solicitante Europe/Paris, fin 23/12/2026. Cero fallidos, omitidos, incidencias o lotes fallidos. Los cuatro controles excluidos no generaron seguimientos.
 

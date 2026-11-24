@@ -22,7 +22,11 @@ Lanzamiento manual, Batch, identidad canónica y contraste implementados. Valida
 
 Fase 2 completada: gestión comercial estándar, acceso por función, compartición e informe comprobados; 19 fixtures históricos y 31 nuevos conservados. Ver docs/FASE-2.md y docs/ACCESO.md. Login As restaurado a false y conexión temporal de navegador detenida. Las autorizaciones temporales de esta comprobación están cerradas; no son tareas pendientes. No iniciar el procesamiento de fases posteriores sin un nuevo encargo.
 
-## Alcance
+## Revisión acotada de fase 3
+
+Revisión sobre 31528e267a3f2d65ba41015dc1ef9a5838c56195. Resolver trazabilidad de fuentes y diagnóstico de reconciliación. Conservar los 50 registros históricos, los 247 de fase 3 y todas sus evidencias. No relanzar demostraciones, iniciar ensayos reales de fase 4, habilitar Login As, ampliar permisos ni crear usuarios persistentes. Validar y desplegar únicamente las clases corregidas con manifest/revision-fase-3.xml. Ver docs/REVISION-FASE-3.md.
+
+## Alcance histórico de fase 3
 
 Fase 3: lanzamiento técnico manual, Batch Apex, identidad canónica, resultados parciales, pruebas Apex y demostración aislada de 120 contratos en lotes de 50 seguida de repetición. Destino exclusivo p06-renovaciones-dev, Developer Edition, API 65.0; contrastar la identidad con el registro privado de fase 1B antes de escribir.
 
