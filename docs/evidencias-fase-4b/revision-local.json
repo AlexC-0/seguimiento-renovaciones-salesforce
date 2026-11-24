@@ -1,0 +1,45 @@
+{
+  "timestamp": "2026-11-24T09:07:52.276Z",
+  "baseline": "abfcba0e7aa682084fc93fb23fe6c0ba9cd9e998",
+  "branch": "main",
+  "indexEmpty": true,
+  "gitDiffCheck": true,
+  "scriptSyntax": [
+    "scripts/fase-4b/abortar.cjs",
+    "scripts/fase-4b/comprobar-reversion.cjs",
+    "scripts/fase-4b/comun.cjs",
+    "scripts/fase-4b/documentar.cjs",
+    "scripts/fase-4b/finalizar.cjs",
+    "scripts/fase-4b/inspeccionar.cjs",
+    "scripts/fase-4b/motor.cjs",
+    "scripts/fase-4b/observador.cjs",
+    "scripts/fase-4b/observador.test.cjs",
+    "scripts/fase-4b/preparar.cjs",
+    "scripts/fase-4b/recuperar.cjs",
+    "scripts/fase-4b/reglas.cjs",
+    "scripts/fase-4b/reversion.cjs",
+    "scripts/fase-4b/revisar-local.cjs",
+    "scripts/fase-4b/traza.cjs"
+  ],
+  "tests": {
+    "command": "node --test --test-reporter=tap scripts/fase-4b/observador.test.cjs",
+    "passed": 4,
+    "failed": 0,
+    "scope": "Regresiones del observador, ejecutadas antes del ensayo; fuentes idénticas"
+  },
+  "xml": {
+    "files": 6,
+    "wellFormed": true,
+    "namespace": "http://soap.sforce.com/2006/04/metadata"
+  },
+  "parsedEvidenceJson": 44,
+  "relativeLinksChecked": 71,
+  "publicSensitivePatternMatches": [],
+  "whitespaceIssues": [],
+  "privateStateIgnored": true,
+  "previousEvidenceUnchanged": true,
+  "previousEvidenceCount": 82,
+  "applicationUnchanged": true,
+  "apexTestsRunInThisPhase": false,
+  "pass": true
+}

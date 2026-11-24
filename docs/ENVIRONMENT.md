@@ -92,3 +92,11 @@ El 24/11/2026 se comprobó el destino p06-renovaciones-dev con API 65.0 y la ide
 Los ensayos usaron CLI/API y no requirieron navegador ni Login As. Corte 2026-11-24, fin 2026-12-24 y zona Salesforce Europe/Paris. Los timestamps de evidencia están en UTC. Usuarios y permisos comerciales conservados.
 
 La única configuración temporal fue P06_F4A_RechazoAcotado, inicialmente ausente, limitada a la creación para un contrato nuevo exacto. Se validó antes de cada despliegue y quedó inactiva verificada. Los paquetes MDAPI se conservan bajo docs/evidencias-fase-4a, fuera del paquete de aplicación. ZIP con manifiesto raíz y separadores /; los rechazos de empaquetado anteriores se conservan. No hubo cambios de aplicación, servicios, túneles ni reintentos automáticos. [Resultados y recibos](FASE-4A.md).
+
+## Entorno de fase 4B
+
+El 24/11/2026 se verificó el mismo destino P06 con API 65.0. Node 24.13.0 y CLI 2.158.7 reutilizados sin cambios globales. La instantánea inicial registró cero Batch activos, 14999 solicitudes API y 250000 ejecuciones asíncronas disponibles; no son garantías de capacidad.
+
+Se validaron y desplegaron dos reglas temporales limitadas a un contrato nuevo para rechazar seguimiento y auditoría de Creación. Ambas quedaron inactivas verificadas antes de recuperar; F4A permaneció inactiva. Los ZIP y recibos están fuera del paquete de aplicación. Una traza USER_DEBUG limitada al operador y su DebugLevel propios se retiraron después de recoger logs del rollback; la traza anterior no cambió.
+
+Cuatro jobs del ensayo, dos recuperaciones manuales. Corte 2026-11-24, fin 2026-12-24, Europe/Paris; evidencia en UTC. Conexión CLI/API sin navegador ni Login As. No se modificaron usuarios, permisos o configuración global. 48 registros nuevos conservados junto a los 374 anteriores. [Detalle y restauración](FASE-4B.md).

@@ -1,0 +1,26 @@
+{
+  "timestamp": "2026-11-24T09:05:30.203Z",
+  "pass": true,
+  "job": "707g700001DaJUFAA3",
+  "execution": "a01g700001MNnNpAAL",
+  "created": 10,
+  "existing": 0,
+  "newFollowIds": [
+    "a03g700000tTtSrAAK",
+    "a03g700000tTtSsAAK",
+    "a03g700000tTtStAAK",
+    "a03g700000tTtSuAAK",
+    "a03g700000tTtSvAAK",
+    "a03g700000tTtSwAAK",
+    "a03g700000tTtSxAAK",
+    "a03g700000tTtSyAAK",
+    "a03g700000tTtSzAAK",
+    "a03g700000tTtT0AAK"
+  ],
+  "existingUnchanged": true,
+  "originalExecutionAndIncidentsUnchanged": true,
+  "originalReconciliation": true,
+  "canonical": true,
+  "newExecution": true,
+  "automaticRetry": false
+}

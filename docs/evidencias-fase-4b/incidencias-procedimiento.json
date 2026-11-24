@@ -1,0 +1,13 @@
+{
+  "recordedAt": "2026-11-24T09:04:46.305Z",
+  "items": [
+    {
+      "stage": "Preparación local de archivos",
+      "problem": "Error de sintaxis al construir un script con literales anidados",
+      "effect": "El generador no se ejecutó; no hubo consultas, despliegues ni jobs por ese intento",
+      "correction": "Escritura literal de archivos y comprobación node --check antes de ejecutar"
+    }
+  ],
+  "salesforceFailedValidations": 0,
+  "applicationDefectObserved": false
+}

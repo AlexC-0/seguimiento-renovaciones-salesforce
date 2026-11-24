@@ -1,0 +1,107 @@
+{
+  "timestamp": "2026-11-24T09:01:59.476Z",
+  "pass": true,
+  "job": "707g700001DaQaQAAV",
+  "execution": "a01g700001MNaFJAA1",
+  "scopeSource": "VARIABLE_ASSIGNMENT de alcance en execute, vinculado a la ejecución; no se deduce del orden ni de NumberOfErrors",
+  "scopes": [
+    {
+      "log": "07Lg700000EfX9eEAF",
+      "start": "2026-11-24T09:00:09.000+0000",
+      "sha256": "acb2aa218e4b614fdc476be82fbc8e64e77e2d0949dc4300c092834fed4e4d3b",
+      "scope": [
+        "a00g700002bNoPBAA0",
+        "a00g700002bNoPCAA0",
+        "a00g700002bNoPDAA0",
+        "a00g700002bNoPEAA0",
+        "a00g700002bNoPFAA0"
+      ],
+      "executionLinked": true,
+      "insertResults": [
+        {
+          "success": false
+        },
+        {
+          "success": true,
+          "id": "a03g700000tTqWfAAK"
+        },
+        {
+          "success": true,
+          "id": "a03g700000tTqWgAAK"
+        },
+        {
+          "success": true,
+          "id": "a03g700000tTqWhAAK"
+        },
+        {
+          "success": true,
+          "id": "a03g700000tTqWiAAK"
+        }
+      ],
+      "tentativeSuccesses": 4,
+      "individualFailures": 1,
+      "rolledBack": true,
+      "rejectedAudit": true,
+      "fatalError": true,
+      "persistedFollows": []
+    },
+    {
+      "log": "07Lg700000EfX9fEAF",
+      "start": "2026-11-24T09:00:09.000+0000",
+      "sha256": "7b1fb9d98de69fb430605fdfab1dc947e75e943307691e10804aff5c00f2c56b",
+      "scope": [
+        "a00g700002bNoPGAA0",
+        "a00g700002bNoPHAA0",
+        "a00g700002bNoPIAA0",
+        "a00g700002bNoPJAA0",
+        "a00g700002bNoPKAA0"
+      ],
+      "executionLinked": true,
+      "insertResults": [
+        {
+          "success": true,
+          "id": "a03g700000tTqWjAAK"
+        },
+        {
+          "success": true,
+          "id": "a03g700000tTqWkAAK"
+        },
+        {
+          "success": true,
+          "id": "a03g700000tTqWlAAK"
+        },
+        {
+          "success": true,
+          "id": "a03g700000tTqWmAAK"
+        },
+        {
+          "success": true,
+          "id": "a03g700000tTqWnAAK"
+        }
+      ],
+      "tentativeSuccesses": 5,
+      "individualFailures": 0,
+      "rolledBack": false,
+      "rejectedAudit": false,
+      "fatalError": false,
+      "persistedFollows": [
+        "a03g700000tTqWjAAK",
+        "a03g700000tTqWkAAK",
+        "a03g700000tTqWlAAK",
+        "a03g700000tTqWmAAK",
+        "a03g700000tTqWnAAK"
+      ]
+    }
+  ],
+  "tentativePersisted": 0,
+  "individualIncidentsPersisted": 0,
+  "confirmedCounters": {
+    "Evaluados": 5,
+    "Creados": 5,
+    "YaExistentes": 0,
+    "Omitidos": 0,
+    "Fallidos": 0,
+    "LotesFallidos": 1
+  },
+  "wholeScopeRollback": true
+}

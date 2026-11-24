@@ -1,0 +1,40 @@
+{
+  "timestamp": "2026-11-24T09:04:13.126Z",
+  "job": {
+    "Id": "707g700001DZSWQAA5",
+    "Status": "Aborted",
+    "NumberOfErrors": 0,
+    "JobItemsProcessed": 0,
+    "TotalJobItems": 0,
+    "CreatedDate": "2026-11-24T09:03:58.000+0000",
+    "CompletedDate": "2026-11-24T09:03:59.000+0000",
+    "ExtendedStatus": "job 707g700001DZSWQAA5 aborted"
+  },
+  "execution": {
+    "Id": "a01g700001MNm3ZAAT",
+    "IsDeleted": false,
+    "Name": "EJE-000015",
+    "CreatedDate": "2026-11-24T09:03:58.000+0000",
+    "LastModifiedDate": "2026-11-24T09:03:59.000+0000",
+    "SystemModstamp": "2026-11-24T09:03:59.000+0000",
+    "LastViewedDate": null,
+    "LastReferencedDate": null,
+    "AsyncApexJobId__c": "707g700001DZSWQAA5",
+    "Creados__c": 0,
+    "Estado__c": "Encolada",
+    "Evaluados__c": 0,
+    "Fallidos__c": 0,
+    "FechaCorte__c": "2026-11-24",
+    "FinVentana__c": "2026-12-24",
+    "Finalizacion__c": null,
+    "InicioVentana__c": "2026-11-24",
+    "Inicio__c": "2026-11-24T09:03:58.000+0000",
+    "LotesFallidos__c": 0,
+    "Omitidos__c": 0,
+    "RequiereReconciliacion__c": false,
+    "YaExistentes__c": 0,
+    "ZonaHoraria__c": "Europe/Paris"
+  },
+  "follows": [],
+  "incidents": []
+}

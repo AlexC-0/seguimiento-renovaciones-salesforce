@@ -1,0 +1,29 @@
+{
+  "timestamp": "2026-11-24T09:02:59.190Z",
+  "originalJob": "707g700001DaQaQAAV",
+  "originalExecution": "a01g700001MNaFJAA1",
+  "originalState": "Fallida",
+  "originalReconciliation": true,
+  "missingContractIds": [
+    "a00g700002bNoPBAA0",
+    "a00g700002bNoPCAA0",
+    "a00g700002bNoPDAA0",
+    "a00g700002bNoPEAA0",
+    "a00g700002bNoPFAA0"
+  ],
+  "expectedCreated": 5,
+  "expectedExisting": 5,
+  "samples": [
+    {
+      "id": "a03g700000tTqWjAAK",
+      "state": "Cerrado",
+      "notes": "P06 F4B: muestra ficticia que debe conservar la nueva ejecución."
+    },
+    {
+      "id": "a03g700000tTqWkAAK",
+      "state": "En curso",
+      "notes": "P06 F4B: muestra ficticia que debe conservar la nueva ejecución."
+    }
+  ],
+  "context": "Revisión y preparación técnica de datos ficticios nuevos; sin sesión comercial adicional."
+}

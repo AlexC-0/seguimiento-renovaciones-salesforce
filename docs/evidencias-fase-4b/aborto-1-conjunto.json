@@ -1,0 +1,61 @@
+{
+  "label": "aborto-1",
+  "timestamp": "2026-11-24T09:03:42.928Z",
+  "cut": "2026-11-24",
+  "end": "2026-12-24",
+  "timezone": "Europe/Paris",
+  "eligible": 10,
+  "account": "001g700001MNlKPAA1",
+  "contracts": [
+    {
+      "id": "a00g700002bMdqoAAC",
+      "expiry": "2026-12-04"
+    },
+    {
+      "id": "a00g700002bMdqpAAC",
+      "expiry": "2026-12-05"
+    },
+    {
+      "id": "a00g700002bMdqqAAC",
+      "expiry": "2026-12-06"
+    },
+    {
+      "id": "a00g700002bMdqrAAC",
+      "expiry": "2026-12-07"
+    },
+    {
+      "id": "a00g700002bMdqsAAC",
+      "expiry": "2026-12-08"
+    },
+    {
+      "id": "a00g700002bMdqtAAC",
+      "expiry": "2026-12-09"
+    },
+    {
+      "id": "a00g700002bMdquAAC",
+      "expiry": "2026-12-10"
+    },
+    {
+      "id": "a00g700002bMdqvAAC",
+      "expiry": "2026-12-11"
+    },
+    {
+      "id": "a00g700002bMdqwAAC",
+      "expiry": "2026-12-12"
+    },
+    {
+      "id": "a00g700002bMdqxAAC",
+      "expiry": "2026-12-13"
+    }
+  ],
+  "initialFollows": 0,
+  "queryChecks": [
+    {
+      "object": "ContratoComercial__c",
+      "requested": 10,
+      "retrieved": 10,
+      "pages": 1,
+      "done": true
+    }
+  ]
+}

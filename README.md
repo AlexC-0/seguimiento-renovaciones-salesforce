@@ -12,7 +12,9 @@ Pruebas Apex: 20/20 correctas, incluidas las 14 anteriores y seis regresiones. D
 
 Fase 4A comprobada el 24/11/2026: dos jobs observados simultáneamente en Processing sobre 30 contratos; rechazo individual real de uno entre cinco y recuperación manual con una creación y cuatro existentes. Los 297 registros anteriores y 51 archivos de evidencia se conservan; quedan 77 registros nuevos inventariados. La regla temporal de ensayo está inactiva. [Resultados y límites](docs/FASE-4A.md).
 
-V1 sigue abierta: quedan sin demostrar la colisión de inserción, los abortos, la reversión completa de un lote y su recuperación, así como los casos temporales indicados en los criterios. El solapamiento observado no acredita rendimiento general.
+Fase 4B comprobada: reversión completa de un lote con conservación del otro, aborto antes de comenzar y dos recuperaciones manuales que conservan historia. Los 374 registros anteriores y 82 evidencias siguen intactos; quedan 48 nuevos. Las reglas temporales están inactivas y la traza retirada. [Resultados](docs/FASE-4B.md).
+
+V1 sigue abierta. No se acreditan aborto a mitad del procesamiento, errores reales de start/finish, colisión de inserción, cruce de medianoche ni cambio estacional. Estos ensayos no acreditan rendimiento general.
 
 ## Funciones
 
@@ -22,7 +24,7 @@ V1 sigue abierta: quedan sin demostrar la colisión de inserción, los abortos, 
 - Informe Seguimientos de renovación pendientes: Pendiente o En curso y Aplicable=true, incluidos atrasados; agrupación por responsable y orden de vencimiento.
 - Compartición manual de contratos tras transferencias, con revisión explícita de concesiones. No existe sincronización automática de propietarios.
 
-El paquete de aplicación mantiene cuatro objetos, 35 campos y 21 validaciones. La organización conserva además la regla de ensayo de fase 4A inactiva. Account conserva ReadWrite interno; el permiso comercial solo concede lectura. Los detalles están en [Acceso](docs/ACCESO.md).
+El paquete de aplicación mantiene cuatro objetos, 35 campos y 21 validaciones. La organización conserva además tres reglas de ensayo inactivas, una de fase 4A y dos de fase 4B. Account conserva ReadWrite interno; el permiso comercial solo concede lectura. Los detalles están en [Acceso](docs/ACCESO.md).
 
 ## Estructura
 
@@ -39,6 +41,7 @@ El paquete de aplicación mantiene cuatro objetos, 35 campos y 21 validaciones. 
 | scripts/fase-3 | Lanzamiento, contraste, demostración y conservación |
 | scripts/revision-fase-3 | Trazabilidad reproducible y conservación de la revisión |
 | docs/evidencias-fase-3 | Resultados sanitizados e inventario |
+| scripts/fase-4b y docs/evidencias-fase-4b | Reversión, aborto, recuperación, conservación y reglas temporales |
 | scripts/fase-4a | Ensayos acotados, recuperación y conservación |
 | docs/evidencias-fase-4a | Resultados por escenario y regla temporal fuera de la aplicación |
 
@@ -46,6 +49,8 @@ No se añaden LWC, Flow, integraciones, comunicaciones, programación ni reinten
 
 ## Documentación
 
+- [Fase 4B: reversión, aborto y recuperación](docs/FASE-4B.md)
+- [Evidencias de fase 4B](docs/evidencias-fase-4b.json)
 - [Fase 4A: solapamiento, rechazo individual y recuperación](docs/FASE-4A.md)
 - [Evidencias de fase 4A](docs/evidencias-fase-4a.json)
 - [Fase 3: resultados y procedimiento](docs/FASE-3.md)

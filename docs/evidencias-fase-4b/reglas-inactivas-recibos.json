@@ -1,0 +1,38 @@
+{
+  "timestamp": "2026-11-24T09:01:03.205Z",
+  "validation": {
+    "id": "0Afg700000L7EerCAF",
+    "status": "Succeeded",
+    "done": true,
+    "success": true,
+    "checkOnly": true,
+    "components": 2,
+    "tests": 0
+  },
+  "deployment": {
+    "id": "0Afg700000L7EoXCAV",
+    "status": "Succeeded",
+    "done": true,
+    "success": true,
+    "checkOnly": false,
+    "components": 2,
+    "tests": 0
+  },
+  "packageSha256": "47990c466442a1b594b7db0d9c372961c6f285438edf45d208dc3cc7707c9056",
+  "checks": [
+    {
+      "object": "SeguimientoRenovacion__c",
+      "name": "P06_F4B_RechazoSeguimiento",
+      "active": false,
+      "formula": "AND(ISNEW(), CASESAFEID(Contrato__c) = \"a00g700002bNoPBAA0\")",
+      "previousRulesUnchanged": true
+    },
+    {
+      "object": "IncidenciaRenovacion__c",
+      "name": "P06_F4B_RechazoAuditoria",
+      "active": false,
+      "formula": "AND(ISNEW(), CASESAFEID(Contrato__c) = \"a00g700002bNoPBAA0\", ISPICKVAL(Etapa__c, \"Creación\"))",
+      "previousRulesUnchanged": true
+    }
+  ]
+}

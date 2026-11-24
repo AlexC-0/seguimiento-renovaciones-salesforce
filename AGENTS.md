@@ -22,7 +22,19 @@ Lanzamiento manual, Batch, identidad canónica y contraste implementados. Valida
 
 Fase 2 completada: gestión comercial estándar, acceso por función, compartición e informe comprobados; 19 fixtures históricos y 31 nuevos conservados. Ver docs/FASE-2.md y docs/ACCESO.md. Login As restaurado a false y conexión temporal de navegador detenida. Las autorizaciones temporales de esta comprobación están cerradas; no son tareas pendientes. No iniciar el procesamiento de fases posteriores sin un nuevo encargo.
 
-## Alcance vigente de fase 4A
+## Alcance vigente de fase 4B
+
+Ensayos reales de reversión completa de execute por fallo de auditoría, aborto de un job identificado y recuperación manual sobre abfcba0e7aa682084fc93fb23fe6c0ba9cd9e998. Destino exclusivo p06-renovaciones-dev, API 65.0. Conservar los 374 registros anteriores y sus evidencias; contratos nuevos inventariados y selección explícita por IDs.
+
+Dos reglas temporales limitadas a un contrato nuevo: rechazo de seguimiento y de su incidencia de Creación. Mantener Reconciliación disponible, conservar componentes fuera de la aplicación y verificar desactivación antes de recuperar y al terminar. La regla F4A permanece inactiva. Observación acotada que distingue cierre de job y ejecución; contraste repetido conserva resultados y diagnósticos. Abortar solo el job vinculado, tras verificar clase y solicitante; máximo dos intentos separados si el primero termina antes.
+
+No modificar usuarios, permisos comerciales, configuración global ni Login As. No forzar concurrencia, medianoche, cambio estacional o rendimiento. Correcciones de aplicación solo ante defecto acreditado, con regresión y validación previa. No cerrar V1 ni ejecutar staging, commit o push.
+
+## Resultado de fase 4B
+
+Reversión real de execute por auditoría rechazada, con otro lote confirmado, y aborto antes de comenzar comprobados. Recuperaciones manuales: cinco creados y cinco existentes tras rollback; diez creados tras aborto. Conservar 374 registros anteriores, 48 nuevos y todas las evidencias; no reactivar ni repetir ensayos cerrados. Reglas F4B y F4A inactivas, TraceFlag/DebugLevel propios retirados. Dos historias adversas conservan diagnóstico y reconciliación; informe técnico con 179 IDs. Sin cambios de aplicación; cuatro regresiones del observador correctas. Ver docs/FASE-4B.md. V1 abierta; otros escenarios requieren nuevo alcance.
+
+## Antecedente: alcance de fase 4A
 
 Comprobar solapamiento observado, rechazo individual real y recuperación por nuevo lanzamiento manual, sobre 563b4399447898a1d86c5bc0312aded2c15ce897. Destino exclusivo p06-renovaciones-dev, API 65.0, identidad verificada antes de escribir. Conservar los 297 registros previos y sus evidencias mediante inventario completo y comparación final. Usar solo contratos nuevos inventariados y filtros explícitos de Id.
 

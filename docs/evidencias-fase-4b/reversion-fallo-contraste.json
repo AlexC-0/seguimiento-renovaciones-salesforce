@@ -1,0 +1,122 @@
+{
+  "observations": [
+    {
+      "pass": 1,
+      "job": {
+        "Id": "707g700001DaQaQAAV",
+        "Status": "Completed",
+        "NumberOfErrors": 1,
+        "JobItemsProcessed": 2,
+        "TotalJobItems": 2,
+        "CreatedDate": "2026-11-24T09:00:08.000+0000",
+        "CompletedDate": "2026-11-24T09:00:10.000+0000",
+        "ExtendedStatus": "First error: Insert failed. First exception on row 0; first error: FIELD_CUSTOM_VALIDATION_EXCEPTION, P06_F4B_RechazoAuditoria: rechazo acotado de ensayo.: [Contrato__c]"
+      },
+      "execution": {
+        "Id": "a01g700001MNaFJAA1",
+        "IsDeleted": false,
+        "Name": "EJE-000013",
+        "CreatedDate": "2026-11-24T09:00:08.000+0000",
+        "LastModifiedDate": "2026-11-24T09:00:10.000+0000",
+        "SystemModstamp": "2026-11-24T09:00:10.000+0000",
+        "LastViewedDate": null,
+        "LastReferencedDate": null,
+        "AsyncApexJobId__c": "707g700001DaQaQAAV",
+        "Creados__c": 5,
+        "Estado__c": "Fallida",
+        "Evaluados__c": 5,
+        "Fallidos__c": 0,
+        "FechaCorte__c": "2026-11-24",
+        "FinVentana__c": "2026-12-24",
+        "Finalizacion__c": "2026-11-24T09:00:10.000+0000",
+        "InicioVentana__c": "2026-11-24",
+        "Inicio__c": "2026-11-24T09:00:08.000+0000",
+        "LotesFallidos__c": 1,
+        "Omitidos__c": 0,
+        "RequiereReconciliacion__c": true,
+        "YaExistentes__c": 0,
+        "ZonaHoraria__c": "Europe/Paris"
+      },
+      "incidents": [
+        {
+          "Id": "a02g700000F7tIWAAZ",
+          "IsDeleted": false,
+          "Name": "INC-000005",
+          "CreatedDate": "2026-11-24T09:00:10.000+0000",
+          "LastModifiedDate": "2026-11-24T09:00:10.000+0000",
+          "SystemModstamp": "2026-11-24T09:00:10.000+0000",
+          "LastViewedDate": null,
+          "LastReferencedDate": null,
+          "CamposAfectados__c": null,
+          "ClaveIntentada__c": "CONTRASTE_JOB:v1:789bed2c393923cf09f276795bb0ac767e7043a9cad2f280f83a7b2a46bd0cd7",
+          "CodigoError__c": "CONTRASTE_JOB",
+          "Contrato__c": null,
+          "Ejecucion__c": "a01g700001MNaFJAA1",
+          "Etapa__c": "Reconciliación",
+          "Mensaje__c": "Job=707g700001DaQaQAAV; estado=Completed; NumberOfErrors=1; JobItemsProcessed=2; TotalJobItems=2; LotesFallidos conservados=1. Resumen completo: máximo entre histórico y fallos de lote informados. Los resultados individuales no se reconstruyen. Revisión manual pendiente. Detalle: First error: Insert failed. First exception on row 0; first error: FIELD_CUSTOM_VALIDATION_EXCEPTION, P06_F4B_RechazoAuditoria: rechazo acotado de ensayo.: [Contrato__c]"
+        }
+      ]
+    },
+    {
+      "pass": 2,
+      "job": {
+        "Id": "707g700001DaQaQAAV",
+        "Status": "Completed",
+        "NumberOfErrors": 1,
+        "JobItemsProcessed": 2,
+        "TotalJobItems": 2,
+        "CreatedDate": "2026-11-24T09:00:08.000+0000",
+        "CompletedDate": "2026-11-24T09:00:10.000+0000",
+        "ExtendedStatus": "First error: Insert failed. First exception on row 0; first error: FIELD_CUSTOM_VALIDATION_EXCEPTION, P06_F4B_RechazoAuditoria: rechazo acotado de ensayo.: [Contrato__c]"
+      },
+      "execution": {
+        "Id": "a01g700001MNaFJAA1",
+        "IsDeleted": false,
+        "Name": "EJE-000013",
+        "CreatedDate": "2026-11-24T09:00:08.000+0000",
+        "LastModifiedDate": "2026-11-24T09:00:10.000+0000",
+        "SystemModstamp": "2026-11-24T09:00:10.000+0000",
+        "LastViewedDate": null,
+        "LastReferencedDate": null,
+        "AsyncApexJobId__c": "707g700001DaQaQAAV",
+        "Creados__c": 5,
+        "Estado__c": "Fallida",
+        "Evaluados__c": 5,
+        "Fallidos__c": 0,
+        "FechaCorte__c": "2026-11-24",
+        "FinVentana__c": "2026-12-24",
+        "Finalizacion__c": "2026-11-24T09:00:10.000+0000",
+        "InicioVentana__c": "2026-11-24",
+        "Inicio__c": "2026-11-24T09:00:08.000+0000",
+        "LotesFallidos__c": 1,
+        "Omitidos__c": 0,
+        "RequiereReconciliacion__c": true,
+        "YaExistentes__c": 0,
+        "ZonaHoraria__c": "Europe/Paris"
+      },
+      "incidents": [
+        {
+          "Id": "a02g700000F7tIWAAZ",
+          "IsDeleted": false,
+          "Name": "INC-000005",
+          "CreatedDate": "2026-11-24T09:00:10.000+0000",
+          "LastModifiedDate": "2026-11-24T09:00:10.000+0000",
+          "SystemModstamp": "2026-11-24T09:00:10.000+0000",
+          "LastViewedDate": null,
+          "LastReferencedDate": null,
+          "CamposAfectados__c": null,
+          "ClaveIntentada__c": "CONTRASTE_JOB:v1:789bed2c393923cf09f276795bb0ac767e7043a9cad2f280f83a7b2a46bd0cd7",
+          "CodigoError__c": "CONTRASTE_JOB",
+          "Contrato__c": null,
+          "Ejecucion__c": "a01g700001MNaFJAA1",
+          "Etapa__c": "Reconciliación",
+          "Mensaje__c": "Job=707g700001DaQaQAAV; estado=Completed; NumberOfErrors=1; JobItemsProcessed=2; TotalJobItems=2; LotesFallidos conservados=1. Resumen completo: máximo entre histórico y fallos de lote informados. Los resultados individuales no se reconstruyen. Revisión manual pendiente. Detalle: First error: Insert failed. First exception on row 0; first error: FIELD_CUSTOM_VALIDATION_EXCEPTION, P06_F4B_RechazoAuditoria: rechazo acotado de ensayo.: [Contrato__c]"
+        }
+      ]
+    }
+  ],
+  "individualCountersPreserved": true,
+  "previousFollowsAndIncidentsPreserved": true,
+  "secondPassUnchanged": true,
+  "pass": true
+}

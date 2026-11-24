@@ -1,0 +1,58 @@
+{
+  "timestamp": "2026-11-24T09:05:08.524Z",
+  "job": {
+    "Id": "707g700001DZSWQAA5",
+    "Status": "Aborted",
+    "NumberOfErrors": 0,
+    "JobItemsProcessed": 0,
+    "TotalJobItems": 0,
+    "CreatedDate": "2026-11-24T09:03:58.000+0000",
+    "CompletedDate": "2026-11-24T09:03:59.000+0000",
+    "ExtendedStatus": "job 707g700001DZSWQAA5 aborted"
+  },
+  "execution": {
+    "Id": "a01g700001MNm3ZAAT",
+    "IsDeleted": false,
+    "Name": "EJE-000015",
+    "CreatedDate": "2026-11-24T09:03:58.000+0000",
+    "LastModifiedDate": "2026-11-24T09:04:27.000+0000",
+    "SystemModstamp": "2026-11-24T09:04:27.000+0000",
+    "LastViewedDate": null,
+    "LastReferencedDate": null,
+    "AsyncApexJobId__c": "707g700001DZSWQAA5",
+    "Creados__c": 0,
+    "Estado__c": "Abortada",
+    "Evaluados__c": 0,
+    "Fallidos__c": 0,
+    "FechaCorte__c": "2026-11-24",
+    "FinVentana__c": "2026-12-24",
+    "Finalizacion__c": "2026-11-24T09:04:27.000+0000",
+    "InicioVentana__c": "2026-11-24",
+    "Inicio__c": "2026-11-24T09:03:58.000+0000",
+    "LotesFallidos__c": 0,
+    "Omitidos__c": 0,
+    "RequiereReconciliacion__c": true,
+    "YaExistentes__c": 0,
+    "ZonaHoraria__c": "Europe/Paris"
+  },
+  "follows": [],
+  "incidents": [
+    {
+      "Id": "a02g700000F7xtxAAB",
+      "IsDeleted": false,
+      "Name": "INC-000006",
+      "CreatedDate": "2026-11-24T09:04:28.000+0000",
+      "LastModifiedDate": "2026-11-24T09:04:28.000+0000",
+      "SystemModstamp": "2026-11-24T09:04:28.000+0000",
+      "LastViewedDate": null,
+      "LastReferencedDate": null,
+      "CamposAfectados__c": null,
+      "ClaveIntentada__c": "CONTRASTE_JOB:v1:8807dcc39ba7432e643575288390c6dda59d46173c8513391e39e526828c75e7",
+      "CodigoError__c": "CONTRASTE_JOB",
+      "Contrato__c": null,
+      "Ejecucion__c": "a01g700001MNm3ZAAT",
+      "Etapa__c": "Reconciliación",
+      "Mensaje__c": "Job=707g700001DZSWQAA5; estado=Aborted; NumberOfErrors=0; JobItemsProcessed=0; TotalJobItems=0; LotesFallidos conservados=0. Fase o resumen no concluyente: se conserva el contador previo de lotes. Los resultados individuales no se reconstruyen. Revisión manual pendiente. Detalle: job 707g700001DZSWQAA5 aborted"
+    }
+  ]
+}

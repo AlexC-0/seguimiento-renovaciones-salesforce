@@ -1,0 +1,25 @@
+{
+  "recordedAt": "2026-11-24T09:03:29.215Z",
+  "command": "node --test --test-reporter=tap scripts/fase-4b/observador.test.cjs",
+  "exitCode": 0,
+  "passed": 4,
+  "failed": 0,
+  "tests": [
+    "Completed adelantado no se interpreta como cierre ausente definitivo",
+    "terminal estable sin finish termina tras gracia acotada",
+    "cierre requiere lecturas estables y no solo estado terminal",
+    "trabajo activo o lecturas inestables no prolongan el límite total"
+  ],
+  "source": "Resultado TAP de la ejecución previa al ensayo remoto",
+  "hashes": [
+    {
+      "file": "scripts/fase-4b/observador.cjs",
+      "sha256": "3131b8d4c001d268f30c51c3c341a502b4ab91480e5370ef64420117ccd855b4"
+    },
+    {
+      "file": "scripts/fase-4b/observador.test.cjs",
+      "sha256": "b5b2cdbfcbe9ce45368b7df77e6630c0cac58a6fa234da3ebb9b7f2cc8056c25"
+    }
+  ],
+  "apexTests": false
+}

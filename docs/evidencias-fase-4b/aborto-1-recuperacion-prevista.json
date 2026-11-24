@@ -1,0 +1,23 @@
+{
+  "timestamp": "2026-11-24T09:05:08.533Z",
+  "originalJob": "707g700001DZSWQAA5",
+  "originalExecution": "a01g700001MNm3ZAAT",
+  "originalState": "Abortada",
+  "originalReconciliation": true,
+  "missingContractIds": [
+    "a00g700002bMdqoAAC",
+    "a00g700002bMdqpAAC",
+    "a00g700002bMdqqAAC",
+    "a00g700002bMdqrAAC",
+    "a00g700002bMdqsAAC",
+    "a00g700002bMdqtAAC",
+    "a00g700002bMdquAAC",
+    "a00g700002bMdqvAAC",
+    "a00g700002bMdqwAAC",
+    "a00g700002bMdqxAAC"
+  ],
+  "expectedCreated": 10,
+  "expectedExisting": 0,
+  "samples": [],
+  "context": "Revisión y preparación técnica de datos ficticios nuevos; sin sesión comercial adicional."
+}

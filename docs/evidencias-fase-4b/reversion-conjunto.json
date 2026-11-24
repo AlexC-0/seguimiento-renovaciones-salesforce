@@ -1,0 +1,61 @@
+{
+  "label": "reversion",
+  "timestamp": "2026-11-24T08:59:03.119Z",
+  "cut": "2026-11-24",
+  "end": "2026-12-24",
+  "timezone": "Europe/Paris",
+  "eligible": 10,
+  "account": "001g700001MNXHRAA5",
+  "contracts": [
+    {
+      "id": "a00g700002bNoPBAA0",
+      "expiry": "2026-12-04"
+    },
+    {
+      "id": "a00g700002bNoPCAA0",
+      "expiry": "2026-12-05"
+    },
+    {
+      "id": "a00g700002bNoPDAA0",
+      "expiry": "2026-12-06"
+    },
+    {
+      "id": "a00g700002bNoPEAA0",
+      "expiry": "2026-12-07"
+    },
+    {
+      "id": "a00g700002bNoPFAA0",
+      "expiry": "2026-12-08"
+    },
+    {
+      "id": "a00g700002bNoPGAA0",
+      "expiry": "2026-12-09"
+    },
+    {
+      "id": "a00g700002bNoPHAA0",
+      "expiry": "2026-12-10"
+    },
+    {
+      "id": "a00g700002bNoPIAA0",
+      "expiry": "2026-12-11"
+    },
+    {
+      "id": "a00g700002bNoPJAA0",
+      "expiry": "2026-12-12"
+    },
+    {
+      "id": "a00g700002bNoPKAA0",
+      "expiry": "2026-12-13"
+    }
+  ],
+  "initialFollows": 0,
+  "queryChecks": [
+    {
+      "object": "ContratoComercial__c",
+      "requested": 10,
+      "retrieved": 10,
+      "pages": 1,
+      "done": true
+    }
+  ]
+}

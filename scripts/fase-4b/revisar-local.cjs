@@ -1,0 +1,36 @@
+'use strict';
+const h = require('./comun.cjs');
+const walk = dir => h.fs.readdirSync(dir, { withFileTypes: true }).flatMap(x => x.isDirectory() ? walk(h.path.join(dir,x.name)) : [h.path.join(dir,x.name)]);
+const git = args => h.cp.execFileSync('git', ['-c','safe.directory='+h.root.replaceAll('\\','/'),'-c','core.autocrlf=false',...args], {cwd:h.root,env:{...process.env,GIT_OPTIONAL_LOCKS:'0'},encoding:'utf8'});
+const assert = (value,message) => {if(!value)throw Error(message);};
+const relative = p => h.path.relative(h.root,p).replaceAll('\\','/');
+const before = h.read('antes.json');
+const branch=git(['branch','--show-current']).trim();
+assert(git(['rev-parse','HEAD']).trim()===h.baseline && branch==='main','Referencia o rama inesperada.');
+assert(git(['rev-parse','--show-toplevel']).trim().toLowerCase()===h.root.replaceAll('\\','/').toLowerCase(),'Raíz distinta.');
+assert(git(['remote','get-url','origin']).trim()==='https://github.com/AlexC-0/seguimiento-renovaciones-salesforce.git','Remoto distinto.');
+assert(!git(['diff','--cached','--name-only']).trim(),'Hay cambios preparados en el índice.');
+git(['diff','--check']);
+const scripts=walk(h.path.join(h.root,'scripts/fase-4b')).filter(p=>p.endsWith('.cjs'));
+for(const file of scripts)h.cp.execFileSync(process.execPath,['--check',file],{cwd:h.root,windowsHide:true});
+const tests=h.readJSON(h.path.join(h.out,'pruebas-observador.json'));
+assert(tests.exitCode===0&&tests.passed===4&&tests.failed===0&&tests.hashes.every(x=>h.hash(h.fs.readFileSync(h.path.join(h.root,x.file)))===x.sha256),'Regresiones no verificadas o fuentes cambiadas.');
+const xmlCommand = "$ErrorActionPreference='Stop'; $files=Get-ChildItem -LiteralPath 'docs/evidencias-fase-4b' -Recurse -File | Where-Object { $_.Extension -in '.xml','.object' }; foreach($file in $files) { [xml]$doc=[IO.File]::ReadAllText($file.FullName); if($doc.DocumentElement.NamespaceURI -ne 'http://soap.sforce.com/2006/04/metadata') { throw 'Namespace inesperado' } }; Write-Output $files.Count";
+const xmlCount=Number(h.cp.execFileSync('powershell.exe',['-NoProfile','-NonInteractive','-Command',xmlCommand],{cwd:h.root,windowsHide:true,encoding:'utf8'}).trim());
+assert(xmlCount===6,'Paquetes XML incompletos.');
+const docs=['AGENTS.md','README.md','docs/STATUS.md','docs/ENVIRONMENT.md','docs/PROJECT_BRIEF.md','docs/FASE-4B.md'];
+const jsonFiles=[...walk(h.out).filter(p=>p.endsWith('.json')),h.path.join(h.root,'docs/evidencias-fase-4b.json')];for(const p of jsonFiles)h.readJSON(p);
+const expectedOutput=h.path.join(h.out,'revision-local.json');
+const aggregate=h.path.join(h.root,'docs/evidencias-fase-4b.json');
+const links=[];for(const file of docs){const text=h.fs.readFileSync(h.path.join(h.root,file),'utf8');for(const match of text.matchAll(/\[[^\]]*\]\(([^)]+)\)/g)){const url=match[1];if(/^(https?:|#)/.test(url))continue;const target=h.path.resolve(h.path.dirname(h.path.join(h.root,file)),url.split('#')[0]);assert(h.fs.existsSync(target)||target===expectedOutput||target===aggregate,'Enlace roto en '+file+': '+url);links.push({file,target:url});}}
+const publicFiles=[...docs.map(p=>h.path.join(h.root,p)),...walk(h.out),aggregate,...scripts];
+const secretPatterns=[/00D[a-zA-Z0-9]{12,15}/,/005[a-zA-Z0-9]{12,15}/,/https:\/\/(?!developer\.|help\.|trailhead\.)[^\s"<>/]+\.(?:salesforce|force)\.com/i,/(?:access_token|refresh_token|client_secret)\s*["']?\s*[:=]\s*["'][^"']{8,}/i,/-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----/,/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i];
+const sensitive=[];const whitespace=[];for(const file of publicFiles){const text=h.fs.readFileSync(file,'utf8');if(secretPatterns.some(p=>p.test(text)))sensitive.push(relative(file));if(/[\t ]+\r?$/m.test(text))whitespace.push(relative(file));assert(!text.includes('\uFFFD'),'Codificación con sustitución en '+relative(file));}
+assert(!sensitive.length,'Revisar posibles identidades o secretos en: '+sensitive.join(', '));assert(!whitespace.length,'Espacios finales en: '+whitespace.join(', '));
+const priorEvidence=before.evidence.every(x=>h.hash(h.fs.readFileSync(h.path.join(h.root,x.file)))===x.sha256);
+const application=before.application.every(x=>h.hash(h.fs.readFileSync(h.path.join(h.root,x.file)))===x.sha256);
+assert(priorEvidence&&application,'Bytes históricos alterados.');
+const preservedPaths=['.sf/p06-fase-4b/antes.json','.sf/p06-fase-4b/estado.json','.sf/p06-fase-4b/reglas.json'];
+assert(git(['check-ignore',...preservedPaths]).trim().split(/\r?\n/).length===preservedPaths.length,'Estado privado no excluido.');
+h.publish('revision-local.json',{timestamp:new Date().toISOString(),baseline:h.baseline,branch,indexEmpty:true,gitDiffCheck:true,scriptSyntax:scripts.map(relative),tests:{command:tests.command,passed:4,failed:0,scope:'Regresiones del observador, ejecutadas antes del ensayo; fuentes idénticas'},xml:{files:xmlCount,wellFormed:true,namespace:'http://soap.sforce.com/2006/04/metadata'},parsedEvidenceJson:jsonFiles.length,relativeLinksChecked:links.length,publicSensitivePatternMatches:sensitive,whitespaceIssues:whitespace,privateStateIgnored:true,previousEvidenceUnchanged:priorEvidence,previousEvidenceCount:before.evidence.length,applicationUnchanged:application,apexTestsRunInThisPhase:false,pass:true});
+console.log(JSON.stringify({scripts:scripts.length,testsPassed:4,xml:xmlCount,relativeLinks:links.length,priorEvidence:before.evidence.length,applicationUnchanged:application,pass:true}));

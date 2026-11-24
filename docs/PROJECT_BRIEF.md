@@ -38,13 +38,13 @@ En cada actualización persistida debe cumplirse:
 
 `evaluados = creados + ya existentes + omitidos + fallidos`
 
-Los contadores representan resultados confirmados por registro, no intentos en memoria. Los lotes completamente revertidos se contabilizan aparte y no permiten inferir cuántos resultados individuales se persistieron. finish y el contraste manual señalan reconciliación ante incertidumbre. Las pruebas verifican rollback y señalización de un cierre incoherente; la fase 4A demuestra rechazo individual y recuperación mediante otra ejecución. Interrupciones y reversión total de un lote siguen sin ensayo real.
+Los contadores representan resultados confirmados por registro, no intentos en memoria. Los lotes completamente revertidos se contabilizan aparte y no permiten inferir cuántos resultados individuales se persistieron. finish y el contraste manual señalan reconciliación ante incertidumbre. Las pruebas verifican rollback y señalización de un cierre incoherente; la fase 4A demuestra rechazo individual y recuperación mediante otra ejecución. La fase 4B añade reversión total de un execute, aborto antes de comenzar y sus recuperaciones manuales; no acredita aborto intermedio ni fallos de start/finish.
 
 La recuperación será manual, con revisión de resultados persistidos, incidencias y estado del trabajo antes de decidir un nuevo lanzamiento. No se inventarán resultados ni se alterarán evidencias anteriores para cuadrar contadores. La resolución de una incertidumbre podrá dejar constancia en una nueva incidencia de reconciliación sin borrar el contador histórico de lotes fallidos.
 
 ## Criterios de aceptación funcional
 
-La tabla define la aceptación integral de V1. Fase 1B comprobó el modelo declarativo con 117 casos; fase 2 comprobó las funciones comerciales de AC-14, las denegaciones ordinarias de AC-15, el informe AC-16 y la conservación de AC-17. Fase 3 incorpora operador, procesamiento, identidad y repetición, con pruebas unitarias y dos jobs reales de tres lotes. [FASE-3.md](FASE-3.md) conserva esa evidencia histórica. [FASE-4A.md](FASE-4A.md) añade solapamiento observado, rechazo individual y recuperación manual. La colisión de inserción, el cruce real de medianoche, el cambio estacional y las interrupciones siguen sin demostración real; no se equipara esta cobertura con la aceptación completa de V1.
+La tabla define la aceptación integral de V1. Fase 1B comprobó el modelo declarativo con 117 casos; fase 2 comprobó las funciones comerciales de AC-14, las denegaciones ordinarias de AC-15, el informe AC-16 y la conservación de AC-17. Fase 3 incorpora operador, procesamiento, identidad y repetición, con pruebas unitarias y dos jobs reales de tres lotes. [FASE-3.md](FASE-3.md) conserva esa evidencia histórica. [FASE-4A.md](FASE-4A.md) añade solapamiento observado, rechazo individual y recuperación manual. La fase 4B añade reversión completa de lote y aborto previo al inicio. La colisión de inserción, el cruce real de medianoche, el cambio estacional y el aborto durante el procesamiento siguen sin demostración real; no se equipara esta cobertura con la aceptación completa de V1.
 
 | ID | Escenario | Resultado exigido |
 |---|---|---|
@@ -81,7 +81,19 @@ La tabla define la aceptación integral de V1. Fase 1B comprobó el modelo decla
 | AC-17 | 297 registros anteriores y 51 evidencias intactos, 77 nuevos conservados | Campos temporales y de visualización separados |
 | AC-18 | Claves canónicas del conjunto solapado coinciden con las parejas capturadas | Inserción concurrente sobre la misma identidad no demostrada |
 
-AC-08, cruce real de medianoche de AC-03 y cambio estacional de AC-20 siguen pendientes de evidencia real. Tres regresiones locales verifican el observador del ensayo; las 20 pruebas Apex son el resultado histórico de la revisión de fase 3 y no se repitieron. V1 sigue abierta.
+Al cierre de fase 4A, AC-08, el cruce real de medianoche de AC-03 y el cambio estacional de AC-20 seguían pendientes de evidencia real. Tres regresiones locales verificaron el observador de ese ensayo; las 20 pruebas Apex corresponden a la revisión de fase 3. La cobertura añadida después figura en fase 4B; V1 sigue abierta.
+
+## Cobertura añadida en fase 4B
+
+| Criterio | Evidencia real añadida | Límite |
+|---|---|---|
+| AC-05 | Recuperación reconoce cinco existentes, conserva todos sus campos y no reabre el cerrado | Muestra técnica del conjunto de reversión |
+| AC-08 | Cinco miembros de execute identificados en log; cuatro inserciones tentativas revertidas, auditoría ausente y otro lote conservado | Fallo de auditoría de Creación; no errores reales de start/finish |
+| AC-09 | Diagnóstico persistido, contraste repetido estable y nuevas ejecuciones recuperan cinco tras rollback y diez tras aborto | Aborto antes de comenzar, sin demostración intermedia |
+| AC-16 | Informe y SOQL coinciden en 179 IDs, 19 nuevos incluidos y un cerrado excluido | Cuenta técnica, no nueva sesión comercial |
+| AC-17 | 374 anteriores y 82 evidencias intactos, 48 nuevos conservados, historias adversas sin cambios | Se separan campos temporales y de visualización |
+
+No se amplía la cobertura de colisión de inserción, medianoche o cambio estacional. La conservación de datos tras recuperación no limpia automáticamente RequiereReconciliacion de los intentos adversos. V1 sigue abierta. [Resultados de fase 4B](FASE-4B.md).
 
 ## Límites de fase 1A
 

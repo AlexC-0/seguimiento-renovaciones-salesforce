@@ -1,0 +1,27 @@
+{
+  "observedAt": "2026-11-24T09:03:12.375Z",
+  "linked": true,
+  "requesterVerified": true,
+  "jobClass": "LoteRenovaciones",
+  "beforeAbort": "Holding",
+  "batchSize": 5,
+  "scope": 10,
+  "timezone": "Europe/Paris",
+  "end": "2026-12-24",
+  "cut": "2026-11-24",
+  "job": "707g700001DZR2MAAX",
+  "execution": "a01g700001MN9gYAAT",
+  "scopeIds": [
+    "a00g700002bNoPBAA0",
+    "a00g700002bNoPCAA0",
+    "a00g700002bNoPDAA0",
+    "a00g700002bNoPEAA0",
+    "a00g700002bNoPFAA0",
+    "a00g700002bNoPGAA0",
+    "a00g700002bNoPHAA0",
+    "a00g700002bNoPIAA0",
+    "a00g700002bNoPJAA0",
+    "a00g700002bNoPKAA0"
+  ],
+  "context": "Lanzamiento manual sobre IDs explícitos."
+}

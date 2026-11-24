@@ -1,0 +1,21 @@
+{
+  "timestamp": "2026-11-24T09:03:20.327Z",
+  "pass": true,
+  "job": "707g700001DZR2MAAX",
+  "execution": "a01g700001MN9gYAAT",
+  "created": 5,
+  "existing": 5,
+  "newFollowIds": [
+    "a03g700000tTr1FAAS",
+    "a03g700000tTr1GAAS",
+    "a03g700000tTr1HAAS",
+    "a03g700000tTr1IAAS",
+    "a03g700000tTr1JAAS"
+  ],
+  "existingUnchanged": true,
+  "originalExecutionAndIncidentsUnchanged": true,
+  "originalReconciliation": true,
+  "canonical": true,
+  "newExecution": true,
+  "automaticRetry": false
+}

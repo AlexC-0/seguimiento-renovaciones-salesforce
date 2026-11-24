@@ -1,0 +1,245 @@
+{
+  "timestamp": "2026-11-24T09:05:29.035Z",
+  "records": [
+    {
+      "objeto": "Account",
+      "id": "001g700001MNXHRAA5",
+      "scenario": "reversion"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002bNoPBAA0",
+      "scenario": "reversion"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002bNoPCAA0",
+      "scenario": "reversion"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002bNoPDAA0",
+      "scenario": "reversion"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002bNoPEAA0",
+      "scenario": "reversion"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002bNoPFAA0",
+      "scenario": "reversion"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002bNoPGAA0",
+      "scenario": "reversion"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002bNoPHAA0",
+      "scenario": "reversion"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002bNoPIAA0",
+      "scenario": "reversion"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002bNoPJAA0",
+      "scenario": "reversion"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002bNoPKAA0",
+      "scenario": "reversion"
+    },
+    {
+      "objeto": "EjecucionRenovacion__c",
+      "id": "a01g700001MNaFJAA1",
+      "scenario": "reversion"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tTqWjAAK",
+      "scenario": "reversion"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tTqWkAAK",
+      "scenario": "reversion"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tTqWlAAK",
+      "scenario": "reversion"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tTqWmAAK",
+      "scenario": "reversion"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tTqWnAAK",
+      "scenario": "reversion"
+    },
+    {
+      "objeto": "IncidenciaRenovacion__c",
+      "id": "a02g700000F7tIWAAZ",
+      "scenario": "reversion"
+    },
+    {
+      "objeto": "EjecucionRenovacion__c",
+      "id": "a01g700001MN9gYAAT",
+      "scenario": "reversion"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tTr1FAAS",
+      "scenario": "reversion"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tTr1GAAS",
+      "scenario": "reversion"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tTr1HAAS",
+      "scenario": "reversion"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tTr1IAAS",
+      "scenario": "reversion"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tTr1JAAS",
+      "scenario": "reversion"
+    },
+    {
+      "objeto": "Account",
+      "id": "001g700001MNlKPAA1",
+      "scenario": "aborto-1"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002bMdqoAAC",
+      "scenario": "aborto-1"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002bMdqpAAC",
+      "scenario": "aborto-1"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002bMdqqAAC",
+      "scenario": "aborto-1"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002bMdqrAAC",
+      "scenario": "aborto-1"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002bMdqsAAC",
+      "scenario": "aborto-1"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002bMdqtAAC",
+      "scenario": "aborto-1"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002bMdquAAC",
+      "scenario": "aborto-1"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002bMdqvAAC",
+      "scenario": "aborto-1"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002bMdqwAAC",
+      "scenario": "aborto-1"
+    },
+    {
+      "objeto": "ContratoComercial__c",
+      "id": "a00g700002bMdqxAAC",
+      "scenario": "aborto-1"
+    },
+    {
+      "objeto": "EjecucionRenovacion__c",
+      "id": "a01g700001MNm3ZAAT",
+      "scenario": "aborto-1"
+    },
+    {
+      "objeto": "IncidenciaRenovacion__c",
+      "id": "a02g700000F7xtxAAB",
+      "scenario": "aborto-1"
+    },
+    {
+      "objeto": "EjecucionRenovacion__c",
+      "id": "a01g700001MNnNpAAL",
+      "scenario": "aborto-1"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tTtSrAAK",
+      "scenario": "aborto-1"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tTtSsAAK",
+      "scenario": "aborto-1"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tTtStAAK",
+      "scenario": "aborto-1"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tTtSuAAK",
+      "scenario": "aborto-1"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tTtSvAAK",
+      "scenario": "aborto-1"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tTtSwAAK",
+      "scenario": "aborto-1"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tTtSxAAK",
+      "scenario": "aborto-1"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tTtSyAAK",
+      "scenario": "aborto-1"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tTtSzAAK",
+      "scenario": "aborto-1"
+    },
+    {
+      "objeto": "SeguimientoRenovacion__c",
+      "id": "a03g700000tTtT0AAK",
+      "scenario": "aborto-1"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "timestamp": "2026-11-24T09:04:13.142Z",
+  "classification": "antes de comenzar",
+  "receipt": {
+    "afterAbort": "Aborted",
+    "abortRequested": true,
+    "observedAt": "2026-11-24T09:03:59.058Z",
+    "linked": true,
+    "requesterVerified": true,
+    "jobClass": "LoteRenovaciones",
+    "beforeAbort": "Holding",
+    "batchSize": 5,
+    "scope": 10,
+    "timezone": "Europe/Paris",
+    "end": "2026-12-24",
+    "cut": "2026-11-24",
+    "job": "707g700001DZSWQAA5",
+    "execution": "a01g700001MNm3ZAAT"
+  },
+  "job": {
+    "Id": "707g700001DZSWQAA5",
+    "Status": "Aborted",
+    "NumberOfErrors": 0,
+    "JobItemsProcessed": 0,
+    "TotalJobItems": 0,
+    "CreatedDate": "2026-11-24T09:03:58.000+0000",
+    "CompletedDate": "2026-11-24T09:03:59.000+0000",
+    "ExtendedStatus": "job 707g700001DZSWQAA5 aborted"
+  },
+  "executionStateBeforeContrast": "Encolada",
+  "confirmedFollows": 0,
+  "confirmedCounts": {
+    "Evaluados": 0,
+    "Creados": 0,
+    "YaExistentes": 0,
+    "Omitidos": 0,
+    "Fallidos": 0,
+    "LotesFallidos": 0
+  },
+  "aborted": true
+}

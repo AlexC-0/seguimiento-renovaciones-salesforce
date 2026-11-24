@@ -1,0 +1,29 @@
+{
+  "afterAbort": "Aborted",
+  "abortRequested": true,
+  "observedAt": "2026-11-24T09:03:59.058Z",
+  "linked": true,
+  "requesterVerified": true,
+  "jobClass": "LoteRenovaciones",
+  "beforeAbort": "Holding",
+  "batchSize": 5,
+  "scope": 10,
+  "timezone": "Europe/Paris",
+  "end": "2026-12-24",
+  "cut": "2026-11-24",
+  "job": "707g700001DZSWQAA5",
+  "execution": "a01g700001MNm3ZAAT",
+  "scopeIds": [
+    "a00g700002bMdqoAAC",
+    "a00g700002bMdqpAAC",
+    "a00g700002bMdqqAAC",
+    "a00g700002bMdqrAAC",
+    "a00g700002bMdqsAAC",
+    "a00g700002bMdqtAAC",
+    "a00g700002bMdquAAC",
+    "a00g700002bMdqvAAC",
+    "a00g700002bMdqwAAC",
+    "a00g700002bMdqxAAC"
+  ],
+  "context": "Aborto solicitado dentro de la transacción de lanzamiento; confirmar estado persistido después del commit."
+}

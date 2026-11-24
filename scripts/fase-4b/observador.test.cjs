@@ -1,0 +1,7 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict'),{decision}=require('./observador.cjs');
+const sample=(elapsed,state='Completed',closed=false)=>({elapsed,job:{Status:state},execution:{Estado__c:closed?'Fallida':'En curso',Finalizacion__c:closed?'2026-11-24T00:00:00Z':null}});
+test('Completed adelantado no se interpreta como cierre ausente definitivo',()=>assert.equal(decision([sample(0),sample(1000),sample(2000)],2000).stop,false));
+test('terminal estable sin finish termina tras gracia acotada',()=>assert.deepEqual(decision([sample(0),sample(9000),sample(10000)],10000),{stop:true,reason:'terminal estable sin cierre tras espera acotada'}));
+test('cierre requiere lecturas estables y no solo estado terminal',()=>{assert.equal(decision([sample(0,'Completed',true)],0).stop,false);assert.equal(decision([sample(0,'Completed',true),sample(1000,'Completed',true),sample(2000,'Completed',true)],2000).stop,true);});
+test('trabajo activo o lecturas inestables no prolongan el límite total',()=>{assert.equal(decision([sample(0,'Processing')],120000).reason,'límite de observación');assert.equal(decision([sample(0),sample(119000,'Aborted')],120000).reason,'límite de observación');});

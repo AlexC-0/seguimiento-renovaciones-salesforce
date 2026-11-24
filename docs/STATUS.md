@@ -2,6 +2,16 @@
 
 Fecha: 24/11/2026.
 
+## Fase 4B
+
+Comprobada sobre abfcba0e7aa682084fc93fb23fe6c0ba9cd9e998. Un execute revirtió cuatro inserciones tentativas al rechazarse su auditoría; sus cinco miembros están identificados en la traza. El otro lote conservó cinco seguimientos. Job Completed con un error; ejecución Fallida, Evaluados=5, Creados=5, LotesFallidos=1 y reconciliación marcada. finish dejó una incidencia; dos contrastes posteriores no la duplicaron.
+
+La recuperación manual creó cinco ausentes y reconoció cinco existentes sin cambios, incluido un cerrado y otro con notas. Un conjunto independiente obtuvo Aborted desde Holding antes de comenzar: cero resultados confirmados. El contraste persistió Abortada y diagnóstico; la nueva ejecución creó diez seguimientos. Ambas historias adversas y sus marcas se conservan.
+
+Configuración final: dos reglas F4B inactivas verificadas, regla F4A inactiva, traza y nivel temporales retirados; Login As=false y usuarios/permisos comerciales intactos. Conservación: 374 registros anteriores, 48 nuevos y 82 evidencias históricas. Informe y SOQL técnico: 179 IDs, 19 nuevos incluidos y uno cerrado excluido.
+
+Cuatro regresiones locales del observador correctas; sin cambios de aplicación ni nueva batería Apex. V1 abierta. Aborto a mitad del procesamiento, errores de start/finish, colisión de inserción y casos temporales siguen sin evidencia real. [Resultados de fase 4B](FASE-4B.md) y [evidencias](evidencias-fase-4b.json).
+
 ## Fase 4A
 
 Comprobada sobre 563b4399447898a1d86c5bc0312aded2c15ce897. Dos trabajos sobre los mismos 30 contratos se observaron Processing en dos consultas completas, con 2/6 y 5/6 lotes cada uno. Resultado final: 30 creados y 30 existentes entre ambas ejecuciones, 30 identidades únicas y ningún seguimiento sobrescrito. No se acredita una colisión de inserción.
